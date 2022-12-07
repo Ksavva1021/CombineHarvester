@@ -19,15 +19,20 @@ void BuildRooMorphingPy(bp::object & ws, ch::CombineHarvester& cb,
   BuildRooMorphing(*ws_, cb, bin, process, *mass_var_, norm_postfix, allow_morph, verbose, force_template_limit, file_);
 }
 
-
 void BuildCMSHistFuncFactoryPy(bp::object &ws, ch::CombineHarvester& cb, bp::object &mass_var, std::string const& process){
   RooWorkspace *ws_ = (RooWorkspace*)(TPython::ObjectProxy_AsVoidPtr(ws.ptr()));
   RooAbsReal *mass_var_ = (RooAbsReal*)(TPython::ObjectProxy_AsVoidPtr(mass_var.ptr()));
   ch::CMSHistFuncFactory f;
-  std::map<std::string, RooAbsReal*> morphVars = {{process, mass_var_}};
+  std::map<std::string, RooAbsReal*> morphVars;
+  std::stringstream stream(process);
+  std::string token;
+  while (getline(stream, token, ',')) {
+    morphVars.insert({token,mass_var_});
+  }
   f.SetHorizontalMorphingVariable(morphVars);
   f.Run(cb, *ws_);
 }
+
 
 BOOST_PYTHON_MODULE(libCombineHarvesterCombinePdfs)
 {

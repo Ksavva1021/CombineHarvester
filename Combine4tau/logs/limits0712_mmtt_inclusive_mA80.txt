@@ -1,0 +1,414 @@
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80 /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+ <<< Combine >>> 
+>>> random number generator seed is 123456
+Will use a-priori expected background instead of a-posteriori one.
+>>> method used is AsymptoticLimits
+Turning on runtime-define MINIMIZER_analytic
+Set Default Value of Parameter r_A60 To : 0
+Set Default Value of Parameter r_A70 To : 0
+Set Default Value of Parameter r_A90 To : 0
+Set Default Value of Parameter r_A100 To : 0
+Set Default Value of Parameter r_A125 To : 0
+Set Default Value of Parameter r_A140 To : 0
+Set Default Value of Parameter r_A160 To : 0
+Redefining the POIs to be: RooArgSet:: = (r_A80)
+Freezing the following parameters: RooArgSet:: = (r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160)
+SimNLL created with 1 channels, 0 generic constraints, 32 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+Median for expected limits: 0.159973
+Sigma  for expected limits: 0.0816205
+
+ -- AsymptoticLimits ( CLs ) --
+Expected  2.5%: r_A80 < 0.0850
+Expected 16.0%: r_A80 < 0.1140
+Expected 50.0%: r_A80 < 0.1600
+Expected 84.0%: r_A80 < 0.2262
+Expected 97.5%: r_A80 < 0.3072
+
+Done in 0.00 min (cpu), 0.00 min (real)
+Printing Message Summary From ... combine_logger.out
+----------------------------------------------
+Messages of type INFO : 11
+Messages of type DEBUG : 0
+Messages of type ERROR : 0
+----------------------------------------------
+INFO: (function: run) Combine.cc: 687 -- Freezing the following parameters: 
+INFO: (function: run) Combine.cc: 690  r_A60 
+INFO: (function: run) Combine.cc: 690  r_A70 
+INFO: (function: run) Combine.cc: 690  r_A90 
+INFO: (function: run) Combine.cc: 690  r_A100 
+INFO: (function: run) Combine.cc: 690  r_A125 
+INFO: (function: run) Combine.cc: 690  r_A140 
+INFO: (function: run) Combine.cc: 690  r_A160 
+INFO: (function: generateAsimov) ToyMCSamplerOpt.cc: 139 -- Using internal logic for binned/unbinned Asimov dataset generation
+INFO: (function: generateWithHisto) ToyMCSamplerOpt.cc: 214 -- Generating asimov with histogram for pdf pdf_binmmtt_inclusive_obsOnly: in 32 x-bins
+INFO: (function: runLimitExpected) AsymptoticLimits.cc: 436 -- Median for expected limits = 0.159973 (Sigma for expected limits = 0.0816205)
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80 /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+ <<< Combine >>> 
+>>> random number generator seed is 123456
+Will use a-priori expected background instead of a-posteriori one.
+>>> method used is AsymptoticLimits
+Turning on runtime-define MINIMIZER_analytic
+Set Default Value of Parameter r_A60 To : 0
+Set Default Value of Parameter r_A70 To : 0
+Set Default Value of Parameter r_A90 To : 0
+Set Default Value of Parameter r_A100 To : 0
+Set Default Value of Parameter r_A125 To : 0
+Set Default Value of Parameter r_A140 To : 0
+Set Default Value of Parameter r_A160 To : 0
+Redefining the POIs to be: RooArgSet:: = (r_A80)
+Freezing the following parameters: RooArgSet:: = (r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160)
+SimNLL created with 1 channels, 0 generic constraints, 32 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+Median for expected limits: 0.151428
+Sigma  for expected limits: 0.0772607
+
+ -- AsymptoticLimits ( CLs ) --
+Expected  2.5%: r_A80 < 0.0807
+Expected 16.0%: r_A80 < 0.1081
+Expected 50.0%: r_A80 < 0.1514
+Expected 84.0%: r_A80 < 0.2138
+Expected 97.5%: r_A80 < 0.2896
+
+Done in 0.00 min (cpu), 0.00 min (real)
+Printing Message Summary From ... combine_logger.out
+----------------------------------------------
+Messages of type INFO : 11
+Messages of type DEBUG : 0
+Messages of type ERROR : 0
+----------------------------------------------
+INFO: (function: run) Combine.cc: 687 -- Freezing the following parameters: 
+INFO: (function: run) Combine.cc: 690  r_A60 
+INFO: (function: run) Combine.cc: 690  r_A70 
+INFO: (function: run) Combine.cc: 690  r_A90 
+INFO: (function: run) Combine.cc: 690  r_A100 
+INFO: (function: run) Combine.cc: 690  r_A125 
+INFO: (function: run) Combine.cc: 690  r_A140 
+INFO: (function: run) Combine.cc: 690  r_A160 
+INFO: (function: generateAsimov) ToyMCSamplerOpt.cc: 139 -- Using internal logic for binned/unbinned Asimov dataset generation
+INFO: (function: generateWithHisto) ToyMCSamplerOpt.cc: 214 -- Generating asimov with histogram for pdf pdf_binmmtt_inclusive_obsOnly: in 32 x-bins
+INFO: (function: runLimitExpected) AsymptoticLimits.cc: 436 -- Median for expected limits = 0.151428 (Sigma for expected limits = 0.0772607)
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80 /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+ <<< Combine >>> 
+>>> random number generator seed is 123456
+Will use a-priori expected background instead of a-posteriori one.
+>>> method used is AsymptoticLimits
+Turning on runtime-define MINIMIZER_analytic
+Set Default Value of Parameter r_A60 To : 0
+Set Default Value of Parameter r_A70 To : 0
+Set Default Value of Parameter r_A90 To : 0
+Set Default Value of Parameter r_A100 To : 0
+Set Default Value of Parameter r_A125 To : 0
+Set Default Value of Parameter r_A140 To : 0
+Set Default Value of Parameter r_A160 To : 0
+Redefining the POIs to be: RooArgSet:: = (r_A80)
+Freezing the following parameters: RooArgSet:: = (r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160)
+SimNLL created with 1 channels, 0 generic constraints, 32 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+Median for expected limits: 0.14502
+Sigma  for expected limits: 0.0739909
+
+ -- AsymptoticLimits ( CLs ) --
+Expected  2.5%: r_A80 < 0.0775
+Expected 16.0%: r_A80 < 0.1037
+Expected 50.0%: r_A80 < 0.1450
+Expected 84.0%: r_A80 < 0.2042
+Expected 97.5%: r_A80 < 0.2758
+
+Done in 0.00 min (cpu), 0.00 min (real)
+Printing Message Summary From ... combine_logger.out
+----------------------------------------------
+Messages of type INFO : 11
+Messages of type DEBUG : 0
+Messages of type ERROR : 0
+----------------------------------------------
+INFO: (function: run) Combine.cc: 687 -- Freezing the following parameters: 
+INFO: (function: run) Combine.cc: 690  r_A60 
+INFO: (function: run) Combine.cc: 690  r_A70 
+INFO: (function: run) Combine.cc: 690  r_A90 
+INFO: (function: run) Combine.cc: 690  r_A100 
+INFO: (function: run) Combine.cc: 690  r_A125 
+INFO: (function: run) Combine.cc: 690  r_A140 
+INFO: (function: run) Combine.cc: 690  r_A160 
+INFO: (function: generateAsimov) ToyMCSamplerOpt.cc: 139 -- Using internal logic for binned/unbinned Asimov dataset generation
+INFO: (function: generateWithHisto) ToyMCSamplerOpt.cc: 214 -- Generating asimov with histogram for pdf pdf_binmmtt_inclusive_obsOnly: in 32 x-bins
+INFO: (function: runLimitExpected) AsymptoticLimits.cc: 436 -- Median for expected limits = 0.14502 (Sigma for expected limits = 0.0739909)
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80 /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+ <<< Combine >>> 
+>>> random number generator seed is 123456
+Will use a-priori expected background instead of a-posteriori one.
+>>> method used is AsymptoticLimits
+Turning on runtime-define MINIMIZER_analytic
+Set Default Value of Parameter r_A60 To : 0
+Set Default Value of Parameter r_A70 To : 0
+Set Default Value of Parameter r_A90 To : 0
+Set Default Value of Parameter r_A100 To : 0
+Set Default Value of Parameter r_A125 To : 0
+Set Default Value of Parameter r_A140 To : 0
+Set Default Value of Parameter r_A160 To : 0
+Redefining the POIs to be: RooArgSet:: = (r_A80)
+Freezing the following parameters: RooArgSet:: = (r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160)
+SimNLL created with 1 channels, 0 generic constraints, 32 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+Median for expected limits: 0.137878
+Sigma  for expected limits: 0.0703474
+
+ -- AsymptoticLimits ( CLs ) --
+Expected  2.5%: r_A80 < 0.0738
+Expected 16.0%: r_A80 < 0.0986
+Expected 50.0%: r_A80 < 0.1379
+Expected 84.0%: r_A80 < 0.1939
+Expected 97.5%: r_A80 < 0.2613
+
+Done in 0.00 min (cpu), 0.00 min (real)
+Printing Message Summary From ... combine_logger.out
+----------------------------------------------
+Messages of type INFO : 11
+Messages of type DEBUG : 0
+Messages of type ERROR : 0
+----------------------------------------------
+INFO: (function: run) Combine.cc: 687 -- Freezing the following parameters: 
+INFO: (function: run) Combine.cc: 690  r_A60 
+INFO: (function: run) Combine.cc: 690  r_A70 
+INFO: (function: run) Combine.cc: 690  r_A90 
+INFO: (function: run) Combine.cc: 690  r_A100 
+INFO: (function: run) Combine.cc: 690  r_A125 
+INFO: (function: run) Combine.cc: 690  r_A140 
+INFO: (function: run) Combine.cc: 690  r_A160 
+INFO: (function: generateAsimov) ToyMCSamplerOpt.cc: 139 -- Using internal logic for binned/unbinned Asimov dataset generation
+INFO: (function: generateWithHisto) ToyMCSamplerOpt.cc: 214 -- Generating asimov with histogram for pdf pdf_binmmtt_inclusive_obsOnly: in 32 x-bins
+INFO: (function: runLimitExpected) AsymptoticLimits.cc: 436 -- Median for expected limits = 0.137878 (Sigma for expected limits = 0.0703474)
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80 /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+ <<< Combine >>> 
+>>> random number generator seed is 123456
+Will use a-priori expected background instead of a-posteriori one.
+>>> method used is AsymptoticLimits
+Turning on runtime-define MINIMIZER_analytic
+Set Default Value of Parameter r_A60 To : 0
+Set Default Value of Parameter r_A70 To : 0
+Set Default Value of Parameter r_A90 To : 0
+Set Default Value of Parameter r_A100 To : 0
+Set Default Value of Parameter r_A125 To : 0
+Set Default Value of Parameter r_A140 To : 0
+Set Default Value of Parameter r_A160 To : 0
+Redefining the POIs to be: RooArgSet:: = (r_A80)
+Freezing the following parameters: RooArgSet:: = (r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160)
+SimNLL created with 1 channels, 0 generic constraints, 32 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+Median for expected limits: 0.125549
+Sigma  for expected limits: 0.064057
+
+ -- AsymptoticLimits ( CLs ) --
+Expected  2.5%: r_A80 < 0.0673
+Expected 16.0%: r_A80 < 0.0899
+Expected 50.0%: r_A80 < 0.1255
+Expected 84.0%: r_A80 < 0.1763
+Expected 97.5%: r_A80 < 0.2372
+
+Done in 0.00 min (cpu), 0.00 min (real)
+Printing Message Summary From ... combine_logger.out
+----------------------------------------------
+Messages of type INFO : 11
+Messages of type DEBUG : 0
+Messages of type ERROR : 0
+----------------------------------------------
+INFO: (function: run) Combine.cc: 687 -- Freezing the following parameters: 
+INFO: (function: run) Combine.cc: 690  r_A60 
+INFO: (function: run) Combine.cc: 690  r_A70 
+INFO: (function: run) Combine.cc: 690  r_A90 
+INFO: (function: run) Combine.cc: 690  r_A100 
+INFO: (function: run) Combine.cc: 690  r_A125 
+INFO: (function: run) Combine.cc: 690  r_A140 
+INFO: (function: run) Combine.cc: 690  r_A160 
+INFO: (function: generateAsimov) ToyMCSamplerOpt.cc: 139 -- Using internal logic for binned/unbinned Asimov dataset generation
+INFO: (function: generateWithHisto) ToyMCSamplerOpt.cc: 214 -- Generating asimov with histogram for pdf pdf_binmmtt_inclusive_obsOnly: in 32 x-bins
+INFO: (function: runLimitExpected) AsymptoticLimits.cc: 436 -- Median for expected limits = 0.125549 (Sigma for expected limits = 0.064057)
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80 /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+ <<< Combine >>> 
+>>> random number generator seed is 123456
+Will use a-priori expected background instead of a-posteriori one.
+>>> method used is AsymptoticLimits
+Turning on runtime-define MINIMIZER_analytic
+Set Default Value of Parameter r_A60 To : 0
+Set Default Value of Parameter r_A70 To : 0
+Set Default Value of Parameter r_A90 To : 0
+Set Default Value of Parameter r_A100 To : 0
+Set Default Value of Parameter r_A125 To : 0
+Set Default Value of Parameter r_A140 To : 0
+Set Default Value of Parameter r_A160 To : 0
+Redefining the POIs to be: RooArgSet:: = (r_A80)
+Freezing the following parameters: RooArgSet:: = (r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160)
+SimNLL created with 1 channels, 0 generic constraints, 32 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+Median for expected limits: 0.106293
+Sigma  for expected limits: 0.054232
+
+ -- AsymptoticLimits ( CLs ) --
+Expected  2.5%: r_A80 < 0.0570
+Expected 16.0%: r_A80 < 0.0762
+Expected 50.0%: r_A80 < 0.1063
+Expected 84.0%: r_A80 < 0.1491
+Expected 97.5%: r_A80 < 0.2005
+
+Done in 0.00 min (cpu), 0.00 min (real)
+Printing Message Summary From ... combine_logger.out
+----------------------------------------------
+Messages of type INFO : 11
+Messages of type DEBUG : 0
+Messages of type ERROR : 0
+----------------------------------------------
+INFO: (function: run) Combine.cc: 687 -- Freezing the following parameters: 
+INFO: (function: run) Combine.cc: 690  r_A60 
+INFO: (function: run) Combine.cc: 690  r_A70 
+INFO: (function: run) Combine.cc: 690  r_A90 
+INFO: (function: run) Combine.cc: 690  r_A100 
+INFO: (function: run) Combine.cc: 690  r_A125 
+INFO: (function: run) Combine.cc: 690  r_A140 
+INFO: (function: run) Combine.cc: 690  r_A160 
+INFO: (function: generateAsimov) ToyMCSamplerOpt.cc: 139 -- Using internal logic for binned/unbinned Asimov dataset generation
+INFO: (function: generateWithHisto) ToyMCSamplerOpt.cc: 214 -- Generating asimov with histogram for pdf pdf_binmmtt_inclusive_obsOnly: in 32 x-bins
+INFO: (function: runLimitExpected) AsymptoticLimits.cc: 436 -- Median for expected limits = 0.106293 (Sigma for expected limits = 0.054232)
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80 /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+ <<< Combine >>> 
+>>> random number generator seed is 123456
+Will use a-priori expected background instead of a-posteriori one.
+>>> method used is AsymptoticLimits
+Turning on runtime-define MINIMIZER_analytic
+Set Default Value of Parameter r_A60 To : 0
+Set Default Value of Parameter r_A70 To : 0
+Set Default Value of Parameter r_A90 To : 0
+Set Default Value of Parameter r_A100 To : 0
+Set Default Value of Parameter r_A125 To : 0
+Set Default Value of Parameter r_A140 To : 0
+Set Default Value of Parameter r_A160 To : 0
+Redefining the POIs to be: RooArgSet:: = (r_A80)
+Freezing the following parameters: RooArgSet:: = (r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160)
+SimNLL created with 1 channels, 0 generic constraints, 32 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+Median for expected limits: 0.09021
+Sigma  for expected limits: 0.0460263
+
+ -- AsymptoticLimits ( CLs ) --
+Expected  2.5%: r_A80 < 0.0482
+Expected 16.0%: r_A80 < 0.0645
+Expected 50.0%: r_A80 < 0.0902
+Expected 84.0%: r_A80 < 0.1268
+Expected 97.5%: r_A80 < 0.1710
+
+Done in 0.00 min (cpu), 0.00 min (real)
+Printing Message Summary From ... combine_logger.out
+----------------------------------------------
+Messages of type INFO : 11
+Messages of type DEBUG : 0
+Messages of type ERROR : 0
+----------------------------------------------
+INFO: (function: run) Combine.cc: 687 -- Freezing the following parameters: 
+INFO: (function: run) Combine.cc: 690  r_A60 
+INFO: (function: run) Combine.cc: 690  r_A70 
+INFO: (function: run) Combine.cc: 690  r_A90 
+INFO: (function: run) Combine.cc: 690  r_A100 
+INFO: (function: run) Combine.cc: 690  r_A125 
+INFO: (function: run) Combine.cc: 690  r_A140 
+INFO: (function: run) Combine.cc: 690  r_A160 
+INFO: (function: generateAsimov) ToyMCSamplerOpt.cc: 139 -- Using internal logic for binned/unbinned Asimov dataset generation
+INFO: (function: generateWithHisto) ToyMCSamplerOpt.cc: 214 -- Generating asimov with histogram for pdf pdf_binmmtt_inclusive_obsOnly: in 32 x-bins
+INFO: (function: runLimitExpected) AsymptoticLimits.cc: 436 -- Median for expected limits = 0.09021 (Sigma for expected limits = 0.0460263)
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80 /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+ <<< Combine >>> 
+>>> random number generator seed is 123456
+Will use a-priori expected background instead of a-posteriori one.
+>>> method used is AsymptoticLimits
+Turning on runtime-define MINIMIZER_analytic
+Set Default Value of Parameter r_A60 To : 0
+Set Default Value of Parameter r_A70 To : 0
+Set Default Value of Parameter r_A90 To : 0
+Set Default Value of Parameter r_A100 To : 0
+Set Default Value of Parameter r_A125 To : 0
+Set Default Value of Parameter r_A140 To : 0
+Set Default Value of Parameter r_A160 To : 0
+Redefining the POIs to be: RooArgSet:: = (r_A80)
+Freezing the following parameters: RooArgSet:: = (r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160)
+SimNLL created with 1 channels, 0 generic constraints, 32 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+Median for expected limits: 0.0608673
+Sigma  for expected limits: 0.0310553
+
+ -- AsymptoticLimits ( CLs ) --
+Expected  2.5%: r_A80 < 0.0324
+Expected 16.0%: r_A80 < 0.0434
+Expected 50.0%: r_A80 < 0.0609
+Expected 84.0%: r_A80 < 0.0861
+Expected 97.5%: r_A80 < 0.1168
+
+Done in 0.00 min (cpu), 0.00 min (real)
+Printing Message Summary From ... combine_logger.out
+----------------------------------------------
+Messages of type INFO : 11
+Messages of type DEBUG : 0
+Messages of type ERROR : 0
+----------------------------------------------
+INFO: (function: run) Combine.cc: 687 -- Freezing the following parameters: 
+INFO: (function: run) Combine.cc: 690  r_A60 
+INFO: (function: run) Combine.cc: 690  r_A70 
+INFO: (function: run) Combine.cc: 690  r_A90 
+INFO: (function: run) Combine.cc: 690  r_A100 
+INFO: (function: run) Combine.cc: 690  r_A125 
+INFO: (function: run) Combine.cc: 690  r_A140 
+INFO: (function: run) Combine.cc: 690  r_A160 
+INFO: (function: generateAsimov) ToyMCSamplerOpt.cc: 139 -- Using internal logic for binned/unbinned Asimov dataset generation
+INFO: (function: generateWithHisto) ToyMCSamplerOpt.cc: 214 -- Generating asimov with histogram for pdf pdf_binmmtt_inclusive_obsOnly: in 32 x-bins
+INFO: (function: runLimitExpected) AsymptoticLimits.cc: 436 -- Median for expected limits = 0.0608673 (Sigma for expected limits = 0.0310553)
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+>> pushd /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80; combine --redefineSignalPOIs r_A80 --setParameters r_A60=0,r_A70=0,r_A90=0,r_A100=0,r_A125=0,r_A140=0,r_A160=0 --freezeParameters r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160 --X-rtd MINIMIZER_analytic --rAbsAcc 0 --rRelAcc 0.0005 --cminDefaultMinimizerStrategy 0 --cminDefaultMinimizerTolerance 0.01 -v 1 --run blind -M AsymptoticLimits -m 100 -d ws.root -n .Test; popd
+>> pushd /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80; combine --redefineSignalPOIs r_A80 --setParameters r_A60=0,r_A70=0,r_A90=0,r_A100=0,r_A125=0,r_A140=0,r_A160=0 --freezeParameters r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160 --X-rtd MINIMIZER_analytic --rAbsAcc 0 --rRelAcc 0.0005 --cminDefaultMinimizerStrategy 0 --cminDefaultMinimizerTolerance 0.01 -v 1 --run blind -M AsymptoticLimits -m 110 -d ws.root -n .Test; popd
+>> pushd /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80; combine --redefineSignalPOIs r_A80 --setParameters r_A60=0,r_A70=0,r_A90=0,r_A100=0,r_A125=0,r_A140=0,r_A160=0 --freezeParameters r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160 --X-rtd MINIMIZER_analytic --rAbsAcc 0 --rRelAcc 0.0005 --cminDefaultMinimizerStrategy 0 --cminDefaultMinimizerTolerance 0.01 -v 1 --run blind -M AsymptoticLimits -m 125 -d ws.root -n .Test; popd
+>> pushd /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80; combine --redefineSignalPOIs r_A80 --setParameters r_A60=0,r_A70=0,r_A90=0,r_A100=0,r_A125=0,r_A140=0,r_A160=0 --freezeParameters r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160 --X-rtd MINIMIZER_analytic --rAbsAcc 0 --rRelAcc 0.0005 --cminDefaultMinimizerStrategy 0 --cminDefaultMinimizerTolerance 0.01 -v 1 --run blind -M AsymptoticLimits -m 140 -d ws.root -n .Test; popd
+>> pushd /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80; combine --redefineSignalPOIs r_A80 --setParameters r_A60=0,r_A70=0,r_A90=0,r_A100=0,r_A125=0,r_A140=0,r_A160=0 --freezeParameters r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160 --X-rtd MINIMIZER_analytic --rAbsAcc 0 --rRelAcc 0.0005 --cminDefaultMinimizerStrategy 0 --cminDefaultMinimizerTolerance 0.01 -v 1 --run blind -M AsymptoticLimits -m 160 -d ws.root -n .Test; popd
+>> pushd /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80; combine --redefineSignalPOIs r_A80 --setParameters r_A60=0,r_A70=0,r_A90=0,r_A100=0,r_A125=0,r_A140=0,r_A160=0 --freezeParameters r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160 --X-rtd MINIMIZER_analytic --rAbsAcc 0 --rRelAcc 0.0005 --cminDefaultMinimizerStrategy 0 --cminDefaultMinimizerTolerance 0.01 -v 1 --run blind -M AsymptoticLimits -m 180 -d ws.root -n .Test; popd
+>> pushd /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80; combine --redefineSignalPOIs r_A80 --setParameters r_A60=0,r_A70=0,r_A90=0,r_A100=0,r_A125=0,r_A140=0,r_A160=0 --freezeParameters r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160 --X-rtd MINIMIZER_analytic --rAbsAcc 0 --rRelAcc 0.0005 --cminDefaultMinimizerStrategy 0 --cminDefaultMinimizerTolerance 0.01 -v 1 --run blind -M AsymptoticLimits -m 200 -d ws.root -n .Test; popd
+>> pushd /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80; combine --redefineSignalPOIs r_A80 --setParameters r_A60=0,r_A70=0,r_A90=0,r_A100=0,r_A125=0,r_A140=0,r_A160=0 --freezeParameters r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160 --X-rtd MINIMIZER_analytic --rAbsAcc 0 --rRelAcc 0.0005 --cminDefaultMinimizerStrategy 0 --cminDefaultMinimizerTolerance 0.01 -v 1 --run blind -M AsymptoticLimits -m 250 -d ws.root -n .Test; popd
+>> pushd /vols/cms/ks1021/offlin/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80 /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+ <<< Combine >>> 
+>>> random number generator seed is 123456
+Will use a-priori expected background instead of a-posteriori one.
+>>> method used is AsymptoticLimits
+Turning on runtime-define MINIMIZER_analytic
+Set Default Value of Parameter r_A60 To : 0
+Set Default Value of Parameter r_A70 To : 0
+Set Default Value of Parameter r_A90 To : 0
+Set Default Value of Parameter r_A100 To : 0
+Set Default Value of Parameter r_A125 To : 0
+Set Default Value of Parameter r_A140 To : 0
+Set Default Value of Parameter r_A160 To : 0
+Redefining the POIs to be: RooArgSet:: = (r_A80)
+Freezing the following parameters: RooArgSet:: = (r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160)
+SimNLL created with 1 channels, 0 generic constraints, 32 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+Median for expected limits: 0.0439301
+Sigma  for expected limits: 0.0224137
+
+ -- AsymptoticLimits ( CLs ) --
+Expected  2.5%: r_A80 < 0.0233
+Expected 16.0%: r_A80 < 0.0313
+Expected 50.0%: r_A80 < 0.0439
+Expected 84.0%: r_A80 < 0.0623
+Expected 97.5%: r_A80 < 0.0847
+
+Done in 0.00 min (cpu), 0.00 min (real)
+Printing Message Summary From ... combine_logger.out
+----------------------------------------------
+Messages of type INFO : 11
+Messages of type DEBUG : 0
+Messages of type ERROR : 0
+----------------------------------------------
+INFO: (function: run) Combine.cc: 687 -- Freezing the following parameters: 
+INFO: (function: run) Combine.cc: 690  r_A60 
+INFO: (function: run) Combine.cc: 690  r_A70 
+INFO: (function: run) Combine.cc: 690  r_A90 
+INFO: (function: run) Combine.cc: 690  r_A100 
+INFO: (function: run) Combine.cc: 690  r_A125 
+INFO: (function: run) Combine.cc: 690  r_A140 
+INFO: (function: run) Combine.cc: 690  r_A160 
+INFO: (function: generateAsimov) ToyMCSamplerOpt.cc: 139 -- Using internal logic for binned/unbinned Asimov dataset generation
+INFO: (function: generateWithHisto) ToyMCSamplerOpt.cc: 214 -- Generating asimov with histogram for pdf pdf_binmmtt_inclusive_obsOnly: in 32 x-bins
+INFO: (function: runLimitExpected) AsymptoticLimits.cc: 436 -- Median for expected limits = 0.0439301 (Sigma for expected limits = 0.0224137)
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+e/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/mmtt_inclusive/m80; combine --redefineSignalPOIs r_A80 --setParameters r_A60=0,r_A70=0,r_A90=0,r_A100=0,r_A125=0,r_A140=0,r_A160=0 --freezeParameters r_A60,r_A70,r_A90,r_A100,r_A125,r_A140,r_A160 --X-rtd MINIMIZER_analytic --rAbsAcc 0 --rRelAcc 0.0005 --cminDefaultMinimizerStrategy 0 --cminDefaultMinimizerTolerance 0.01 -v 1 --run blind -M AsymptoticLimits -m 300 -d ws.root -n .Test; popd

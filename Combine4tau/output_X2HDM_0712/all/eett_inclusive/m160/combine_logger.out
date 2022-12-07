@@ -1,0 +1,11 @@
+INFO: (function: run) Combine.cc: 687 -- Freezing the following parameters: 
+INFO: (function: run) Combine.cc: 690  r_A60 
+INFO: (function: run) Combine.cc: 690  r_A70 
+INFO: (function: run) Combine.cc: 690  r_A80 
+INFO: (function: run) Combine.cc: 690  r_A90 
+INFO: (function: run) Combine.cc: 690  r_A100 
+INFO: (function: run) Combine.cc: 690  r_A125 
+INFO: (function: run) Combine.cc: 690  r_A140 
+INFO: (function: generateAsimov) ToyMCSamplerOpt.cc: 139 -- Using internal logic for binned/unbinned Asimov dataset generation
+INFO: (function: generateWithHisto) ToyMCSamplerOpt.cc: 214 -- Generating asimov with histogram for pdf pdf_bineett_inclusive_obsOnly: in 27 x-bins
+INFO: (function: runLimitExpected) AsymptoticLimits.cc: 436 -- Median for expected limits = 0.0360565 (Sigma for expected limits = 0.0183965)

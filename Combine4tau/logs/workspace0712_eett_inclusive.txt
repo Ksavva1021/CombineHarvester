@@ -1,0 +1,153 @@
+>> Directory /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/eett_inclusive/, looking for datacards
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/eett_inclusive /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+Channel eett_inclusive will use autoMCStats with settings: event-threshold=0.3, include-signal=0, hist-mode=1
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+============================================================
+Analysing bin errors for: prop_bineett_inclusive
+Poisson cut-off: 0.3
+Processes excluded for sums: A125phi A90phi A100phi A60phi A70phi A140phi A160phi A80phi
+============================================================
+Bin        Contents        Error           Notes                         
+0          0.902742        0.060277        total sum                     
+0          0.186125        0.060277        excluding marked processes    
+0          10.000000       3.162278        Unweighted events, alpha=0.090274
+  => Total parameter prop_bineett_inclusive_bin0[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+1          10.140694       0.243730        total sum                     
+1          1.129768        0.243730        excluding marked processes    
+1          21.000000       4.582576        Unweighted events, alpha=0.482890
+  => Total parameter prop_bineett_inclusive_bin1[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+2          19.329490       0.633776        total sum                     
+2          2.794065        0.633776        excluding marked processes    
+2          19.000000       4.358899        Unweighted events, alpha=1.017342
+  => Total parameter prop_bineett_inclusive_bin2[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+3          20.517787       0.505539        total sum                     
+3          1.901707        0.505539        excluding marked processes    
+3          14.000000       3.741657        Unweighted events, alpha=1.465556
+  => Total parameter prop_bineett_inclusive_bin3[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+4          28.397617       0.568139        total sum                     
+4          2.848051        0.568139        excluding marked processes    
+4          25.000000       5.000000        Unweighted events, alpha=1.135905
+  => Total parameter prop_bineett_inclusive_bin4[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+5          28.029450       0.520142        total sum                     
+5          2.047467        0.520142        excluding marked processes    
+5          15.000000       3.872983        Unweighted events, alpha=1.868630
+  => Total parameter prop_bineett_inclusive_bin5[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+6          34.360888       0.519757        total sum                     
+6          2.696543        0.519757        excluding marked processes    
+6          27.000000       5.196152        Unweighted events, alpha=1.272625
+  => Total parameter prop_bineett_inclusive_bin6[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+7          37.472652       0.544411        total sum                     
+7          2.930173        0.544411        excluding marked processes    
+7          29.000000       5.385165        Unweighted events, alpha=1.292160
+  => Total parameter prop_bineett_inclusive_bin7[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+8          43.873658       1.092392        total sum                     
+8          9.310912        1.092392        excluding marked processes    
+8          73.000000       8.544004        Unweighted events, alpha=0.601009
+  => Total parameter prop_bineett_inclusive_bin8[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+9          47.275382       1.208093        total sum                     
+9          12.826862       1.208093        excluding marked processes    
+9          113.000000      10.630146       Unweighted events, alpha=0.418366
+  => Total parameter prop_bineett_inclusive_bin9[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+10         37.010837       0.685658        total sum                     
+10         2.566246        0.685658        excluding marked processes    
+10         14.000000       3.741657        Unweighted events, alpha=2.643631
+  => Total parameter prop_bineett_inclusive_bin10[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+11         35.629559       0.429406        total sum                     
+11         1.838165        0.429406        excluding marked processes    
+11         18.000000       4.242641        Unweighted events, alpha=1.979420
+  => Total parameter prop_bineett_inclusive_bin11[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+12         33.777607       0.382766        total sum                     
+12         1.449208        0.382766        excluding marked processes    
+12         14.000000       3.741657        Unweighted events, alpha=2.412686
+  => Total parameter prop_bineett_inclusive_bin12[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+13         31.366235       0.419321        total sum                     
+13         1.279206        0.419321        excluding marked processes    
+13         9.000000        3.000000        Unweighted events, alpha=3.485137
+  => Total parameter prop_bineett_inclusive_bin13[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+14         29.297487       0.427550        total sum                     
+14         1.444351        0.427550        excluding marked processes    
+14         11.000000       3.316625        Unweighted events, alpha=2.663408
+  => Total parameter prop_bineett_inclusive_bin14[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+15         28.314365       0.338598        total sum                     
+15         1.119574        0.338598        excluding marked processes    
+15         11.000000       3.316625        Unweighted events, alpha=2.574033
+  => Total parameter prop_bineett_inclusive_bin15[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+16         25.201247       0.308614        total sum                     
+16         1.023100        0.308614        excluding marked processes    
+16         11.000000       3.316625        Unweighted events, alpha=2.291022
+  => Total parameter prop_bineett_inclusive_bin16[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+17         20.945157       0.179112        total sum                     
+17         0.472437        0.179112        excluding marked processes    
+17         7.000000        2.645751        Unweighted events, alpha=2.992165
+  => Total parameter prop_bineett_inclusive_bin17[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+18         36.051219       0.357878        total sum                     
+18         0.951867        0.357878        excluding marked processes    
+18         7.000000        2.645751        Unweighted events, alpha=5.150174
+  => Total parameter prop_bineett_inclusive_bin18[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+19         5.163477        0.130888        total sum                     
+19         0.416223        0.130888        excluding marked processes    
+19         10.000000       3.162278        Unweighted events, alpha=0.516348
+  => Total parameter prop_bineett_inclusive_bin19[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+20         8.013935        0.132985        total sum                     
+20         0.346596        0.132985        excluding marked processes    
+20         7.000000        2.645751        Unweighted events, alpha=1.144848
+  => Total parameter prop_bineett_inclusive_bin20[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+21         2.989762        0.122025        total sum                     
+21         0.374072        0.122025        excluding marked processes    
+21         9.000000        3.000000        Unweighted events, alpha=0.332196
+  => Total parameter prop_bineett_inclusive_bin21[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+22         1.578860        0.114213        total sum                     
+22         0.320267        0.114213        excluding marked processes    
+22         8.000000        2.828427        Unweighted events, alpha=0.197358
+  => Total parameter prop_bineett_inclusive_bin22[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+23         0.516760        0.068618        total sum                     
+23         0.188830        0.068618        excluding marked processes    
+23         8.000000        2.828427        Unweighted events, alpha=0.064595
+  => Total parameter prop_bineett_inclusive_bin23[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+24         0.843168        0.098844        total sum                     
+24         0.287828        0.098844        excluding marked processes    
+24         8.000000        2.828427        Unweighted events, alpha=0.105396
+  => Total parameter prop_bineett_inclusive_bin24[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+25         0.287285        0.042647        total sum                     
+25         0.118750        0.042647        excluding marked processes    
+25         8.000000        2.828427        Unweighted events, alpha=0.035911
+  => Total parameter prop_bineett_inclusive_bin25[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+26         0.031235        0.007344        total sum                     
+26         0.019807        0.007344        excluding marked processes    
+26         7.000000        2.645751        Unweighted events, alpha=0.004462
+  => Total parameter prop_bineett_inclusive_bin26[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau

@@ -1,0 +1,16 @@
+imax    1 number of bins
+jmax    19 number of processes minus 1
+kmax    * number of nuisance parameters
+--------------------------------------------------------------------------------
+shapes data_obs tttt_inclusive common/tttt_inclusive_input_all.root X2HDM:tttt_inclusive_data_obs 
+shapes * tttt_inclusive common/tttt_inclusive_input_all.root X2HDM:tttt_inclusive_$PROCESS_morph 
+--------------------------------------------------------------------------------
+bin          tttt_inclusive  
+observation  2.0             
+--------------------------------------------------------------------------------
+bin                    tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  tttt_inclusive  
+process                VVJF            VVLF            VVR             VVV             WGam            WJF             WLF             WR              ZJF             ZLF             ZR              jetFakes        A60phi          A70phi          A80phi          A90phi          A100phi         A125phi         A140phi         A160phi         
+process                1               2               3               4               5               6               7               8               9               10              11              12              -7              -6              -5              -4              -3              -2              -1              0               
+rate                   1               1               1               1               1               1               1               1               1               1               1               1               1               1               1               1               1               1               1               1               
+--------------------------------------------------------------------------------
+tttt_inclusive autoMCStats 0.3 0 1

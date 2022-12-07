@@ -1,0 +1,11 @@
+Info in <TCanvas::Print>: pdf file /vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0512/tttt/mvis_min_sum_dR_1_signal_tttt_inclusive_2016_postVFP.pdf has been created
+Info in <TCanvas::Print>: png file /vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0512/tttt/mvis_min_sum_dR_1_signal_tttt_inclusive_2016_postVFP.png has been created
+Info in <TCanvas::Print>: pdf file /vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0512/tttt/mvis_min_sum_dR_1_signal_tttt_inclusive_2017.pdf has been created
+Info in <TCanvas::Print>: png file /vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0512/tttt/mvis_min_sum_dR_1_signal_tttt_inclusive_2017.png has been created
+Info in <TCanvas::Print>: pdf file /vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0512/tttt/mvis_min_sum_dR_1_signal_tttt_inclusive_2016_preVFP.pdf has been created
+Info in <TCanvas::Print>: png file /vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0512/tttt/mvis_min_sum_dR_1_signal_tttt_inclusive_2016_preVFP.png has been created
+Info in <TCanvas::Print>: pdf file /vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0512/tttt/mvis_min_sum_dR_1_signal_tttt_inclusive_2018.pdf has been created
+Info in <TCanvas::Print>: png file /vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0512/tttt/mvis_min_sum_dR_1_signal_tttt_inclusive_2018.png has been created
+TFile::Write:0: RuntimeWarning: file /vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0512/tttt/mvis_min_sum_dR_1_signal_tttt_inclusive_all.root not opened in write mode
+Info in <TCanvas::Print>: pdf file /vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0512/tttt/mvis_min_sum_dR_1_signal_tttt_inclusive_all.pdf has been created
+Info in <TCanvas::Print>: png file /vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0512/tttt/mvis_min_sum_dR_1_signal_tttt_inclusive_all.png has been created

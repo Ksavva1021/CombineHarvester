@@ -1,0 +1,24 @@
+>> Directory /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/tttt_inclusive/, looking for datacards
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/tttt_inclusive /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+Channel tttt_inclusive will use autoMCStats with settings: event-threshold=0.3, include-signal=0, hist-mode=1
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name MH is already in this set
+============================================================
+Analysing bin errors for: prop_bintttt_inclusive
+Poisson cut-off: 0.3
+Processes excluded for sums: A125phi A90phi A100phi A60phi A70phi A140phi A160phi A80phi
+============================================================
+Bin        Contents        Error           Notes                         
+0          4.818783        0.000258        total sum                     
+0          0.000436        0.000258        excluding marked processes    
+0          3.000000        1.732051        Unweighted events, alpha=1.606261
+  => Total parameter prop_bintttt_inclusive_bin0[0.00,-7.00,7.00] to be gaussian constrained
+------------------------------------------------------------
+/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau
+>> pushd /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/output_X2HDM_0712/all/tttt_inclusive/; combineCards.py tttt_inclusive=tttt_inclusive.txt &> combined.txt.cmb; text2workspace.py -o ws.root -P CombineHarvester.Combine4tau.X2HDM:X2HDM combined.txt.cmb; popd

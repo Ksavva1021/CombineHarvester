@@ -22,3 +22,8 @@ __init__.py
 *.pdf
 
 docs/html
+
+Combine4tau/archive
+Combine4tau/logs
+Combine4tau/outputs
+Combine4tau/shapes

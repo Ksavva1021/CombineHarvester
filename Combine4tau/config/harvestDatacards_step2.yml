@@ -1,0 +1,11 @@
+folder: "outputs/out_1012"
+year: "all"
+channels: ["cmb","mmtt", "emtt", "ettt","mttt","tttt","eett"]  
+build_workspaces: True
+calculate_limits: True
+unblind: False
+collect_limits: True
+grid_A: ["60","70","80","90","100","125","140","160"]
+grid_phi: ["100","110","125","140","160","180","200","250","300"]
+
+ 

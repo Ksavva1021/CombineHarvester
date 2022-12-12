@@ -13,7 +13,7 @@ from prettytable import PrettyTable
 from argparse import ArgumentParser
 
 description = '''This script makes datacards with CombineHarvester.'''
-parser = ArgumentParser(prog="harvesterDatacards",description=description,epilog="Succes!")
+parser = ArgumentParser(prog="harvesterDatacards",description=description,epilog="Success!")
 parser.add_argument('-c', '--config', dest='config', type=str, default='config/harvestDatacards.yml', action='store', help="set config file")
 args = parser.parse_args()
 

@@ -6,6 +6,7 @@ from datetime import datetime
 from prettytable import PrettyTable
 from argparse import ArgumentParser
 import yaml
+import ROOT
 
 description = '''This script makes datacards with CombineHarvester.'''
 parser = ArgumentParser(prog="harvesterDatacards_step2",description=description,epilog="Success!")
@@ -20,7 +21,8 @@ folder = setup["folder"]
 year = setup["year"]
 channels = setup["channels"]
 build_workspaces = setup["build_workspaces"]
-calculate_limits = setup["calculate_limits"]
+calculate_AsymptoticLimits = setup["calculate_AsymptoticLimits"]
+calculate_HybridNew = setup["calculate_HybridNew"]
 unblind = setup["unblind"]
 collect_limits = setup["collect_limits"]
 grid_A = setup["grid_A"]
@@ -30,8 +32,8 @@ cmssw_base = os.getcwd()
 
 pTable = PrettyTable()
 column_names = ["Option", "Setting"]
-pTable.add_column(column_names[0], ["Folder","Year","Channels","Build Workspaces","Calculate Limits","Unblind","Collect Limits","Grid of mA","Grid of m#phi"])
-pTable.add_column(column_names[0], [folder,year,channels,build_workspaces,calculate_limits,unblind,collect_limits,grid_A,grid_phi])
+pTable.add_column(column_names[0], ["Folder","Year","Channels","Build Workspaces","Calculate AsymptoticLimits","Calculate HybridNew","Unblind","Collect Limits","Grid of mA","Grid of m#phi"])
+pTable.add_column(column_names[0], [folder,year,channels,build_workspaces,calculate_AsymptoticLimits,calculate_HybridNew,unblind,collect_limits,grid_A,grid_phi])
 print(pTable)
 # ------------------------------------
 
@@ -47,10 +49,11 @@ if (build_workspaces == True):
 for chan in channels:
    if chan != "cmb":
       chan += "_inclusive"
+   if (os.path.exists("%(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/limits" %vars()) == False):
+      os.mkdir("%(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/limits"%vars())
    for mA in grid_A:
-      if (os.path.exists("%(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/m%(mA)s" %vars()) == False):
-         os.mkdir("%(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/m%(mA)s" %vars())
-      os.system("cp %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/ws.root %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/m%(mA)s/ws.root" %vars())
+      if (os.path.exists("%(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/limits/A%(mA)s" %vars()) == False):
+         os.mkdir("%(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/limits/A%(mA)s" %vars())
 
 # ------------------------------------
 
@@ -67,9 +70,9 @@ def ParametersToFreeze(grid_A,mA):
   return frozen_POIs,frozen_POIs_SetToZero 
 
 # Calculate AsymptoticLimits 
-log_limits = "limits" + datetime.today().strftime('%d%m')
+log_limits = "AL" + datetime.today().strftime('%d%m')
 grid_phi_str = ','.join(grid_phi)
-if (calculate_limits):
+if (calculate_AsymptoticLimits):
    for chan in channels:
       if chan != "cmb":
          chan += "_inclusive"
@@ -77,18 +80,45 @@ if (calculate_limits):
         POI = "r_A"+mA
         frozen_POIs,frozen_POIs_SetToZero = ParametersToFreeze(grid_A,mA)
         if (unblind == False):
-           os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M AsymptoticLimits -m %(grid_phi_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/m%(mA)s/ws.root --X-rtd MINIMIZER_analytic --rAbsAcc 0 --rRelAcc 0.0005 --cminDefaultMinimizerStrategy 0 --cminDefaultMinimizerTolerance 0.01 -v 1 --there --run blind | tee -a %(cmssw_base)s/logs/%(log_limits)s_%(chan)s_mA%(mA)s.txt" %vars())
-        else:
-           os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M AsymptoticLimits -m %(grid_phi_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/m%(mA)s/ws.root --X-rtd MINIMIZER_analytic --rAbsAcc 0 --rRelAcc 0.0005 --cminDefaultMinimizerStrategy 0 --cminDefaultMinimizerTolerance 0.01 -v 1 --there | tee -a %(cmssw_base)s/logs/%(log_limits)s_%(chan)s_mA%(mA)s.txt" %vars())
+           os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M AsymptoticLimits -m %(grid_phi_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 --run expected | tee -a %(cmssw_base)s/logs/%(log_limits)s_%(chan)s_mA%(mA)s.txt" %vars())
+           os.system("mv higgsCombine*Asymptotic*.root %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/limits/A%(mA)s"%vars())
 
-# ------------------------------------
+if (calculate_HybridNew):
+  for chan in channels:
+     if chan != "cmb":
+        chan += "_inclusive"
+     for mA in grid_A:
+       POI = "r_A"+mA
+       frozen_POIs,frozen_POIs_SetToZero = ParametersToFreeze(grid_A,mA)
+       for mphi in grid_phi:
+          inFile = ROOT.TFile.Open("%(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/limits/A%(mA)s/higgsCombine.Test.AsymptoticLimits.mH%(mphi)s.root"%vars())
+          tree = inFile.Get("limit")
+          tree.GetEvent(1)
+          ALimit = tree.limit
+          inFile.Close()
+          lower_bound = 0.1 * ALimit
+          upper_bound = 2.0 * ALimit
+          if (unblind == False): 
+            os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M HybridNew %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/ws.root -m %(mphi)s --LHCmode LHC-limits --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s --setParameterRanges %(POI)s=0,%(upper_bound)s --cminDefaultMinimizerStrategy 0 --expectedFromGrid 0.16 --rAbsAcc %(lower_bound)s --fork 16" %vars())
+            os.system("mv higgsCombine*16*.root %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/limits/A%(mA)s"%vars())
 
-# Collect Limits
-if (collect_limits):
-   for chan in channels:
-      if chan != "cmb":
-         chan += "_inclusive"
-      for mA in grid_A:
-         os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M CollectLimits %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/m%(mA)s/higgsCombine.Test.AsymptoticLimits.mH*.root --use-dirs -o %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/limit.json" %vars()) 
+
+
+
+
+
+
+#print(counter)
+#            
+## ------------------------------------
+#
+## Collect Limits
+#if (collect_limits):
+#   for chan in channels:
+#      if chan != "cmb":
+#         chan += "_inclusive"
+#      for mA in grid_A:
+#         os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M CollectLimits %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/m%(mA)s/higgsCombine.Test.AsymptoticLimits.mH*.root --use-dirs -o %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/limit.json" %vars()) 
+#
 
 

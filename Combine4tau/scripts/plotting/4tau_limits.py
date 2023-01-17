@@ -27,8 +27,6 @@ parser.add_argument(
     '--logy', action='store_true', help="""Draw y-axis in log scale""")
 parser.add_argument(
     '--logx', action='store_true', help="""Draw x-axis in log scale""")
-parser.add_argument(
-    '--channel', default='')   
 args = parser.parse_args()
 
 with open(args.input) as file:
@@ -106,9 +104,15 @@ for src in files:
        graphs[-1].Draw('PLSAME')
        legend.AddEntry(graphs[-1], '', 'PL')
 
-axis[0].GetYaxis().SetTitle('95% CL limit')
-if args.y_title is not None:
-    axis[0].GetYaxis().SetTitle(args.y_title)
+axis[0].GetYaxis().SetTitle('95% CL Limit on #sigma #times BR(#phi#rightarrow#tau#tau) #times BR(A#rightarrow#tau#tau)')
+axis[0].GetYaxis().SetTitleOffset(1.75)
+axis[0].GetYaxis().SetTitleSize(0.04)
+axis[0].GetXaxis().SetTitleSize(0.04)
+axis[0].GetYaxis().SetLabelSize(0.03)
+axis[0].GetXaxis().SetLabelSize(0.03)
+
+#if args.y_title is not None:
+#    axis[0].GetYaxis().SetTitle(args.y_title)
 axis[0].GetXaxis().SetTitle(args.x_title)
 axis[0].GetXaxis().SetLabelOffset(axis[0].GetXaxis().GetLabelOffset()*2)    
 
@@ -134,23 +138,23 @@ legend.Draw()
 box = ROOT.TPave(pads[0].GetLeftMargin(), 0.81, 1-pads[0].GetRightMargin(), 1-pads[0].GetTopMargin(), 1, 'NDC')
 box.Draw()
 
+legend.SetTextSize(0.025);
 legend.Draw()
 
 plot.DrawCMSLogo(pads[0], 'CMS', args.cms_sub, 11, 0.045, 0.035, 1.2, '', 0.8)
 plot.DrawTitle(pads[0], args.title_right, 3)
 plot.DrawTitle(pads[0], args.title_left, 1)
 
-latex = ROOT.TLatex()
-latex.SetNDC()
-latex.SetTextAngle(0)
-latex.SetTextAlign(12)
-latex.SetTextFont(42)
-latex.SetTextSize(0.04)
+#latex = ROOT.TLatex()
+#latex.SetNDC()
+#latex.SetTextAngle(0)
+#latex.SetTextAlign(12)
+#latex.SetTextFont(42)
+#latex.SetTextSize(0.04)
+#
+#latex.DrawLatex(.75,.75,'{}'.format(args.channel))
 
-latex.DrawLatex(.75,.75,'{}'.format(args.channel))
-
-
+canv.Update()
 
 canv.Print('.pdf')
 canv.Print('.png')
-# maketable.TablefromJson(args.table_vals, args.file, "TablefromJson.txt")

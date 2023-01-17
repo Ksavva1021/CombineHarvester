@@ -15,43 +15,13 @@ parser.add_option('--channel',help= 'Name of input channels', default='tttt')
 parser.add_option('--folder', help= 'Folder for processing', default='output')
 parser.add_option('--year', help= 'Year for processing', default='all')
 parser.add_option('--MA', help='Mass of A to run limits for', default='100')
-parser.add_option('--grid_A', help= 'Grid of A Masses', default='60,70,80,90,100,125,140,160')
-parser.add_option('--xs_file', help='Cross-sections', default="/vols/cms/ks1021/4tau/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/scripts/xs_inputs_2018_UL.txt")
 (options, args) = parser.parse_args()
 
 # initialising variables
 folder = options.folder
 channel = options.channel
 year = options.year
-grid_A = options.grid_A.split(',')
-input_xs = open(options.xs_file, "r")
 mA = options.MA
-xs_list=[word for line in input_xs for word in line.split()]
-
-xs = {}
-for A in grid_A:
-   temp_xs = []
-   temp_phi = []
-   for i in range(len(xs_list)):
-      if "Zstar" in xs_list[i]:
-         split = re.split('(\d+)', xs_list[i])
-         mPhi = split[1]
-         mA_ = split[3]
-         if A == mA_:
-            temp_xs.append(xs_list[i+1])
-            temp_phi.append(mPhi)
-   xs["mA{}".format(A)] = [temp_xs,temp_phi] 
-
-
-def PlotXS(xs,A): 
-   xvals = xs['mA{}'.format(A)][1]
-   yvals = xs['mA{}'.format(A)][0]
-
-   xvals = np.asarray(xvals,dtype=float)
-   yvals = np.asarray(yvals,dtype=float)
-   graph = R.TGraph(len(xvals), array('d', xvals), array('d', yvals))
-   graph.Sort()
-   return graph
 
 
 style_dict = {
@@ -59,13 +29,24 @@ style_dict = {
             'exp0' : { 'LineColor' : ROOT.kBlack, 'LineStyle' : 2},
             'exp1' : { 'FillColor' : ROOT.kGreen+1, 'FillColorAlpha' : [ROOT.kGreen+1,0.5]},
             'exp2' : { 'FillColor' : ROOT.kOrange, 'FillColorAlpha' : [ROOT.kOrange,0.5]},
-            'xs'   : { 'LineColor' : ROOT.kBlue, 'LineStyle' : 2}
             },
         'legend' : {
             'exp0' : { 'Label' : 'Expected', 'LegendStyle' : 'L', 'DrawStyle' : 'LSAME'},
             'exp1' : { 'Label' : '#pm 1 #sigma Expected', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
             'exp2' : { 'Label' : '#pm 2 #sigma Expected', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
-            'xs'   : { 'Label' : 'xs','LegendStyle' : 'L', 'DrawStyle' : 'LSAME'}
+            }
+        }
+
+style_dict1 = {
+        'style' : {
+            'exp0' : { 'LineColor' : ROOT.kBlue, 'LineStyle' : 2},
+            'exp1' : { 'FillColor' : ROOT.kRed, 'FillColorAlpha' : [ROOT.kRed,0.5]},
+            'exp2' : { 'FillColor' : ROOT.kOrange, 'FillColorAlpha' : [ROOT.kOrange,0.5]},
+            },
+        'legend' : {
+            'exp0' : { 'Label' : 'Expected HN', 'LegendStyle' : 'L', 'DrawStyle' : 'LSAME'},
+            'exp1' : { 'Label' : '#pm 1 #sigma Expected HN', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
+            'exp2' : { 'Label' : '#pm 2 #sigma Expected', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
             }
         }
 
@@ -76,8 +57,8 @@ pads = OnePad()
 
 # Get limit TGraphs as a dictionary
 print("Channel:",channel,"MA:", mA)
-graphs = StandardLimitsFromJSONFile('%(folder)s/%(year)s/%(channel)s/limit_m%(mA)s.json'%vars(),draw=['exp0', 'exp1', 'exp2'])
-graphs["xs"] = PlotXS(xs,mA)
+graphs = StandardLimitsFromJSONFile('outputs/out_mt_tot/all/tttt_inclusive/limits/A60/AL_A60.json',draw=['exp0', 'exp1'])
+graphs1 = StandardLimitsFromJSONFile('outputs/out_mt_tot/all/tttt_inclusive/limits/A60/HN_comb.json',draw=['exp0', 'exp1'])
 
 # Create an empty TH1 from the first TGraph to serve as the pad axis and frame
 axis = CreateAxisHist(graphs.values()[0])
@@ -91,7 +72,10 @@ legend = PositionedLegend(0.3, 0.2, 3, 0.015)
 
 # Set the standard green and yellow colors and draw
 StyleLimitBand(graphs,overwrite_style_dict=style_dict["style"])
-DrawLimitBand(pads[0], graphs,draw=['exp0','exp1','exp2','xs'], legend=legend,legend_overwrite=style_dict["legend"])
+StyleLimitBand(graphs1,overwrite_style_dict=style_dict1["style"])
+#DrawLimitBand(pads[0], graphs,draw=['exp0','exp1','exp2'], legend=legend,legend_overwrite=style_dict["legend"])
+DrawLimitBand(pads[0], graphs,draw=['exp0','exp1'], legend=legend,legend_overwrite=style_dict["legend"])
+DrawLimitBand(pads[0], graphs1,draw=['exp0','exp1'], legend=legend,legend_overwrite=style_dict1["legend"])
 legend.Draw()
 
 # Re-draw the frame and tick marks
@@ -116,5 +100,5 @@ latex.DrawLatex(0.6,0.6,'mA = {}'.format(mA))
 latex.DrawLatex(0.6,0.5,'{}'.format(channel))
 
 
-canv.Print('%(folder)s/%(year)s/%(channel)s/limit_plot_m%(mA)s.pdf'%vars())
-canv.Print('%(folder)s/%(year)s/%(channel)s/limit_plot_m%(mA)s.png'%vars())
+canv.Print('1s.pdf')
+canv.Print('1.png')

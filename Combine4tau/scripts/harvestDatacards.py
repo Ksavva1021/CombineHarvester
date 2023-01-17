@@ -80,7 +80,8 @@ for chn in channels:
 
 # Populating Observation, Process and Systematic entries in the harvester instance
 for chn in channels:
-   filename = input_dir_path + era_tag + "/" + chn + "/" + variable + "_signal_" + chn + "_inclusive_" + era_tag + "_rebinned" + ".root"
+   #filename = input_dir_path + era_tag + "/" + chn + "/" + variable + "_signal_" + chn + "_inclusive_" + era_tag + "_rebinned" + ".root"
+   filename = input_dir_path + era_tag + "/" + chn + "/" + variable + "_signal_" + chn + "_inclusive_" + era_tag + ".root"
    print ">>>   file %s"%(filename)
    harvester.cp().channel([chn]).process(bkg_procs[chn]).ExtractShapes(filename, "$BIN/$PROCESS", "$BIN/$PROCESS_$SYSTEMATIC")
    harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESS$MASS_norm", "$BIN/$PROCESS$MASS_$SYSTEMATIC")
@@ -88,6 +89,13 @@ for chn in channels:
 # Replacing negative bins
 print(green("Removing NegativeBins"))
 harvester.ForEachProc(NegativeBins)
+
+if(auto_rebin):
+  rebin = AutoRebin()
+  rebin.SetBinUncertFraction(0.3)
+  rebin.SetRebinMode(1)
+  rebin.SetPerformRebin(True)
+  rebin.SetVerbosity(1) 
 
 workspace = RooWorkspace(analysis,analysis)
 # RooVar

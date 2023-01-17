@@ -1,7 +1,8 @@
-output_folder: "outputs/out_1012"
+output_folder: "outputs/out_st"
 analysis: "X2HDM"
 year: "all"
-channels: ["mmtt", "emtt", "ettt","mttt","tttt","eett"]  
+#channels: ["mmtt", "emtt", "ettt","mttt","tttt","eett","ttt"]  
+channels: ["tttt"]
 
 categories: 
         "mmtt": [[1,"mmtt_inclusive"]]
@@ -10,8 +11,9 @@ categories:
         "mttt": [[1,"mttt_inclusive"]]
         "tttt": [[1,"tttt_inclusive"]]
         "eett": [[1,"eett_inclusive"]]
+        "ttt" : [[1,"ttt_inclusive"]]
 
-variable: "mvis_min_sum_dR_1"
+variable: "st"
 
 background_processes:
         "mmtt": ["VVJF","VVLF","VVR","VVV","WGam","WJF","WLF","WR","ZJF","ZLF","ZR","jetFakes"]
@@ -20,10 +22,11 @@ background_processes:
         "mttt": ["VVJF","VVLF","VVR","VVV","WGam","WJF","WLF","WR","ZJF","ZLF","ZR","jetFakes"]
         "tttt": ["VVJF","VVLF","VVR","VVV","WGam","WJF","WLF","WR","ZJF","ZLF","ZR","jetFakes"]
         "eett": ["VVJF","VVLF","VVR","VVV","WGam","WJF","WLF","WR","ZJF","ZLF","ZR","jetFakes"]
+        "ttt" : ["VVJF","VVLF","VVR","VVV","WGam","WJF","WLF","WR","ZJF","ZLF","ZR","jetFakes"]
 
 signal_processes: ["A60phi","A70phi","A80phi","A90phi","A100phi","A125phi","A140phi","A160phi"]
 mass_shifts: ["100","110","125","140","160","180","200","250","300"]
-auto_rebin: False
+auto_rebin: True
 auto_mc: True
 verbose: True 
  

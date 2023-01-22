@@ -1,11 +1,42 @@
-folder: "outputs/out_mt_tot"
+folder: "outputs/mt_tot"
 year: "all"
-#channels: ["cmb","mmtt", "emtt", "ettt","mttt","tttt","eett","ttt"]  
-channels: ["tttt"]
-build_workspaces: False
-calculate_AsymptoticLimits: True
-calculate_HybridNew: True
+channels: ["mmtt", "emtt", "ettt","mttt","tttt","eett","ttt"]  
+build_workspaces: True
+calculate_AsymptoticLimits: False
+calculate_combined_AsymptoticLimits: False
+calculate_HybridNew: False
 unblind: False
 collect_limits: False
 grid_A: ["60","70","80","90","100","125","140","160"]
 grid_phi: ["100","110","125","140","160","180","200","250","300"] 
+categories: 
+        "mmtt": [[1,"inclusive"],[2,"nobtag"],[3,"mvis2_cut_0-100"],[4,"mvis2_100-200"],[5,'mvis2_200-500'],[6,"z_control"],[7,"2l2t_sig"]]
+        "emtt": [[1,"inclusive"],[2,"nobtag"],[3,"mvis2_cut_0-100"],[4,"mvis2_100-200"],[5,'mvis2_200-500']]
+        "ettt": [[1,"inclusive"],[2,"nobtag"],[3,"mvis2_cut_0-100"],[4,"mvis2_100-200"],[5,'mvis2_200-500']]
+        "mttt": [[1,"inclusive"],[2,"nobtag"],[3,"mvis2_cut_0-100"],[4,"mvis2_100-200"],[5,'mvis2_200-500']]
+        "tttt": [[1,"inclusive"],[2,"nobtag"],[3,"mvis2_cut_0-100"],[4,"mvis2_100-200"],[5,'mvis2_200-500']]
+        "eett": [[1,"inclusive"],[2,"nobtag"],[3,"mvis2_cut_0-100"],[4,"mvis2_100-200"],[5,'mvis2_200-500'],[6,"z_control"],[7,"2l2t_sig"]]
+        "ttt" : [[1,"inclusive"],[2,"nobtag"],[3,"mvis2_cut_0-100"],[4,"mvis2_100-200"],[5,'mvis2_200-500']]
+combine_categories:
+        "mmtt": 
+                folder: "cmb_mmtt_os_ss"
+                categories: [[5,"z_control"],[6,"2l2t_sig"]]
+        "emtt": 
+                folder: "cmb_emtt_mvis2"
+                categories: [[3,"mvis2_cut_0-100"],[4,"mvis2_100-200"],[5,'mvis2_200-500']] 
+        "ettt": 
+                folder: "cmb_ettt_nobtag"
+                categories: [[2,"nobtag"]]
+        "mttt": 
+                folder: "mttt_all"
+                categories: [[1,"inclusive"],[2,"nobtag"],[3,"mvis2_cut_tight"],[4,"mvis2_cut_loose"]]
+        "tttt": 
+                folder: "tttt_all"
+                categories: [[1,"inclusive"],[2,"nobtag"],[3,"mvis2_cut_tight"],[4,"mvis2_cut_loose"]]
+        "eett": 
+                folder: "cmb_eett_os_ss"
+                categories: [[1,"inclusive"],[2,"nobtag"],[3,"mvis2_cut_tight"],[4,"mvis2_cut_loose"],[5,"z_control"],[6,"2l2t_sig"]]
+        "ttt" : 
+                folder: "ttt_all"
+                categories: [[1,"inclusive"],[2,"nobtag"],[3,"mvis2_cut_tight"],[4,"mvis2_cut_loose"]]
+

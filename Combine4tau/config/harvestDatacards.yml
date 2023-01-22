@@ -1,28 +1,29 @@
-output_folder: "outputs/out_st"
+output_folder: "outputs/mt_tot"
 analysis: "X2HDM"
 year: "all"
-#channels: ["mmtt", "emtt", "ettt","mttt","tttt","eett","ttt"]  
-channels: ["tttt"]
+channels: ["mmtt", "emtt", "ettt","mttt","tttt","eett","ttt"]  
+#channels: ["tttt"]
 
 categories: 
-        "mmtt": [[1,"mmtt_inclusive"]]
-        "emtt": [[1,"emtt_inclusive"]]
-        "ettt": [[1,"ettt_inclusive"]]
-        "mttt": [[1,"mttt_inclusive"]]
-        "tttt": [[1,"tttt_inclusive"]]
-        "eett": [[1,"eett_inclusive"]]
-        "ttt" : [[1,"ttt_inclusive"]]
+        "mmtt": [[1,"mmtt_inclusive"],[2,"mmtt_nobtag"],[3,"mmtt_mvis2_0-100"],[4,"mmtt_mvis2_100-200"],[5,"mmtt_mvis2_200-500"],[6,"mmtt_z_control"],[7,"mmtt_2l2t_sig"]]
+        "emtt": [[1,"emtt_inclusive"],[2,"emtt_nobtag"],[3,"emtt_mvis2_0-100"],[4,"emtt_mvis2_100-200"],[5,"emtt_mvis2_200-500"]]
+        "ettt": [[1,"ettt_inclusive"],[2,"ettt_nobtag"],[3,"ettt_mvis2_0-100"],[4,"ettt_mvis2_100-200"],[5,"ettt_mvis2_200-500"]]
+        "mttt": [[1,"mttt_inclusive"],[2,"mttt_nobtag"],[3,"mttt_mvis2_0-100"],[4,"mttt_mvis2_100-200"],[5,"mttt_mvis2_200-500"]]
+        "tttt": [[1,"tttt_inclusive"],[2,"tttt_nobtag"],[3,"tttt_mvis2_0-100"],[4,"tttt_mvis2_100-200"],[5,"tttt_mvis2_200-500"]]
+        "eett": [[1,"eett_inclusive"],[2,"eett_nobtag"],[3,"eett_mvis2_0-100"],[4,"eett_mvis2_100-200"],[5,"eett_mvis2_200-500"],[6,"eett_z_control"],[7,"eett_2l2t_sig"]]
+        "ttt" : [[1,"ttt_inclusive"],[2,"ttt_nobtag"],[3,"ttt_mvis2_0-100"],[4,"ttt_mvis2_100-200"],[5,"ttt_mvis2_200-500"]]
 
-variable: "st"
+
+variable: "mt_tot"
 
 background_processes:
-        "mmtt": ["VVJF","VVLF","VVR","VVV","WGam","WJF","WLF","WR","ZJF","ZLF","ZR","jetFakes"]
-        "emtt": ["VVJF","VVLF","VVR","VVV","WGam","WJF","WLF","WR","ZJF","ZLF","ZR","jetFakes"] 
-        "ettt": ["VVJF","VVLF","VVR","VVV","WGam","WJF","WLF","WR","ZJF","ZLF","ZR","jetFakes"]
-        "mttt": ["VVJF","VVLF","VVR","VVV","WGam","WJF","WLF","WR","ZJF","ZLF","ZR","jetFakes"]
-        "tttt": ["VVJF","VVLF","VVR","VVV","WGam","WJF","WLF","WR","ZJF","ZLF","ZR","jetFakes"]
-        "eett": ["VVJF","VVLF","VVR","VVV","WGam","WJF","WLF","WR","ZJF","ZLF","ZR","jetFakes"]
-        "ttt" : ["VVJF","VVLF","VVR","VVV","WGam","WJF","WLF","WR","ZJF","ZLF","ZR","jetFakes"]
+        "mmtt": ["VVJF","VVLF","VVR","VVV","jetFakes"]
+        "emtt": ["VVJF","VVLF","VVR","VVV","jetFakes"] 
+        "ettt": ["VVJF","VVLF","VVR","VVV","jetFakes"]
+        "mttt": ["VVJF","VVLF","VVR","VVV","jetFakes"]
+        "tttt": ["VVJF","VVLF","VVR","VVV","jetFakes"]
+        "eett": ["VVJF","VVLF","VVR","VVV","jetFakes"]
+        "ttt" : ["VVJF","VVLF","VVR","VVV","jetFakes"]
 
 signal_processes: ["A60phi","A70phi","A80phi","A90phi","A100phi","A125phi","A140phi","A160phi"]
 mass_shifts: ["100","110","125","140","160","180","200","250","300"]

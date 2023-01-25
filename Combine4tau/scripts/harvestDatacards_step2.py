@@ -21,11 +21,13 @@ folder = setup["folder"]
 year = setup["year"]
 channels = setup["channels"]
 build_workspaces = setup["build_workspaces"]
+build_combined_workspaces = setup["build_combined_workspaces"]
 calculate_AsymptoticLimits = setup["calculate_AsymptoticLimits"]
 calculate_combined_AsymptoticLimits = setup["calculate_combined_AsymptoticLimits"]
 calculate_HybridNew = setup["calculate_HybridNew"]
 unblind = setup["unblind"]
 collect_limits = setup["collect_limits"]
+collect_combined_limits = setup["collect_combined_limits"]
 grid_A = setup["grid_A"]
 grid_phi = setup["grid_phi"]
 combine_categories = setup["combine_categories"]
@@ -34,8 +36,8 @@ cmssw_base = os.getcwd()
 
 pTable = PrettyTable()
 column_names = ["Option", "Setting"]
-pTable.add_column(column_names[0], ["Folder","Year","Channels","Build Workspaces","Calculate AsymptoticLimits","Calculate HybridNew","Unblind","Collect Limits","Grid of mA","Grid of m#phi"])
-pTable.add_column(column_names[0], [folder,year,channels,build_workspaces,calculate_AsymptoticLimits,calculate_HybridNew,unblind,collect_limits,grid_A,grid_phi])
+pTable.add_column(column_names[0], ["Folder","Year","Channels","Build Workspaces","Build Combined Workspaces","Calculate AsymptoticLimits","Calculate Combined Asymptotic Limits","Calculate HybridNew","Unblind","Collect Limits","Grid of mA","Grid of m#phi"])
+pTable.add_column(column_names[0], [folder,year,channels,build_workspaces,build_combined_workspaces,calculate_AsymptoticLimits,calculate_combined_AsymptoticLimits,calculate_HybridNew,unblind,collect_limits,grid_A,grid_phi])
 print(pTable)
 # ------------------------------------
 
@@ -44,7 +46,7 @@ log_workspace = "workspace" + datetime.today().strftime('%d%m')
 if (os.path.exists("%(cmssw_base)s/%(folder)s/%(year)s/logs" %vars()) == False):
    os.mkdir("%(cmssw_base)s/%(folder)s/%(year)s/logs"%vars())
 
-if (build_workspaces == True):
+if (build_combined_workspaces == True):
    for chan in channels:
       category_folder = combine_categories['{}'.format(chan)]["folder"] 
       # first gather all root files and text datacards in new folder
@@ -67,7 +69,9 @@ if (build_workspaces == True):
          if (os.path.exists("%(cmssw_base)s/%(folder)s/%(year)s/%(category_folder)s/limits/A%(mA)s" %vars()) == False):
             os.mkdir("%(cmssw_base)s/%(folder)s/%(year)s/%(category_folder)s/limits/A%(mA)s" %vars())
         
-      for cat in categories:
+if (build_workspaces == True):
+   for chan in channels:
+      for cat in categories['{}'.format(chan)]:
          category = cat[1]
          os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M T2W -o ws.root -P CombineHarvester.Combine4tau.X2HDM:X2HDM -i %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s_%(category)s/ --parallel 4 | tee -a %(cmssw_base)s/%(folder)s/%(year)s/logs/%(log_workspace)s_%(chan)s_%(category)s.txt" % vars())
          
@@ -107,7 +111,7 @@ if (calculate_combined_AsymptoticLimits):
 
 if (calculate_AsymptoticLimits):
    for chan in channels:
-      for cat in categories:
+      for cat in categories['{}'.format(chan)]:
          category = cat[1]
          for mA in grid_A:
             POI = "r_A"+mA
@@ -143,9 +147,22 @@ if (calculate_AsymptoticLimits):
 # Collect Limits
 if (collect_limits):
    for chan in channels:
+      for cat in categories['{}'.format(chan)]:
+         category = cat[1]
+      #category_folder = combine_categories['{}'.format(chan)]["folder"]
+         for mA in grid_A:
+            os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M CollectLimits %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s_%(category)s/limits/A%(mA)s/higgsCombine.Test.AsymptoticLimits.mH*.root --use-dirs -o %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s_%(category)s/limits/A%(mA)s/limit.json" %vars()) 
+
+
+if (collect_combined_limits):
+   for chan in channels:
       category_folder = combine_categories['{}'.format(chan)]["folder"]
       for mA in grid_A:
-         os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M CollectLimits %(cmssw_base)s/%(folder)s/%(year)s/%(category_folder)s/limits/A%(mA)s/higgsCombine.Test.AsymptoticLimits.mH*.root --use-dirs -o %(cmssw_base)s/%(folder)s/%(year)s/%(category_folder)s/limits/A%(mA)s/limit.json" %vars()) 
+         os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M CollectLimits %(cmssw_base)s/%(folder)s/%(year)s/%(category_folder)s/limits/A%(mA)s/higgsCombine.Test.AsymptoticLimits.mH*.root --use-dirs -o %(cmssw_base)s/%(folder)s/%(year)s/%(category_folder)s/limits/A%(mA)s/limit.json" %vars())
+
+
+
+
 
 
 

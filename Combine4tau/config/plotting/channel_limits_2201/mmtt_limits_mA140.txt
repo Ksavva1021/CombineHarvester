@@ -1,0 +1,3 @@
+outputs/mvis1_2201/all/mmtt_nobtag/limits/A140/limit_A140.json:exp0:Title=nobtag:LineColor=920:MarkerColor=920:LineStyle=1
+outputs/mvis1_2201/all/mmtt_inclusive/limits/A140/limit_A140.json:exp0:Title=Inclusive:LineColor=600:MarkerColor=600:LineStyle=1
+outputs/mvis1_2201/all/cmb_mmtt_mvis2/limits/A140/limit_A140.json:exp0:Title=mvis2:LineColor=402:MarkerColor=402:LineStyle=1

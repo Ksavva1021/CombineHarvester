@@ -1,0 +1,5 @@
+config/xsections/xs_A80.json:xs:Title=xs A80 GeV:LineColor=600:MarkerColor=600:LineStyle=3
+outputs/out_mt_tot/all/eett_inclusive/limit_m80.json:exp0:Title=mt_tot:LineColor=1:MarkerColor=1:LineStyle=1
+outputs/out_mvis1/all/eett_inclusive/limit_m80.json:exp0:Title=mvis_min_sum_dR_1:LineColor=402:MarkerColor=402:LineStyle=1
+outputs/out_mvis2/all/eett_inclusive/limit_m80.json:exp0:Title=mvis_min_sum_dR_2:LineColor=810:MarkerColor=810:LineStyle=1
+outputs/out_st/all/eett_inclusive/limit_m80.json:exp0:Title=st:LineColor=435:MarkerColor=435:LineStyle=1

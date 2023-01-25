@@ -36,8 +36,8 @@ cmssw_base = os.getcwd()
 
 pTable = PrettyTable()
 column_names = ["Option", "Setting"]
-pTable.add_column(column_names[0], ["Folder","Year","Channels","Build Workspaces","Build Combined Workspaces","Calculate AsymptoticLimits","Calculate Combined Asymptotic Limits","Calculate HybridNew","Unblind","Collect Limits","Grid of mA","Grid of m#phi"])
-pTable.add_column(column_names[0], [folder,year,channels,build_workspaces,build_combined_workspaces,calculate_AsymptoticLimits,calculate_combined_AsymptoticLimits,calculate_HybridNew,unblind,collect_limits,grid_A,grid_phi])
+pTable.add_column(column_names[0], ["Folder","Year","Channels","Build Workspaces","Build Combined Workspaces","Calculate AsymptoticLimits","Calculate Combined Asymptotic Limits","Calculate HybridNew","Unblind","Collect Limits","Collect Combined Limits","Grid of mA","Grid of m#phi"])
+pTable.add_column(column_names[0], [folder,year,channels,build_workspaces,build_combined_workspaces,calculate_AsymptoticLimits,calculate_combined_AsymptoticLimits,calculate_HybridNew,unblind,collect_limits,collect_combined_limits,grid_A,grid_phi])
 print(pTable)
 # ------------------------------------
 

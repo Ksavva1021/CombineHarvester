@@ -1,6 +1,0 @@
-outputs/mt_tot/all/eett_inclusive/limits/A140/limit_A140.json:exp0:Title=Inclusive:LineColor=1:MarkerColor=1:LineStyle=1
-outputs/mt_tot/all/eett_nobtag/limits/A140/limit_A140.json:exp0:Title=nobtag:LineColor=920:MarkerColor=920:LineStyle=1
-outputs/mt_tot/all/eett_mvis2_cut_loose/limits/A140/limit_A140.json:exp0:Title=mvis2(0,100):LineColor=600:MarkerColor=600:LineStyle=1
-outputs/mt_tot/all/eett_mvis2_cut_tight/limits/A140/limit_A140.json:exp0:Title=mvis2(0,200):LineColor=402:MarkerColor=402:LineStyle=1
-outputs/mt_tot/all/eett_z_control/limits/A140/limit_A140.json:exp0:Title=os:LineColor=810:MarkerColor=810:LineStyle=1
-outputs/mt_tot/all/eett_2l2t_sig/limits/A140/limit_A140.json:exp0:Title=ss:LineColor=435:MarkerColor=435:LineStyle=1

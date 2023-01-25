@@ -1,0 +1,8 @@
+outputs/archive/out_st/all/cmb/limit_m100.json:exp0:Title=Combined:LineColor=419:MarkerColor=419:LineStyle=1
+outputs/archive/out_st/all/tttt_inclusive/limit_m100.json:exp0:Title=#tau_{h}#tau_{h}#tau_{h}#tau_{h}:LineColor=920:MarkerColor=920:LineStyle=1
+outputs/archive/out_st/all/mttt_inclusive/limit_m100.json:exp0:Title=#tau_{#mu}#tau_{h}#tau_{h}#tau_{h}:LineColor=600:MarkerColor=600:LineStyle=1
+outputs/archive/out_st/all/mmtt_inclusive/limit_m100.json:exp0:Title=#tau_{#mu}#tau_{#mu}#tau_{h}#tau_{h}:LineColor=1:MarkerColor=1:LineStyle=1
+outputs/archive/out_st/all/ettt_inclusive/limit_m100.json:exp0:Title=#tau_{e}#tau_{h}#tau_{h}#tau_{h}:LineColor=402:MarkerColor=402:LineStyle=1
+outputs/archive/out_st/all/emtt_inclusive/limit_m100.json:exp0:Title=#tau_{e}#tau_{#mu}#tau_{h}#tau_{h}:LineColor=810:MarkerColor=810:LineStyle=1
+outputs/archive/out_st/all/eett_inclusive/limit_m100.json:exp0:Title=#tau_{e}#tau_{e}#tau_{h}#tau_{h}:LineColor=435:MarkerColor=435:LineStyle=1
+config/xsections/xs_A100.json:xs:Title=xs:LineColor=618:MarkerColor=618:LineStyle=3

@@ -1,0 +1,2 @@
+outputs/out_mt_tot/all/tttt_inclusive/limits/A80/AL_A80.json:exp0:Title=AsymptoticLimits:LineColor=402:MarkerColor=402:LineStyle=1
+outputs/out_mt_tot/all/tttt_inclusive/limits/A80/HN_A80.json:exp0:Title=HybridNew:LineColor=600:MarkerColor=600:LineStyle=1

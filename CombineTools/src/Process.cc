@@ -87,7 +87,7 @@ void Process::set_shape(std::unique_ptr<TH1> shape, bool set_rate) {
   if (set_rate) {
     this->set_rate(shape_->Integral());
   }
-  if (shape_->Integral() > 0.) shape_->Scale(1. / shape_->Integral());
+  if (shape_->Integral() != 0.) shape_->Scale(1. / shape_->Integral());
 }
 
 void Process::set_shape(TH1 const& shape, bool set_rate) {

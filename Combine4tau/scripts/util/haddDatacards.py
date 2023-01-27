@@ -1,14 +1,15 @@
 import os
 
-variable = ['st','mvis_min_sum_dR_1','mt_tot']
-channels = ['eett','emtt','ettt','mmtt','mttt','ttt','tttt']
-
+#variable = ['st','mvis_min_sum_dR_1','mt_tot']
+variable = ['mvis_min_sum_dR_1']
+#channels = ['eett','emtt','ettt','mmtt','mttt','ttt','tttt']
+channels = ['tttt']
 categories = {
               "ttt" : ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig"],
-              "tttt": ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig"],
+              "tttt": ["inclusive","nobtag"],
               "ettt": ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig"],
               "mttt": ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig"],
-              "emtt": ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig"],
+              "emtt": ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig","z_control_nobtag","2l2t_sig_nobtag"],
               "eett": ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig","z_control","2l2t_sig","z_control_nobtag","2l2t_sig_nobtag"],
               "mmtt": ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig","z_control","2l2t_sig","z_control_nobtag","2l2t_sig_nobtag"],
              }

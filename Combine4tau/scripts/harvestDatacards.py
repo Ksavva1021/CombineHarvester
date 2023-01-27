@@ -87,16 +87,18 @@ for chn in channels:
    harvester.cp().channel([chn]).process(bkg_procs[chn]).ExtractShapes(filename, "$BIN/$PROCESS", "$BIN/$PROCESS_$SYSTEMATIC")
    harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESS$MASS_norm", "$BIN/$PROCESS$MASS_$SYSTEMATIC")
 
-# Replacing negative bins
-print(green("Removing NegativeBins"))
-harvester.ForEachProc(NegativeBins)
-
 if(auto_rebin):
   rebin = AutoRebin()
-  rebin.SetBinUncertFraction(0.3)
+  rebin.SetBinThreshold(100)
+  rebin.SetBinUncertFraction(0.5)
   rebin.SetRebinMode(1)
   rebin.SetPerformRebin(True)
   rebin.SetVerbosity(1) 
+  rebin.Rebin(harvester,harvester)
+
+# Replacing negative bins
+print(green("Removing NegativeBins"))
+harvester.ForEachProc(NegativeBins)
 
 workspace = RooWorkspace(analysis,analysis)
 # RooVar

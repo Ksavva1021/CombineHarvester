@@ -1,10 +1,10 @@
-folder: "outputs/mvis1_2201_mi"
+folder: "outputs/mvis1_2201"
 year: "all"
 #channels: ["mmtt", "emtt", "ettt","mttt","tttt","eett","ttt"]  
 channels: ["tttt"]
 build_workspaces: True
 build_combined_workspaces: False
-model_dependent: False
+model_dependent: True
 calculate_AsymptoticLimits: True
 calculate_combined_AsymptoticLimits: False
 calculate_HybridNew: False

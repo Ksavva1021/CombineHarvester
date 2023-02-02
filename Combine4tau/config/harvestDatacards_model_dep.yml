@@ -1,4 +1,4 @@
-output_folder: "outputs/mvis1_2201_mi"
+output_folder: "outputs/mvis1_2201"
 analysis: "X2HDM"
 year: "all"
 #channels: ["mmtt", "emtt", "ettt","mttt","tttt","eett","ttt"]  
@@ -25,10 +25,10 @@ background_processes:
         "eett": ["VVJF","VVLF","VVR","VVV","jetFakes"]
         "ttt" : ["VVJF","VVLF","VVR","VVV","jetFakes"]
 
-#signal_processes: ["A60phi","A70phi","A80phi","A90phi","A100phi","A125phi","A140phi","A160phi"]
-signal_processes: ["A60","A70","A80","A90","A100","A125","A140","A160"]
-mass_shifts: ["100","110","125","140","160","180","200","250","300"]
+#signal_processes: ["phi100","phi110","phi125","phi140","phi160","phi180","phi200","phi300"]
+signal_processes: ["phi100","phi200"]
+mass_shifts: ["60","70","80","90","100","125","140","160"]
 auto_rebin: True
 auto_mc: True
 verbose: True 
-model_dependent: False
+model_dependent: True

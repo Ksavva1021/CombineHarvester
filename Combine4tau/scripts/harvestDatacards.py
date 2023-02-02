@@ -34,13 +34,14 @@ mass_shifts = setup["mass_shifts"]
 auto_rebin = setup["auto_rebin"]
 use_automc = setup["auto_mc"]
 verbose = setup["verbose"]
+model_dep = setup["model_dependent"]
 
 base_path = os.getcwd()
 input_dir_path = base_path + "/shapes/"
 pTable = PrettyTable()
 column_names = ["Option", "Setting"]
-pTable.add_column(column_names[0], ["Output Folder","Analysis","Year","Channels","Variable","Signal Processes","Mass Shifts","Auto Rebin","AutoMC","Verbose"])
-pTable.add_column(column_names[0], [output_folder,analysis,era_tag,channels,variable,sig_procs,mass_shifts,auto_rebin,use_automc,verbose])
+pTable.add_column(column_names[0], ["Output Folder","Analysis","Year","Channels","Variable","Signal Processes","Mass Shifts","Auto Rebin","AutoMC","Verbose","Model Dependent"])
+pTable.add_column(column_names[0], [output_folder,analysis,era_tag,channels,variable,sig_procs,mass_shifts,auto_rebin,use_automc,verbose,model_dep])
 print(pTable)
 # ------------------------------------
 
@@ -80,12 +81,16 @@ for chn in channels:
 
 # Populating Observation, Process and Systematic entries in the harvester instance
 for chn in channels:
-   #filename = input_dir_path + era_tag + "/" + chn + "/" + variable + "_signal_" + chn + "_inclusive_" + era_tag + "_rebinned" + ".root"
-   filename = input_dir_path + '2201/' + era_tag + "/" + chn + "/" + variable + "_" + chn + "_multicat_" + era_tag + ".root"
-   print ">>>   file %s"%(filename)
-   print(chn)
-   harvester.cp().channel([chn]).process(bkg_procs[chn]).ExtractShapes(filename, "$BIN/$PROCESS", "$BIN/$PROCESS_$SYSTEMATIC")
-   harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESS$MASS_norm", "$BIN/$PROCESS$MASS_$SYSTEMATIC")
+  #filename = input_dir_path + era_tag + "/" + chn + "/" + variable + "_signal_" + chn + "_inclusive_" + era_tag + "_rebinned" + ".root"
+  filename = input_dir_path + '2201/' + era_tag + "/" + chn + "/" + variable + "_" + chn + "_multicat_" + era_tag + ".root"
+  print ">>>   file %s"%(filename)
+  print(chn)
+  harvester.cp().channel([chn]).process(bkg_procs[chn]).ExtractShapes(filename, "$BIN/$PROCESS", "$BIN/$PROCESS_$SYSTEMATIC")
+  if not model_dep:
+    harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESSphi$MASS_norm", "$BIN/$PROCESSphi$MASS_$SYSTEMATIC")
+  else:
+    harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/A$MASS$PROCESS", "$BIN/A$MASS$PROCESS_$SYSTEMATIC")
+   
 
 if(auto_rebin):
   rebin = AutoRebin()
@@ -102,12 +107,12 @@ harvester.ForEachProc(NegativeBins)
 
 workspace = RooWorkspace(analysis,analysis)
 # RooVar
-Mphi = RooRealVar("MH","Mass of H/h in GeV", 100., 300.)
+Mphi = RooRealVar("MH","Mass of H/h in GeV", float(mass_shifts[0]), float(mass_shifts[-1]))
 Mphi.setConstant(True)
 
 # MORPHING
 print green(">>> morphing...")
-BuildCMSHistFuncFactory(workspace, harvester, Mphi, "A60phi,A70phi,A80phi,A90phi,A100phi,A125phi,A140phi,A160phi")
+BuildCMSHistFuncFactory(workspace, harvester, Mphi, ",".join(sig_procs))
 
 workspace.writeToFile("workspace_py.root")
 

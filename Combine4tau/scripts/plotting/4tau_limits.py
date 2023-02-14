@@ -24,6 +24,8 @@ parser.add_argument(
 parser.add_argument(
     '--title-left', default='', help="""Left header text above the frame""")
 parser.add_argument(
+    '--title-center', default='', help="""Center header text above the frame""")
+parser.add_argument(
     '--logy', action='store_true', help="""Draw y-axis in log scale""")
 parser.add_argument(
     '--logx', action='store_true', help="""Draw x-axis in log scale""")
@@ -144,6 +146,7 @@ legend.Draw()
 plot.DrawCMSLogo(pads[0], 'CMS', args.cms_sub, 11, 0.045, 0.035, 1.2, '', 0.8)
 plot.DrawTitle(pads[0], args.title_right, 3)
 plot.DrawTitle(pads[0], args.title_left, 1)
+plot.DrawTitle(pads[0], args.title_center,2)
 
 #latex = ROOT.TLatex()
 #latex.SetNDC()

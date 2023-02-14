@@ -1,22 +1,22 @@
 import os
 
-#variable = ['st','mvis_min_sum_dR_1','mt_tot']
-variable = ['mvis_min_sum_dR_1']
-#channels = ['eett','emtt','ettt','mmtt','mttt','ttt','tttt']
-channels = ['tttt']
+variable = ['st','mvis_min_sum_dR_1','mt_tot']
+#variable = ['st','mt_tot']
+channels = ['eett','emtt','ettt','mmtt','mttt','ttt','tttt']
+#channels = ['tttt']
 categories = {
-              "ttt" : ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig"],
+              "ttt" : ["inclusive","nobtag"],
               "tttt": ["inclusive","nobtag"],
-              "ettt": ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig"],
-              "mttt": ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig"],
-              "emtt": ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig","z_control_nobtag","2l2t_sig_nobtag"],
-              "eett": ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig","z_control","2l2t_sig","z_control_nobtag","2l2t_sig_nobtag"],
-              "mmtt": ["inclusive","nobtag","mvis2_0-100","mvis2_100-200","mvis2_200-500","mvis2_0-100_2l2t_sig","mvis2_100-200_2l2t_sig","mvis2_200-500_2l2t_sig","z_control","2l2t_sig","z_control_nobtag","2l2t_sig_nobtag"],
+              "ettt": ["inclusive","nobtag"],
+              "mttt": ["inclusive","nobtag"],
+              "emtt": ["inclusive","nobtag","z_control_nobtag","2l2t_sig_nobtag"],
+              "eett": ["inclusive","nobtag","z_control_nobtag","2l2t_sig_nobtag"],
+              "mmtt": ["inclusive","nobtag","z_control_nobtag","2l2t_sig_nobtag"],
              }
 
-source_directory = '/vols/cms/ks1021/4tau/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/2201/'
+source_directory = '/vols/cms/ks1021/4tau/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0202/'
 
-target_directory = '/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/2201/all'
+target_directory = '/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/0202/all'
 
 for channel in channels: 
   if not os.path.isdir('%(target_directory)s/%(channel)s' % vars()):
@@ -28,5 +28,3 @@ for channel in channels:
   os.system("rm -r %(target_directory)s/%(channel)s/*signal*all.root"% vars())
 
          
-         
-

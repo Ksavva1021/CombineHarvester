@@ -40,157 +40,170 @@ verbose: True
 
 systematics:
         Tau_ID_DM_0:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF","VVLF","VVR","VVV"]
                 name: "syst_tau_id_DM0"
         
         Tau_ID_DM_1:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF","VVLF","VVR","VVV"]
                 name: "syst_tau_id_DM1"
 
         Tau_ID_DM_10:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF","VVLF","VVR","VVV"]
                 name: "syst_tau_id_DM10"
 
         DoubleTau_Trigger:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF","VVLF","VVR","VVV"]
                 name: "syst_doubletau_trg"
 
         Tau_Scale_1prong:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF","VVLF","VVR","VVV"]
                 name: "1prong"
 
         Tau_Scale_1prong1pizero:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF","VVLF","VVR","VVV"]
                 name: "1prong1pizero"
 
         Tau_Scale_3prong:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF","VVLF","VVR","VVV"]
                 name: "3prong"
 
         Tau_Scale_3prong1pizero:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF","VVLF","VVR","VVV"]
                 name: "3prong1pizero"
 
         Jet_Res:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "syst_jet_res"
 
         Jet_Absolute:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "Absolute"
 
         Jet_Absolute_YEAR:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "Absolute_YEAR"
 
         Jet_BBEC1:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "BBEC1"
 
         Jet_BBEC1_YEAR:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "BBEC1_YEAR"
 
         Jet_EC2:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "EC2"
 
         Jet_EC2_YEAR:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "EC2_YEAR"
 
         Jet_FlavorQCD:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "FlavorQCD"
 
         Jet_HF:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "HF"
 
         Jet_HF_YEAR:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "HF_YEAR"
 
         Jet_RelativeBal:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "RelativeBal"
 
         Jet_RelativeSample_YEAR:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "RelativeSample_YEAR"
 
         MET_Unclustered:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF","VVLF","VVR","VVV"]
                 name: "syst_met_unclustered"
 
-#        Electron_Scale:
-#                channel: ""
-#                effect: "shape"
-#                processes: ["VVJF","VVLF","VVR","VVV"]
-#                name: "syst_electron_scale"
-#
+        Electron_Scale:
+                channel: ["eett","ettt","emtt"]
+                effect: "shape"
+                processes: ["VVJF","VVLF","VVR","VVV"]
+                name: "syst_electron_scale"
+
         Jet_Fakes_iso:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["jetFakes"]
                 name: "all_iso"
 
         Jet_Fakes_q_sum:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["jetFakes"]
                 name: "all_q_sum"
 
         Jet_Fakes_nonclosure:
-                channel: "all"
+                channel: ["all"]
                 effect: "shape"
                 processes: ["jetFakes"]
                 name: "all_non_closure"
 
+
+#        Electron_ID:
+#                channel: ["eett","ettt","emtt"]
+#                effect: "shape"
+#                processes: ["VVJF","VVLF","VVR","VVV"]
+#                name: "syst_electron_id"
+#
+#        Muon_ID:
+#                channel: ["mmtt","mttt","emtt"]
+#                effect: "shape"
+#                processes: ["VVJF","VVLF","VVR","VVV"]
+#                name: "syst_muon_id"
+
         Lumi:
-                channel: "all"
+                channel: ["all"]
                 effect: "lnN"
                 processes: ["VVJF","VVLF","VVR","VVV"]
                 scaleFactor: 1.016

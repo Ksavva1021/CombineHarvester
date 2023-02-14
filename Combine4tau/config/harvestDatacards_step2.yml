@@ -1,39 +1,41 @@
-folder: "outputs/mt_tot_check"
+folder: "outputs/3101/st"
 year: "all"
-#channels: ["mmtt", "emtt", "ettt","mttt","tttt","eett","ttt"]  
-channels: ["tttt"]
-build_workspaces: True
-build_combined_workspaces: False
+#channels: ["cmb","mmtt", "emtt", "ettt","mttt","tttt","eett","ttt"]  
+channels: ["mmtt", "emtt", "eett"]  
+#channels: ["cmb"]
+build_workspaces: False
+build_combined_workspaces: True
 
-calculate_AsymptoticLimits: True
-calculate_combined_AsymptoticLimits: False
+calculate_AsymptoticLimits: False
+calculate_combined_AsymptoticLimits: True
 calculate_HybridNew: False
 unblind: False
 
-collect_limits: True
-collect_combined_limits: False
+collect_limits: False
+collect_combined_limits: True
 
 grid_A: ["60","70","80","90","100","125","140","160"]
 grid_phi: ["100","110","125","140","160","180","200","250","300"] 
 
 categories: 
-        "mmtt": [[1,"inclusive"],[2,"nobtag"],[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
-        "emtt": [[1,"inclusive"],[2,"nobtag"],[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
-        "ettt": [[1,"inclusive"],[2,"nobtag"]]
-        "mttt": [[1,"inclusive"],[2,"nobtag"]]
-        "tttt": [[1,"inclusive"],[2,"nobtag"]]
-        "eett": [[1,"inclusive"],[2,"nobtag"],[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
-        "ttt" : [[1,"inclusive"],[2,"nobtag"]]
+
+        "mmtt": [[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
+        "emtt": [[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
+        "ettt": [[2,"nobtag"]]
+        "mttt": [[2,"nobtag"]]
+        "tttt": [[1,"inclusive"]]
+        "eett": [[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
+        "ttt" : [[1,"inclusive"]]
 
 combine_categories:
         "mmtt": 
-                folder: "cmb_mmtt_os_ss_nobtag"
+                folder: "cmb_mmtt"
                 categories: [[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
         "eett":
-                folder: "cmb_eett_os_ss_nobtag"
+                folder: "cmb_eett"
                 categories: [[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
         "emtt": 
-                folder: "cmb_emtt_os_ss_nobtag"
+                folder: "cmb_emtt"
                 categories: [[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]] 
         "ettt": 
                 folder: "cmb_ettt_mvis2"
@@ -47,4 +49,6 @@ combine_categories:
         "ttt" : 
                 folder: "cmb_ttt_mvis2"
                 categories: [[3,"mvis2_0-100"],[4,"mvis2_100-200"],[5,'mvis2_200-500']]
+
+
 

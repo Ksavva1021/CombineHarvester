@@ -85,9 +85,9 @@ for chn in channels:
      scaleFactor = 1.0
      if "scaleFactor" in sysDef:
         scaleFactor = sysDef["scaleFactor"]
-     if (sysDef["channel"] == "all" and ("YEAR" not in syst)):
+     if ("all" in sysDef["channel"] and ("YEAR" not in syst)):
         harvester.cp().process(sysDef["processes"]).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor)) 
-     elif ((sysDef["channel"] == chn) and ("YEAR" not in syst)):
+     elif ((chn in sysDef["channel"]) and ("YEAR" not in syst)):
         harvester.cp().process(sysDef["processes"]).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
      if "YEAR" in syst:
 	for year in ["2016preVFP","2016postVFP","2017","2018"]:

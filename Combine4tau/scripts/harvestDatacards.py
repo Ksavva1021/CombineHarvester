@@ -60,6 +60,7 @@ def green(string,**kwargs):
 
 def NegativeBins(p):
   '''Replaces negative bins in hists with 0'''
+  print("Process is: ",p.process())
   hist = p.shape()
   has_negative = False
   for i in range(1,hist.GetNbinsX()+1):
@@ -80,6 +81,7 @@ for chn in channels:
   harvester.AddProcesses(['*'], [analysis], [era_tag], [chn], bkg_procs[chn], cats[chn], False)
   harvester.AddProcesses(mass_shifts, [analysis], [era_tag], [chn], sig_procs, cats[chn], True)
 
+sig_procs_systs = [x + "phi$MASS" for x in sig_procs]
 for chn in channels:
   for syst in systematics:
      sysDef = systematics[syst]
@@ -87,13 +89,13 @@ for chn in channels:
      if "scaleFactor" in sysDef:
         scaleFactor = sysDef["scaleFactor"]
      if ("all" in sysDef["channel"] and ("YEAR" not in syst)):
-        harvester.cp().process(sysDef["processes"]).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor)) 
+        harvester.cp().process(sysDef["processes"]+sig_procs_systs).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor)) 
      elif ((chn in sysDef["channel"]) and ("YEAR" not in syst)):
-        harvester.cp().process(sysDef["processes"]).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
+        harvester.cp().process(sysDef["processes"]+sig_procs_systs).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
      if "YEAR" in syst:
 	for year in ["2016preVFP","2016postVFP","2017","2018"]:
 	   name = sysDef["name"].replace("YEAR",year)
-           harvester.cp().process(sysDef["processes"]).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
+           harvester.cp().process(sysDef["processes"]+sig_procs_systs).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
 
 # Populating Observation, Process and Systematic entries in the harvester instance
 for chn in channels:
@@ -102,7 +104,6 @@ for chn in channels:
   print ">>>   file %s"%(filename)
   print(chn)
   harvester.cp().channel([chn]).process(bkg_procs[chn]).ExtractShapes(filename, "$BIN/$PROCESS", "$BIN/$PROCESS_$SYSTEMATIC")
-  continue # added to check systematics
   if not model_dep:
     harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESSphi$MASS_norm", "$BIN/$PROCESSphi$MASS_$SYSTEMATIC")
   else:
@@ -118,53 +119,46 @@ if(auto_rebin):
   rebin.Rebin(harvester,harvester)
 
 # Replacing negative bins
-#print(green("Removing NegativeBins"))
-#harvester.ForEachProc(NegativeBins)
-#
+print(green("Removing NegativeBins"))
+harvester.ForEachProc(NegativeBins)
+
 workspace = RooWorkspace(analysis,analysis)
-## RooVar
-#Mphi = RooRealVar("MH","Mass of H/h in GeV", 100., 300.)
-#Mphi.setConstant(True)
-#
-## MORPHING
-#print green(">>> morphing...")
-#BuildCMSHistFuncFactory(workspace, harvester, Mphi, "A60phi,A70phi,A80phi,A90phi,A100phi,A125phi,A140phi,A160phi")
-#
+
 # RooVar
-#Mphi = RooRealVar("MH","Mass of H/h in GeV", float(mass_shifts[0]), float(mass_shifts[-1]))
-#Mphi.setConstant(True)
+Mphi = RooRealVar("MH","Mass of H/h in GeV", float(mass_shifts[0]), float(mass_shifts[-1]))
+Mphi.setConstant(True)
 
 # MORPHING
-#print green(">>> morphing...")
-#BuildCMSHistFuncFactory(workspace, harvester, Mphi, ",".join(sig_procs))
+print green(">>> morphing...")
+BuildCMSHistFuncFactory(workspace, harvester, Mphi, ",".join(sig_procs))
 
 workspace.writeToFile("workspace_py.root")
-#
-## EXTRACT PDFs
-#print green(">>> add workspace and extract pdf...")
-#harvester.AddWorkspace(workspace, False)
-#harvester.ExtractPdfs(harvester, analysis, "$BIN_$PROCESS_morph", "")  # Extract all processes (signal and bkg are named the same way)
-#harvester.ExtractData(analysis, "$BIN_data_obs")  # Extract the RooDataHist
+
+# EXTRACT PDFs
+print green(">>> add workspace and extract pdf...")
+harvester.AddWorkspace(workspace, False)
+harvester.ExtractPdfs(harvester, analysis, "$BIN_$PROCESS_morph", "")  # Extract all processes (signal and bkg are named the same way)
+harvester.ExtractData(analysis, "$BIN_data_obs")  # Extract the RooDataHist
 #
 if (use_automc):
    # Set the autoMCStats line (with -1 = no bbb uncertainties)
    # Set threshold to 0.3 to use Poisson PDF instead
    harvester.SetAutoMCStats(harvester, 0.3, 0, 1)
-#
-#
-#if verbose>0:
-#    print green("\n>>> print observation...\n")
-#    harvester.PrintObs()
-#    print green("\n>>> print processes...\n")
-#    harvester.PrintProcs()
-#    print green("\n>>> print systematics...\n")
-#    harvester.PrintSysts()
-#    print green("\n>>> print parameters...\n")
-#    harvester.PrintParams()
-#    print "\n"
-#
-#
-## WRITER
+
+
+if verbose>0:
+    print green("\n>>> print observation...\n")
+    harvester.PrintObs()
+    print green("\n>>> print processes...\n")
+    harvester.PrintProcs()
+    print green("\n>>> print systematics...\n")
+    harvester.PrintSysts()
+    print green("\n>>> print parameters...\n")
+    harvester.PrintParams()
+    print "\n"
+
+
+# WRITER
 print green(">>> writing datacards...")
 datacardtxt  = "%s/%s/$BIN/$BIN.txt"%(output_folder,era_tag)
 datacardroot = "%s/%s/$BIN/common/$BIN_input_%s.root"%(output_folder,era_tag,era_tag)
@@ -172,18 +166,18 @@ writer = CardWriter(datacardtxt,datacardroot)
 writer.SetVerbosity(1)
 writer.SetWildcardMasses([ ])
 writer.WriteCards("cmb", harvester)
-#
-## You have to delete the workspace as otherwise you will get a memory management seg val (You can avoid this if you use a newer version of PyROOT or if you run the file within a function)
-#workspace.Delete()
-#
-## Relocating outputs to ease further processing
-#if (os.path.exists("{}/{}/cmb".format(output_folder,era_tag)) == False):
-#   os.system("mkdir {}/{}/cmb".format(output_folder,era_tag))
-#if (os.path.exists("{}/{}/cmb/common".format(output_folder,era_tag)) == False):
-#   os.system("mkdir {}/{}/cmb/common".format(output_folder,era_tag))
-#os.system("cp -r {}/{}/*/*/*.root {}/{}/cmb/common/".format(output_folder,era_tag,output_folder,era_tag))
-#os.system("cp -r {}/{}/*/*.txt {}/{}/cmb/".format(output_folder,era_tag,output_folder,era_tag))
-#os.system("mv workspace_py.root {}/{}/".format(output_folder,era_tag))
+
+# You have to delete the workspace as otherwise you will get a memory management seg val (You can avoid this if you use a newer version of PyROOT or if you run the file within a function)
+workspace.Delete()
+
+# Relocating outputs to ease further processing
+if (os.path.exists("{}/{}/cmb".format(output_folder,era_tag)) == False):
+   os.system("mkdir {}/{}/cmb".format(output_folder,era_tag))
+if (os.path.exists("{}/{}/cmb/common".format(output_folder,era_tag)) == False):
+   os.system("mkdir {}/{}/cmb/common".format(output_folder,era_tag))
+os.system("cp -r {}/{}/*/*/*.root {}/{}/cmb/common/".format(output_folder,era_tag,output_folder,era_tag))
+os.system("cp -r {}/{}/*/*.txt {}/{}/cmb/".format(output_folder,era_tag,output_folder,era_tag))
+os.system("mv workspace_py.root {}/{}/".format(output_folder,era_tag))
 
 
 

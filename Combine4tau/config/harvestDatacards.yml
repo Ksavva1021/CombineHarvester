@@ -1,26 +1,16 @@
-output_folder: "outputs/1402"
+output_folder: "outputs/2002"
 analysis: "X2HDM"
 year: "all"
-#channels: ["mmtt", "emtt", "ettt","mttt","tttt","eett","ttt"]  
-channels: ["mmtt"]
+channels: ["mmtt", "ettt","mttt","tttt","eett","ttt","emtt"]  
 model_dependent: False
 categories: 
-        "mmtt": [[1,"mmtt_inclusive"]]
-        "emtt": [[11,"emtt_z_control_nobtag"],[12,"emtt_2l2t_sig_nobtag"]]
-        "ettt": [[2,"ettt_nobtag"]]
-        "mttt": [[2,"mttt_nobtag"]]
-        "tttt": [[1,"tttt_inclusive"]]
-        "eett": [[11,"eett_z_control_nobtag"],[12,"eett_2l2t_sig_nobtag"]]
-        "ttt" : [[1,"ttt_inclusive"]]
-
-#        "mmtt": [[1,"mmtt_inclusive"],[2,"mmtt_nobtag"],[11,"mmtt_z_control_nobtag"],[12,"mmtt_2l2t_sig_nobtag"]]
-#        "emtt": [[1,"emtt_inclusive"],[2,"emtt_nobtag"],[11,"emtt_z_control_nobtag"],[12,"emtt_2l2t_sig_nobtag"]]
-#        "ettt": [[1,"ettt_inclusive"],[2,"ettt_nobtag"]]
-#        "mttt": [[1,"mttt_inclusive"],[2,"mttt_nobtag"]]
-#        "tttt": [[1,"tttt_inclusive"],[2,"tttt_nobtag"]]
-#        "eett": [[1,"eett_inclusive"],[2,"eett_nobtag"],[11,"eett_z_control_nobtag"],[12,"eett_2l2t_sig_nobtag"]]
-#        "ttt" : [[1,"ttt_inclusive"],[2,"ttt_nobtag"]]
-
+        "mmtt": [[1,"mmtt_inclusive"],[2,"mmtt_nobtag"],[11,"mmtt_z_control_nobtag"],[12,"mmtt_2l2t_sig_nobtag"]]
+        "emtt": [[1,"emtt_inclusive"],[2,"emtt_nobtag"],[11,"emtt_z_control_nobtag"],[12,"emtt_2l2t_sig_nobtag"]]
+        "ettt": [[1,"ettt_inclusive"],[2,"ettt_nobtag"]]
+        "mttt": [[1,"mttt_inclusive"],[2,"mttt_nobtag"]]
+        "tttt": [[1,"tttt_inclusive"],[2,"tttt_nobtag"]]
+        "eett": [[1,"eett_inclusive"],[2,"eett_nobtag"],[11,"eett_z_control_nobtag"],[12,"eett_2l2t_sig_nobtag"]]
+        "ttt" : [[1,"ttt_inclusive"],[2,"ttt_nobtag"]]
 
 variable: "mt_tot"
 
@@ -69,25 +59,25 @@ systematics:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF","VVLF","VVR","VVV"]
-                name: "1prong"
+                name: "syst_1prong"
 
         Tau_Scale_1prong1pizero:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF","VVLF","VVR","VVV"]
-                name: "1prong1pizero"
+                name: "syst_1prong1pizero"
 
         Tau_Scale_3prong:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF","VVLF","VVR","VVV"]
-                name: "3prong"
+                name: "syst_3prong"
 
         Tau_Scale_3prong1pizero:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF","VVLF","VVR","VVV"]
-                name: "3prong1pizero"
+                name: "syst_3prong1pizero"
 
         Jet_Res:
                 channel: ["all"]
@@ -99,67 +89,67 @@ systematics:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "Absolute"
+                name: "syst_Absolute"
 
         Jet_Absolute_YEAR:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "Absolute_YEAR"
+                name: "syst_Absolute_YEAR"
 
         Jet_BBEC1:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "BBEC1"
+                name: "syst_BBEC1"
 
         Jet_BBEC1_YEAR:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "BBEC1_YEAR"
+                name: "syst_BBEC1_YEAR"
 
         Jet_EC2:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "EC2"
+                name: "syst_EC2"
 
         Jet_EC2_YEAR:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "EC2_YEAR"
+                name: "syst_EC2_YEAR"
 
         Jet_FlavorQCD:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "FlavorQCD"
+                name: "syst_FlavorQCD"
 
         Jet_HF:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "HF"
+                name: "syst_HF"
 
         Jet_HF_YEAR:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "HF_YEAR"
+                name: "syst_HF_YEAR"
 
         Jet_RelativeBal:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "RelativeBal"
+                name: "syst_RelativeBal"
 
         Jet_RelativeSample_YEAR:
                 channel: ["all"]
                 effect: "shape"
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "RelativeSample_YEAR"
+                name: "syst_RelativeSample_YEAR"
 
         MET_Unclustered:
                 channel: ["all"]
@@ -167,11 +157,11 @@ systematics:
                 processes: ["VVJF","VVLF","VVR","VVV"]
                 name: "syst_met_unclustered"
 
-        Electron_Scale:
-                channel: ["eett","ettt","emtt"]
-                effect: "shape"
-                processes: ["VVJF","VVLF","VVR","VVV"]
-                name: "syst_electron_scale"
+#        Electron_Scale:
+#                channel: ["eett","ettt","emtt"]
+#                effect: "shape"
+#                processes: ["VVJF","VVLF","VVR","VVV"]
+#                name: "syst_electron_scale"
 
         Jet_Fakes_iso:
                 channel: ["all"]
@@ -190,7 +180,6 @@ systematics:
                 effect: "shape"
                 processes: ["jetFakes"]
                 name: "all_non_closure"
-
 
 #        Electron_ID:
 #                channel: ["eett","ettt","emtt"]

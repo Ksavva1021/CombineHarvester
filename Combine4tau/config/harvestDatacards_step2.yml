@@ -1,7 +1,7 @@
-folder: "outputs/mvis1_2201_mi"
+folder: "outputs/AN"
 year: "all"
 #channels: ["mmtt", "emtt", "ettt","mttt","tttt","eett","ttt"]  
-channels: ["tttt"]
+channels: ["eett","emtt","mmtt"]
 build_workspaces: True
 build_combined_workspaces: False
 model_dependent: False
@@ -10,21 +10,20 @@ calculate_combined_AsymptoticLimits: False
 calculate_HybridNew: False
 unblind: False
 
-collect_limits: False
-collect_combined_limits: True
+collect_limits: True
+collect_combined_limits: False
 
 grid_A: ["60","70","80","90","100","125","140","160"]
-#grid_phi: ["100","110","125","140","160","180","200","250","300"] 
-grid_phi: ["100","200"]
+grid_phi: ["100","110","125","140","160","180","200","250","300"] 
 
 categories: 
-        "mmtt": [[1,"inclusive"],[2,"nobtag"],[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
-        "emtt": [[1,"inclusive"],[2,"nobtag"],[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
-        "ettt": [[1,"inclusive"],[2,"nobtag"]]
-        "mttt": [[1,"inclusive"],[2,"nobtag"]]
-        "tttt": [[2,"nobtag"]]
-        "eett": [[1,"inclusive"],[2,"nobtag"],[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
-        "ttt" : [[1,"inclusive"],[2,"nobtag"]]
+        "mmtt": [[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
+        "emtt": [[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
+        "ettt": [[2,"nobtag"]]
+        "mttt": [[2,"nobtag"]]
+        "tttt": [[1,"inclusive"]]
+        "eett": [[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]
+        "ttt" : [[1,"inclusive"]]
 
 combine_categories:
         "mmtt": 

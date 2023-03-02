@@ -100,7 +100,7 @@ for chn in channels:
 # Populating Observation, Process and Systematic entries in the harvester instance
 for chn in channels:
   #filename = input_dir_path + era_tag + "/" + chn + "/" + variable + "_signal_" + chn + "_inclusive_" + era_tag + "_rebinned" + ".root"
-  filename = input_dir_path + '1402/' + era_tag + "/" + chn + "/" + variable + "_" + chn + "_multicat_" + era_tag + ".root"
+  filename = input_dir_path + 'AN/' + era_tag + "/" + chn + "/" + variable + "_" + chn + "_multicat_" + era_tag + ".root"
   print ">>>   file %s"%(filename)
   print(chn)
   harvester.cp().channel([chn]).process(bkg_procs[chn]).ExtractShapes(filename, "$BIN/$PROCESS", "$BIN/$PROCESS_$SYSTEMATIC")

@@ -147,7 +147,7 @@ if (calculate_AsymptoticLimits):
               POI = "tanb"
             frozen_POIs,frozen_POIs_SetToZero = ParametersToFreeze(setup["grid_"+split_higgs],m,split_higgs,sto=model_dependent)
             if (unblind == False):
-               os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M AsymptoticLimits -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 --run expected -v3| tee -a %(cmssw_base)s/%(folder)s/%(year)s/logs/%(log_limits)s_%(chan)s_m%(split_higgs)S%(m)s.txt" %vars())
+               os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M AsymptoticLimits -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 --run expected -v3| tee -a %(cmssw_base)s/%(folder)s/%(year)s/logs/%(log_limits)s_%(chan)s_m%(split_higgs)s%(m)s.txt" %vars())
             os.system("mv higgsCombine*Asymptotic*.root %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/limits/%(split_higgs)s%(m)s"%vars())
 
       else:

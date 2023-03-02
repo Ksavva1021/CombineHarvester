@@ -20,7 +20,7 @@ parser.add_argument(
 parser.add_argument(
     '--cms-sub', default='Internal', help="""Text below the CMS logo""")
 parser.add_argument(
-    '--title-right', default='', help="""Right header text above the frame""")
+    '--title-right', default="138 fb^{-1}", help="""Right header text above the frame""")
 parser.add_argument(
     '--title-left', default='', help="""Left header text above the frame""")
 parser.add_argument(
@@ -61,7 +61,7 @@ graphs = []
 graph_sets = []
 
 legend = plot.PositionedLegend(0.45, 0.10, 3, 0.015)
-plot.Set(legend, NColumns=2)
+plot.Set(legend, NColumns=3)
 
 defcols = [
     ROOT.kGreen+3, ROOT.kRed, ROOT.kBlue, ROOT.kBlack, ROOT.kYellow+2,
@@ -104,7 +104,7 @@ for src in files:
            axis = plot.CreateAxisHists(len(pads), graphs[-1], True)
            DrawAxisHists(pads, axis, pads[0])
        graphs[-1].Draw('PLSAME')
-       legend.AddEntry(graphs[-1], '', 'PL')
+       legend.AddEntry(graphs[-1], '', 'L')
 
 axis[0].GetYaxis().SetTitle('95% CL Limit on #sigma #times BR(#phi#rightarrow#tau#tau) #times BR(A#rightarrow#tau#tau)')
 axis[0].GetYaxis().SetTitleOffset(1.75)

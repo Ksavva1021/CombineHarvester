@@ -1,18 +1,18 @@
-output_folder: "outputs/2002"
+output_folder: "outputs/AN"
 analysis: "X2HDM"
 year: "all"
 channels: ["mmtt", "ettt","mttt","tttt","eett","ttt","emtt"]  
 model_dependent: False
 categories: 
-        "mmtt": [[1,"mmtt_inclusive"],[2,"mmtt_nobtag"],[11,"mmtt_z_control_nobtag"],[12,"mmtt_2l2t_sig_nobtag"]]
-        "emtt": [[1,"emtt_inclusive"],[2,"emtt_nobtag"],[11,"emtt_z_control_nobtag"],[12,"emtt_2l2t_sig_nobtag"]]
-        "ettt": [[1,"ettt_inclusive"],[2,"ettt_nobtag"]]
-        "mttt": [[1,"mttt_inclusive"],[2,"mttt_nobtag"]]
-        "tttt": [[1,"tttt_inclusive"],[2,"tttt_nobtag"]]
-        "eett": [[1,"eett_inclusive"],[2,"eett_nobtag"],[11,"eett_z_control_nobtag"],[12,"eett_2l2t_sig_nobtag"]]
-        "ttt" : [[1,"ttt_inclusive"],[2,"ttt_nobtag"]]
+        "mmtt": [[11,"mmtt_z_control_nobtag"],[12,"mmtt_2l2t_sig_nobtag"]]
+        "emtt": [[11,"emtt_z_control_nobtag"],[12,"emtt_2l2t_sig_nobtag"]]
+        "ettt": [[2,"ettt_nobtag"]]
+        "mttt": [[2,"mttt_nobtag"]]
+        "tttt": [[1,"tttt_inclusive"]]
+        "eett": [[11,"eett_z_control_nobtag"],[12,"eett_2l2t_sig_nobtag"]]
+        "ttt" : [[1,"ttt_inclusive"]]
 
-variable: "mt_tot"
+variable: "mt_tot" 
 
 background_processes:
         "mmtt": ["VVJF","VVLF","VVR","VVV","jetFakes"]
@@ -49,35 +49,35 @@ systematics:
                 processes: ["VVJF","VVLF","VVR","VVV"]
                 name: "syst_tau_id_DM10"
 
-        DoubleTau_Trigger:
-                channel: ["all"]
-                effect: "shape"
-                processes: ["VVJF","VVLF","VVR","VVV"]
-                name: "syst_doubletau_trg"
-
-        Tau_Scale_1prong:
-                channel: ["all"]
-                effect: "shape"
-                processes: ["VVJF","VVLF","VVR","VVV"]
-                name: "syst_1prong"
-
-        Tau_Scale_1prong1pizero:
-                channel: ["all"]
-                effect: "shape"
-                processes: ["VVJF","VVLF","VVR","VVV"]
-                name: "syst_1prong1pizero"
-
-        Tau_Scale_3prong:
-                channel: ["all"]
-                effect: "shape"
-                processes: ["VVJF","VVLF","VVR","VVV"]
-                name: "syst_3prong"
-
-        Tau_Scale_3prong1pizero:
-                channel: ["all"]
-                effect: "shape"
-                processes: ["VVJF","VVLF","VVR","VVV"]
-                name: "syst_3prong1pizero"
+#        DoubleTau_Trigger:
+#                channel: ["all"]
+#                effect: "shape"
+#                processes: ["VVJF","VVLF","VVR","VVV"]
+#                name: "syst_doubletau_trg"
+#
+#        Tau_Scale_1prong:
+#                channel: ["all"]
+#                effect: "shape"
+#                processes: ["VVJF","VVLF","VVR","VVV"]
+#                name: "syst_1prong"
+#
+#        Tau_Scale_1prong1pizero:
+#                channel: ["all"]
+#                effect: "shape"
+#                processes: ["VVJF","VVLF","VVR","VVV"]
+#                name: "syst_1prong1pizero"
+#
+#        Tau_Scale_3prong:
+#                channel: ["all"]
+#                effect: "shape"
+#                processes: ["VVJF","VVLF","VVR","VVV"]
+#                name: "syst_3prong"
+#
+#        Tau_Scale_3prong1pizero:
+#                channel: ["all"]
+#                effect: "shape"
+#                processes: ["VVJF","VVLF","VVR","VVV"]
+#                name: "syst_3prong1pizero"
 
         Jet_Res:
                 channel: ["all"]
@@ -91,11 +91,11 @@ systematics:
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "syst_Absolute"
 
-        Jet_Absolute_YEAR:
-                channel: ["all"]
-                effect: "shape"
-                processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "syst_Absolute_YEAR"
+#        Jet_Absolute_YEAR:
+#                channel: ["all"]
+#                effect: "shape"
+#                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+#                name: "syst_Absolute_YEAR"
 
         Jet_BBEC1:
                 channel: ["all"]
@@ -103,11 +103,11 @@ systematics:
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "syst_BBEC1"
 
-        Jet_BBEC1_YEAR:
-                channel: ["all"]
-                effect: "shape"
-                processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "syst_BBEC1_YEAR"
+#        Jet_BBEC1_YEAR:
+#                channel: ["all"]
+#                effect: "shape"
+#                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+#                name: "syst_BBEC1_YEAR"
 
         Jet_EC2:
                 channel: ["all"]
@@ -115,11 +115,11 @@ systematics:
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "syst_EC2"
 
-        Jet_EC2_YEAR:
-                channel: ["all"]
-                effect: "shape"
-                processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "syst_EC2_YEAR"
+#        Jet_EC2_YEAR:
+#                channel: ["all"]
+#                effect: "shape"
+#                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+#                name: "syst_EC2_YEAR"
 
         Jet_FlavorQCD:
                 channel: ["all"]
@@ -133,11 +133,11 @@ systematics:
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "syst_HF"
 
-        Jet_HF_YEAR:
-                channel: ["all"]
-                effect: "shape"
-                processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "syst_HF_YEAR"
+#        Jet_HF_YEAR:
+#                channel: ["all"]
+#                effect: "shape"
+#                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+#                name: "syst_HF_YEAR"
 
         Jet_RelativeBal:
                 channel: ["all"]
@@ -145,11 +145,11 @@ systematics:
                 processes: ["VVJF", "VVLF", "VVR", "VVV"]
                 name: "syst_RelativeBal"
 
-        Jet_RelativeSample_YEAR:
-                channel: ["all"]
-                effect: "shape"
-                processes: ["VVJF", "VVLF", "VVR", "VVV"]
-                name: "syst_RelativeSample_YEAR"
+#        Jet_RelativeSample_YEAR:
+#                channel: ["all"]
+#                effect: "shape"
+#                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+#                name: "syst_RelativeSample_YEAR"
 
         MET_Unclustered:
                 channel: ["all"]

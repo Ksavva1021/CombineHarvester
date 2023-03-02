@@ -1,0 +1,3 @@
+outputs/2202/mvis1/all/cmb/limits/A80/limit_A80.json:exp0:Title=High Visible Mass Pair:LineColor=419:MarkerColor=419:LineStyle=2
+outputs/2202/mt_tot/all/cmb/limits/A80/limit_A80.json:exp0:Title=M_{T}^{tot}:LineColor=425:MarkerColor=425:LineStyle=1
+outputs/2202/st/all/cmb/limits/A80/limit_A80.json:exp0:Title=st:LineColor=1:MarkerColor=1:LineStyle=2

@@ -1,0 +1,2282 @@
++------------------+--------------------------------------------------------------------------------------+
+|      Option      |                                        Option                                        |
++------------------+--------------------------------------------------------------------------------------+
+|  Output Folder   |                                  outputs/0202/test                                   |
+|     Analysis     |                                        X2HDM                                         |
+|       Year       |                                         all                                          |
+|     Channels     |                                       ['eett']                                       |
+|     Variable     |                                        mt_tot                                        |
+| Signal Processes | ['A60phi', 'A70phi', 'A80phi', 'A90phi', 'A100phi', 'A125phi', 'A140phi', 'A160phi'] |
+|   Mass Shifts    |           ['100', '110', '125', '140', '160', '180', '200', '250', '300']            |
+|    Auto Rebin    |                                         True                                         |
+|      AutoMC      |                                         True                                         |
+|     Verbose      |                                         True                                         |
++------------------+--------------------------------------------------------------------------------------+
+>>>   file /vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/0202/all/eett/mt_tot_eett_multicat_all.root
+eett
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+*      X2HDM     all    eett     eett_z_control_nobtag        11  VVR              0    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+*      X2HDM     all    eett     eett_z_control_nobtag        11  VVV              0    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+*      X2HDM     all    eett     eett_z_control_nobtag        11  jetFakes         0    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  VVV              0    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  jetFakes         0    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+100    X2HDM     all    eett     eett_z_control_nobtag        11  A60phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+100    X2HDM     all    eett     eett_z_control_nobtag        11  A70phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+110    X2HDM     all    eett     eett_z_control_nobtag        11  A70phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+110    X2HDM     all    eett     eett_z_control_nobtag        11  A100phi          1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+125    X2HDM     all    eett     eett_z_control_nobtag        11  A60phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+125    X2HDM     all    eett     eett_z_control_nobtag        11  A80phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+125    X2HDM     all    eett     eett_z_control_nobtag        11  A90phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+125    X2HDM     all    eett     eett_z_control_nobtag        11  A125phi          1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+140    X2HDM     all    eett     eett_z_control_nobtag        11  A140phi          1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+160    X2HDM     all    eett     eett_z_control_nobtag        11  A70phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+160    X2HDM     all    eett     eett_z_control_nobtag        11  A90phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+180    X2HDM     all    eett     eett_z_control_nobtag        11  A60phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+200    X2HDM     all    eett     eett_z_control_nobtag        11  A70phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+300    X2HDM     all    eett     eett_z_control_nobtag        11  A90phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+100    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A70phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+100    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A80phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+100    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A125phi          1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+100    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A160phi          1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+110    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A60phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+110    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A70phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+110    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A80phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+125    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A70phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+125    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A80phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+125    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A100phi          1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+125    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A160phi          1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+140    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A60phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+140    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A70phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+140    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A80phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+140    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A125phi          1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+160    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A90phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+160    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A100phi          1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+160    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A125phi          1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+160    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A140phi          1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+180    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A100phi          1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+180    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A125phi          1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+200    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A70phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+200    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A80phi           1    0          0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+300    X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A90phi           1    0          0    
+[AutoRebin] Searching for bins failing conditions for analysis bin id eett_2l2t_sig_nobtag
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 19
+Moving left, bin index: 18, BinLowEdge: 102, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 17, BinLowEdge: 96, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 16, BinLowEdge: 90, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 15, BinLowEdge: 84, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 14, BinLowEdge: 78, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 13, BinLowEdge: 72, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 12, BinLowEdge: 66, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 11, BinLowEdge: 60, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 10, BinLowEdge: 54, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 9, BinLowEdge: 48, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 8, BinLowEdge: 42, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 7, BinLowEdge: 36, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 6, BinLowEdge: 30, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 5, BinLowEdge: 24, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 4, BinLowEdge: 18, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 3, BinLowEdge: 12, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 2, BinLowEdge: 6, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving left, bin index: 1, BinLowEdge: 0, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving right, bin index: 20, BinLowEdge: 114, Bin content: 0, Running total from combining bins: -0.595291, Current fractional error: -1.00077
+Moving right, bin index: 21, BinLowEdge: 120, Bin content: -0.00288574, Running total from combining bins: -0.598177, Current fractional error: -0.995951
+Moving right, bin index: 22, BinLowEdge: 126, Bin content: -0.00736855, Running total from combining bins: -0.605545, Current fractional error: -0.983901
+Moving right, bin index: 23, BinLowEdge: 132, Bin content: -0.0216908, Running total from combining bins: -0.627236, Current fractional error: -0.950172
+Moving right, bin index: 24, BinLowEdge: 138, Bin content: -0.0121472, Running total from combining bins: -0.639383, Current fractional error: -0.932281
+Moving right, bin index: 25, BinLowEdge: 144, Bin content: 0.0393143, Running total from combining bins: -0.600069, Current fractional error: -0.995266
+Moving right, bin index: 26, BinLowEdge: 150, Bin content: 0.202152, Running total from combining bins: -0.397917, Current fractional error: -1.5677
+Moving right, bin index: 27, BinLowEdge: 156, Bin content: -0.0297245, Running total from combining bins: -0.427641, Current fractional error: -1.46284
+Moving right, bin index: 28, BinLowEdge: 162, Bin content: -0.0341397, Running total from combining bins: -0.461781, Current fractional error: -1.44937
+Moving right, bin index: 29, BinLowEdge: 168, Bin content: 0.28871, Running total from combining bins: -0.173071, Current fractional error: -4.09957
+Moving right, bin index: 30, BinLowEdge: 174, Bin content: 0.536675, Running total from combining bins: 0.363604, Current fractional error: 2.36609
+Moving right, bin index: 31, BinLowEdge: 180, Bin content: 0.0141231, Running total from combining bins: 0.377727, Current fractional error: 2.28141
+Moving right, bin index: 32, BinLowEdge: 186, Bin content: 0.844581, Running total from combining bins: 1.22231, Current fractional error: 0.833824
+Moving right, bin index: 33, BinLowEdge: 192, Bin content: 0.149519, Running total from combining bins: 1.37183, Current fractional error: 0.748741
+Moving right, bin index: 34, BinLowEdge: 198, Bin content: 0.314156, Running total from combining bins: 1.68598, Current fractional error: 0.616082
+Moving right, bin index: 35, BinLowEdge: 204, Bin content: 0.223201, Running total from combining bins: 1.90918, Current fractional error: 0.560457
+Moving right, bin index: 36, BinLowEdge: 210, Bin content: 0.331008, Running total from combining bins: 2.24019, Current fractional error: 0.502822
+Moving right, bin index: 37, BinLowEdge: 216, Bin content: 0.126167, Running total from combining bins: 2.36636, Current fractional error: 0.487194
+Moving right, bin index: 38, BinLowEdge: 222, Bin content: 0.0449173, Running total from combining bins: 2.41128, Current fractional error: 0.484962
+Moving right, bin index: 39, BinLowEdge: 228, Bin content: -0.0309189, Running total from combining bins: 2.38036, Current fractional error: 0.492243
+Moving right, bin index: 40, BinLowEdge: 234, Bin content: 1.24759, Running total from combining bins: 3.62795, Current fractional error: 0.385559
+Moving right, bin index: 41, BinLowEdge: 240, Bin content: -0.0873044, Running total from combining bins: 3.54065, Current fractional error: 0.39596
+Moving right, bin index: 42, BinLowEdge: 246, Bin content: 0.358065, Running total from combining bins: 3.89871, Current fractional error: 0.374755
+Moving right, bin index: 43, BinLowEdge: 252, Bin content: 0.238957, Running total from combining bins: 4.13767, Current fractional error: 0.355008
+Moving right, bin index: 44, BinLowEdge: 258, Bin content: 0.000253018, Running total from combining bins: 4.13792, Current fractional error: 0.35852
+Moving right, bin index: 45, BinLowEdge: 264, Bin content: 0.264232, Running total from combining bins: 4.40215, Current fractional error: 0.338624
+Moving right, bin index: 46, BinLowEdge: 270, Bin content: 0.0112876, Running total from combining bins: 4.41344, Current fractional error: 0.33786
+Moving right, bin index: 47, BinLowEdge: 276, Bin content: 0.333871, Running total from combining bins: 4.74731, Current fractional error: 0.323133
+Moving right, bin index: 48, BinLowEdge: 282, Bin content: 0.0452855, Running total from combining bins: 4.7926, Current fractional error: 0.320356
+Moving right, bin index: 49, BinLowEdge: 288, Bin content: -0.00822181, Running total from combining bins: 4.78438, Current fractional error: 0.320912
+Moving right, bin index: 50, BinLowEdge: 294, Bin content: 0.437376, Running total from combining bins: 5.22175, Current fractional error: 0.299406
+Merging right using 31 bins
+Erasing bin upper edge for bin 19, BinUpperEdge: 114
+Erasing bin upper edge for bin 20, BinUpperEdge: 120
+Erasing bin upper edge for bin 21, BinUpperEdge: 126
+Erasing bin upper edge for bin 22, BinUpperEdge: 132
+Erasing bin upper edge for bin 23, BinUpperEdge: 138
+Erasing bin upper edge for bin 24, BinUpperEdge: 144
+Erasing bin upper edge for bin 25, BinUpperEdge: 150
+Erasing bin upper edge for bin 26, BinUpperEdge: 156
+Erasing bin upper edge for bin 27, BinUpperEdge: 162
+Erasing bin upper edge for bin 28, BinUpperEdge: 168
+Erasing bin upper edge for bin 29, BinUpperEdge: 174
+Erasing bin upper edge for bin 30, BinUpperEdge: 180
+Erasing bin upper edge for bin 31, BinUpperEdge: 186
+Erasing bin upper edge for bin 32, BinUpperEdge: 192
+Erasing bin upper edge for bin 33, BinUpperEdge: 198
+Erasing bin upper edge for bin 34, BinUpperEdge: 204
+Erasing bin upper edge for bin 35, BinUpperEdge: 210
+Erasing bin upper edge for bin 36, BinUpperEdge: 216
+Erasing bin upper edge for bin 37, BinUpperEdge: 222
+Erasing bin upper edge for bin 38, BinUpperEdge: 228
+Erasing bin upper edge for bin 39, BinUpperEdge: 234
+Erasing bin upper edge for bin 40, BinUpperEdge: 240
+Erasing bin upper edge for bin 41, BinUpperEdge: 246
+Erasing bin upper edge for bin 42, BinUpperEdge: 252
+Erasing bin upper edge for bin 43, BinUpperEdge: 258
+Erasing bin upper edge for bin 44, BinUpperEdge: 264
+Erasing bin upper edge for bin 45, BinUpperEdge: 270
+Erasing bin upper edge for bin 46, BinUpperEdge: 276
+Erasing bin upper edge for bin 47, BinUpperEdge: 282
+Erasing bin upper edge for bin 48, BinUpperEdge: 288
+Erasing bin upper edge for bin 49, BinUpperEdge: 294
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 0, Bin error fraction: -nan
+Bin index: 2, BinLowEdge: 6, Bin content: 0, Bin error fraction: -nan
+Bin index: 3, BinLowEdge: 12, Bin content: 0, Bin error fraction: -nan
+Bin index: 4, BinLowEdge: 18, Bin content: 0, Bin error fraction: -nan
+Bin index: 5, BinLowEdge: 24, Bin content: 0, Bin error fraction: -nan
+Bin index: 6, BinLowEdge: 30, Bin content: 0, Bin error fraction: -nan
+Bin index: 7, BinLowEdge: 36, Bin content: 0, Bin error fraction: -nan
+Bin index: 8, BinLowEdge: 42, Bin content: 0, Bin error fraction: -nan
+Bin index: 9, BinLowEdge: 48, Bin content: 0, Bin error fraction: -nan
+Bin index: 10, BinLowEdge: 54, Bin content: 0, Bin error fraction: -nan
+Bin index: 11, BinLowEdge: 60, Bin content: 0, Bin error fraction: -nan
+Bin index: 12, BinLowEdge: 66, Bin content: 0, Bin error fraction: -nan
+Bin index: 13, BinLowEdge: 72, Bin content: 0, Bin error fraction: -nan
+Bin index: 14, BinLowEdge: 78, Bin content: 0, Bin error fraction: -nan
+Bin index: 15, BinLowEdge: 84, Bin content: 0, Bin error fraction: -nan
+Bin index: 16, BinLowEdge: 90, Bin content: 0, Bin error fraction: -nan
+Bin index: 17, BinLowEdge: 96, Bin content: 0, Bin error fraction: -nan
+Bin index: 18, BinLowEdge: 102, Bin content: 0, Bin error fraction: -nan
+Bin index: 19, BinLowEdge: 108, Bin content: 5.22175, Bin error fraction: 0.299406
+Bin index: 20, BinLowEdge: 300, Bin content: 0.273543, Bin error fraction: 0.661962
+Bin index: 21, BinLowEdge: 306, Bin content: 0.181852, Bin error fraction: 0.681064
+Bin index: 22, BinLowEdge: 312, Bin content: 0.00110971, Bin error fraction: 0.70168
+Bin index: 23, BinLowEdge: 318, Bin content: 0.0018557, Bin error fraction: 0.571949
+Bin index: 24, BinLowEdge: 324, Bin content: 0.184809, Bin error fraction: 0.726429
+Bin index: 25, BinLowEdge: 330, Bin content: -0.0106687, Bin error fraction: -3.56672
+Bin index: 26, BinLowEdge: 336, Bin content: -0.000225147, Bin error fraction: -5.90929
+Bin index: 27, BinLowEdge: 342, Bin content: 0.00573608, Bin error fraction: 0.878886
+Bin index: 28, BinLowEdge: 348, Bin content: -0.00371061, Bin error fraction: -0.942868
+Bin index: 29, BinLowEdge: 354, Bin content: -0.00187426, Bin error fraction: -1.05632
+Bin index: 30, BinLowEdge: 360, Bin content: 0.143445, Bin error fraction: 0.999465
+Bin index: 31, BinLowEdge: 366, Bin content: 0.00169696, Bin error fraction: 0.564001
+Bin index: 32, BinLowEdge: 372, Bin content: 0.00948045, Bin error fraction: 0.995873
+Bin index: 33, BinLowEdge: 378, Bin content: 0.000955547, Bin error fraction: 0.660354
+Bin index: 34, BinLowEdge: 384, Bin content: 0.000200128, Bin error fraction: 0.767569
+Bin index: 35, BinLowEdge: 390, Bin content: -0.000376548, Bin error fraction: -1.82333
+Bin index: 36, BinLowEdge: 396, Bin content: 0.0174246, Bin error fraction: 1.02121
+Bin index: 37, BinLowEdge: 402, Bin content: 0.000727986, Bin error fraction: 0.725408
+Bin index: 38, BinLowEdge: 408, Bin content: 0.000141101, Bin error fraction: 1
+Bin index: 39, BinLowEdge: 414, Bin content: 0.001299, Bin error fraction: 0.718448
+Bin index: 40, BinLowEdge: 420, Bin content: 0.000300933, Bin error fraction: 1
+Bin index: 41, BinLowEdge: 426, Bin content: 0, Bin error fraction: -nan
+Bin index: 42, BinLowEdge: 432, Bin content: 0, Bin error fraction: -nan
+Bin index: 43, BinLowEdge: 438, Bin content: 0.000536987, Bin error fraction: 1
+Bin index: 44, BinLowEdge: 444, Bin content: 0, Bin error fraction: -nan
+Bin index: 45, BinLowEdge: 450, Bin content: 0.000702989, Bin error fraction: 0.774139
+Bin index: 46, BinLowEdge: 456, Bin content: 0.000553709, Bin error fraction: 1
+Bin index: 47, BinLowEdge: 462, Bin content: 0.00021264, Bin error fraction: 1
+Bin index: 48, BinLowEdge: 468, Bin content: -0.000810101, Bin error fraction: -1
+Bin index: 49, BinLowEdge: 474, Bin content: 0.000592583, Bin error fraction: 1
+Bin index: 50, BinLowEdge: 480, Bin content: 0.000122212, Bin error fraction: 0.717829
+Bin index: 51, BinLowEdge: 486, Bin content: 0.00040851, Bin error fraction: 0.708891
+Bin index: 52, BinLowEdge: 492, Bin content: 8.74134e-05, Bin error fraction: 1
+Bin index: 53, BinLowEdge: 498, Bin content: 7.11343e-05, Bin error fraction: 1
+Bin index: 54, BinLowEdge: 504, Bin content: 0.000537167, Bin error fraction: 1
+Bin index: 55, BinLowEdge: 510, Bin content: 0, Bin error fraction: -nan
+Bin index: 56, BinLowEdge: 516, Bin content: 0.000576995, Bin error fraction: 1
+Bin index: 57, BinLowEdge: 522, Bin content: 0, Bin error fraction: -nan
+Bin index: 58, BinLowEdge: 528, Bin content: 0.00110746, Bin error fraction: 0.70914
+Bin index: 59, BinLowEdge: 534, Bin content: 0, Bin error fraction: -nan
+Bin index: 60, BinLowEdge: 540, Bin content: 0, Bin error fraction: -nan
+Bin index: 61, BinLowEdge: 546, Bin content: 0.000542966, Bin error fraction: 1
+Bin index: 62, BinLowEdge: 552, Bin content: -0.00985762, Bin error fraction: -1
+Bin index: 63, BinLowEdge: 558, Bin content: 0, Bin error fraction: -nan
+Bin index: 64, BinLowEdge: 564, Bin content: 0, Bin error fraction: -nan
+Bin index: 65, BinLowEdge: 570, Bin content: 0, Bin error fraction: -nan
+Bin index: 66, BinLowEdge: 576, Bin content: -0.00225294, Bin error fraction: -1
+Bin index: 67, BinLowEdge: 582, Bin content: -4.70651e-05, Bin error fraction: -1
+Bin index: 68, BinLowEdge: 588, Bin content: 0.000222759, Bin error fraction: 0.830848
+Bin index: 69, BinLowEdge: 594, Bin content: 0, Bin error fraction: -nan
+Bin index: 70, BinLowEdge: 600, Bin content: 0.859719, Bin error fraction: 0.925841
+Bin index: 71, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 25
+Moving left, bin index: 24, BinLowEdge: 324, Bin content: 0.184809, Running total from combining bins: 0.17414, Current fractional error: 0.801304
+Moving left, bin index: 23, BinLowEdge: 318, Bin content: 0.0018557, Running total from combining bins: 0.175996, Current fractional error: 0.792878
+Moving left, bin index: 22, BinLowEdge: 312, Bin content: 0.00110971, Running total from combining bins: 0.177105, Current fractional error: 0.787922
+Moving left, bin index: 21, BinLowEdge: 306, Bin content: 0.181852, Running total from combining bins: 0.358957, Current fractional error: 0.519785
+Moving left, bin index: 20, BinLowEdge: 300, Bin content: 0.273543, Running total from combining bins: 0.6325, Current fractional error: 0.411069
+Moving left, bin index: 19, BinLowEdge: 108, Bin content: 5.22175, Running total from combining bins: 5.85425, Current fractional error: 0.270726
+Moving right, bin index: 26, BinLowEdge: 336, Bin content: -0.000225147, Running total from combining bins: -0.0108938, Current fractional error: -3.49514
+Moving right, bin index: 27, BinLowEdge: 342, Bin content: 0.00573608, Running total from combining bins: -0.00515773, Current fractional error: -7.44662
+Moving right, bin index: 28, BinLowEdge: 348, Bin content: -0.00371061, Running total from combining bins: -0.00886835, Current fractional error: -4.3488
+Moving right, bin index: 29, BinLowEdge: 354, Bin content: -0.00187426, Running total from combining bins: -0.0107426, Current fractional error: -3.59479
+Moving right, bin index: 30, BinLowEdge: 360, Bin content: 0.143445, Running total from combining bins: 0.132703, Current fractional error: 1.11888
+Moving right, bin index: 31, BinLowEdge: 366, Bin content: 0.00169696, Running total from combining bins: 0.1344, Current fractional error: 1.10478
+Moving right, bin index: 32, BinLowEdge: 372, Bin content: 0.00948045, Running total from combining bins: 0.14388, Current fractional error: 1.03407
+Moving right, bin index: 33, BinLowEdge: 378, Bin content: 0.000955547, Running total from combining bins: 0.144836, Current fractional error: 1.02725
+Moving right, bin index: 34, BinLowEdge: 384, Bin content: 0.000200128, Running total from combining bins: 0.145036, Current fractional error: 1.02584
+Moving right, bin index: 35, BinLowEdge: 390, Bin content: -0.000376548, Running total from combining bins: 0.144659, Current fractional error: 1.02852
+Moving right, bin index: 36, BinLowEdge: 396, Bin content: 0.0174246, Running total from combining bins: 0.162084, Current fractional error: 0.924489
+Moving right, bin index: 37, BinLowEdge: 402, Bin content: 0.000727986, Running total from combining bins: 0.162812, Current fractional error: 0.920361
+Moving right, bin index: 38, BinLowEdge: 408, Bin content: 0.000141101, Running total from combining bins: 0.162953, Current fractional error: 0.919564
+Moving right, bin index: 39, BinLowEdge: 414, Bin content: 0.001299, Running total from combining bins: 0.164252, Current fractional error: 0.91231
+Moving right, bin index: 40, BinLowEdge: 420, Bin content: 0.000300933, Running total from combining bins: 0.164553, Current fractional error: 0.910643
+Moving right, bin index: 41, BinLowEdge: 426, Bin content: 0, Running total from combining bins: 0.164553, Current fractional error: 0.910643
+Moving right, bin index: 42, BinLowEdge: 432, Bin content: 0, Running total from combining bins: 0.164553, Current fractional error: 0.910643
+Moving right, bin index: 43, BinLowEdge: 438, Bin content: 0.000536987, Running total from combining bins: 0.16509, Current fractional error: 0.907687
+Moving right, bin index: 44, BinLowEdge: 444, Bin content: 0, Running total from combining bins: 0.16509, Current fractional error: 0.907687
+Moving right, bin index: 45, BinLowEdge: 450, Bin content: 0.000702989, Running total from combining bins: 0.165793, Current fractional error: 0.903844
+Moving right, bin index: 46, BinLowEdge: 456, Bin content: 0.000553709, Running total from combining bins: 0.166346, Current fractional error: 0.900841
+Moving right, bin index: 47, BinLowEdge: 462, Bin content: 0.00021264, Running total from combining bins: 0.166559, Current fractional error: 0.899692
+Moving right, bin index: 48, BinLowEdge: 468, Bin content: -0.000810101, Running total from combining bins: 0.165749, Current fractional error: 0.904103
+Moving right, bin index: 49, BinLowEdge: 474, Bin content: 0.000592583, Running total from combining bins: 0.166342, Current fractional error: 0.900889
+Moving right, bin index: 50, BinLowEdge: 480, Bin content: 0.000122212, Running total from combining bins: 0.166464, Current fractional error: 0.900228
+Moving right, bin index: 51, BinLowEdge: 486, Bin content: 0.00040851, Running total from combining bins: 0.166872, Current fractional error: 0.898026
+Moving right, bin index: 52, BinLowEdge: 492, Bin content: 8.74134e-05, Running total from combining bins: 0.16696, Current fractional error: 0.897556
+Moving right, bin index: 53, BinLowEdge: 498, Bin content: 7.11343e-05, Running total from combining bins: 0.167031, Current fractional error: 0.897174
+Moving right, bin index: 54, BinLowEdge: 504, Bin content: 0.000537167, Running total from combining bins: 0.167568, Current fractional error: 0.894303
+Moving right, bin index: 55, BinLowEdge: 510, Bin content: 0, Running total from combining bins: 0.167568, Current fractional error: 0.894303
+Moving right, bin index: 56, BinLowEdge: 516, Bin content: 0.000576995, Running total from combining bins: 0.168145, Current fractional error: 0.891241
+Moving right, bin index: 57, BinLowEdge: 522, Bin content: 0, Running total from combining bins: 0.168145, Current fractional error: 0.891241
+Moving right, bin index: 58, BinLowEdge: 528, Bin content: 0.00110746, Running total from combining bins: 0.169252, Current fractional error: 0.885422
+Moving right, bin index: 59, BinLowEdge: 534, Bin content: 0, Running total from combining bins: 0.169252, Current fractional error: 0.885422
+Moving right, bin index: 60, BinLowEdge: 540, Bin content: 0, Running total from combining bins: 0.169252, Current fractional error: 0.885422
+Moving right, bin index: 61, BinLowEdge: 546, Bin content: 0.000542966, Running total from combining bins: 0.169795, Current fractional error: 0.882596
+Moving right, bin index: 62, BinLowEdge: 552, Bin content: -0.00985762, Running total from combining bins: 0.159938, Current fractional error: 0.939019
+Moving right, bin index: 63, BinLowEdge: 558, Bin content: 0, Running total from combining bins: 0.159938, Current fractional error: 0.939019
+Moving right, bin index: 64, BinLowEdge: 564, Bin content: 0, Running total from combining bins: 0.159938, Current fractional error: 0.939019
+Moving right, bin index: 65, BinLowEdge: 570, Bin content: 0, Running total from combining bins: 0.159938, Current fractional error: 0.939019
+Moving right, bin index: 66, BinLowEdge: 576, Bin content: -0.00225294, Running total from combining bins: 0.157685, Current fractional error: 0.952542
+Moving right, bin index: 67, BinLowEdge: 582, Bin content: -4.70651e-05, Running total from combining bins: 0.157638, Current fractional error: 0.952827
+Moving right, bin index: 68, BinLowEdge: 588, Bin content: 0.000222759, Running total from combining bins: 0.157861, Current fractional error: 0.951483
+Moving right, bin index: 69, BinLowEdge: 594, Bin content: 0, Running total from combining bins: 0.157861, Current fractional error: 0.951483
+Moving right, bin index: 70, BinLowEdge: 600, Bin content: 0.859719, Running total from combining bins: 1.01758, Current fractional error: 0.796018
+Merging left using 6 bins
+Erasing bin low edge for bin 25, BinLowEdge: 330
+Erasing bin low edge for bin 24, BinLowEdge: 324
+Erasing bin low edge for bin 23, BinLowEdge: 318
+Erasing bin low edge for bin 22, BinLowEdge: 312
+Erasing bin low edge for bin 21, BinLowEdge: 306
+Erasing bin low edge for bin 20, BinLowEdge: 300
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 0, Bin error fraction: -nan
+Bin index: 2, BinLowEdge: 6, Bin content: 0, Bin error fraction: -nan
+Bin index: 3, BinLowEdge: 12, Bin content: 0, Bin error fraction: -nan
+Bin index: 4, BinLowEdge: 18, Bin content: 0, Bin error fraction: -nan
+Bin index: 5, BinLowEdge: 24, Bin content: 0, Bin error fraction: -nan
+Bin index: 6, BinLowEdge: 30, Bin content: 0, Bin error fraction: -nan
+Bin index: 7, BinLowEdge: 36, Bin content: 0, Bin error fraction: -nan
+Bin index: 8, BinLowEdge: 42, Bin content: 0, Bin error fraction: -nan
+Bin index: 9, BinLowEdge: 48, Bin content: 0, Bin error fraction: -nan
+Bin index: 10, BinLowEdge: 54, Bin content: 0, Bin error fraction: -nan
+Bin index: 11, BinLowEdge: 60, Bin content: 0, Bin error fraction: -nan
+Bin index: 12, BinLowEdge: 66, Bin content: 0, Bin error fraction: -nan
+Bin index: 13, BinLowEdge: 72, Bin content: 0, Bin error fraction: -nan
+Bin index: 14, BinLowEdge: 78, Bin content: 0, Bin error fraction: -nan
+Bin index: 15, BinLowEdge: 84, Bin content: 0, Bin error fraction: -nan
+Bin index: 16, BinLowEdge: 90, Bin content: 0, Bin error fraction: -nan
+Bin index: 17, BinLowEdge: 96, Bin content: 0, Bin error fraction: -nan
+Bin index: 18, BinLowEdge: 102, Bin content: 0, Bin error fraction: -nan
+Bin index: 19, BinLowEdge: 108, Bin content: 5.85425, Bin error fraction: 0.270726
+Bin index: 20, BinLowEdge: 336, Bin content: -0.000225147, Bin error fraction: -5.90929
+Bin index: 21, BinLowEdge: 342, Bin content: 0.00573608, Bin error fraction: 0.878886
+Bin index: 22, BinLowEdge: 348, Bin content: -0.00371061, Bin error fraction: -0.942868
+Bin index: 23, BinLowEdge: 354, Bin content: -0.00187426, Bin error fraction: -1.05632
+Bin index: 24, BinLowEdge: 360, Bin content: 0.143445, Bin error fraction: 0.999465
+Bin index: 25, BinLowEdge: 366, Bin content: 0.00169696, Bin error fraction: 0.564001
+Bin index: 26, BinLowEdge: 372, Bin content: 0.00948045, Bin error fraction: 0.995873
+Bin index: 27, BinLowEdge: 378, Bin content: 0.000955547, Bin error fraction: 0.660354
+Bin index: 28, BinLowEdge: 384, Bin content: 0.000200128, Bin error fraction: 0.767569
+Bin index: 29, BinLowEdge: 390, Bin content: -0.000376548, Bin error fraction: -1.82333
+Bin index: 30, BinLowEdge: 396, Bin content: 0.0174246, Bin error fraction: 1.02121
+Bin index: 31, BinLowEdge: 402, Bin content: 0.000727986, Bin error fraction: 0.725408
+Bin index: 32, BinLowEdge: 408, Bin content: 0.000141101, Bin error fraction: 1
+Bin index: 33, BinLowEdge: 414, Bin content: 0.001299, Bin error fraction: 0.718448
+Bin index: 34, BinLowEdge: 420, Bin content: 0.000300933, Bin error fraction: 1
+Bin index: 35, BinLowEdge: 426, Bin content: 0, Bin error fraction: -nan
+Bin index: 36, BinLowEdge: 432, Bin content: 0, Bin error fraction: -nan
+Bin index: 37, BinLowEdge: 438, Bin content: 0.000536987, Bin error fraction: 1
+Bin index: 38, BinLowEdge: 444, Bin content: 0, Bin error fraction: -nan
+Bin index: 39, BinLowEdge: 450, Bin content: 0.000702989, Bin error fraction: 0.774139
+Bin index: 40, BinLowEdge: 456, Bin content: 0.000553709, Bin error fraction: 1
+Bin index: 41, BinLowEdge: 462, Bin content: 0.00021264, Bin error fraction: 1
+Bin index: 42, BinLowEdge: 468, Bin content: -0.000810101, Bin error fraction: -1
+Bin index: 43, BinLowEdge: 474, Bin content: 0.000592583, Bin error fraction: 1
+Bin index: 44, BinLowEdge: 480, Bin content: 0.000122212, Bin error fraction: 0.717829
+Bin index: 45, BinLowEdge: 486, Bin content: 0.00040851, Bin error fraction: 0.708891
+Bin index: 46, BinLowEdge: 492, Bin content: 8.74134e-05, Bin error fraction: 1
+Bin index: 47, BinLowEdge: 498, Bin content: 7.11343e-05, Bin error fraction: 1
+Bin index: 48, BinLowEdge: 504, Bin content: 0.000537167, Bin error fraction: 1
+Bin index: 49, BinLowEdge: 510, Bin content: 0, Bin error fraction: -nan
+Bin index: 50, BinLowEdge: 516, Bin content: 0.000576995, Bin error fraction: 1
+Bin index: 51, BinLowEdge: 522, Bin content: 0, Bin error fraction: -nan
+Bin index: 52, BinLowEdge: 528, Bin content: 0.00110746, Bin error fraction: 0.70914
+Bin index: 53, BinLowEdge: 534, Bin content: 0, Bin error fraction: -nan
+Bin index: 54, BinLowEdge: 540, Bin content: 0, Bin error fraction: -nan
+Bin index: 55, BinLowEdge: 546, Bin content: 0.000542966, Bin error fraction: 1
+Bin index: 56, BinLowEdge: 552, Bin content: -0.00985762, Bin error fraction: -1
+Bin index: 57, BinLowEdge: 558, Bin content: 0, Bin error fraction: -nan
+Bin index: 58, BinLowEdge: 564, Bin content: 0, Bin error fraction: -nan
+Bin index: 59, BinLowEdge: 570, Bin content: 0, Bin error fraction: -nan
+Bin index: 60, BinLowEdge: 576, Bin content: -0.00225294, Bin error fraction: -1
+Bin index: 61, BinLowEdge: 582, Bin content: -4.70651e-05, Bin error fraction: -1
+Bin index: 62, BinLowEdge: 588, Bin content: 0.000222759, Bin error fraction: 0.830848
+Bin index: 63, BinLowEdge: 594, Bin content: 0, Bin error fraction: -nan
+Bin index: 64, BinLowEdge: 600, Bin content: 0.859719, Bin error fraction: 0.925841
+Bin index: 65, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 56
+Moving left, bin index: 55, BinLowEdge: 546, Bin content: 0.000542966, Running total from combining bins: -0.00931465, Current fractional error: -1.0599
+Moving left, bin index: 54, BinLowEdge: 540, Bin content: 0, Running total from combining bins: -0.00931465, Current fractional error: -1.0599
+Moving left, bin index: 53, BinLowEdge: 534, Bin content: 0, Running total from combining bins: -0.00931465, Current fractional error: -1.0599
+Moving left, bin index: 52, BinLowEdge: 528, Bin content: 0.00110746, Running total from combining bins: -0.0082072, Current fractional error: -1.20672
+Moving left, bin index: 51, BinLowEdge: 522, Bin content: 0, Running total from combining bins: -0.0082072, Current fractional error: -1.20672
+Moving left, bin index: 50, BinLowEdge: 516, Bin content: 0.000576995, Running total from combining bins: -0.0076302, Current fractional error: -1.30017
+Moving left, bin index: 49, BinLowEdge: 510, Bin content: 0, Running total from combining bins: -0.0076302, Current fractional error: -1.30017
+Moving left, bin index: 48, BinLowEdge: 504, Bin content: 0.000537167, Running total from combining bins: -0.00709303, Current fractional error: -1.40068
+Moving left, bin index: 47, BinLowEdge: 498, Bin content: 7.11343e-05, Running total from combining bins: -0.0070219, Current fractional error: -1.41491
+Moving left, bin index: 46, BinLowEdge: 492, Bin content: 8.74134e-05, Running total from combining bins: -0.00693449, Current fractional error: -1.4328
+Moving left, bin index: 45, BinLowEdge: 486, Bin content: 0.00040851, Running total from combining bins: -0.00652598, Current fractional error: -1.52313
+Moving left, bin index: 44, BinLowEdge: 480, Bin content: 0.000122212, Running total from combining bins: -0.00640377, Current fractional error: -1.55226
+Moving left, bin index: 43, BinLowEdge: 474, Bin content: 0.000592583, Running total from combining bins: -0.00581118, Current fractional error: -1.71359
+Moving left, bin index: 42, BinLowEdge: 468, Bin content: -0.000810101, Running total from combining bins: -0.00662128, Current fractional error: -1.5089
+Moving left, bin index: 41, BinLowEdge: 462, Bin content: 0.00021264, Running total from combining bins: -0.00640864, Current fractional error: -1.55932
+Moving left, bin index: 40, BinLowEdge: 456, Bin content: 0.000553709, Running total from combining bins: -0.00585494, Current fractional error: -1.70941
+Moving left, bin index: 39, BinLowEdge: 450, Bin content: 0.000702989, Running total from combining bins: -0.00515195, Current fractional error: -1.94553
+Moving left, bin index: 38, BinLowEdge: 444, Bin content: 0, Running total from combining bins: -0.00515195, Current fractional error: -1.94553
+Moving left, bin index: 37, BinLowEdge: 438, Bin content: 0.000536987, Running total from combining bins: -0.00461496, Current fractional error: -2.17502
+Moving left, bin index: 36, BinLowEdge: 432, Bin content: 0, Running total from combining bins: -0.00461496, Current fractional error: -2.17502
+Moving left, bin index: 35, BinLowEdge: 426, Bin content: 0, Running total from combining bins: -0.00461496, Current fractional error: -2.17502
+Moving left, bin index: 34, BinLowEdge: 420, Bin content: 0.000300933, Running total from combining bins: -0.00431403, Current fractional error: -2.32779
+Moving left, bin index: 33, BinLowEdge: 414, Bin content: 0.001299, Running total from combining bins: -0.00301503, Current fractional error: -3.34504
+Moving left, bin index: 32, BinLowEdge: 408, Bin content: 0.000141101, Running total from combining bins: -0.00287393, Current fractional error: -3.50962
+Moving left, bin index: 31, BinLowEdge: 402, Bin content: 0.000727986, Running total from combining bins: -0.00214594, Current fractional error: -4.70665
+Moving left, bin index: 30, BinLowEdge: 396, Bin content: 0.0174246, Running total from combining bins: 0.0152787, Current fractional error: 1.33917
+Moving left, bin index: 29, BinLowEdge: 390, Bin content: -0.000376548, Running total from combining bins: 0.0149021, Current fractional error: 1.37379
+Moving left, bin index: 28, BinLowEdge: 384, Bin content: 0.000200128, Running total from combining bins: 0.0151023, Current fractional error: 1.35562
+Moving left, bin index: 27, BinLowEdge: 378, Bin content: 0.000955547, Running total from combining bins: 0.0160578, Current fractional error: 1.27556
+Moving left, bin index: 26, BinLowEdge: 372, Bin content: 0.00948045, Running total from combining bins: 0.0255383, Current fractional error: 0.88314
+Moving left, bin index: 25, BinLowEdge: 366, Bin content: 0.00169696, Running total from combining bins: 0.0272352, Current fractional error: 0.828859
+Moving left, bin index: 24, BinLowEdge: 360, Bin content: 0.143445, Running total from combining bins: 0.17068, Current fractional error: 0.850331
+Moving left, bin index: 23, BinLowEdge: 354, Bin content: -0.00187426, Running total from combining bins: 0.168806, Current fractional error: 0.859852
+Moving left, bin index: 22, BinLowEdge: 348, Bin content: -0.00371061, Running total from combining bins: 0.165096, Current fractional error: 0.879433
+Moving left, bin index: 21, BinLowEdge: 342, Bin content: 0.00573608, Running total from combining bins: 0.170832, Current fractional error: 0.850416
+Moving left, bin index: 20, BinLowEdge: 336, Bin content: -0.000225147, Running total from combining bins: 0.170606, Current fractional error: 0.851574
+Moving left, bin index: 19, BinLowEdge: 108, Bin content: 5.85425, Running total from combining bins: 6.02486, Current fractional error: 0.264163
+Moving right, bin index: 57, BinLowEdge: 558, Bin content: 0, Running total from combining bins: -0.00985762, Current fractional error: -1
+Moving right, bin index: 58, BinLowEdge: 564, Bin content: 0, Running total from combining bins: -0.00985762, Current fractional error: -1
+Moving right, bin index: 59, BinLowEdge: 570, Bin content: 0, Running total from combining bins: -0.00985762, Current fractional error: -1
+Moving right, bin index: 60, BinLowEdge: 576, Bin content: -0.00225294, Running total from combining bins: -0.0121106, Current fractional error: -0.834957
+Moving right, bin index: 61, BinLowEdge: 582, Bin content: -4.70651e-05, Running total from combining bins: -0.0121576, Current fractional error: -0.831734
+Moving right, bin index: 62, BinLowEdge: 588, Bin content: 0.000222759, Running total from combining bins: -0.0119349, Current fractional error: -0.847399
+Moving right, bin index: 63, BinLowEdge: 594, Bin content: 0, Running total from combining bins: -0.0119349, Current fractional error: -0.847399
+Moving right, bin index: 64, BinLowEdge: 600, Bin content: 0.859719, Running total from combining bins: 0.847784, Current fractional error: 0.938951
+Merging left using 37 bins
+Erasing bin low edge for bin 56, BinLowEdge: 552
+Erasing bin low edge for bin 55, BinLowEdge: 546
+Erasing bin low edge for bin 54, BinLowEdge: 540
+Erasing bin low edge for bin 53, BinLowEdge: 534
+Erasing bin low edge for bin 52, BinLowEdge: 528
+Erasing bin low edge for bin 51, BinLowEdge: 522
+Erasing bin low edge for bin 50, BinLowEdge: 516
+Erasing bin low edge for bin 49, BinLowEdge: 510
+Erasing bin low edge for bin 48, BinLowEdge: 504
+Erasing bin low edge for bin 47, BinLowEdge: 498
+Erasing bin low edge for bin 46, BinLowEdge: 492
+Erasing bin low edge for bin 45, BinLowEdge: 486
+Erasing bin low edge for bin 44, BinLowEdge: 480
+Erasing bin low edge for bin 43, BinLowEdge: 474
+Erasing bin low edge for bin 42, BinLowEdge: 468
+Erasing bin low edge for bin 41, BinLowEdge: 462
+Erasing bin low edge for bin 40, BinLowEdge: 456
+Erasing bin low edge for bin 39, BinLowEdge: 450
+Erasing bin low edge for bin 38, BinLowEdge: 444
+Erasing bin low edge for bin 37, BinLowEdge: 438
+Erasing bin low edge for bin 36, BinLowEdge: 432
+Erasing bin low edge for bin 35, BinLowEdge: 426
+Erasing bin low edge for bin 34, BinLowEdge: 420
+Erasing bin low edge for bin 33, BinLowEdge: 414
+Erasing bin low edge for bin 32, BinLowEdge: 408
+Erasing bin low edge for bin 31, BinLowEdge: 402
+Erasing bin low edge for bin 30, BinLowEdge: 396
+Erasing bin low edge for bin 29, BinLowEdge: 390
+Erasing bin low edge for bin 28, BinLowEdge: 384
+Erasing bin low edge for bin 27, BinLowEdge: 378
+Erasing bin low edge for bin 26, BinLowEdge: 372
+Erasing bin low edge for bin 25, BinLowEdge: 366
+Erasing bin low edge for bin 24, BinLowEdge: 360
+Erasing bin low edge for bin 23, BinLowEdge: 354
+Erasing bin low edge for bin 22, BinLowEdge: 348
+Erasing bin low edge for bin 21, BinLowEdge: 342
+Erasing bin low edge for bin 20, BinLowEdge: 336
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 0, Bin error fraction: -nan
+Bin index: 2, BinLowEdge: 6, Bin content: 0, Bin error fraction: -nan
+Bin index: 3, BinLowEdge: 12, Bin content: 0, Bin error fraction: -nan
+Bin index: 4, BinLowEdge: 18, Bin content: 0, Bin error fraction: -nan
+Bin index: 5, BinLowEdge: 24, Bin content: 0, Bin error fraction: -nan
+Bin index: 6, BinLowEdge: 30, Bin content: 0, Bin error fraction: -nan
+Bin index: 7, BinLowEdge: 36, Bin content: 0, Bin error fraction: -nan
+Bin index: 8, BinLowEdge: 42, Bin content: 0, Bin error fraction: -nan
+Bin index: 9, BinLowEdge: 48, Bin content: 0, Bin error fraction: -nan
+Bin index: 10, BinLowEdge: 54, Bin content: 0, Bin error fraction: -nan
+Bin index: 11, BinLowEdge: 60, Bin content: 0, Bin error fraction: -nan
+Bin index: 12, BinLowEdge: 66, Bin content: 0, Bin error fraction: -nan
+Bin index: 13, BinLowEdge: 72, Bin content: 0, Bin error fraction: -nan
+Bin index: 14, BinLowEdge: 78, Bin content: 0, Bin error fraction: -nan
+Bin index: 15, BinLowEdge: 84, Bin content: 0, Bin error fraction: -nan
+Bin index: 16, BinLowEdge: 90, Bin content: 0, Bin error fraction: -nan
+Bin index: 17, BinLowEdge: 96, Bin content: 0, Bin error fraction: -nan
+Bin index: 18, BinLowEdge: 102, Bin content: 0, Bin error fraction: -nan
+Bin index: 19, BinLowEdge: 108, Bin content: 6.02486, Bin error fraction: 0.264163
+Bin index: 20, BinLowEdge: 558, Bin content: 0, Bin error fraction: -nan
+Bin index: 21, BinLowEdge: 564, Bin content: 0, Bin error fraction: -nan
+Bin index: 22, BinLowEdge: 570, Bin content: 0, Bin error fraction: -nan
+Bin index: 23, BinLowEdge: 576, Bin content: -0.00225294, Bin error fraction: -1
+Bin index: 24, BinLowEdge: 582, Bin content: -4.70651e-05, Bin error fraction: -1
+Bin index: 25, BinLowEdge: 588, Bin content: 0.000222759, Bin error fraction: 0.830848
+Bin index: 26, BinLowEdge: 594, Bin content: 0, Bin error fraction: -nan
+Bin index: 27, BinLowEdge: 600, Bin content: 0.859719, Bin error fraction: 0.925841
+Bin index: 28, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 23
+Moving left, bin index: 22, BinLowEdge: 570, Bin content: 0, Running total from combining bins: -0.00225294, Current fractional error: -1
+Moving left, bin index: 21, BinLowEdge: 564, Bin content: 0, Running total from combining bins: -0.00225294, Current fractional error: -1
+Moving left, bin index: 20, BinLowEdge: 558, Bin content: 0, Running total from combining bins: -0.00225294, Current fractional error: -1
+Moving left, bin index: 19, BinLowEdge: 108, Bin content: 6.02486, Running total from combining bins: 6.02261, Current fractional error: 0.264262
+Moving right, bin index: 24, BinLowEdge: 582, Bin content: -4.70651e-05, Running total from combining bins: -0.00230001, Current fractional error: -0.979751
+Moving right, bin index: 25, BinLowEdge: 588, Bin content: 0.000222759, Running total from combining bins: -0.00207725, Current fractional error: -1.08847
+Moving right, bin index: 26, BinLowEdge: 594, Bin content: 0, Running total from combining bins: -0.00207725, Current fractional error: -1.08847
+Moving right, bin index: 27, BinLowEdge: 600, Bin content: 0.859719, Running total from combining bins: 0.857641, Current fractional error: 0.928088
+Merging left using 4 bins
+Erasing bin low edge for bin 23, BinLowEdge: 576
+Erasing bin low edge for bin 22, BinLowEdge: 570
+Erasing bin low edge for bin 21, BinLowEdge: 564
+Erasing bin low edge for bin 20, BinLowEdge: 558
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 0, Bin error fraction: -nan
+Bin index: 2, BinLowEdge: 6, Bin content: 0, Bin error fraction: -nan
+Bin index: 3, BinLowEdge: 12, Bin content: 0, Bin error fraction: -nan
+Bin index: 4, BinLowEdge: 18, Bin content: 0, Bin error fraction: -nan
+Bin index: 5, BinLowEdge: 24, Bin content: 0, Bin error fraction: -nan
+Bin index: 6, BinLowEdge: 30, Bin content: 0, Bin error fraction: -nan
+Bin index: 7, BinLowEdge: 36, Bin content: 0, Bin error fraction: -nan
+Bin index: 8, BinLowEdge: 42, Bin content: 0, Bin error fraction: -nan
+Bin index: 9, BinLowEdge: 48, Bin content: 0, Bin error fraction: -nan
+Bin index: 10, BinLowEdge: 54, Bin content: 0, Bin error fraction: -nan
+Bin index: 11, BinLowEdge: 60, Bin content: 0, Bin error fraction: -nan
+Bin index: 12, BinLowEdge: 66, Bin content: 0, Bin error fraction: -nan
+Bin index: 13, BinLowEdge: 72, Bin content: 0, Bin error fraction: -nan
+Bin index: 14, BinLowEdge: 78, Bin content: 0, Bin error fraction: -nan
+Bin index: 15, BinLowEdge: 84, Bin content: 0, Bin error fraction: -nan
+Bin index: 16, BinLowEdge: 90, Bin content: 0, Bin error fraction: -nan
+Bin index: 17, BinLowEdge: 96, Bin content: 0, Bin error fraction: -nan
+Bin index: 18, BinLowEdge: 102, Bin content: 0, Bin error fraction: -nan
+Bin index: 19, BinLowEdge: 108, Bin content: 6.0226, Bin error fraction: 0.264262
+Bin index: 20, BinLowEdge: 582, Bin content: -4.70651e-05, Bin error fraction: -1
+Bin index: 21, BinLowEdge: 588, Bin content: 0.000222759, Bin error fraction: 0.830848
+Bin index: 22, BinLowEdge: 594, Bin content: 0, Bin error fraction: -nan
+Bin index: 23, BinLowEdge: 600, Bin content: 0.859719, Bin error fraction: 0.925841
+Bin index: 24, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 20
+Moving left, bin index: 19, BinLowEdge: 108, Bin content: 6.0226, Running total from combining bins: 6.02256, Current fractional error: 0.264264
+Moving right, bin index: 21, BinLowEdge: 588, Bin content: 0.000222759, Running total from combining bins: 0.000175694, Current fractional error: 1.08694
+Moving right, bin index: 22, BinLowEdge: 594, Bin content: 0, Running total from combining bins: 0.000175694, Current fractional error: 1.08694
+Moving right, bin index: 23, BinLowEdge: 600, Bin content: 0.859719, Running total from combining bins: 0.859894, Current fractional error: 0.925652
+Merging left using 1 bins
+Erasing bin low edge for bin 20, BinLowEdge: 582
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 0, Bin error fraction: -nan
+Bin index: 2, BinLowEdge: 6, Bin content: 0, Bin error fraction: -nan
+Bin index: 3, BinLowEdge: 12, Bin content: 0, Bin error fraction: -nan
+Bin index: 4, BinLowEdge: 18, Bin content: 0, Bin error fraction: -nan
+Bin index: 5, BinLowEdge: 24, Bin content: 0, Bin error fraction: -nan
+Bin index: 6, BinLowEdge: 30, Bin content: 0, Bin error fraction: -nan
+Bin index: 7, BinLowEdge: 36, Bin content: 0, Bin error fraction: -nan
+Bin index: 8, BinLowEdge: 42, Bin content: 0, Bin error fraction: -nan
+Bin index: 9, BinLowEdge: 48, Bin content: 0, Bin error fraction: -nan
+Bin index: 10, BinLowEdge: 54, Bin content: 0, Bin error fraction: -nan
+Bin index: 11, BinLowEdge: 60, Bin content: 0, Bin error fraction: -nan
+Bin index: 12, BinLowEdge: 66, Bin content: 0, Bin error fraction: -nan
+Bin index: 13, BinLowEdge: 72, Bin content: 0, Bin error fraction: -nan
+Bin index: 14, BinLowEdge: 78, Bin content: 0, Bin error fraction: -nan
+Bin index: 15, BinLowEdge: 84, Bin content: 0, Bin error fraction: -nan
+Bin index: 16, BinLowEdge: 90, Bin content: 0, Bin error fraction: -nan
+Bin index: 17, BinLowEdge: 96, Bin content: 0, Bin error fraction: -nan
+Bin index: 18, BinLowEdge: 102, Bin content: 0, Bin error fraction: -nan
+Bin index: 19, BinLowEdge: 108, Bin content: 6.02256, Bin error fraction: 0.264264
+Bin index: 20, BinLowEdge: 588, Bin content: 0.000222759, Bin error fraction: 0.830848
+Bin index: 21, BinLowEdge: 594, Bin content: 0, Bin error fraction: -nan
+Bin index: 22, BinLowEdge: 600, Bin content: 0.859719, Bin error fraction: 0.925841
+Bin index: 23, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 1
+Moving right, bin index: 2, BinLowEdge: 6, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 3, BinLowEdge: 12, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 4, BinLowEdge: 18, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 5, BinLowEdge: 24, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 6, BinLowEdge: 30, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 7, BinLowEdge: 36, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 8, BinLowEdge: 42, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 9, BinLowEdge: 48, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 10, BinLowEdge: 54, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 11, BinLowEdge: 60, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 12, BinLowEdge: 66, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 13, BinLowEdge: 72, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 14, BinLowEdge: 78, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 15, BinLowEdge: 84, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 16, BinLowEdge: 90, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 17, BinLowEdge: 96, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 18, BinLowEdge: 102, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 19, BinLowEdge: 108, Bin content: 6.02256, Running total from combining bins: 6.02256, Current fractional error: 0.264264
+Merging right using 18 bins
+Erasing bin upper edge for bin 1, BinUpperEdge: 6
+Erasing bin upper edge for bin 2, BinUpperEdge: 12
+Erasing bin upper edge for bin 3, BinUpperEdge: 18
+Erasing bin upper edge for bin 4, BinUpperEdge: 24
+Erasing bin upper edge for bin 5, BinUpperEdge: 30
+Erasing bin upper edge for bin 6, BinUpperEdge: 36
+Erasing bin upper edge for bin 7, BinUpperEdge: 42
+Erasing bin upper edge for bin 8, BinUpperEdge: 48
+Erasing bin upper edge for bin 9, BinUpperEdge: 54
+Erasing bin upper edge for bin 10, BinUpperEdge: 60
+Erasing bin upper edge for bin 11, BinUpperEdge: 66
+Erasing bin upper edge for bin 12, BinUpperEdge: 72
+Erasing bin upper edge for bin 13, BinUpperEdge: 78
+Erasing bin upper edge for bin 14, BinUpperEdge: 84
+Erasing bin upper edge for bin 15, BinUpperEdge: 90
+Erasing bin upper edge for bin 16, BinUpperEdge: 96
+Erasing bin upper edge for bin 17, BinUpperEdge: 102
+Erasing bin upper edge for bin 18, BinUpperEdge: 108
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 6.02256, Bin error fraction: 0.264264
+Bin index: 2, BinLowEdge: 588, Bin content: 0.000222759, Bin error fraction: 0.830848
+Bin index: 3, BinLowEdge: 594, Bin content: 0, Bin error fraction: -nan
+Bin index: 4, BinLowEdge: 600, Bin content: 0.859719, Bin error fraction: 0.925841
+Bin index: 5, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 3
+Moving left, bin index: 2, BinLowEdge: 588, Bin content: 0.000222759, Running total from combining bins: 0.000222759, Current fractional error: 0.830848
+Moving left, bin index: 1, BinLowEdge: 0, Bin content: 6.02256, Running total from combining bins: 6.02278, Current fractional error: 0.264254
+Moving right, bin index: 4, BinLowEdge: 600, Bin content: 0.859719, Running total from combining bins: 0.859719, Current fractional error: 0.925841
+Merging left using 2 bins
+Erasing bin low edge for bin 3, BinLowEdge: 594
+Erasing bin low edge for bin 2, BinLowEdge: 588
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 6.02278, Bin error fraction: 0.264254
+Bin index: 2, BinLowEdge: 600, Bin content: 0.859719, Bin error fraction: 0.925841
+Bin index: 3, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 2
+Moving left, bin index: 1, BinLowEdge: 0, Bin content: 6.02278, Running total from combining bins: 6.8825, Current fractional error: 0.258552
+Merging left using 1 bins
+Erasing bin low edge for bin 2, BinLowEdge: 600
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 6.8825, Bin error fraction: 0.258552
+Bin index: 2, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin] Some bins not satisfying requested condition found for analysis bin eett_2l2t_sig_nobtag, merging with neighbouring bins
+Init Edges/Widths     Content    New Edges/Widths     
+0          6          0         0          5600      
+6          6          0         -          -         
+12         6          0         -          -         
+18         6          0         -          -         
+24         6          0         -          -         
+30         6          0         -          -         
+36         6          0         -          -         
+42         6          0         -          -         
+48         6          0         -          -         
+54         6          0         -          -         
+60         6          0         -          -         
+66         6          0         -          -         
+72         6          0         -          -         
+78         6          0         -          -         
+84         6          0         -          -         
+90         6          0         -          -         
+96         6          0         -          -         
+102        6          0         -          -         
+108        6          -0.6      -          -         
+114        6          0         -          -         
+120        6          -0.0029   -          -         
+126        6          -0.0074   -          -         
+132        6          -0.022    -          -         
+138        6          -0.012    -          -         
+144        6          0.039     -          -         
+150        6          0.2       -          -         
+156        6          -0.03     -          -         
+162        6          -0.034    -          -         
+168        6          0.29      -          -         
+174        6          0.54      -          -         
+180        6          0.014     -          -         
+186        6          0.84      -          -         
+192        6          0.15      -          -         
+198        6          0.31      -          -         
+204        6          0.22      -          -         
+210        6          0.33      -          -         
+216        6          0.13      -          -         
+222        6          0.045     -          -         
+228        6          -0.031    -          -         
+234        6          1.2       -          -         
+240        6          -0.087    -          -         
+246        6          0.36      -          -         
+252        6          0.24      -          -         
+258        6          0.00025   -          -         
+264        6          0.26      -          -         
+270        6          0.011     -          -         
+276        6          0.33      -          -         
+282        6          0.045     -          -         
+288        6          -0.0082   -          -         
+294        6          0.44      -          -         
+300        6          0.27      -          -         
+306        6          0.18      -          -         
+312        6          0.0011    -          -         
+318        6          0.0019    -          -         
+324        6          0.18      -          -         
+330        6          -0.011    -          -         
+336        6          -0.00023  -          -         
+342        6          0.0057    -          -         
+348        6          -0.0037   -          -         
+354        6          -0.0019   -          -         
+360        6          0.14      -          -         
+366        6          0.0017    -          -         
+372        6          0.0095    -          -         
+378        6          0.00096   -          -         
+384        6          0.0002    -          -         
+390        6          -0.00038  -          -         
+396        6          0.017     -          -         
+402        6          0.00073   -          -         
+408        6          0.00014   -          -         
+414        6          0.0013    -          -         
+420        6          0.0003    -          -         
+426        6          0         -          -         
+432        6          0         -          -         
+438        6          0.00054   -          -         
+444        6          0         -          -         
+450        6          0.0007    -          -         
+456        6          0.00055   -          -         
+462        6          0.00021   -          -         
+468        6          -0.00081  -          -         
+474        6          0.00059   -          -         
+480        6          0.00012   -          -         
+486        6          0.00041   -          -         
+492        6          8.7e-05   -          -         
+498        6          7.1e-05   -          -         
+504        6          0.00054   -          -         
+510        6          0         -          -         
+516        6          0.00058   -          -         
+522        6          0         -          -         
+528        6          0.0011    -          -         
+534        6          0         -          -         
+540        6          0         -          -         
+546        6          0.00054   -          -         
+552        6          -0.0099   -          -         
+558        6          0         -          -         
+564        6          0         -          -         
+570        6          0         -          -         
+576        6          -0.0023   -          -         
+582        6          -4.7e-05  -          -         
+588        6          0.00022   -          -         
+594        6          0         -          -         
+600        5000       0.86      -          -         
+5600       0          0         5600       0         
+[AutoRebin] Applying binning to all relevant distributions for analysis bin id eett_2l2t_sig_nobtag
+[AutoRebin] Searching for bins failing conditions for analysis bin id eett_z_control_nobtag
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 101
+Moving left, bin index: 100, BinLowEdge: 594, Bin content: -0.00403135, Running total from combining bins: -0.679103, Current fractional error: -1.12195
+Moving left, bin index: 99, BinLowEdge: 588, Bin content: 0.0370425, Running total from combining bins: -0.64206, Current fractional error: -1.19154
+Moving left, bin index: 98, BinLowEdge: 582, Bin content: -0.0251435, Running total from combining bins: -0.667204, Current fractional error: -1.14698
+Moving left, bin index: 97, BinLowEdge: 576, Bin content: 0.00403016, Running total from combining bins: -0.663173, Current fractional error: -1.15395
+Moving left, bin index: 96, BinLowEdge: 570, Bin content: 0.0373345, Running total from combining bins: -0.625839, Current fractional error: -1.22412
+Moving left, bin index: 95, BinLowEdge: 564, Bin content: -0.00836662, Running total from combining bins: -0.634206, Current fractional error: -1.20967
+Moving left, bin index: 94, BinLowEdge: 558, Bin content: -0.0190106, Running total from combining bins: -0.653216, Current fractional error: -1.1762
+Moving left, bin index: 93, BinLowEdge: 552, Bin content: -0.00545164, Running total from combining bins: -0.658668, Current fractional error: -1.16655
+Moving left, bin index: 92, BinLowEdge: 546, Bin content: -0.0581307, Running total from combining bins: -0.716798, Current fractional error: -1.07494
+Moving left, bin index: 91, BinLowEdge: 540, Bin content: -0.0520632, Running total from combining bins: -0.768862, Current fractional error: -1.01067
+Moving left, bin index: 90, BinLowEdge: 534, Bin content: -0.0291225, Running total from combining bins: -0.797984, Current fractional error: -0.97469
+Moving left, bin index: 89, BinLowEdge: 528, Bin content: 0.00217732, Running total from combining bins: -0.795807, Current fractional error: -0.977358
+Moving left, bin index: 88, BinLowEdge: 522, Bin content: 0.127559, Running total from combining bins: -0.668248, Current fractional error: -1.31
+Moving left, bin index: 87, BinLowEdge: 516, Bin content: 0.0586183, Running total from combining bins: -0.609629, Current fractional error: -1.47003
+Moving left, bin index: 86, BinLowEdge: 510, Bin content: -0.00666238, Running total from combining bins: -0.616292, Current fractional error: -1.45417
+Moving left, bin index: 85, BinLowEdge: 504, Bin content: 0.239485, Running total from combining bins: -0.376807, Current fractional error: -2.42933
+Moving left, bin index: 84, BinLowEdge: 498, Bin content: 0.743101, Running total from combining bins: 0.366294, Current fractional error: 2.94131
+Moving left, bin index: 83, BinLowEdge: 492, Bin content: 0.601623, Running total from combining bins: 0.967917, Current fractional error: 1.16813
+Moving left, bin index: 82, BinLowEdge: 486, Bin content: 0.0838613, Running total from combining bins: 1.05178, Current fractional error: 1.08074
+Moving left, bin index: 81, BinLowEdge: 480, Bin content: 0.10729, Running total from combining bins: 1.15907, Current fractional error: 0.985321
+Moving left, bin index: 80, BinLowEdge: 474, Bin content: 0.127144, Running total from combining bins: 1.28621, Current fractional error: 0.890431
+Moving left, bin index: 79, BinLowEdge: 468, Bin content: -0.0664881, Running total from combining bins: 1.21972, Current fractional error: 0.941104
+Moving left, bin index: 78, BinLowEdge: 462, Bin content: 0.0545861, Running total from combining bins: 1.27431, Current fractional error: 0.917097
+Moving left, bin index: 77, BinLowEdge: 456, Bin content: 0.346039, Running total from combining bins: 1.62035, Current fractional error: 0.785943
+Moving left, bin index: 76, BinLowEdge: 450, Bin content: -0.349333, Running total from combining bins: 1.27102, Current fractional error: 1.02038
+Moving left, bin index: 75, BinLowEdge: 444, Bin content: 0.48998, Running total from combining bins: 1.761, Current fractional error: 0.791023
+Moving left, bin index: 74, BinLowEdge: 438, Bin content: -0.0291947, Running total from combining bins: 1.7318, Current fractional error: 0.804771
+Moving left, bin index: 73, BinLowEdge: 432, Bin content: 0.394282, Running total from combining bins: 2.12608, Current fractional error: 0.682731
+Moving left, bin index: 72, BinLowEdge: 426, Bin content: 0.144533, Running total from combining bins: 2.27062, Current fractional error: 0.645918
+Moving left, bin index: 71, BinLowEdge: 420, Bin content: 0.376513, Running total from combining bins: 2.64713, Current fractional error: 0.566889
+Moving left, bin index: 70, BinLowEdge: 414, Bin content: 0.206319, Running total from combining bins: 2.85345, Current fractional error: 0.538185
+Moving left, bin index: 69, BinLowEdge: 408, Bin content: 0.176401, Running total from combining bins: 3.02985, Current fractional error: 0.52695
+Moving left, bin index: 68, BinLowEdge: 402, Bin content: 0.220567, Running total from combining bins: 3.25042, Current fractional error: 0.495805
+Moving left, bin index: 67, BinLowEdge: 396, Bin content: -0.0167448, Running total from combining bins: 3.23367, Current fractional error: 0.509585
+Moving left, bin index: 66, BinLowEdge: 390, Bin content: -0.0201091, Running total from combining bins: 3.21356, Current fractional error: 0.521849
+Moving left, bin index: 65, BinLowEdge: 384, Bin content: -0.165749, Running total from combining bins: 3.04781, Current fractional error: 0.553033
+Moving left, bin index: 64, BinLowEdge: 378, Bin content: 0.677538, Running total from combining bins: 3.72535, Current fractional error: 0.466621
+Moving left, bin index: 63, BinLowEdge: 372, Bin content: 0.797456, Running total from combining bins: 4.52281, Current fractional error: 0.420328
+Moving left, bin index: 62, BinLowEdge: 366, Bin content: 0.307728, Running total from combining bins: 4.83053, Current fractional error: 0.395729
+Moving left, bin index: 61, BinLowEdge: 360, Bin content: -0.63529, Running total from combining bins: 4.19524, Current fractional error: 0.462865
+Moving left, bin index: 60, BinLowEdge: 354, Bin content: 0.296089, Running total from combining bins: 4.49133, Current fractional error: 0.441146
+Moving left, bin index: 59, BinLowEdge: 348, Bin content: 0.710212, Running total from combining bins: 5.20155, Current fractional error: 0.398673
+Merging left using 42 bins
+Erasing bin low edge for bin 101, BinLowEdge: 600
+Erasing bin low edge for bin 100, BinLowEdge: 594
+Erasing bin low edge for bin 99, BinLowEdge: 588
+Erasing bin low edge for bin 98, BinLowEdge: 582
+Erasing bin low edge for bin 97, BinLowEdge: 576
+Erasing bin low edge for bin 96, BinLowEdge: 570
+Erasing bin low edge for bin 95, BinLowEdge: 564
+Erasing bin low edge for bin 94, BinLowEdge: 558
+Erasing bin low edge for bin 93, BinLowEdge: 552
+Erasing bin low edge for bin 92, BinLowEdge: 546
+Erasing bin low edge for bin 91, BinLowEdge: 540
+Erasing bin low edge for bin 90, BinLowEdge: 534
+Erasing bin low edge for bin 89, BinLowEdge: 528
+Erasing bin low edge for bin 88, BinLowEdge: 522
+Erasing bin low edge for bin 87, BinLowEdge: 516
+Erasing bin low edge for bin 86, BinLowEdge: 510
+Erasing bin low edge for bin 85, BinLowEdge: 504
+Erasing bin low edge for bin 84, BinLowEdge: 498
+Erasing bin low edge for bin 83, BinLowEdge: 492
+Erasing bin low edge for bin 82, BinLowEdge: 486
+Erasing bin low edge for bin 81, BinLowEdge: 480
+Erasing bin low edge for bin 80, BinLowEdge: 474
+Erasing bin low edge for bin 79, BinLowEdge: 468
+Erasing bin low edge for bin 78, BinLowEdge: 462
+Erasing bin low edge for bin 77, BinLowEdge: 456
+Erasing bin low edge for bin 76, BinLowEdge: 450
+Erasing bin low edge for bin 75, BinLowEdge: 444
+Erasing bin low edge for bin 74, BinLowEdge: 438
+Erasing bin low edge for bin 73, BinLowEdge: 432
+Erasing bin low edge for bin 72, BinLowEdge: 426
+Erasing bin low edge for bin 71, BinLowEdge: 420
+Erasing bin low edge for bin 70, BinLowEdge: 414
+Erasing bin low edge for bin 69, BinLowEdge: 408
+Erasing bin low edge for bin 68, BinLowEdge: 402
+Erasing bin low edge for bin 67, BinLowEdge: 396
+Erasing bin low edge for bin 66, BinLowEdge: 390
+Erasing bin low edge for bin 65, BinLowEdge: 384
+Erasing bin low edge for bin 64, BinLowEdge: 378
+Erasing bin low edge for bin 63, BinLowEdge: 372
+Erasing bin low edge for bin 62, BinLowEdge: 366
+Erasing bin low edge for bin 61, BinLowEdge: 360
+Erasing bin low edge for bin 60, BinLowEdge: 354
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 0, Bin error fraction: -nan
+Bin index: 2, BinLowEdge: 6, Bin content: 0, Bin error fraction: -nan
+Bin index: 3, BinLowEdge: 12, Bin content: 0, Bin error fraction: -nan
+Bin index: 4, BinLowEdge: 18, Bin content: 0, Bin error fraction: -nan
+Bin index: 5, BinLowEdge: 24, Bin content: 0, Bin error fraction: -nan
+Bin index: 6, BinLowEdge: 30, Bin content: 0, Bin error fraction: -nan
+Bin index: 7, BinLowEdge: 36, Bin content: 0, Bin error fraction: -nan
+Bin index: 8, BinLowEdge: 42, Bin content: 0, Bin error fraction: -nan
+Bin index: 9, BinLowEdge: 48, Bin content: 0, Bin error fraction: -nan
+Bin index: 10, BinLowEdge: 54, Bin content: -0.023042, Bin error fraction: -1
+Bin index: 11, BinLowEdge: 60, Bin content: 0, Bin error fraction: -nan
+Bin index: 12, BinLowEdge: 66, Bin content: -0.000452065, Bin error fraction: -1.65233
+Bin index: 13, BinLowEdge: 72, Bin content: 0, Bin error fraction: -nan
+Bin index: 14, BinLowEdge: 78, Bin content: 0, Bin error fraction: -nan
+Bin index: 15, BinLowEdge: 84, Bin content: 0.0273896, Bin error fraction: 1
+Bin index: 16, BinLowEdge: 90, Bin content: 0.118795, Bin error fraction: 1.0543
+Bin index: 17, BinLowEdge: 96, Bin content: -0.0132173, Bin error fraction: -3.86166
+Bin index: 18, BinLowEdge: 102, Bin content: 0.471775, Bin error fraction: 0.568327
+Bin index: 19, BinLowEdge: 108, Bin content: 1.14984, Bin error fraction: 0.769861
+Bin index: 20, BinLowEdge: 114, Bin content: 1.91673, Bin error fraction: 0.365115
+Bin index: 21, BinLowEdge: 120, Bin content: 1.97876, Bin error fraction: 0.81284
+Bin index: 22, BinLowEdge: 126, Bin content: 1.77199, Bin error fraction: 0.579179
+Bin index: 23, BinLowEdge: 132, Bin content: 3.62448, Bin error fraction: 0.358014
+Bin index: 24, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 25, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 26, BinLowEdge: 150, Bin content: 2.9892, Bin error fraction: 0.696614
+Bin index: 27, BinLowEdge: 156, Bin content: 11.8882, Bin error fraction: 0.260589
+Bin index: 28, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 29, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 30, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 31, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 32, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 33, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 34, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 35, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 36, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 37, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 38, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 39, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 40, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 41, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 42, BinLowEdge: 246, Bin content: 5.51081, Bin error fraction: 0.309416
+Bin index: 43, BinLowEdge: 252, Bin content: 0.573169, Bin error fraction: 2.27942
+Bin index: 44, BinLowEdge: 258, Bin content: 3.05056, Bin error fraction: 0.683041
+Bin index: 45, BinLowEdge: 264, Bin content: 1.03823, Bin error fraction: 1.4448
+Bin index: 46, BinLowEdge: 270, Bin content: 1.54543, Bin error fraction: 0.671297
+Bin index: 47, BinLowEdge: 276, Bin content: 2.70974, Bin error fraction: 0.3785
+Bin index: 48, BinLowEdge: 282, Bin content: 5.19063, Bin error fraction: 0.364463
+Bin index: 49, BinLowEdge: 288, Bin content: 1.9966, Bin error fraction: 0.425012
+Bin index: 50, BinLowEdge: 294, Bin content: 0.827804, Bin error fraction: 0.69736
+Bin index: 51, BinLowEdge: 300, Bin content: 0.321118, Bin error fraction: 1.95463
+Bin index: 52, BinLowEdge: 306, Bin content: 0.690091, Bin error fraction: 1.1916
+Bin index: 53, BinLowEdge: 312, Bin content: 0.0856912, Bin error fraction: 5.03507
+Bin index: 54, BinLowEdge: 318, Bin content: 2.55007, Bin error fraction: 0.409328
+Bin index: 55, BinLowEdge: 324, Bin content: 0.522692, Bin error fraction: 1.00791
+Bin index: 56, BinLowEdge: 330, Bin content: 0.360735, Bin error fraction: 1.95342
+Bin index: 57, BinLowEdge: 336, Bin content: 0.155225, Bin error fraction: 2.38309
+Bin index: 58, BinLowEdge: 342, Bin content: 1.66576, Bin error fraction: 0.512335
+Bin index: 59, BinLowEdge: 348, Bin content: 5.20155, Bin error fraction: 0.398673
+Bin index: 60, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 10
+Moving left, bin index: 9, BinLowEdge: 48, Bin content: 0, Running total from combining bins: -0.023042, Current fractional error: -1
+Moving left, bin index: 8, BinLowEdge: 42, Bin content: 0, Running total from combining bins: -0.023042, Current fractional error: -1
+Moving left, bin index: 7, BinLowEdge: 36, Bin content: 0, Running total from combining bins: -0.023042, Current fractional error: -1
+Moving left, bin index: 6, BinLowEdge: 30, Bin content: 0, Running total from combining bins: -0.023042, Current fractional error: -1
+Moving left, bin index: 5, BinLowEdge: 24, Bin content: 0, Running total from combining bins: -0.023042, Current fractional error: -1
+Moving left, bin index: 4, BinLowEdge: 18, Bin content: 0, Running total from combining bins: -0.023042, Current fractional error: -1
+Moving left, bin index: 3, BinLowEdge: 12, Bin content: 0, Running total from combining bins: -0.023042, Current fractional error: -1
+Moving left, bin index: 2, BinLowEdge: 6, Bin content: 0, Running total from combining bins: -0.023042, Current fractional error: -1
+Moving left, bin index: 1, BinLowEdge: 0, Bin content: 0, Running total from combining bins: -0.023042, Current fractional error: -1
+Moving right, bin index: 11, BinLowEdge: 60, Bin content: 0, Running total from combining bins: -0.023042, Current fractional error: -1
+Moving right, bin index: 12, BinLowEdge: 66, Bin content: -0.000452065, Running total from combining bins: -0.023494, Current fractional error: -0.981273
+Moving right, bin index: 13, BinLowEdge: 72, Bin content: 0, Running total from combining bins: -0.023494, Current fractional error: -0.981273
+Moving right, bin index: 14, BinLowEdge: 78, Bin content: 0, Running total from combining bins: -0.023494, Current fractional error: -0.981273
+Moving right, bin index: 15, BinLowEdge: 84, Bin content: 0.0273896, Running total from combining bins: 0.00389555, Current fractional error: 9.1901
+Moving right, bin index: 16, BinLowEdge: 90, Bin content: 0.118795, Running total from combining bins: 0.122691, Current fractional error: 1.06171
+Moving right, bin index: 17, BinLowEdge: 96, Bin content: -0.0132173, Running total from combining bins: 0.109473, Current fractional error: 1.27798
+Moving right, bin index: 18, BinLowEdge: 102, Bin content: 0.471775, Running total from combining bins: 0.581248, Current fractional error: 0.520308
+Moving right, bin index: 19, BinLowEdge: 108, Bin content: 1.14984, Running total from combining bins: 1.73109, Current fractional error: 0.540385
+Moving right, bin index: 20, BinLowEdge: 114, Bin content: 1.91673, Running total from combining bins: 3.64781, Current fractional error: 0.320263
+Moving right, bin index: 21, BinLowEdge: 120, Bin content: 1.97876, Running total from combining bins: 5.62657, Current fractional error: 0.353309
+Merging right using 11 bins
+Erasing bin upper edge for bin 10, BinUpperEdge: 60
+Erasing bin upper edge for bin 11, BinUpperEdge: 66
+Erasing bin upper edge for bin 12, BinUpperEdge: 72
+Erasing bin upper edge for bin 13, BinUpperEdge: 78
+Erasing bin upper edge for bin 14, BinUpperEdge: 84
+Erasing bin upper edge for bin 15, BinUpperEdge: 90
+Erasing bin upper edge for bin 16, BinUpperEdge: 96
+Erasing bin upper edge for bin 17, BinUpperEdge: 102
+Erasing bin upper edge for bin 18, BinUpperEdge: 108
+Erasing bin upper edge for bin 19, BinUpperEdge: 114
+Erasing bin upper edge for bin 20, BinUpperEdge: 120
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 0, Bin error fraction: -nan
+Bin index: 2, BinLowEdge: 6, Bin content: 0, Bin error fraction: -nan
+Bin index: 3, BinLowEdge: 12, Bin content: 0, Bin error fraction: -nan
+Bin index: 4, BinLowEdge: 18, Bin content: 0, Bin error fraction: -nan
+Bin index: 5, BinLowEdge: 24, Bin content: 0, Bin error fraction: -nan
+Bin index: 6, BinLowEdge: 30, Bin content: 0, Bin error fraction: -nan
+Bin index: 7, BinLowEdge: 36, Bin content: 0, Bin error fraction: -nan
+Bin index: 8, BinLowEdge: 42, Bin content: 0, Bin error fraction: -nan
+Bin index: 9, BinLowEdge: 48, Bin content: 0, Bin error fraction: -nan
+Bin index: 10, BinLowEdge: 54, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 11, BinLowEdge: 126, Bin content: 1.77199, Bin error fraction: 0.579179
+Bin index: 12, BinLowEdge: 132, Bin content: 3.62448, Bin error fraction: 0.358014
+Bin index: 13, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 14, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 15, BinLowEdge: 150, Bin content: 2.9892, Bin error fraction: 0.696614
+Bin index: 16, BinLowEdge: 156, Bin content: 11.8882, Bin error fraction: 0.260589
+Bin index: 17, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 18, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 19, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 20, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 21, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 22, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 23, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 24, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 25, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 26, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 27, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 28, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 29, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 30, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 31, BinLowEdge: 246, Bin content: 5.51081, Bin error fraction: 0.309416
+Bin index: 32, BinLowEdge: 252, Bin content: 0.573169, Bin error fraction: 2.27942
+Bin index: 33, BinLowEdge: 258, Bin content: 3.05056, Bin error fraction: 0.683041
+Bin index: 34, BinLowEdge: 264, Bin content: 1.03823, Bin error fraction: 1.4448
+Bin index: 35, BinLowEdge: 270, Bin content: 1.54543, Bin error fraction: 0.671297
+Bin index: 36, BinLowEdge: 276, Bin content: 2.70974, Bin error fraction: 0.3785
+Bin index: 37, BinLowEdge: 282, Bin content: 5.19063, Bin error fraction: 0.364463
+Bin index: 38, BinLowEdge: 288, Bin content: 1.9966, Bin error fraction: 0.425012
+Bin index: 39, BinLowEdge: 294, Bin content: 0.827804, Bin error fraction: 0.69736
+Bin index: 40, BinLowEdge: 300, Bin content: 0.321118, Bin error fraction: 1.95463
+Bin index: 41, BinLowEdge: 306, Bin content: 0.690091, Bin error fraction: 1.1916
+Bin index: 42, BinLowEdge: 312, Bin content: 0.0856912, Bin error fraction: 5.03507
+Bin index: 43, BinLowEdge: 318, Bin content: 2.55007, Bin error fraction: 0.409328
+Bin index: 44, BinLowEdge: 324, Bin content: 0.522692, Bin error fraction: 1.00791
+Bin index: 45, BinLowEdge: 330, Bin content: 0.360735, Bin error fraction: 1.95342
+Bin index: 46, BinLowEdge: 336, Bin content: 0.155225, Bin error fraction: 2.38309
+Bin index: 47, BinLowEdge: 342, Bin content: 1.66576, Bin error fraction: 0.512335
+Bin index: 48, BinLowEdge: 348, Bin content: 5.20155, Bin error fraction: 0.398673
+Bin index: 49, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 1
+Moving right, bin index: 2, BinLowEdge: 6, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 3, BinLowEdge: 12, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 4, BinLowEdge: 18, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 5, BinLowEdge: 24, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 6, BinLowEdge: 30, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 7, BinLowEdge: 36, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 8, BinLowEdge: 42, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 9, BinLowEdge: 48, Bin content: 0, Running total from combining bins: 0, Current fractional error: -nan
+Moving right, bin index: 10, BinLowEdge: 54, Bin content: 5.62657, Running total from combining bins: 5.62657, Current fractional error: 0.353309
+Merging right using 9 bins
+Erasing bin upper edge for bin 1, BinUpperEdge: 6
+Erasing bin upper edge for bin 2, BinUpperEdge: 12
+Erasing bin upper edge for bin 3, BinUpperEdge: 18
+Erasing bin upper edge for bin 4, BinUpperEdge: 24
+Erasing bin upper edge for bin 5, BinUpperEdge: 30
+Erasing bin upper edge for bin 6, BinUpperEdge: 36
+Erasing bin upper edge for bin 7, BinUpperEdge: 42
+Erasing bin upper edge for bin 8, BinUpperEdge: 48
+Erasing bin upper edge for bin 9, BinUpperEdge: 54
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 1.77199, Bin error fraction: 0.579179
+Bin index: 3, BinLowEdge: 132, Bin content: 3.62448, Bin error fraction: 0.358014
+Bin index: 4, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 5, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 6, BinLowEdge: 150, Bin content: 2.9892, Bin error fraction: 0.696614
+Bin index: 7, BinLowEdge: 156, Bin content: 11.8882, Bin error fraction: 0.260589
+Bin index: 8, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 9, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 10, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 11, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 12, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 13, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 14, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 15, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 16, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 17, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 18, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 19, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 20, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 21, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 22, BinLowEdge: 246, Bin content: 5.51081, Bin error fraction: 0.309416
+Bin index: 23, BinLowEdge: 252, Bin content: 0.573169, Bin error fraction: 2.27942
+Bin index: 24, BinLowEdge: 258, Bin content: 3.05056, Bin error fraction: 0.683041
+Bin index: 25, BinLowEdge: 264, Bin content: 1.03823, Bin error fraction: 1.4448
+Bin index: 26, BinLowEdge: 270, Bin content: 1.54543, Bin error fraction: 0.671297
+Bin index: 27, BinLowEdge: 276, Bin content: 2.70974, Bin error fraction: 0.3785
+Bin index: 28, BinLowEdge: 282, Bin content: 5.19063, Bin error fraction: 0.364463
+Bin index: 29, BinLowEdge: 288, Bin content: 1.9966, Bin error fraction: 0.425012
+Bin index: 30, BinLowEdge: 294, Bin content: 0.827804, Bin error fraction: 0.69736
+Bin index: 31, BinLowEdge: 300, Bin content: 0.321118, Bin error fraction: 1.95463
+Bin index: 32, BinLowEdge: 306, Bin content: 0.690091, Bin error fraction: 1.1916
+Bin index: 33, BinLowEdge: 312, Bin content: 0.0856912, Bin error fraction: 5.03507
+Bin index: 34, BinLowEdge: 318, Bin content: 2.55007, Bin error fraction: 0.409328
+Bin index: 35, BinLowEdge: 324, Bin content: 0.522692, Bin error fraction: 1.00791
+Bin index: 36, BinLowEdge: 330, Bin content: 0.360735, Bin error fraction: 1.95342
+Bin index: 37, BinLowEdge: 336, Bin content: 0.155225, Bin error fraction: 2.38309
+Bin index: 38, BinLowEdge: 342, Bin content: 1.66576, Bin error fraction: 0.512335
+Bin index: 39, BinLowEdge: 348, Bin content: 5.20155, Bin error fraction: 0.398673
+Bin index: 40, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 33
+Moving left, bin index: 32, BinLowEdge: 306, Bin content: 0.690091, Running total from combining bins: 0.775782, Current fractional error: 1.19702
+Moving left, bin index: 31, BinLowEdge: 300, Bin content: 0.321118, Running total from combining bins: 1.0969, Current fractional error: 1.02184
+Moving left, bin index: 30, BinLowEdge: 294, Bin content: 0.827804, Running total from combining bins: 1.9247, Current fractional error: 0.655051
+Moving left, bin index: 29, BinLowEdge: 288, Bin content: 1.9966, Running total from combining bins: 3.9213, Current fractional error: 0.387563
+Moving left, bin index: 28, BinLowEdge: 282, Bin content: 5.19063, Running total from combining bins: 9.11193, Current fractional error: 0.266313
+Moving right, bin index: 34, BinLowEdge: 318, Bin content: 2.55007, Running total from combining bins: 2.63576, Current fractional error: 0.428519
+Moving right, bin index: 35, BinLowEdge: 324, Bin content: 0.522692, Running total from combining bins: 3.15845, Current fractional error: 0.394591
+Moving right, bin index: 36, BinLowEdge: 330, Bin content: 0.360735, Running total from combining bins: 3.51918, Current fractional error: 0.406832
+Moving right, bin index: 37, BinLowEdge: 336, Bin content: 0.155225, Running total from combining bins: 3.67441, Current fractional error: 0.402441
+Moving right, bin index: 38, BinLowEdge: 342, Bin content: 1.66576, Running total from combining bins: 5.34017, Current fractional error: 0.319715
+Merging left using 5 bins
+Erasing bin low edge for bin 33, BinLowEdge: 312
+Erasing bin low edge for bin 32, BinLowEdge: 306
+Erasing bin low edge for bin 31, BinLowEdge: 300
+Erasing bin low edge for bin 30, BinLowEdge: 294
+Erasing bin low edge for bin 29, BinLowEdge: 288
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 1.77199, Bin error fraction: 0.579179
+Bin index: 3, BinLowEdge: 132, Bin content: 3.62448, Bin error fraction: 0.358014
+Bin index: 4, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 5, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 6, BinLowEdge: 150, Bin content: 2.9892, Bin error fraction: 0.696614
+Bin index: 7, BinLowEdge: 156, Bin content: 11.8882, Bin error fraction: 0.260589
+Bin index: 8, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 9, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 10, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 11, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 12, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 13, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 14, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 15, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 16, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 17, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 18, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 19, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 20, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 21, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 22, BinLowEdge: 246, Bin content: 5.51081, Bin error fraction: 0.309416
+Bin index: 23, BinLowEdge: 252, Bin content: 0.573169, Bin error fraction: 2.27942
+Bin index: 24, BinLowEdge: 258, Bin content: 3.05056, Bin error fraction: 0.683041
+Bin index: 25, BinLowEdge: 264, Bin content: 1.03823, Bin error fraction: 1.4448
+Bin index: 26, BinLowEdge: 270, Bin content: 1.54543, Bin error fraction: 0.671297
+Bin index: 27, BinLowEdge: 276, Bin content: 2.70974, Bin error fraction: 0.3785
+Bin index: 28, BinLowEdge: 282, Bin content: 9.11193, Bin error fraction: 0.266313
+Bin index: 29, BinLowEdge: 318, Bin content: 2.55007, Bin error fraction: 0.409328
+Bin index: 30, BinLowEdge: 324, Bin content: 0.522692, Bin error fraction: 1.00791
+Bin index: 31, BinLowEdge: 330, Bin content: 0.360735, Bin error fraction: 1.95342
+Bin index: 32, BinLowEdge: 336, Bin content: 0.155225, Bin error fraction: 2.38309
+Bin index: 33, BinLowEdge: 342, Bin content: 1.66576, Bin error fraction: 0.512335
+Bin index: 34, BinLowEdge: 348, Bin content: 5.20155, Bin error fraction: 0.398673
+Bin index: 35, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 32
+Moving left, bin index: 31, BinLowEdge: 330, Bin content: 0.360735, Running total from combining bins: 0.51596, Current fractional error: 1.54248
+Moving left, bin index: 30, BinLowEdge: 324, Bin content: 0.522692, Running total from combining bins: 1.03865, Current fractional error: 0.918914
+Moving left, bin index: 29, BinLowEdge: 318, Bin content: 2.55007, Running total from combining bins: 3.58872, Current fractional error: 0.39412
+Moving left, bin index: 28, BinLowEdge: 282, Bin content: 9.11193, Running total from combining bins: 12.7007, Current fractional error: 0.221149
+Moving right, bin index: 33, BinLowEdge: 342, Bin content: 1.66576, Running total from combining bins: 1.82098, Current fractional error: 0.510794
+Moving right, bin index: 34, BinLowEdge: 348, Bin content: 5.20155, Running total from combining bins: 7.02253, Current fractional error: 0.323639
+Merging right using 2 bins
+Erasing bin upper edge for bin 32, BinUpperEdge: 342
+Erasing bin upper edge for bin 33, BinUpperEdge: 348
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 1.77199, Bin error fraction: 0.579179
+Bin index: 3, BinLowEdge: 132, Bin content: 3.62448, Bin error fraction: 0.358014
+Bin index: 4, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 5, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 6, BinLowEdge: 150, Bin content: 2.9892, Bin error fraction: 0.696614
+Bin index: 7, BinLowEdge: 156, Bin content: 11.8882, Bin error fraction: 0.260589
+Bin index: 8, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 9, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 10, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 11, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 12, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 13, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 14, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 15, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 16, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 17, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 18, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 19, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 20, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 21, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 22, BinLowEdge: 246, Bin content: 5.51081, Bin error fraction: 0.309416
+Bin index: 23, BinLowEdge: 252, Bin content: 0.573169, Bin error fraction: 2.27942
+Bin index: 24, BinLowEdge: 258, Bin content: 3.05056, Bin error fraction: 0.683041
+Bin index: 25, BinLowEdge: 264, Bin content: 1.03823, Bin error fraction: 1.4448
+Bin index: 26, BinLowEdge: 270, Bin content: 1.54543, Bin error fraction: 0.671297
+Bin index: 27, BinLowEdge: 276, Bin content: 2.70974, Bin error fraction: 0.3785
+Bin index: 28, BinLowEdge: 282, Bin content: 9.11193, Bin error fraction: 0.266313
+Bin index: 29, BinLowEdge: 318, Bin content: 2.55007, Bin error fraction: 0.409328
+Bin index: 30, BinLowEdge: 324, Bin content: 0.522692, Bin error fraction: 1.00791
+Bin index: 31, BinLowEdge: 330, Bin content: 0.360735, Bin error fraction: 1.95342
+Bin index: 32, BinLowEdge: 336, Bin content: 7.02253, Bin error fraction: 0.323639
+Bin index: 33, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 31
+Moving left, bin index: 30, BinLowEdge: 324, Bin content: 0.522692, Running total from combining bins: 0.883427, Current fractional error: 0.99593
+Moving left, bin index: 29, BinLowEdge: 318, Bin content: 2.55007, Running total from combining bins: 3.43349, Current fractional error: 0.3976
+Moving left, bin index: 28, BinLowEdge: 282, Bin content: 9.11193, Running total from combining bins: 12.5454, Current fractional error: 0.221935
+Moving right, bin index: 32, BinLowEdge: 336, Bin content: 7.02253, Running total from combining bins: 7.38326, Current fractional error: 0.322283
+Merging right using 1 bins
+Erasing bin upper edge for bin 31, BinUpperEdge: 336
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 1.77199, Bin error fraction: 0.579179
+Bin index: 3, BinLowEdge: 132, Bin content: 3.62448, Bin error fraction: 0.358014
+Bin index: 4, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 5, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 6, BinLowEdge: 150, Bin content: 2.9892, Bin error fraction: 0.696614
+Bin index: 7, BinLowEdge: 156, Bin content: 11.8882, Bin error fraction: 0.260589
+Bin index: 8, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 9, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 10, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 11, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 12, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 13, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 14, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 15, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 16, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 17, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 18, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 19, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 20, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 21, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 22, BinLowEdge: 246, Bin content: 5.51081, Bin error fraction: 0.309416
+Bin index: 23, BinLowEdge: 252, Bin content: 0.573169, Bin error fraction: 2.27942
+Bin index: 24, BinLowEdge: 258, Bin content: 3.05056, Bin error fraction: 0.683041
+Bin index: 25, BinLowEdge: 264, Bin content: 1.03823, Bin error fraction: 1.4448
+Bin index: 26, BinLowEdge: 270, Bin content: 1.54543, Bin error fraction: 0.671297
+Bin index: 27, BinLowEdge: 276, Bin content: 2.70974, Bin error fraction: 0.3785
+Bin index: 28, BinLowEdge: 282, Bin content: 9.11193, Bin error fraction: 0.266313
+Bin index: 29, BinLowEdge: 318, Bin content: 2.55007, Bin error fraction: 0.409328
+Bin index: 30, BinLowEdge: 324, Bin content: 0.522692, Bin error fraction: 1.00791
+Bin index: 31, BinLowEdge: 330, Bin content: 7.38326, Bin error fraction: 0.322283
+Bin index: 32, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 30
+Moving left, bin index: 29, BinLowEdge: 318, Bin content: 2.55007, Running total from combining bins: 3.07276, Current fractional error: 0.380514
+Moving left, bin index: 28, BinLowEdge: 282, Bin content: 9.11193, Running total from combining bins: 12.1847, Current fractional error: 0.221066
+Moving right, bin index: 31, BinLowEdge: 330, Bin content: 7.38326, Running total from combining bins: 7.90596, Current fractional error: 0.308264
+Merging right using 1 bins
+Erasing bin upper edge for bin 30, BinUpperEdge: 330
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 1.77199, Bin error fraction: 0.579179
+Bin index: 3, BinLowEdge: 132, Bin content: 3.62448, Bin error fraction: 0.358014
+Bin index: 4, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 5, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 6, BinLowEdge: 150, Bin content: 2.9892, Bin error fraction: 0.696614
+Bin index: 7, BinLowEdge: 156, Bin content: 11.8882, Bin error fraction: 0.260589
+Bin index: 8, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 9, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 10, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 11, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 12, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 13, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 14, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 15, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 16, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 17, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 18, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 19, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 20, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 21, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 22, BinLowEdge: 246, Bin content: 5.51081, Bin error fraction: 0.309416
+Bin index: 23, BinLowEdge: 252, Bin content: 0.573169, Bin error fraction: 2.27942
+Bin index: 24, BinLowEdge: 258, Bin content: 3.05056, Bin error fraction: 0.683041
+Bin index: 25, BinLowEdge: 264, Bin content: 1.03823, Bin error fraction: 1.4448
+Bin index: 26, BinLowEdge: 270, Bin content: 1.54543, Bin error fraction: 0.671297
+Bin index: 27, BinLowEdge: 276, Bin content: 2.70974, Bin error fraction: 0.3785
+Bin index: 28, BinLowEdge: 282, Bin content: 9.11193, Bin error fraction: 0.266313
+Bin index: 29, BinLowEdge: 318, Bin content: 2.55007, Bin error fraction: 0.409328
+Bin index: 30, BinLowEdge: 324, Bin content: 7.90596, Bin error fraction: 0.308264
+Bin index: 31, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 23
+Moving left, bin index: 22, BinLowEdge: 246, Bin content: 5.51081, Running total from combining bins: 6.08398, Current fractional error: 0.353077
+Moving right, bin index: 24, BinLowEdge: 258, Bin content: 3.05056, Running total from combining bins: 3.62373, Current fractional error: 0.678688
+Moving right, bin index: 25, BinLowEdge: 264, Bin content: 1.03823, Running total from combining bins: 4.66196, Current fractional error: 0.617925
+Moving right, bin index: 26, BinLowEdge: 270, Bin content: 1.54543, Running total from combining bins: 6.20738, Current fractional error: 0.49326
+Merging left using 1 bins
+Erasing bin low edge for bin 23, BinLowEdge: 252
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 1.77199, Bin error fraction: 0.579179
+Bin index: 3, BinLowEdge: 132, Bin content: 3.62448, Bin error fraction: 0.358014
+Bin index: 4, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 5, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 6, BinLowEdge: 150, Bin content: 2.9892, Bin error fraction: 0.696614
+Bin index: 7, BinLowEdge: 156, Bin content: 11.8882, Bin error fraction: 0.260589
+Bin index: 8, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 9, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 10, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 11, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 12, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 13, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 14, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 15, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 16, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 17, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 18, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 19, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 20, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 21, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 22, BinLowEdge: 246, Bin content: 6.08398, Bin error fraction: 0.353077
+Bin index: 23, BinLowEdge: 258, Bin content: 3.05056, Bin error fraction: 0.683041
+Bin index: 24, BinLowEdge: 264, Bin content: 1.03823, Bin error fraction: 1.4448
+Bin index: 25, BinLowEdge: 270, Bin content: 1.54543, Bin error fraction: 0.671297
+Bin index: 26, BinLowEdge: 276, Bin content: 2.70974, Bin error fraction: 0.3785
+Bin index: 27, BinLowEdge: 282, Bin content: 9.11193, Bin error fraction: 0.266313
+Bin index: 28, BinLowEdge: 318, Bin content: 2.55007, Bin error fraction: 0.409328
+Bin index: 29, BinLowEdge: 324, Bin content: 7.90596, Bin error fraction: 0.308264
+Bin index: 30, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 24
+Moving left, bin index: 23, BinLowEdge: 258, Bin content: 3.05056, Running total from combining bins: 4.08879, Current fractional error: 0.627921
+Moving left, bin index: 22, BinLowEdge: 246, Bin content: 6.08398, Running total from combining bins: 10.1728, Current fractional error: 0.32907
+Moving right, bin index: 25, BinLowEdge: 270, Bin content: 1.54543, Running total from combining bins: 2.58366, Current fractional error: 0.705914
+Moving right, bin index: 26, BinLowEdge: 276, Bin content: 2.70974, Running total from combining bins: 5.2934, Current fractional error: 0.395293
+Merging left using 2 bins
+Erasing bin low edge for bin 24, BinLowEdge: 264
+Erasing bin low edge for bin 23, BinLowEdge: 258
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 1.77199, Bin error fraction: 0.579179
+Bin index: 3, BinLowEdge: 132, Bin content: 3.62448, Bin error fraction: 0.358014
+Bin index: 4, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 5, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 6, BinLowEdge: 150, Bin content: 2.9892, Bin error fraction: 0.696614
+Bin index: 7, BinLowEdge: 156, Bin content: 11.8882, Bin error fraction: 0.260589
+Bin index: 8, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 9, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 10, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 11, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 12, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 13, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 14, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 15, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 16, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 17, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 18, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 19, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 20, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 21, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 22, BinLowEdge: 246, Bin content: 10.1728, Bin error fraction: 0.32907
+Bin index: 23, BinLowEdge: 270, Bin content: 1.54543, Bin error fraction: 0.671297
+Bin index: 24, BinLowEdge: 276, Bin content: 2.70974, Bin error fraction: 0.3785
+Bin index: 25, BinLowEdge: 282, Bin content: 9.11193, Bin error fraction: 0.266313
+Bin index: 26, BinLowEdge: 318, Bin content: 2.55007, Bin error fraction: 0.409328
+Bin index: 27, BinLowEdge: 324, Bin content: 7.90596, Bin error fraction: 0.308264
+Bin index: 28, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 23
+Moving left, bin index: 22, BinLowEdge: 246, Bin content: 10.1728, Running total from combining bins: 11.7182, Current fractional error: 0.299076
+Moving right, bin index: 24, BinLowEdge: 276, Bin content: 2.70974, Running total from combining bins: 4.25517, Current fractional error: 0.34284
+Moving right, bin index: 25, BinLowEdge: 282, Bin content: 9.11193, Running total from combining bins: 13.3671, Current fractional error: 0.211817
+Merging left using 1 bins
+Erasing bin low edge for bin 23, BinLowEdge: 270
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 1.77199, Bin error fraction: 0.579179
+Bin index: 3, BinLowEdge: 132, Bin content: 3.62448, Bin error fraction: 0.358014
+Bin index: 4, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 5, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 6, BinLowEdge: 150, Bin content: 2.9892, Bin error fraction: 0.696614
+Bin index: 7, BinLowEdge: 156, Bin content: 11.8882, Bin error fraction: 0.260589
+Bin index: 8, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 9, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 10, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 11, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 12, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 13, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 14, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 15, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 16, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 17, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 18, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 19, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 20, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 21, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 22, BinLowEdge: 246, Bin content: 11.7182, Bin error fraction: 0.299076
+Bin index: 23, BinLowEdge: 276, Bin content: 2.70974, Bin error fraction: 0.3785
+Bin index: 24, BinLowEdge: 282, Bin content: 9.11193, Bin error fraction: 0.266313
+Bin index: 25, BinLowEdge: 318, Bin content: 2.55007, Bin error fraction: 0.409328
+Bin index: 26, BinLowEdge: 324, Bin content: 7.90596, Bin error fraction: 0.308264
+Bin index: 27, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 2
+Moving left, bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Running total from combining bins: 7.39856, Current fractional error: 0.302385
+Moving right, bin index: 3, BinLowEdge: 132, Bin content: 3.62448, Running total from combining bins: 5.39647, Current fractional error: 0.306574
+Merging right using 1 bins
+Erasing bin upper edge for bin 2, BinUpperEdge: 132
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 5.39647, Bin error fraction: 0.306574
+Bin index: 3, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 4, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 5, BinLowEdge: 150, Bin content: 2.9892, Bin error fraction: 0.696614
+Bin index: 6, BinLowEdge: 156, Bin content: 11.8882, Bin error fraction: 0.260589
+Bin index: 7, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 8, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 9, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 10, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 11, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 12, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 13, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 14, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 15, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 16, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 17, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 18, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 19, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 20, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 21, BinLowEdge: 246, Bin content: 11.7182, Bin error fraction: 0.299076
+Bin index: 22, BinLowEdge: 276, Bin content: 2.70974, Bin error fraction: 0.3785
+Bin index: 23, BinLowEdge: 282, Bin content: 9.11193, Bin error fraction: 0.266313
+Bin index: 24, BinLowEdge: 318, Bin content: 2.55007, Bin error fraction: 0.409328
+Bin index: 25, BinLowEdge: 324, Bin content: 7.90596, Bin error fraction: 0.308264
+Bin index: 26, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 24
+Moving left, bin index: 23, BinLowEdge: 282, Bin content: 9.11193, Running total from combining bins: 11.662, Current fractional error: 0.226514
+Moving right, bin index: 25, BinLowEdge: 324, Bin content: 7.90596, Running total from combining bins: 10.456, Current fractional error: 0.253562
+Merging left using 1 bins
+Erasing bin low edge for bin 24, BinLowEdge: 318
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 5.39647, Bin error fraction: 0.306574
+Bin index: 3, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 4, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 5, BinLowEdge: 150, Bin content: 2.9892, Bin error fraction: 0.696614
+Bin index: 6, BinLowEdge: 156, Bin content: 11.8882, Bin error fraction: 0.260589
+Bin index: 7, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 8, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 9, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 10, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 11, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 12, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 13, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 14, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 15, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 16, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 17, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 18, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 19, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 20, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 21, BinLowEdge: 246, Bin content: 11.7182, Bin error fraction: 0.299076
+Bin index: 22, BinLowEdge: 276, Bin content: 2.70974, Bin error fraction: 0.3785
+Bin index: 23, BinLowEdge: 282, Bin content: 11.662, Bin error fraction: 0.226514
+Bin index: 24, BinLowEdge: 324, Bin content: 7.90596, Bin error fraction: 0.308264
+Bin index: 25, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 22
+Moving left, bin index: 21, BinLowEdge: 246, Bin content: 11.7182, Running total from combining bins: 14.4279, Current fractional error: 0.253094
+Moving right, bin index: 23, BinLowEdge: 282, Bin content: 11.662, Running total from combining bins: 14.3717, Current fractional error: 0.197174
+Merging left using 1 bins
+Erasing bin low edge for bin 22, BinLowEdge: 276
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 5.39647, Bin error fraction: 0.306574
+Bin index: 3, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 4, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 5, BinLowEdge: 150, Bin content: 2.9892, Bin error fraction: 0.696614
+Bin index: 6, BinLowEdge: 156, Bin content: 11.8882, Bin error fraction: 0.260589
+Bin index: 7, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 8, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 9, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 10, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 11, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 12, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 13, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 14, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 15, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 16, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 17, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 18, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 19, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 20, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 21, BinLowEdge: 246, Bin content: 14.4279, Bin error fraction: 0.253094
+Bin index: 22, BinLowEdge: 282, Bin content: 11.662, Bin error fraction: 0.226514
+Bin index: 23, BinLowEdge: 324, Bin content: 7.90596, Bin error fraction: 0.308264
+Bin index: 24, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 5
+Moving left, bin index: 4, BinLowEdge: 144, Bin content: 5.14671, Running total from combining bins: 8.13592, Current fractional error: 0.374643
+Moving right, bin index: 6, BinLowEdge: 156, Bin content: 11.8882, Running total from combining bins: 14.8774, Current fractional error: 0.250899
+Merging right using 1 bins
+Erasing bin upper edge for bin 5, BinUpperEdge: 156
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 5.39647, Bin error fraction: 0.306574
+Bin index: 3, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 4, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 5, BinLowEdge: 150, Bin content: 14.8774, Bin error fraction: 0.250899
+Bin index: 6, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 7, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 8, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 9, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 10, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 11, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 12, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 13, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 14, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 15, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 16, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 17, BinLowEdge: 228, Bin content: 6.57081, Bin error fraction: 0.258664
+Bin index: 18, BinLowEdge: 234, Bin content: 3.56241, Bin error fraction: 0.391442
+Bin index: 19, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 20, BinLowEdge: 246, Bin content: 14.4279, Bin error fraction: 0.253094
+Bin index: 21, BinLowEdge: 282, Bin content: 11.662, Bin error fraction: 0.226514
+Bin index: 22, BinLowEdge: 324, Bin content: 7.90596, Bin error fraction: 0.308264
+Bin index: 23, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with entry <= 5, starting from bin: 18
+Moving left, bin index: 17, BinLowEdge: 228, Bin content: 6.57081, Running total from combining bins: 10.1332, Current fractional error: 0.216958
+Moving right, bin index: 19, BinLowEdge: 240, Bin content: 6.83513, Running total from combining bins: 10.3975, Current fractional error: 0.25052
+Merging left using 1 bins
+Erasing bin low edge for bin 18, BinLowEdge: 234
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 5.39647, Bin error fraction: 0.306574
+Bin index: 3, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 4, BinLowEdge: 144, Bin content: 5.14671, Bin error fraction: 0.43249
+Bin index: 5, BinLowEdge: 150, Bin content: 14.8774, Bin error fraction: 0.250899
+Bin index: 6, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 7, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 8, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 9, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 10, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 11, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 12, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 13, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 14, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 15, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 16, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 17, BinLowEdge: 228, Bin content: 10.1332, Bin error fraction: 0.216958
+Bin index: 18, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 19, BinLowEdge: 246, Bin content: 14.4279, Bin error fraction: 0.253094
+Bin index: 20, BinLowEdge: 282, Bin content: 11.662, Bin error fraction: 0.226514
+Bin index: 21, BinLowEdge: 324, Bin content: 7.90596, Bin error fraction: 0.308264
+Bin index: 22, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin::FindNewBinning] Searching for bins failing condition using algorithm mode: 1
+[AutoRebin::FindNewBinning] Testing bins of total_bkg hist to find those with fractional error >= 0.4, starting from bin: 4
+Moving left, bin index: 3, BinLowEdge: 138, Bin content: 6.82281, Running total from combining bins: 11.9695, Current fractional error: 0.285484
+Moving right, bin index: 5, BinLowEdge: 150, Bin content: 14.8774, Running total from combining bins: 20.0241, Current fractional error: 0.217039
+Merging right using 1 bins
+Erasing bin upper edge for bin 4, BinUpperEdge: 150
+
+[AutoRebin::FindNewBinning] New binning found: 
+Bin index: 1, BinLowEdge: 0, Bin content: 5.62657, Bin error fraction: 0.353309
+Bin index: 2, BinLowEdge: 126, Bin content: 5.39647, Bin error fraction: 0.306574
+Bin index: 3, BinLowEdge: 138, Bin content: 6.82281, Bin error fraction: 0.380001
+Bin index: 4, BinLowEdge: 144, Bin content: 20.0241, Bin error fraction: 0.217039
+Bin index: 5, BinLowEdge: 162, Bin content: 11.8627, Bin error fraction: 0.220786
+Bin index: 6, BinLowEdge: 168, Bin content: 14.3874, Bin error fraction: 0.235561
+Bin index: 7, BinLowEdge: 174, Bin content: 8.53069, Bin error fraction: 0.312213
+Bin index: 8, BinLowEdge: 180, Bin content: 16.251, Bin error fraction: 0.218679
+Bin index: 9, BinLowEdge: 186, Bin content: 16.2141, Bin error fraction: 0.244757
+Bin index: 10, BinLowEdge: 192, Bin content: 14.407, Bin error fraction: 0.189808
+Bin index: 11, BinLowEdge: 198, Bin content: 12.339, Bin error fraction: 0.229292
+Bin index: 12, BinLowEdge: 204, Bin content: 9.85792, Bin error fraction: 0.278989
+Bin index: 13, BinLowEdge: 210, Bin content: 10.2096, Bin error fraction: 0.237608
+Bin index: 14, BinLowEdge: 216, Bin content: 8.33498, Bin error fraction: 0.351957
+Bin index: 15, BinLowEdge: 222, Bin content: 9.98726, Bin error fraction: 0.23056
+Bin index: 16, BinLowEdge: 228, Bin content: 10.1332, Bin error fraction: 0.216958
+Bin index: 17, BinLowEdge: 240, Bin content: 6.83513, Bin error fraction: 0.321879
+Bin index: 18, BinLowEdge: 246, Bin content: 14.4279, Bin error fraction: 0.253094
+Bin index: 19, BinLowEdge: 282, Bin content: 11.662, Bin error fraction: 0.226514
+Bin index: 20, BinLowEdge: 324, Bin content: 7.90596, Bin error fraction: 0.308264
+Bin index: 21, BinLowEdge: 5600, Bin content: 0, Bin error fraction: -nan
+[AutoRebin] Some bins not satisfying requested condition found for analysis bin eett_z_control_nobtag, merging with neighbouring bins
+Init Edges/Widths     Content    New Edges/Widths     
+0          6          0         0          126       
+6          6          0         -          -         
+12         6          0         -          -         
+18         6          0         -          -         
+24         6          0         -          -         
+30         6          0         -          -         
+36         6          0         -          -         
+42         6          0         -          -         
+48         6          0         -          -         
+54         6          -0.023    -          -         
+60         6          0         -          -         
+66         6          -0.00045  -          -         
+72         6          0         -          -         
+78         6          0         -          -         
+84         6          0.027     -          -         
+90         6          0.12      -          -         
+96         6          -0.013    -          -         
+102        6          0.47      -          -         
+108        6          1.1       -          -         
+114        6          1.9       -          -         
+120        6          2         -          -         
+126        6          1.8       126        12        
+132        6          3.6       -          -         
+138        6          6.8       138        6         
+144        6          5.1       144        18        
+150        6          3         -          -         
+156        6          12        -          -         
+162        6          12        162        6         
+168        6          14        168        6         
+174        6          8.5       174        6         
+180        6          16        180        6         
+186        6          16        186        6         
+192        6          14        192        6         
+198        6          12        198        6         
+204        6          9.9       204        6         
+210        6          10        210        6         
+216        6          8.3       216        6         
+222        6          10        222        6         
+228        6          6.6       228        12        
+234        6          3.6       -          -         
+240        6          6.8       240        6         
+246        6          5.5       246        36        
+252        6          0.57      -          -         
+258        6          3.1       -          -         
+264        6          1         -          -         
+270        6          1.5       -          -         
+276        6          2.7       -          -         
+282        6          5.2       282        42        
+288        6          2         -          -         
+294        6          0.83      -          -         
+300        6          0.32      -          -         
+306        6          0.69      -          -         
+312        6          0.086     -          -         
+318        6          2.6       -          -         
+324        6          0.52      324        5276      
+330        6          0.36      -          -         
+336        6          0.16      -          -         
+342        6          1.7       -          -         
+348        6          0.71      -          -         
+354        6          0.3       -          -         
+360        6          -0.64     -          -         
+366        6          0.31      -          -         
+372        6          0.8       -          -         
+378        6          0.68      -          -         
+384        6          -0.17     -          -         
+390        6          -0.02     -          -         
+396        6          -0.017    -          -         
+402        6          0.22      -          -         
+408        6          0.18      -          -         
+414        6          0.21      -          -         
+420        6          0.38      -          -         
+426        6          0.14      -          -         
+432        6          0.39      -          -         
+438        6          -0.029    -          -         
+444        6          0.49      -          -         
+450        6          -0.35     -          -         
+456        6          0.35      -          -         
+462        6          0.055     -          -         
+468        6          -0.066    -          -         
+474        6          0.13      -          -         
+480        6          0.11      -          -         
+486        6          0.084     -          -         
+492        6          0.6       -          -         
+498        6          0.74      -          -         
+504        6          0.24      -          -         
+510        6          -0.0067   -          -         
+516        6          0.059     -          -         
+522        6          0.13      -          -         
+528        6          0.0022    -          -         
+534        6          -0.029    -          -         
+540        6          -0.052    -          -         
+546        6          -0.058    -          -         
+552        6          -0.0055   -          -         
+558        6          -0.019    -          -         
+564        6          -0.0084   -          -         
+570        6          0.037     -          -         
+576        6          0.004     -          -         
+582        6          -0.025    -          -         
+588        6          0.037     -          -         
+594        6          -0.004    -          -         
+600        5000       -0.68     -          -         
+5600       0          0         5600       0         
+[AutoRebin] Applying binning to all relevant distributions for analysis bin id eett_z_control_nobtag
+[0;32;40mRemoving NegativeBins[0m
+('Process: ', 'VVR', ' has negative bins.')
+('Process: ', 'VVR', ' has negative bins.')
+('Process: ', 'A70phi', ' has negative bins.')
+('Process: ', 'A90phi', ' has negative bins.')
+[0;32;40m>>> morphing...[0m
+>> Processing eett_2l2t_sig_nobtag,A100phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_2l2t_sig_nobtag = 2800  L(0 - 5600) B(1) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_2l2t_sig_nobtag_A100phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooRealVar::CMS_x_eett_2l2t_sig_nobtag
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooRealVar::MH
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_2l2t_sig_nobtag_A100phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_2l2t_sig_nobtag_A100phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_2l2t_sig_nobtag_A100phi_morph_norm
+>> Processing eett_2l2t_sig_nobtag,A125phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_2l2t_sig_nobtag = 2800  L(0 - 5600) B(1) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_2l2t_sig_nobtag_A125phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_2l2t_sig_nobtag for import of CMSHistFunc::eett_2l2t_sig_nobtag_A125phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_2l2t_sig_nobtag_A125phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_2l2t_sig_nobtag_A125phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_2l2t_sig_nobtag_A125phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_2l2t_sig_nobtag_A125phi_morph_norm
+>> Processing eett_2l2t_sig_nobtag,A140phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_2l2t_sig_nobtag = 2800  L(0 - 5600) B(1) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_2l2t_sig_nobtag_A140phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_2l2t_sig_nobtag for import of CMSHistFunc::eett_2l2t_sig_nobtag_A140phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_2l2t_sig_nobtag_A140phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_2l2t_sig_nobtag_A140phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_2l2t_sig_nobtag_A140phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_2l2t_sig_nobtag_A140phi_morph_norm
+>> Processing eett_2l2t_sig_nobtag,A160phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_2l2t_sig_nobtag = 2800  L(0 - 5600) B(1) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_2l2t_sig_nobtag_A160phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_2l2t_sig_nobtag for import of CMSHistFunc::eett_2l2t_sig_nobtag_A160phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_2l2t_sig_nobtag_A160phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_2l2t_sig_nobtag_A160phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_2l2t_sig_nobtag_A160phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_2l2t_sig_nobtag_A160phi_morph_norm
+>> Processing eett_2l2t_sig_nobtag,A60phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_2l2t_sig_nobtag = 2800  L(0 - 5600) B(1) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_2l2t_sig_nobtag_A60phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_2l2t_sig_nobtag for import of CMSHistFunc::eett_2l2t_sig_nobtag_A60phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_2l2t_sig_nobtag_A60phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_2l2t_sig_nobtag_A60phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_2l2t_sig_nobtag_A60phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_2l2t_sig_nobtag_A60phi_morph_norm
+>> Processing eett_2l2t_sig_nobtag,A70phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_2l2t_sig_nobtag = 2800  L(0 - 5600) B(1) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_2l2t_sig_nobtag_A70phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_2l2t_sig_nobtag for import of CMSHistFunc::eett_2l2t_sig_nobtag_A70phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_2l2t_sig_nobtag_A70phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_2l2t_sig_nobtag_A70phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_2l2t_sig_nobtag_A70phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_2l2t_sig_nobtag_A70phi_morph_norm
+>> Processing eett_2l2t_sig_nobtag,A80phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_2l2t_sig_nobtag = 2800  L(0 - 5600) B(1) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_2l2t_sig_nobtag_A80phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_2l2t_sig_nobtag for import of CMSHistFunc::eett_2l2t_sig_nobtag_A80phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_2l2t_sig_nobtag_A80phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_2l2t_sig_nobtag_A80phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_2l2t_sig_nobtag_A80phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_2l2t_sig_nobtag_A80phi_morph_norm
+>> Processing eett_2l2t_sig_nobtag,A90phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_2l2t_sig_nobtag = 2800  L(0 - 5600) B(1) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_2l2t_sig_nobtag_A90phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_2l2t_sig_nobtag for import of CMSHistFunc::eett_2l2t_sig_nobtag_A90phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_2l2t_sig_nobtag_A90phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_2l2t_sig_nobtag_A90phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_2l2t_sig_nobtag_A90phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_2l2t_sig_nobtag_A90phi_morph_norm
+>> Processing eett_2l2t_sig_nobtag,VVJF
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+*         
+1         
+RooRealVar::CMS_x_eett_2l2t_sig_nobtag = 2800  L(0 - 5600) B(1) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_2l2t_sig_nobtag_VVJF_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_2l2t_sig_nobtag for import of CMSHistFunc::eett_2l2t_sig_nobtag_VVJF_morph
+No normalisation term to import!
+>> Processing eett_2l2t_sig_nobtag,VVLF
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+*         
+1         
+RooRealVar::CMS_x_eett_2l2t_sig_nobtag = 2800  L(0 - 5600) B(1) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_2l2t_sig_nobtag_VVLF_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_2l2t_sig_nobtag for import of CMSHistFunc::eett_2l2t_sig_nobtag_VVLF_morph
+No normalisation term to import!
+>> Processing eett_2l2t_sig_nobtag,VVR
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+*         
+1         
+RooRealVar::CMS_x_eett_2l2t_sig_nobtag = 2800  L(0 - 5600) B(1) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_2l2t_sig_nobtag_VVR_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_2l2t_sig_nobtag for import of CMSHistFunc::eett_2l2t_sig_nobtag_VVR_morph
+No normalisation term to import!
+>> Processing eett_2l2t_sig_nobtag,VVV
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+*         
+1         
+RooRealVar::CMS_x_eett_2l2t_sig_nobtag = 2800  L(0 - 5600) B(1) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_2l2t_sig_nobtag_VVV_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_2l2t_sig_nobtag for import of CMSHistFunc::eett_2l2t_sig_nobtag_VVV_morph
+No normalisation term to import!
+>> Processing eett_2l2t_sig_nobtag,jetFakes
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+*         
+1         
+RooRealVar::CMS_x_eett_2l2t_sig_nobtag = 2800  L(0 - 5600) B(1) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_2l2t_sig_nobtag_jetFakes_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_2l2t_sig_nobtag for import of CMSHistFunc::eett_2l2t_sig_nobtag_jetFakes_morph
+No normalisation term to import!
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(eett_2l2t_sig_nobtag_data_obs): fit range of variable CMS_x_eett_2l2t_sig_nobtag expanded to nearest bin boundaries: [0,5600] --> [0,5600]
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing dataset eett_2l2t_sig_nobtag_data_obs
+>> Processing eett_z_control_nobtag,A100phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_z_control_nobtag = 2800  L(0 - 5600) B(20) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_z_control_nobtag_A100phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooRealVar::CMS_x_eett_z_control_nobtag
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_z_control_nobtag_A100phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_z_control_nobtag_A100phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_z_control_nobtag_A100phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_z_control_nobtag_A100phi_morph_norm
+>> Processing eett_z_control_nobtag,A125phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_z_control_nobtag = 2800  L(0 - 5600) B(20) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_z_control_nobtag_A125phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_z_control_nobtag for import of CMSHistFunc::eett_z_control_nobtag_A125phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_z_control_nobtag_A125phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_z_control_nobtag_A125phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_z_control_nobtag_A125phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_z_control_nobtag_A125phi_morph_norm
+>> Processing eett_z_control_nobtag,A140phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_z_control_nobtag = 2800  L(0 - 5600) B(20) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_z_control_nobtag_A140phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_z_control_nobtag for import of CMSHistFunc::eett_z_control_nobtag_A140phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_z_control_nobtag_A140phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_z_control_nobtag_A140phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_z_control_nobtag_A140phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_z_control_nobtag_A140phi_morph_norm
+>> Processing eett_z_control_nobtag,A160phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_z_control_nobtag = 2800  L(0 - 5600) B(20) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_z_control_nobtag_A160phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_z_control_nobtag for import of CMSHistFunc::eett_z_control_nobtag_A160phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_z_control_nobtag_A160phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_z_control_nobtag_A160phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_z_control_nobtag_A160phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_z_control_nobtag_A160phi_morph_norm
+>> Processing eett_z_control_nobtag,A60phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_z_control_nobtag = 2800  L(0 - 5600) B(20) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_z_control_nobtag_A60phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_z_control_nobtag for import of CMSHistFunc::eett_z_control_nobtag_A60phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_z_control_nobtag_A60phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_z_control_nobtag_A60phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_z_control_nobtag_A60phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_z_control_nobtag_A60phi_morph_norm
+>> Processing eett_z_control_nobtag,A70phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_z_control_nobtag = 2800  L(0 - 5600) B(20) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_z_control_nobtag_A70phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_z_control_nobtag for import of CMSHistFunc::eett_z_control_nobtag_A70phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_z_control_nobtag_A70phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_z_control_nobtag_A70phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_z_control_nobtag_A70phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_z_control_nobtag_A70phi_morph_norm
+>> Processing eett_z_control_nobtag,A80phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_z_control_nobtag = 2800  L(0 - 5600) B(20) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_z_control_nobtag_A80phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_z_control_nobtag for import of CMSHistFunc::eett_z_control_nobtag_A80phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_z_control_nobtag_A80phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_z_control_nobtag_A80phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_z_control_nobtag_A80phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_z_control_nobtag_A80phi_morph_norm
+>> Processing eett_z_control_nobtag,A90phi
+>>>> Mass point: 100
+>>>> Mass point: 110
+>>>> Mass point: 125
+>>>> Mass point: 140
+>>>> Mass point: 160
+>>>> Mass point: 180
+>>>> Mass point: 200
+>>>> Mass point: 250
+>>>> Mass point: 300
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+100       110       125       140       160       180       200       250       300       
+1         1         1         1         1         1         1         1         1         
+RooRealVar::CMS_x_eett_z_control_nobtag = 2800  L(0 - 5600) B(20) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_z_control_nobtag_A90phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_z_control_nobtag for import of CMSHistFunc::eett_z_control_nobtag_A90phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of CMSHistFunc::eett_z_control_nobtag_A90phi_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooProduct::eett_z_control_nobtag_A90phi_morph_norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing RooSpline1D::interp_rate_eett_z_control_nobtag_A90phi
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::MH for import of RooProduct::eett_z_control_nobtag_A90phi_morph_norm
+>> Processing eett_z_control_nobtag,VVJF
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+*         
+1         
+RooRealVar::CMS_x_eett_z_control_nobtag = 2800  L(0 - 5600) B(20) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_z_control_nobtag_VVJF_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_z_control_nobtag for import of CMSHistFunc::eett_z_control_nobtag_VVJF_morph
+No normalisation term to import!
+>> Processing eett_z_control_nobtag,VVLF
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+*         
+1         
+RooRealVar::CMS_x_eett_z_control_nobtag = 2800  L(0 - 5600) B(20) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_z_control_nobtag_VVLF_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_z_control_nobtag for import of CMSHistFunc::eett_z_control_nobtag_VVLF_morph
+No normalisation term to import!
+>> Processing eett_z_control_nobtag,VVR
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+*         
+1         
+RooRealVar::CMS_x_eett_z_control_nobtag = 2800  L(0 - 5600) B(20) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_z_control_nobtag_VVR_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_z_control_nobtag for import of CMSHistFunc::eett_z_control_nobtag_VVR_morph
+No normalisation term to import!
+>> Processing eett_z_control_nobtag,VVV
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+*         
+1         
+RooRealVar::CMS_x_eett_z_control_nobtag = 2800  L(0 - 5600) B(20) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_z_control_nobtag_VVV_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_z_control_nobtag for import of CMSHistFunc::eett_z_control_nobtag_VVV_morph
+No normalisation term to import!
+>> Processing eett_z_control_nobtag,jetFakes
+>> Shape systematics: 0
+>> lnN morphing systematics: 0
+*         
+1         
+RooRealVar::CMS_x_eett_z_control_nobtag = 2800  L(0 - 5600) B(20) 
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing CMSHistFunc::eett_z_control_nobtag_jetFakes_morph
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) using existing copy of RooRealVar::CMS_x_eett_z_control_nobtag for import of CMSHistFunc::eett_z_control_nobtag_jetFakes_morph
+No normalisation term to import!
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(eett_z_control_nobtag_data_obs): fit range of variable CMS_x_eett_z_control_nobtag expanded to nearest bin boundaries: [0,5600] --> [0,5600]
+[#1] INFO:ObjectHandling -- RooWorkspace::import(X2HDM) importing dataset eett_z_control_nobtag_data_obs
+[0;32;40m>>> add workspace and extract pdf...[0m
+[0;32;40m
+>>> print observation...
+[0m
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process               rate       shape
+--------------------------------------------------------------------------------------------------------
+*      X2HDM     all    eett     eett_z_control_nobtag        11  data_obs              272        1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  data_obs              8          1    
+[0;32;40m
+>>> print processes...
+[0m
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+*      X2HDM     all    eett     eett_z_control_nobtag        11  VVJF             0    1          1    
+*      X2HDM     all    eett     eett_z_control_nobtag        11  VVLF             0    1          1    
+*      X2HDM     all    eett     eett_z_control_nobtag        11  VVR              0    1          1    
+*      X2HDM     all    eett     eett_z_control_nobtag        11  VVV              0    1          1    
+*      X2HDM     all    eett     eett_z_control_nobtag        11  jetFakes         0    1          1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  VVJF             0    1          1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  VVLF             0    1          1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  VVR              0    1          1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  VVV              0    1          1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  jetFakes         0    1          1    
+*      X2HDM     all    eett     eett_z_control_nobtag        11  A60phi           1    1          1    
+*      X2HDM     all    eett     eett_z_control_nobtag        11  A70phi           1    1          1    
+*      X2HDM     all    eett     eett_z_control_nobtag        11  A80phi           1    1          1    
+*      X2HDM     all    eett     eett_z_control_nobtag        11  A90phi           1    1          1    
+*      X2HDM     all    eett     eett_z_control_nobtag        11  A100phi          1    1          1    
+*      X2HDM     all    eett     eett_z_control_nobtag        11  A125phi          1    1          1    
+*      X2HDM     all    eett     eett_z_control_nobtag        11  A140phi          1    1          1    
+*      X2HDM     all    eett     eett_z_control_nobtag        11  A160phi          1    1          1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A60phi           1    1          1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A70phi           1    1          1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A80phi           1    1          1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A90phi           1    1          1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A100phi          1    1          1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A125phi          1    1          1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A140phi          1    1          1    
+*      X2HDM     all    eett     eett_2l2t_sig_nobtag         12  A160phi          1    1          1    
+[0;32;40m
+>>> print systematics...
+[0m
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[0;32;40m
+>>> print parameters...
+[0m
+-----------------------------------------------------------------------------------------------------------------
+name                                                                   value      error_d   error_u frozen groups
+-----------------------------------------------------------------------------------------------------------------
+cp: 'outputs/0202/test/all/cmb/common/emtt_2l2t_sig_nobtag_input_all.root' and 'outputs/0202/test/all/cmb/common/emtt_2l2t_sig_nobtag_input_all.root' are the same file
+cp: 'outputs/0202/test/all/cmb/common/emtt_z_control_nobtag_input_all.root' and 'outputs/0202/test/all/cmb/common/emtt_z_control_nobtag_input_all.root' are the same file
+cp: 'outputs/0202/test/all/cmb/common/mmtt_2l2t_sig_nobtag_input_all.root' and 'outputs/0202/test/all/cmb/common/mmtt_2l2t_sig_nobtag_input_all.root' are the same file
+cp: 'outputs/0202/test/all/cmb/common/mmtt_z_control_nobtag_input_all.root' and 'outputs/0202/test/all/cmb/common/mmtt_z_control_nobtag_input_all.root' are the same file
+cp: 'outputs/0202/test/all/cmb/common/ttt_inclusive_input_all.root' and 'outputs/0202/test/all/cmb/common/ttt_inclusive_input_all.root' are the same file
+cp: 'outputs/0202/test/all/cmb/common/tttt_inclusive_input_all.root' and 'outputs/0202/test/all/cmb/common/tttt_inclusive_input_all.root' are the same file
+cp: 'outputs/0202/test/all/cmb/emtt_2l2t_sig_nobtag.txt' and 'outputs/0202/test/all/cmb/emtt_2l2t_sig_nobtag.txt' are the same file
+cp: 'outputs/0202/test/all/cmb/emtt_z_control_nobtag.txt' and 'outputs/0202/test/all/cmb/emtt_z_control_nobtag.txt' are the same file
+cp: 'outputs/0202/test/all/cmb/mmtt_2l2t_sig_nobtag.txt' and 'outputs/0202/test/all/cmb/mmtt_2l2t_sig_nobtag.txt' are the same file
+cp: 'outputs/0202/test/all/cmb/mmtt_z_control_nobtag.txt' and 'outputs/0202/test/all/cmb/mmtt_z_control_nobtag.txt' are the same file
+cp: 'outputs/0202/test/all/cmb/ttt_inclusive.txt' and 'outputs/0202/test/all/cmb/ttt_inclusive.txt' are the same file
+cp: 'outputs/0202/test/all/cmb/tttt_inclusive.txt' and 'outputs/0202/test/all/cmb/tttt_inclusive.txt' are the same file
+CMS_x_eett_2l2t_sig_nobtag                                             2800.0000  0.0000    0.0000  0      
+CMS_x_eett_z_control_nobtag                                            2800.0000  0.0000    0.0000  0      
+MH                                                                     200.0000   0.0000    0.0000  0      
+
+
+[0;32;40m>>> writing datacards...[0m
+[MakeDirs] Creating dir outputs/0202/test/all/eett_2l2t_sig_nobtag/common
+[MakeDirs] Creating dir outputs/0202/test/all/eett_z_control_nobtag/common
+[WriteCards] Creating file outputs/0202/test/all/eett_2l2t_sig_nobtag/common/eett_2l2t_sig_nobtag_input_all.root
+[MakeDirs] Creating dir outputs/0202/test/all/eett_2l2t_sig_nobtag
+[WriteCards] Creating datacard outputs/0202/test/all/eett_2l2t_sig_nobtag/eett_2l2t_sig_nobtag.txt
+[WriteCards] Creating file outputs/0202/test/all/eett_z_control_nobtag/common/eett_z_control_nobtag_input_all.root
+[MakeDirs] Creating dir outputs/0202/test/all/eett_z_control_nobtag
+[WriteCards] Creating datacard outputs/0202/test/all/eett_z_control_nobtag/eett_z_control_nobtag.txt

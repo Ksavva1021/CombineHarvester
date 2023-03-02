@@ -1,0 +1,11 @@
+outputs/AN/all/eett_2l2t_sig_nobtag/limits/A100/limit_A100.json:exp0:Title=#tau_{e}#tau_{e}#tau_{h}#tau_{h} SS:LineColor=419:MarkerColor=419:LineStyle=1
+outputs/AN/all/emtt_2l2t_sig_nobtag/limits/A100/limit_A100.json:exp0:Title=#tau_{e}#tau_{#mu}#tau_{h}#tau_{h} SS:LineColor=920:MarkerColor=920:LineStyle=1
+outputs/AN/all/mmtt_2l2t_sig_nobtag/limits/A100/limit_A100.json:exp0:Title=#tau_{#mu}#tau_{#mu}#tau_{h}#tau_{h} SS:LineColor=600:MarkerColor=600:LineStyle=1
+outputs/AN/all/eett_z_control_nobtag/limits/A100/limit_A100.json:exp0:Title=#tau_{e}#tau_{e}#tau_{h}#tau_{h} OS:LineColor=419:MarkerColor=419:LineStyle=2
+outputs/AN/all/emtt_z_control_nobtag/limits/A100/limit_A100.json:exp0:Title=#tau_{e}#tau_{#mu}#tau_{h}#tau_{h} OS:LineColor=920:MarkerColor=920:LineStyle=2
+outputs/AN/all/mmtt_z_control_nobtag/limits/A100/limit_A100.json:exp0:Title=#tau_{#mu}#tau_{#mu}#tau_{h}#tau_{h} OS:LineColor=600:MarkerColor=600:LineStyle=2
+outputs/AN/all/ettt_nobtag/limits/A100/limit_A100.json:exp0:Title=#tau_{e}#tau_{h}#tau_{h}#tau_{h}:LineColor=402:MarkerColor=402:LineStyle=1
+outputs/AN/all/mttt_nobtag/limits/A100/limit_A100.json:exp0:Title=#tau_{#mu}#tau_{h}#tau_{h}#tau_{h}:LineColor=1:MarkerColor=1:LineStyle=1
+outputs/AN/all/tttt_inclusive/limits/A100/limit_A100.json:exp0:Title=#tau_{h}#tau_{h}#tau_{h}#tau_{h}:LineColor=875:MarkerColor=875:LineStyle=1
+outputs/AN/all/ttt_inclusive/limits/A100/limit_A100.json:exp0:Title=#tau_{h}#tau_{h}#tau_{h}:LineColor=810:MarkerColor=810:LineStyle=1
+outputs/AN/all/cmb/limits/A100/limit_A100.json:exp0:Title=Combined:LineColor=425:MarkerColor=425:LineStyle=1

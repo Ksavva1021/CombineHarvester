@@ -1,0 +1,8 @@
+outputs/2202/mt_tot/all/cmb/limits/A140/limit_A140.json:exp0:Title=Combined:LineColor=425:MarkerColor=425:LineStyle=1
+outputs/2202/mt_tot/all/cmb_eett/limits/A140/limit_A140.json:exp0:Title=#tau_{e}#tau_{e}#tau_{h}#tau_{h}:LineColor=419:MarkerColor=419:LineStyle=1
+outputs/2202/mt_tot/all/cmb_emtt/limits/A140/limit_A140.json:exp0:Title=#tau_{e}#tau_{#mu}#tau_{h}#tau_{h}:LineColor=920:MarkerColor=920:LineStyle=1
+outputs/2202/mt_tot/all/cmb_mmtt/limits/A140/limit_A140.json:exp0:Title=#tau_{#mu}#tau_{#mu}#tau_{h}#tau_{h}:LineColor=600:MarkerColor=600:LineStyle=1
+outputs/2202/mt_tot/all/ettt_nobtag/limits/A140/limit_A140.json:exp0:Title=#tau_{e}#tau_{h}#tau_{h}#tau_{h}:LineColor=402:MarkerColor=402:LineStyle=1
+outputs/2202/mt_tot/all/mttt_nobtag/limits/A140/limit_A140.json:exp0:Title=#tau_{#mu}#tau_{h}#tau_{h}#tau_{h}:LineColor=1:MarkerColor=1:LineStyle=1
+outputs/2202/mt_tot/all/tttt_nobtag/limits/A140/limit_A140.json:exp0:Title=#tau_{h}#tau_{h}#tau_{h}#tau_{h}:LineColor=875:MarkerColor=875:LineStyle=1
+outputs/2202/mt_tot/all/ttt_nobtag/limits/A140/limit_A140.json:exp0:Title=#tau_{h}#tau_{h}#tau_{h}:LineColor=810:MarkerColor=810:LineStyle=1

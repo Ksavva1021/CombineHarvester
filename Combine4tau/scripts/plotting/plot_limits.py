@@ -105,5 +105,5 @@ latex.SetTextAlign(12)
 latex.SetTextFont(42)
 latex.SetTextSize(0.04)
 
-canv.Print('plots/A{}_limit.pdf'.format(options.MA))
+canv.Print('plots/14_03_2023/{}_A{}_limit.pdf'.format(options.channel,options.MA))
 #canv.Print('1.png')

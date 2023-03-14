@@ -12,9 +12,9 @@ categories = {
               "mmtt": ["z_control_nobtag","2l2t_sig_nobtag"],
              }
 
-source_directory = '/vols/cms/ks1021/4tau/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/4tau_plots/'
+source_directory = '/vols/cms/ks1021/offline/4tau_/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/4tau_plots'
 
-target_directory = '/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/AN/all'
+target_directory = '/vols/cms/ks1021/offline/4tau_/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/14_03_2023/all'
 
 for channel in channels: 
   if not os.path.isdir('%(target_directory)s/%(channel)s' % vars()):

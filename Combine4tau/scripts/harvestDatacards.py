@@ -1,7 +1,7 @@
 import ROOT; ROOT.PyConfig.IgnoreCommandLineOptions = True
 import os, sys, re
 import CombineHarvester.CombineTools.ch as ch
-from CombineHarvester.CombineTools.ch import CombineHarvester, MassesFromRange, SystMap, BinByBinFactory, CardWriter, SetStandardBinNames, AutoRebin
+from CombineHarvester.CombineTools.ch import CombineHarvester, MassesFromRange, SystMap, BinByBinFactory, CardWriter, SetStandardBinNames, AutoRebin, BinByBinFactory
 import CombineHarvester.CombinePdfs.morphing as morphing
 from CombineHarvester.CombinePdfs.morphing import BuildRooMorphing
 from CombineHarvester.CombinePdfs.morphing import BuildCMSHistFuncFactory
@@ -34,6 +34,7 @@ mass_shifts = setup["mass_shifts"]
 auto_rebin = setup["auto_rebin"]
 use_automc = setup["auto_mc"]
 verbose = setup["verbose"]
+do_systematics = setup["do_systematics"]
 systematics = setup["systematics"]
 model_dep = setup["model_dependent"]
 
@@ -73,39 +74,44 @@ def NegativeBins(p):
           hist.SetBinContent(i,0)
   p.set_shape(hist,False)
 
+
 # Create an empty CombineHarvester instance
 harvester = CombineHarvester()
 for chn in channels:
   # Adding Data,Signal Processes and Background processes to the harvester instance
   harvester.AddObservations(['*'], [analysis], [era_tag], [chn], cats[chn])
   harvester.AddProcesses(['*'], [analysis], [era_tag], [chn], bkg_procs[chn], cats[chn], False)
-  harvester.AddProcesses(mass_shifts, [analysis], [era_tag], [chn], sig_procs, cats[chn], True)
+  #harvester.AddProcesses(mass_shifts, [analysis], [era_tag], [chn], sig_procs, cats[chn], True)
+  harvester.AddProcesses(['*'], [analysis], [era_tag], [chn], sig_procs, cats[chn], True)
 
-sig_procs_systs = [x + "phi$MASS" for x in sig_procs]
-for chn in channels:
-  for syst in systematics:
-     sysDef = systematics[syst]
-     scaleFactor = 1.0
-     if "scaleFactor" in sysDef:
-        scaleFactor = sysDef["scaleFactor"]
-     if ("all" in sysDef["channel"] and ("YEAR" not in syst)):
-        harvester.cp().process(sysDef["processes"]+sig_procs_systs).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor)) 
-     elif ((chn in sysDef["channel"]) and ("YEAR" not in syst)):
-        harvester.cp().process(sysDef["processes"]+sig_procs_systs).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
-     if "YEAR" in syst:
-	for year in ["2016preVFP","2016postVFP","2017","2018"]:
-	   name = sysDef["name"].replace("YEAR",year)
+
+if do_systematics:
+   sig_procs_systs = [x + "phi$MASS" for x in sig_procs]
+   for chn in channels:
+     for syst in systematics:
+        sysDef = systematics[syst]
+        scaleFactor = 1.0
+        if "scaleFactor" in sysDef:
+           scaleFactor = sysDef["scaleFactor"]
+        if ("all" in sysDef["channel"] and ("YEAR" not in syst)):
+           harvester.cp().process(sysDef["processes"]+sig_procs_systs).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor)) 
+        elif ((chn in sysDef["channel"]) and ("YEAR" not in syst)):
+           harvester.cp().process(sysDef["processes"]+sig_procs_systs).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
+        if "YEAR" in syst:
+           for year in ["2016preVFP","2016postVFP","2017","2018"]:
+   	      name = sysDef["name"].replace("YEAR",year)
            harvester.cp().process(sysDef["processes"]+sig_procs_systs).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
 
 # Populating Observation, Process and Systematic entries in the harvester instance
 for chn in channels:
   #filename = input_dir_path + era_tag + "/" + chn + "/" + variable + "_signal_" + chn + "_inclusive_" + era_tag + "_rebinned" + ".root"
-  filename = input_dir_path + 'AN/' + era_tag + "/" + chn + "/" + variable + "_" + chn + "_multicat_" + era_tag + ".root"
+  filename = input_dir_path + '13_03_2023/' + era_tag + "/" + chn + "/" + variable + "_" + chn + "_multicat_" + era_tag + ".root"
   print ">>>   file %s"%(filename)
   print(chn)
   harvester.cp().channel([chn]).process(bkg_procs[chn]).ExtractShapes(filename, "$BIN/$PROCESS", "$BIN/$PROCESS_$SYSTEMATIC")
   if not model_dep:
-    harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESSphi$MASS_norm", "$BIN/$PROCESSphi$MASS_$SYSTEMATIC")
+    #harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESSphi$MASS_norm", "$BIN/$PROCESSphi$MASS_$SYSTEMATIC")
+    harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESS_norm", "$BIN/$PROCESS_$SYSTEMATIC")
   else:
     harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/A$MASS$PROCESS", "$BIN/A$MASS$PROCESS_$SYSTEMATIC")
    
@@ -122,29 +128,31 @@ if(auto_rebin):
 print(green("Removing NegativeBins"))
 harvester.ForEachProc(NegativeBins)
 
+harvester.PrintAll()
+
 workspace = RooWorkspace(analysis,analysis)
 
-# RooVar
-Mphi = RooRealVar("MH","Mass of H/h in GeV", float(mass_shifts[0]), float(mass_shifts[-1]))
-Mphi.setConstant(True)
+## RooVar
+#Mphi = RooRealVar("MH","Mass of H/h in GeV", float(mass_shifts[0]), float(mass_shifts[-1]))
+#Mphi.setConstant(True)
 
 # MORPHING
-print green(">>> morphing...")
-BuildCMSHistFuncFactory(workspace, harvester, Mphi, ",".join(sig_procs))
+#print green(">>> morphing...")
+#BuildCMSHistFuncFactory(workspace, harvester, Mphi, ",".join(sig_procs))
 
 workspace.writeToFile("workspace_py.root")
 
 # EXTRACT PDFs
 print green(">>> add workspace and extract pdf...")
 harvester.AddWorkspace(workspace, False)
-harvester.ExtractPdfs(harvester, analysis, "$BIN_$PROCESS_morph", "")  # Extract all processes (signal and bkg are named the same way)
+#harvester.ExtractPdfs(harvester, analysis, "$BIN_$PROCESS_morph", "")  # Extract all processes (signal and bkg are named the same way)
+harvester.ExtractPdfs(harvester, analysis, "$BIN_$PROCESS", "")  # Extract all processes (signal and bkg are named the same way)
 harvester.ExtractData(analysis, "$BIN_data_obs")  # Extract the RooDataHist
 #
 if (use_automc):
    # Set the autoMCStats line (with -1 = no bbb uncertainties)
    # Set threshold to 0.3 to use Poisson PDF instead
-   harvester.SetAutoMCStats(harvester, 0.3, 0, 1)
-
+   harvester.SetAutoMCStats(harvester, 0.5, 0, 1)
 
 if verbose>0:
     print green("\n>>> print observation...\n")

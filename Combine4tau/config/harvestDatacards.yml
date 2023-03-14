@@ -1,4 +1,4 @@
-output_folder: "outputs/test1"
+output_folder: "outputs/test2"
 analysis: "X2HDM"
 year: "all"
 #channels: ["mmtt", "ettt","mttt","tttt","eett","ttt","emtt"]  
@@ -24,11 +24,11 @@ background_processes:
         "eett": ["VVJF","VVLF","VVR","VVV","jetFakes"]
         "ttt" : ["VVJF","VVLF","VVR","VVV","jetFakes"]
 
-#signal_processes: ["A60","A70","A80","A90","A100","A125","A140","A160"]
-signal_processes: ["A60phi100","A60phi110","A60phi125","A60phi140","A60phi160","A60phi180","A60phi200","A60phi250","A60phi300","A60phi100","A60phi110","A60phi125","A60phi140","A60phi160","A60phi180","A60phi200","A60phi250","A60phi300","A70phi100","A70phi110","A70phi125","A70phi140","A70phi160","A70phi180","A70phi200","A70phi250","A70phi300","A80phi100","A80phi110","A80phi125","A80phi140","A80phi160","A80phi180","A80phi200","A80phi250","A80phi300","A90phi100","A90phi110","A90phi125","A90phi140","A90phi160","A90phi180","A90phi200","A90phi250","A90phi300","A100phi100","A100phi110","A100phi125","A100phi140","A100phi160","A100phi180","A100phi200","A100phi250","A100phi300","A125phi100","A125phi110","A125phi125","A125phi140","A125phi160","A125phi180","A125phi200","A125phi250","A125phi300","A140phi100","A140phi110","A140phi125","A140phi140","A140phi160","A140phi180","A140phi200","A140phi250","A140phi300","A160phi100","A160phi110","A160phi125","A160phi140","A160phi160","A160phi180","A160phi200","A160phi250","A160phi300"]
+signal_processes: ["A60","A70","A80","A90","A100","A125","A140","A160"]
+#signal_processes: ["A60phi100","A60phi110","A60phi125","A60phi140","A60phi160","A60phi180","A60phi200","A60phi250","A60phi300","A60phi100","A60phi110","A60phi125","A60phi140","A60phi160","A60phi180","A60phi200","A60phi250","A60phi300","A70phi100","A70phi110","A70phi125","A70phi140","A70phi160","A70phi180","A70phi200","A70phi250","A70phi300","A80phi100","A80phi110","A80phi125","A80phi140","A80phi160","A80phi180","A80phi200","A80phi250","A80phi300","A90phi100","A90phi110","A90phi125","A90phi140","A90phi160","A90phi180","A90phi200","A90phi250","A90phi300","A100phi100","A100phi110","A100phi125","A100phi140","A100phi160","A100phi180","A100phi200","A100phi250","A100phi300","A125phi100","A125phi110","A125phi125","A125phi140","A125phi160","A125phi180","A125phi200","A125phi250","A125phi300","A140phi100","A140phi110","A140phi125","A140phi140","A140phi160","A140phi180","A140phi200","A140phi250","A140phi300","A160phi100","A160phi110","A160phi125","A160phi140","A160phi160","A160phi180","A160phi200","A160phi250","A160phi300"]
 
 mass_shifts: ["100","110","125","140","160","180","200","250","300"]
-auto_rebin: True
+auto_rebin: False
 auto_mc: True
 verbose: True 
 

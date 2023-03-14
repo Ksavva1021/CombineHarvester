@@ -81,8 +81,8 @@ for chn in channels:
   # Adding Data,Signal Processes and Background processes to the harvester instance
   harvester.AddObservations(['*'], [analysis], [era_tag], [chn], cats[chn])
   harvester.AddProcesses(['*'], [analysis], [era_tag], [chn], bkg_procs[chn], cats[chn], False)
-  #harvester.AddProcesses(mass_shifts, [analysis], [era_tag], [chn], sig_procs, cats[chn], True)
-  harvester.AddProcesses(['*'], [analysis], [era_tag], [chn], sig_procs, cats[chn], True)
+  harvester.AddProcesses(mass_shifts, [analysis], [era_tag], [chn], sig_procs, cats[chn], True)
+  #harvester.AddProcesses(['*'], [analysis], [era_tag], [chn], sig_procs, cats[chn], True)
 
 
 if do_systematics:
@@ -110,8 +110,8 @@ for chn in channels:
   print(chn)
   harvester.cp().channel([chn]).process(bkg_procs[chn]).ExtractShapes(filename, "$BIN/$PROCESS", "$BIN/$PROCESS_$SYSTEMATIC")
   if not model_dep:
-    #harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESSphi$MASS_norm", "$BIN/$PROCESSphi$MASS_$SYSTEMATIC")
-    harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESS_norm", "$BIN/$PROCESS_$SYSTEMATIC")
+    harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESSphi$MASS_norm", "$BIN/$PROCESSphi$MASS_$SYSTEMATIC")
+    #harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESS_norm", "$BIN/$PROCESS_$SYSTEMATIC")
   else:
     harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/A$MASS$PROCESS", "$BIN/A$MASS$PROCESS_$SYSTEMATIC")
    
@@ -132,21 +132,20 @@ harvester.PrintAll()
 
 workspace = RooWorkspace(analysis,analysis)
 
-## RooVar
-#Mphi = RooRealVar("MH","Mass of H/h in GeV", float(mass_shifts[0]), float(mass_shifts[-1]))
-#Mphi.setConstant(True)
+# RooVar
+Mphi = RooRealVar("MH","Mass of H/h in GeV", float(mass_shifts[0]), float(mass_shifts[-1]))
+Mphi.setConstant(True)
 
 # MORPHING
-#print green(">>> morphing...")
-#BuildCMSHistFuncFactory(workspace, harvester, Mphi, ",".join(sig_procs))
+print green(">>> morphing...")
+BuildCMSHistFuncFactory(workspace, harvester, Mphi, ",".join(sig_procs))
 
 workspace.writeToFile("workspace_py.root")
 
 # EXTRACT PDFs
 print green(">>> add workspace and extract pdf...")
 harvester.AddWorkspace(workspace, False)
-#harvester.ExtractPdfs(harvester, analysis, "$BIN_$PROCESS_morph", "")  # Extract all processes (signal and bkg are named the same way)
-harvester.ExtractPdfs(harvester, analysis, "$BIN_$PROCESS", "")  # Extract all processes (signal and bkg are named the same way)
+harvester.ExtractPdfs(harvester, analysis, "$BIN_$PROCESS_morph", "")  # Extract all processes (signal and bkg are named the same way)
 harvester.ExtractData(analysis, "$BIN_data_obs")  # Extract the RooDataHist
 #
 if (use_automc):

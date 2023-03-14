@@ -57,6 +57,7 @@ pads = OnePad()
 
 # Get limit TGraphs as a dictionary
 graphs = StandardLimitsFromJSONFile(options.folder+'/'+options.year+'/'+options.channel+'/limits/A'+ options.MA + '/limit_A' + options.MA + '.json',draw=['exp0', 'exp1','exp2'])
+#graphs = StandardLimitsFromJSONFile('limit_default.json',draw=['exp0', 'exp1','exp2'])
 #graphs1 = StandardLimitsFromJSONFile('outputs/out_mt_tot/all/tttt_inclusive/limits/A60/HN_comb.json',draw=['exp0', 'exp1'])
 
 # Create an empty TH1 from the first TGraph to serve as the pad axis and frame
@@ -105,5 +106,6 @@ latex.SetTextAlign(12)
 latex.SetTextFont(42)
 latex.SetTextSize(0.04)
 
-canv.Print('plots/14_03_2023/{}_A{}_limit.pdf'.format(options.channel,options.MA))
+canv.Print('plots/{}_A{}_limit.pdf'.format(options.channel,options.MA))
+#canv.Print('test1.pdf')
 #canv.Print('1.png')

@@ -452,7 +452,7 @@ void CMSHistFuncFactory::RunSingleProc(CombineHarvester& cb, RooWorkspace& ws,
     for(unsigned i = 0; i < m; ++i) new_rate_arr[i+1] = 1.0;
     new_rate_arr[m+1] = 0.0;
 
-    bool force_template_limit = false;
+    bool force_template_limit = true;
 
     // if (v_ && force_template_limit) {
     //    std::cout << ">>>> Forcing rate to 0 outside of template range:" << "\n";
@@ -577,7 +577,7 @@ void CMSHistFuncFactory::RunSingleProc(CombineHarvester& cb, RooWorkspace& ws,
     //! [part5]
     CMSHistFunc morph_func(morph_name, "", xvar, *hist_arr[0][0]);
     morph_func.setVerticalSmoothRegion(qrange);
-    morph_func.setHorizontalType(CMSHistFunc::HorizontalType::Integral);
+    morph_func.setHorizontalType(CMSHistFunc::HorizontalType::Closest);
     morph_func.setVerticalMorphs(ss_list);
     if (m > 1) {
       morph_func.addHorizontalMorph(*mass_var[process], TVectorD(m, m_vec.data()));

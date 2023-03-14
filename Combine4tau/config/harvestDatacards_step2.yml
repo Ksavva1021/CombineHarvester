@@ -1,7 +1,9 @@
-folder: "outputs/AN"
+folder: "outputs/test1"
 year: "all"
 #channels: ["mmtt", "emtt", "ettt","mttt","tttt","eett","ttt"]  
-channels: ["eett","emtt","mmtt"]
+#channels: ["ettt","mttt","tttt","ttt"]  
+#channels: ["mmtt","eett","emtt"]
+channels: ["ettt"]
 build_workspaces: True
 build_combined_workspaces: False
 model_dependent: False

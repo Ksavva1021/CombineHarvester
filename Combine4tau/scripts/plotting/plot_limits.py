@@ -32,8 +32,8 @@ style_dict = {
             },
         'legend' : {
             'exp0' : { 'Label' : 'Expected', 'LegendStyle' : 'L', 'DrawStyle' : 'LSAME'},
-            'exp1' : { 'Label' : '#pm 1 #sigma Expected', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
-            'exp2' : { 'Label' : '#pm 2 #sigma Expected', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
+            'exp1' : { 'Label' : '68% Expected', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
+            'exp2' : { 'Label' : '95% Expected', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
             }
         }
 
@@ -45,8 +45,8 @@ style_dict1 = {
             },
         'legend' : {
             'exp0' : { 'Label' : 'Expected HN', 'LegendStyle' : 'L', 'DrawStyle' : 'LSAME'},
-            'exp1' : { 'Label' : '#pm 1 #sigma Expected HN', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
-            'exp2' : { 'Label' : '#pm 2 #sigma Expected', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
+            'exp1' : { 'Label' : '68% Expected', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
+            'exp2' : { 'Label' : '95% Expected', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
             }
         }
 
@@ -56,14 +56,21 @@ canv = ROOT.TCanvas('limit', 'limit')
 pads = OnePad()
 
 # Get limit TGraphs as a dictionary
-print("Channel:",channel,"MA:", mA)
-graphs = StandardLimitsFromJSONFile('outputs/out_mt_tot/all/tttt_inclusive/limits/A60/AL_A60.json',draw=['exp0', 'exp1'])
-graphs1 = StandardLimitsFromJSONFile('outputs/out_mt_tot/all/tttt_inclusive/limits/A60/HN_comb.json',draw=['exp0', 'exp1'])
+graphs = StandardLimitsFromJSONFile(options.folder+'/'+options.year+'/'+options.channel+'/limits/A'+ options.MA + '/limit_A' + options.MA + '.json',draw=['exp0', 'exp1','exp2'])
+#graphs = StandardLimitsFromJSONFile('limit_default.json',draw=['exp0', 'exp1','exp2'])
+#graphs1 = StandardLimitsFromJSONFile('outputs/out_mt_tot/all/tttt_inclusive/limits/A60/HN_comb.json',draw=['exp0', 'exp1'])
 
 # Create an empty TH1 from the first TGraph to serve as the pad axis and frame
 axis = CreateAxisHist(graphs.values()[0])
 axis.GetXaxis().SetTitle('m_{#phi} (GeV)')
-axis.GetYaxis().SetTitle('95% CL limit')
+
+axis.GetYaxis().SetTitle('95% CL Limit on #sigma #times BR(#phi#rightarrow#tau#tau) #times BR(A#rightarrow#tau#tau)')
+axis.GetYaxis().SetTitleOffset(1.75)
+axis.GetYaxis().SetTitleSize(0.04)
+axis.GetXaxis().SetTitleSize(0.04)
+axis.GetYaxis().SetLabelSize(0.03)
+axis.GetXaxis().SetLabelSize(0.03)
+
 pads[0].cd()
 axis.Draw('axis')
 
@@ -72,10 +79,10 @@ legend = PositionedLegend(0.3, 0.2, 3, 0.015)
 
 # Set the standard green and yellow colors and draw
 StyleLimitBand(graphs,overwrite_style_dict=style_dict["style"])
-StyleLimitBand(graphs1,overwrite_style_dict=style_dict1["style"])
-#DrawLimitBand(pads[0], graphs,draw=['exp0','exp1','exp2'], legend=legend,legend_overwrite=style_dict["legend"])
-DrawLimitBand(pads[0], graphs,draw=['exp0','exp1'], legend=legend,legend_overwrite=style_dict["legend"])
-DrawLimitBand(pads[0], graphs1,draw=['exp0','exp1'], legend=legend,legend_overwrite=style_dict1["legend"])
+#StyleLimitBand(graphs1,overwrite_style_dict=style_dict1["style"])
+DrawLimitBand(pads[0], graphs,draw=['exp0','exp1','exp2'], legend=legend,legend_overwrite=style_dict["legend"])
+#DrawLimitBand(pads[0], graphs,draw=['exp0','exp1'], legend=legend,legend_overwrite=style_dict["legend"])
+#DrawLimitBand(pads[0], graphs1,draw=['exp0','exp1'], legend=legend,legend_overwrite=style_dict1["legend"])
 legend.Draw()
 
 # Re-draw the frame and tick marks
@@ -88,6 +95,9 @@ FixBothRanges(pads[0], 0, 0, GetPadYMax(pads[0]), 0.25)
 
 # Standard CMS logo
 DrawCMSLogo(pads[0], 'CMS', 'Internal', 11, 0.045, 0.035, 1.2, '', 0.8)
+MA = options.MA
+DrawTitle(pads[0], "m_{A}=%(MA)s GeV"%vars(), 1)
+DrawTitle(pads[0], "138 fb^{-1}", 3)
 
 latex = ROOT.TLatex()
 latex.SetNDC()
@@ -96,9 +106,6 @@ latex.SetTextAlign(12)
 latex.SetTextFont(42)
 latex.SetTextSize(0.04)
 
-latex.DrawLatex(0.6,0.6,'mA = {}'.format(mA))
-latex.DrawLatex(0.6,0.5,'{}'.format(channel))
-
-
-canv.Print('1s.pdf')
-canv.Print('1.png')
+canv.Print('plots/{}_A{}_limit.pdf'.format(options.channel,options.MA))
+#canv.Print('test1.pdf')
+#canv.Print('1.png')

@@ -3,20 +3,20 @@ import os
 variable = ['mt_tot']
 #variable = ['st','mt_tot']
 channels = ['eett','emtt','ettt','mmtt','mttt','ttt','tttt']
-#channels = ['tttt']
 categories = {
-              "ttt" : ["inclusive","nobtag"],
-              "tttt": ["inclusive","nobtag"],
-              "ettt": ["inclusive","nobtag"],
-              "mttt": ["inclusive","nobtag"],
-              "emtt": ["inclusive","nobtag","z_control_nobtag","2l2t_sig_nobtag"],
-              "eett": ["inclusive","nobtag","z_control_nobtag","2l2t_sig_nobtag"],
-              "mmtt": ["inclusive","nobtag","z_control_nobtag","2l2t_sig_nobtag"],
+              "ttt" : ["inclusive"],
+              "tttt": ["inclusive"],
+              "ettt": ["nobtag"],
+              "mttt": ["nobtag"],
+              "emtt": ["z_control_nobtag","2l2t_sig_nobtag"],
+              "eett": ["z_control_nobtag","2l2t_sig_nobtag"],
+              "mmtt": ["z_control_nobtag","2l2t_sig_nobtag"],
              }
 
-source_directory = '/vols/cms/ks1021/4tau/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/4tau_plots/'
+source_directory = '/vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/1204/'
+target_directory = '/vols/cms/gu18/4tau_v3/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/1704/'
 
-target_directory = '/vols/cms/gu18/4tau_v3/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/2002/all/'
+
 
 for channel in channels: 
   if not os.path.isdir('%(target_directory)s/%(channel)s' % vars()):

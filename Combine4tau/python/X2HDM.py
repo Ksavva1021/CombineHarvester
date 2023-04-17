@@ -37,7 +37,7 @@ class X2HDM(PhysicsModel):
           poiNames.append('tanb')
 
         self.modelBuilder.doSet('POI', ','.join(poiNames))
-
+        
         if self.model_dependent:
           wsptools = imp.load_source('wsptools', '{}/scripts/workspaceTools.py'.format(self.base))
           f = ROOT.TFile("{}/input/type{}_BR.root".format(self.base,self.type_2hdm))

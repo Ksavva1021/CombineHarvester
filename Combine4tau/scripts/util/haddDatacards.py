@@ -1,6 +1,6 @@
 import os
 
-variable = ['st','mvis_min_sum_dR_1','mt_tot']
+variable = ['mt_tot']
 #variable = ['st','mt_tot']
 channels = ['eett','emtt','ettt','mmtt','mttt','ttt','tttt']
 #channels = ['tttt']
@@ -14,9 +14,9 @@ categories = {
               "mmtt": ["inclusive","nobtag","z_control_nobtag","2l2t_sig_nobtag"],
              }
 
-source_directory = '/vols/cms/ks1021/4tau/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0202/'
+source_directory = '/vols/cms/ks1021/4tau/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/4tau_plots/'
 
-target_directory = '/vols/cms/ks1021/offline/4tau/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/0202/all'
+target_directory = '/vols/cms/gu18/4tau_v3/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/2002/all/'
 
 for channel in channels: 
   if not os.path.isdir('%(target_directory)s/%(channel)s' % vars()):

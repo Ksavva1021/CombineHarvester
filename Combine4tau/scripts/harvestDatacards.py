@@ -94,22 +94,25 @@ for chn in channels:
      elif ((chn in sysDef["channel"]) and ("YEAR" not in syst)):
         harvester.cp().process(sysDef["processes"]+sig_procs_systs).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
      if "YEAR" in syst:
-        for year in ["2016preVFP","2016postVFP","2017","2018"]:
+#        for year in ["2016preVFP","2016postVFP","2017","2018"]:
+        for year in ["2016postVFP","2017","2018"]:
            name = sysDef["name"].replace("YEAR",year)
            harvester.cp().process(sysDef["processes"]+sig_procs_systs).AddSyst(harvester, name, sysDef["effect"], SystMap()(scaleFactor))
-  if model_dep:
-     with open("input/4tau_xs_uncerts.json") as jsonfile: sig_xs = json.load(jsonfile)
-     for k,v in sig_xs.items():
-       phi_mass = k.split("phi")[1].split("A")[0]
-       A_mass = k.split("A")[1].split("To")[0]
-       for syst, lnN in v.items():
-         harvester.cp().process("A$MASSphi{}".format(phi_mass)).AddSyst(harvester,syst,"lnN",SystMap("mass")([A_mass],[lnN["Down"],lnN["Up"]]))
+if model_dep:
+   with open("input/4tau_xs_uncerts.json") as jsonfile: sig_xs = json.load(jsonfile)
+   for k,v in sig_xs.items():
+     phi_mass = k.split("phi")[1].split("A")[0]
+     A_mass = k.split("A")[1].split("To")[0]
+     for syst, lnN in v.items():
+       harvester.cp().process(["phi{}".format(phi_mass)]).AddSyst(harvester,str(syst)+"_yield","lnN",SystMap("mass")([A_mass],[lnN["Down"],lnN["Up"]]))
+
+
 
 
 # Populating Observation, Process and Systematic entries in the harvester instance
 for chn in channels:
   #filename = input_dir_path + era_tag + "/" + chn + "/" + variable + "_signal_" + chn + "_inclusive_" + era_tag + "_rebinned" + ".root"
-  filename = input_dir_path + '1402/' + era_tag + "/" + chn + "/" + variable + "_" + chn + "_multicat_" + era_tag + ".root"
+  filename = input_dir_path + '2002/' + era_tag + "/" + chn + "/" + variable + "_" + chn + "_multicat_" + era_tag + ".root"
   print ">>>   file %s"%(filename)
   print(chn)
   harvester.cp().channel([chn]).process(bkg_procs[chn]).ExtractShapes(filename, "$BIN/$PROCESS", "$BIN/$PROCESS_$SYSTEMATIC")

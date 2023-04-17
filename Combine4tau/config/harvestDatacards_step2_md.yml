@@ -1,0 +1,18 @@
+folder: "outputs/2002"
+year: "all"
+channels: ["cmb"]
+build_workspaces: True
+build_combined_workspaces: False
+model_dependent: True
+calculate_AsymptoticLimits: True
+calculate_combined_AsymptoticLimits: False
+calculate_HybridNew: False
+unblind: False
+
+collect_limits: True
+collect_combined_limits: False
+
+grid_A: ["60","70","80","90","100","125","140","160"]
+grid_phi: ["100","200"]
+model_dep: True
+

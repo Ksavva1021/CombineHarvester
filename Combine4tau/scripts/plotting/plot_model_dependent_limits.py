@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+
+#for m in 100 200; do python scripts/plotting/plot_model_dependent_limits.py outputs/2002/all/cmb/limits/phi${m}/limit_phi${m}.json --excluded-mass=${m} --logy --scenario-label="m_{#phi} = ${m} GeV" --output="md_mphi${m}_hb" --title-left="Type X 2HDM Alignment Scenario"; done
+#for m in 100 200; do python scripts/plotting/plot_model_dependent_limits.py outputs/2002/all/cmb/limits/phi${m}/limit_phi${m}.json --logy --scenario-label="m_{#phi} = ${m} GeV" --output="md_mphi${m}" --title-left="Type X 2HDM Alignment Scenario"; done
+
 import CombineHarvester.CombineTools.plotting as plot
 import ROOT
 import argparse
@@ -24,16 +28,18 @@ parser.add_argument(
 parser.add_argument(
     '--y-title', default='tan#beta', help="""Title for the y-axis""")
 parser.add_argument(
-    '--y-range', default="0.1,100", type=str, help="""y-axis range""")
+    '--y-range', default="1,100", type=str, help="""y-axis range""")
 parser.add_argument(
     '--cms-sub', default='Internal', help="""Text below the CMS logo""")
 parser.add_argument(
     '--scenario-label', default='', help="""Scenario name to be drawn in top
     left of plot""")
 parser.add_argument(
-    '--title-right', default='', help="""Right header text above the frame""")
+    '--title-right', default='138 fb^{-1} (GeV)', help="""Right header text above the frame""")
 parser.add_argument(
     '--title-left', default='', help="""Left header text above the frame""")
+parser.add_argument(
+    '--excluded-mass', default='', help="""Excluded mass for region""")
 parser.add_argument(
     '--logy', action='store_true', help="""Draw y-axis in log scale""")
 parser.add_argument(
@@ -71,6 +77,12 @@ if args.y_range is not None:
     h_axis.GetYaxis().SetRangeUser(float(args.y_range.split(',')[0]),float(args.y_range.split(',')[1]))
 h_axis.GetXaxis().SetNdivisions(5,5,0)
 h_axis.Draw()
+if args.logy: 
+  h_axis.GetYaxis().SetMoreLogLabels()
+  h_axis.GetYaxis().SetNoExponent()
+if args.logx: 
+  h_axis.GetXaxis().SetMoreLogLabels()
+  h_axis.GetXaxis().SetNoExponent()
 
 pads[1].SetLogy(args.logy)
 pads[1].SetLogx(args.logx)
@@ -104,7 +116,6 @@ if 'exp0' in args.contours:
     plot.Set(contours["exp0"], LineStyle=2, FillStyle=1001,
              FillColor=plot.CreateTransparentColor(
                 ROOT.kSpring + 6, 0.2))
-    contours["exp0"].Print("all")
     contours["exp0"].Draw(fillstyle)
     contours["exp0"].Draw('LSAME')
 if 'obs' in args.contours:
@@ -113,11 +124,20 @@ if 'obs' in args.contours:
   contours["obs"].Draw(fillstyle)
   contours["obs"].Draw('LSAME')
 
+# Draw excluded regions
+if args.excluded_mass != "":
+  excluded_file = ROOT.TFile("input/excluded_contours.root")
+  excl_cont = excluded_file.Get("mphi"+args.excluded_mass)
+  plot.Set(excl_cont, LineColor=2, FillColor=plot.CreateTransparentColor(2,0.2), FillStyle=1001)
+  excl_cont.Draw('FSAME')
+  excl_cont.Draw("LSAME")
+
 pads[0].cd()
 h_top = h_axis.Clone()
 plot.Set(h_top.GetXaxis(), LabelSize=0, TitleSize=0, TickLength=0)
 plot.Set(h_top.GetYaxis(), LabelSize=0, TitleSize=0, TickLength=0)
 h_top.Draw()
+
 
 # Draw the legend in the top TPad
 legend = plot.PositionedLegend(0.4, 0.11, 3, 0.015)
@@ -133,6 +153,10 @@ if 'exp0' in args.contours:
         legend.AddEntry(contours['exp0'], "Expected", "F")
 if 'exp2' in args.contours:
     legend.AddEntry(contours['exp-2'], "95% expected", "F")
+if args.excluded_mass != "":
+    entry = legend.AddEntry(excl_cont, "HiggsTools-1", "F")
+    entry.SetTextFont(82)
+    # 82
 legend.Draw()
 
 # Draw logos and titles

@@ -1,0 +1,201 @@
+output_folder: "outputs/2002"
+analysis: "X2HDM"
+year: "all"
+channels: ["mmtt", "ettt","mttt","tttt","eett","ttt","emtt"]  
+categories: 
+        "mmtt": [[11,"mmtt_z_control_nobtag"],[12,"mmtt_2l2t_sig_nobtag"]]
+        "emtt": [[11,"emtt_z_control_nobtag"],[12,"emtt_2l2t_sig_nobtag"]]
+        "ettt": [[2,"ettt_nobtag"]]
+        "mttt": [[2,"mttt_nobtag"]]
+        "tttt": [[1,"tttt_inclusive"]]
+        "eett": [[11,"eett_z_control_nobtag"],[12,"eett_2l2t_sig_nobtag"]]
+        "ttt" : [[1,"ttt_inclusive"]]
+
+variable: "mt_tot"
+
+background_processes:
+        "mmtt": ["VVR","VVV","jetFakes"]
+        "emtt": ["VVR","VVV","jetFakes"] 
+        "ettt": ["VVR","VVV","jetFakes"]
+        "mttt": ["VVR","VVV","jetFakes"]
+        "tttt": ["VVR","VVV","jetFakes"]
+        "eett": ["VVR","VVV","jetFakes"]
+        "ttt" : ["VVR","VVV","jetFakes"]
+
+signal_processes: ["phi100","phi200"]
+mass_shifts: ["60","70","80","90","100","125","140","160"]
+auto_rebin: True
+auto_mc: True
+verbose: True
+model_dependent: True
+
+systematics:
+        Tau_ID_DM_0:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF","VVLF","VVR","VVV"]
+                name: "syst_tau_id_DM0"
+        
+        Tau_ID_DM_1:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF","VVLF","VVR","VVV"]
+                name: "syst_tau_id_DM1"
+
+        Tau_ID_DM_10:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF","VVLF","VVR","VVV"]
+                name: "syst_tau_id_DM10"
+
+        #DoubleTau_Trigger:
+        #        channel: ["all"]
+        #        effect: "shape"
+        #        processes: ["VVJF","VVLF","VVR","VVV"]
+        #        name: "syst_doubletau_trg"
+
+        #Tau_Scale_1prong:
+        #        channel: ["all"]
+        #        effect: "shape"
+        #        processes: ["VVJF","VVLF","VVR","VVV"]
+        #        name: "syst_1prong"
+
+        #Tau_Scale_1prong1pizero:
+        #        channel: ["all"]
+        #        effect: "shape"
+        #        processes: ["VVJF","VVLF","VVR","VVV"]
+        #        name: "syst_1prong1pizero"
+
+        #Tau_Scale_3prong:
+        #        channel: ["all"]
+        #        effect: "shape"
+        #        processes: ["VVJF","VVLF","VVR","VVV"]
+        #        name: "syst_3prong"
+
+        #Tau_Scale_3prong1pizero:
+        #        channel: ["all"]
+        #        effect: "shape"
+        #        processes: ["VVJF","VVLF","VVR","VVV"]
+        #        name: "syst_3prong1pizero"
+
+        Jet_Res:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+                name: "syst_jet_res"
+
+        Jet_Absolute:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+                name: "syst_Absolute"
+
+        Jet_Absolute_YEAR:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+                name: "syst_Absolute_YEAR"
+
+        Jet_BBEC1:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+                name: "syst_BBEC1"
+
+        Jet_BBEC1_YEAR:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+                name: "syst_BBEC1_YEAR"
+
+        Jet_EC2:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+                name: "syst_EC2"
+
+        Jet_EC2_YEAR:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+                name: "syst_EC2_YEAR"
+
+        Jet_FlavorQCD:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+                name: "syst_FlavorQCD"
+
+        Jet_HF:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+                name: "syst_HF"
+
+        Jet_HF_YEAR:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+                name: "syst_HF_YEAR"
+
+        Jet_RelativeBal:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+                name: "syst_RelativeBal"
+
+        Jet_RelativeSample_YEAR:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF", "VVLF", "VVR", "VVV"]
+                name: "syst_RelativeSample_YEAR"
+
+        MET_Unclustered:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVJF","VVLF","VVR","VVV"]
+                name: "syst_met_unclustered"
+
+#        Electron_Scale:
+#                channel: ["eett","ettt","emtt"]
+#                effect: "shape"
+#                processes: ["VVJF","VVLF","VVR","VVV"]
+#                name: "syst_electron_scale"
+
+        Jet_Fakes_iso:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["jetFakes"]
+                name: "all_iso"
+
+        Jet_Fakes_q_sum:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["jetFakes"]
+                name: "all_q_sum"
+
+        Jet_Fakes_nonclosure:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["jetFakes"]
+                name: "all_non_closure"
+
+#        Electron_ID:
+#                channel: ["eett","ettt","emtt"]
+#                effect: "shape"
+#                processes: ["VVJF","VVLF","VVR","VVV"]
+#                name: "syst_electron_id"
+#
+#        Muon_ID:
+#                channel: ["mmtt","mttt","emtt"]
+#                effect: "shape"
+#                processes: ["VVJF","VVLF","VVR","VVV"]
+#                name: "syst_muon_id"
+
+        Lumi:
+                channel: ["all"]
+                effect: "lnN"
+                processes: ["VVJF","VVLF","VVR","VVV"]
+                scaleFactor: 1.016
+
+

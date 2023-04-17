@@ -109,7 +109,10 @@ if do_systematics:
 #         for year in ["2016_preVFP","2016_postVFP","2017","2018"]:
          for year in ["2018"]:
             name = sysDef["name"].replace("YEAR",year)
-            harvester.cp().process(sysDef["processes"]+sig_procs).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
+            if ("all" in sysDef["channel"]):
+              harvester.cp().process(sysDef["processes"]).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
+            else:
+              harvester.cp().process(sysDef["processes"]).channel(sysDef["channel"]).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
 
    if model_dep:
       with open("input/4tau_xs_uncerts.json") as jsonfile: sig_xs = json.load(jsonfile)

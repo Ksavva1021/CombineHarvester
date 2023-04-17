@@ -79,6 +79,18 @@ systematics:
                 processes: *mc_procs
                 name: "syst_doubletau_trg"
 
+        SingleElectron_Trigger:
+                channel: ["eett","ettt","emtt"]
+                effect: "shape"
+                processes: *mc_procs
+                name: "syst_singlee_trg"
+
+        SingleMuon_Trigger:
+                channel: ["mmtt","mttt","emtt"]
+                effect: "shape"
+                processes: *mc_procs
+                name: "syst_singlem_trg"
+
         Tau_Scale_1prong:
                 channel: ["all"]
                 effect: "shape"
@@ -115,11 +127,11 @@ systematics:
                 processes: *mc_procs
                 name: "syst_Absolute"
 
-#        Jet_Absolute_YEAR:
-#                channel: ["all"]
-#                effect: "shape"
-#                processes: *mc_procs
-#                name: "syst_Absolute_YEAR"
+        Jet_Absolute_YEAR:
+                channel: ["all"]
+                effect: "shape"
+                processes: *mc_procs
+                name: "syst_Absolute_YEAR"
 
         Jet_BBEC1:
                 channel: ["all"]
@@ -127,11 +139,11 @@ systematics:
                 processes: *mc_procs
                 name: "syst_BBEC1"
 
-#        Jet_BBEC1_YEAR:
-#                channel: ["all"]
-#                effect: "shape"
-#                processes: *mc_procs
-#                name: "syst_BBEC1_YEAR"
+        Jet_BBEC1_YEAR:
+                channel: ["all"]
+                effect: "shape"
+                processes: *mc_procs
+                name: "syst_BBEC1_YEAR"
 
         Jet_EC2:
                 channel: ["all"]
@@ -139,11 +151,11 @@ systematics:
                 processes: *mc_procs
                 name: "syst_EC2"
 
-#        Jet_EC2_YEAR:
-#                channel: ["all"]
-#                effect: "shape"
-#                processes: *mc_procs
-#                name: "syst_EC2_YEAR"
+        Jet_EC2_YEAR:
+                channel: ["all"]
+                effect: "shape"
+                processes: *mc_procs
+                name: "syst_EC2_YEAR"
 
         Jet_FlavorQCD:
                 channel: ["all"]
@@ -157,11 +169,11 @@ systematics:
                 processes: *mc_procs
                 name: "syst_HF"
 
-#        Jet_HF_YEAR:
-#                channel: ["all"]
-#                effect: "shape"
-#                processes: *mc_procs
-#                name: "syst_HF_YEAR"
+        Jet_HF_YEAR:
+                channel: ["all"]
+                effect: "shape"
+                processes: *mc_procs
+                name: "syst_HF_YEAR"
 
         Jet_RelativeBal:
                 channel: ["all"]
@@ -169,11 +181,11 @@ systematics:
                 processes: *mc_procs
                 name: "syst_RelativeBal"
 
-#        Jet_RelativeSample_YEAR:
-#                channel: ["all"]
-#                effect: "shape"
-#                processes: *mc_procs
-#                name: "syst_RelativeSample_YEAR"
+        Jet_RelativeSample_YEAR:
+                channel: ["all"]
+                effect: "shape"
+                processes: *mc_procs
+                name: "syst_RelativeSample_YEAR"
 
         MET_Unclustered:
                 channel: ["all"]
@@ -473,4 +485,32 @@ systematics:
                 processes: *mc_procs
                 scaleFactor: 1.016
 
+        Signal_qcd_scale:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["sig_procs"]
+                name: "syst_signal_qcd_scale"
 
+        Signal_pdf:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["sig_procs"]
+                name: "syst_signal_pdf"
+
+        Signal_alphas:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["sig_procs"]
+                name: "syst_signal_alphas"
+
+        qqZZ_K_factor:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVR","VVLF"]
+                name: "syst_qqZZ_k_factor"
+
+        ggZZ_K_factor:
+                channel: ["all"]
+                effect: "shape"
+                processes: ["VVR","VVLF"]
+                name: "syst_ggZZ_k_factor"

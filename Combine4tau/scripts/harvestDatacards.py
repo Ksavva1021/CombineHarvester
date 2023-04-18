@@ -64,6 +64,33 @@ for chn in channels:
 def green(string,**kwargs):
     return kwargs.get('pre',"")+"\x1b[0;32;40m%s\033[0m"%string
 
+def SetRateForNegativeHistSyst(p):
+  if p.type() != "shape": return
+  histU = p.shape_u().Clone()
+  histD = p.shape_d().Clone()
+  print p.process(), p.name(), p.channel(), p.value_u(), p.value_d()
+  if histU.Integral() < 0 and histD.Integral() < 0:
+    print "Setting Rate For Negative Histograms Systematic"
+    nom = harvester.cp().process([p.process()]).channel([p.channel()]).bin([p.bin()]).GetShape()
+    print histU.Integral(), histD.Integral(), nom.Integral()
+    print histU.Integral()/nom.Integral(), histD.Integral()/nom.Integral()
+    print p.value_u(), p.value_d()
+    p.set_value_u(histU.Integral()/nom.Integral())
+    p.set_value_d(histD.Integral()/nom.Integral())
+    histU.Scale(-1.0)
+    histD.Scale(-1.0)
+    p.set_shapes(histU,histD,None)
+
+def SetRateForNegativeHist(p):
+  hist = p.shape().Clone()
+  if p.rate() < 0:
+    print "Setting Rate For Negative Histograms"
+    print p.process()
+    p.set_rate(p.rate()*-1.0)
+    harvester.cp().process([p.process()]).channel([p.channel()]).bin([p.bin()]).AddSyst(harvester, "rate_minus","rateParam",SystMap()(-1.0))
+    harvester.GetParameter("rate_minus").set_range(-1.0,-1.0)
+
+
 def NegativeBins(p):
   '''Replaces negative bins in hists with 0'''
   print("Process is: ",p.process())
@@ -150,6 +177,8 @@ if(auto_rebin):
 # Replacing negative bins
 #print(green("Removing NegativeBins"))
 #harvester.ForEachProc(NegativeBins)
+harvester.ForEachSyst(SetRateForNegativeHistSyst)
+harvester.ForEachProc(SetRateForNegativeHist)
 
 harvester.PrintAll()
 
@@ -186,6 +215,9 @@ if verbose>0:
     print green("\n>>> print parameters...\n")
     harvester.PrintParams()
     print "\n"
+
+
+
 
 
 # WRITER

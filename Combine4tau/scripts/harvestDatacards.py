@@ -89,7 +89,11 @@ for chn in channels:
   harvester.AddProcesses(mass_shifts, [analysis], [era_tag], [chn], sig_procs, cats[chn], True)
 
 if do_systematics:
-   sig_procs_systs = [x + "phi$MASS" for x in sig_procs]
+   if model_dep:
+     sig_procs_systs = ["A$MASS" + x for x in sig_procs]
+   else:
+     sig_procs_systs = [x + "phi$MASS" for x in sig_procs]
+
    for syst in systematics:
       sysDef = copy.deepcopy(systematics[syst])
 
@@ -120,7 +124,7 @@ if do_systematics:
         phi_mass = k.split("phi")[1].split("A")[0]
         A_mass = k.split("A")[1].split("To")[0]
         for syst, lnN in v.items():
-           harvester.cp().process(["phi{}".format(phi_mass)]).AddSyst(harvester,str(syst)+"_yield","lnN",SystMap("mass")([A_mass],[lnN["Down"],lnN["Up"]]))
+           harvester.cp().process(["A$MASSphi{}".format(phi_mass)]).AddSyst(harvester,str(syst)+"_yield","lnN",SystMap("mass")([A_mass],[lnN["Down"],lnN["Up"]]))
 
 
 # Populating Observation, Process and Systematic entries in the harvester instance

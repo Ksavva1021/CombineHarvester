@@ -1,4 +1,4 @@
-folder: "outputs/1704"
+folder: "outputs/1704_mi"
 year: "all"
 channels: ["cmb"]  
 build_combined_workspaces: False
@@ -20,6 +20,7 @@ collect_limits: True
 
 grid_A: ["60","70","80","90","100","125","140","160"]
 grid_phi: ["100","110","125","140","160","180","200","250","300"] 
+#grid_phi: ["100","200"]
 
 categories: 
         "mmtt": [[11,"z_control_nobtag"],[12,"2l2t_sig_nobtag"]]

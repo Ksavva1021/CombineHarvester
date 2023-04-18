@@ -1,4 +1,4 @@
-output_folder: "outputs/1704"
+output_folder: "outputs/1704_mi"
 analysis: "X2HDM"
 year: "all"
 channels: ["mmtt", "ettt","mttt","tttt","eett","ttt","emtt"]  

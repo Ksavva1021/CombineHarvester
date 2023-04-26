@@ -126,7 +126,8 @@ if 'obs' in args.contours:
 
 # Draw excluded regions
 if args.excluded_mass != "":
-  excluded_file = ROOT.TFile("input/excluded_contours.root")
+  #excluded_file = ROOT.TFile("input/excluded_contours.root")
+  excluded_file = ROOT.TFile("input/excluded_contours_v2.root")
   excl_cont = excluded_file.Get("mphi"+args.excluded_mass)
   plot.Set(excl_cont, LineColor=2, FillColor=plot.CreateTransparentColor(2,0.2), FillStyle=1001)
   excl_cont.Draw('FSAME')

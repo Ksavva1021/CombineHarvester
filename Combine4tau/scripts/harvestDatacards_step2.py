@@ -33,6 +33,7 @@ grid_phi = setup["grid_phi"]
 combine_categories = setup["combine_categories"] if "combine_categories" in setup else []
 categories = setup["categories"] if "categories" in setup else []
 model_dependent = setup["model_dependent"]
+cosbma = setup["cosbma"]
 cmssw_base = os.getcwd()
 
 po_ws = ""
@@ -40,6 +41,9 @@ split_higgs = "A"
 if model_dependent: 
   po_ws = "--PO model_dependent"
   split_higgs = "phi"  
+elif cosbma:
+  po_ws = "--PO cosbma"
+  split_higgs = "phi"
 
 pTable = PrettyTable()
 column_names = ["Option", "Setting"]
@@ -102,7 +106,7 @@ if (build_workspaces == True):
 # ------------------------------------
 
 
-def ParametersToFreeze(grid, m, h, sto=False ):
+def ParametersToFreeze(grid, m, h, sto=False, satz=False):
   '''Returns the POIs to be freezed for each mass'''
   frozen_POIs=""
   frozen_POIs_SetToZero=""
@@ -113,13 +117,15 @@ def ParametersToFreeze(grid, m, h, sto=False ):
     elif i == m and sto:
        frozen_POIs += ("r_" + h + i + ",")
        frozen_POIs_SetToZero += ("r_"+ h + i + "=1,")
+    elif satz:
+       frozen_POIs_SetToZero += ("r_"+ h + i + "=0,")
   if frozen_POIs_SetToZero[-1] == ",": frozen_POIs_SetToZero = frozen_POIs_SetToZero[:-1]
   if frozen_POIs[-1] == ",": frozen_POIs = frozen_POIs[:-1]
   return frozen_POIs,frozen_POIs_SetToZero 
 
 # Calculate AsymptoticLimits 
 log_limits = "AL" + datetime.today().strftime('%d%m')
-if not model_dependent:
+if not (model_dependent or cosbma):
   grid_str = ','.join(grid_phi)
 else:
   grid_str = ','.join(grid_A)
@@ -146,11 +152,16 @@ if (calculate_AsymptoticLimits):
               POI = "r_"+split_higgs+m
             else:
               POI = "tanb"
-            frozen_POIs,frozen_POIs_SetToZero = ParametersToFreeze(setup["grid_"+split_higgs],m,split_higgs,sto=model_dependent)
+            frozen_POIs,frozen_POIs_SetToZero = ParametersToFreeze(setup["grid_"+split_higgs],m,split_higgs,sto=model_dependent,satz=cosbma)
+            method = "-M AsymptoticLimits"
+            blinding = "--run expected"
+            if cosbma: 
+              method = "-M AsymptoticGrid %(cmssw_base)s/input/cosbma_tanb_grid.json" % vars()
+              blinding = "-t -1"
             if (unblind == False):
                add_cond = ""
-               if not model_dependent: add_cond += " --rMin 0 --rMax 0.02"
-               os.system("pushd %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/limits/%(split_higgs)s%(m)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M AsymptoticLimits -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 --run expected  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(add_cond)s | tee -a %(cmssw_base)s/%(folder)s/%(year)s/logs/%(log_limits)s_%(chan)s_m%(split_higgs)s%(m)s.txt; popd" %vars())
+               if not (model_dependent or cosbma): add_cond += " --rMin 0 --rMax 0.02"
+               os.system("pushd %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/limits/%(split_higgs)s%(m)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(add_cond)s --dry-run | tee -a %(cmssw_base)s/%(folder)s/%(year)s/logs/%(log_limits)s_%(chan)s_m%(split_higgs)s%(m)s.txt; popd" %vars())
             #os.system("mv higgsCombine*Asymptotic*.root %(cmssw_base)s/%(folder)s/%(year)s/%(chan)s/limits/%(split_higgs)s%(m)s"%vars())
 
       else:

@@ -38,8 +38,7 @@ use_automc = setup["auto_mc"]
 verbose = setup["verbose"]
 do_systematics = setup["do_systematics"]
 systematics = setup["systematics"]
-model_dep = setup["model_dependent"]
-
+model_dep = setup["model_dependent"] or setup["cosbma"]
 base_path = os.getcwd()
 input_dir_path = base_path + "/shapes/"
 pTable = PrettyTable()
@@ -68,13 +67,9 @@ def SetRateForNegativeHistSyst(p):
   if p.type() != "shape": return
   histU = p.shape_u().Clone()
   histD = p.shape_d().Clone()
-  print p.process(), p.name(), p.channel(), p.value_u(), p.value_d()
   if histU.Integral() < 0 and histD.Integral() < 0:
     print "Setting Rate For Negative Histograms Systematic"
     nom = harvester.cp().process([p.process()]).channel([p.channel()]).bin([p.bin()]).GetShape()
-    print histU.Integral(), histD.Integral(), nom.Integral()
-    print histU.Integral()/nom.Integral(), histD.Integral()/nom.Integral()
-    print p.value_u(), p.value_d()
     p.set_value_u(histU.Integral()/nom.Integral())
     p.set_value_d(histD.Integral()/nom.Integral())
     histU.Scale(-1.0)
@@ -85,7 +80,6 @@ def SetRateForNegativeHist(p):
   hist = p.shape().Clone()
   if p.rate() < 0:
     print "Setting Rate For Negative Histograms"
-    print p.process()
     p.set_rate(p.rate()*-1.0)
     harvester.cp().process([p.process()]).channel([p.channel()]).bin([p.bin()]).AddSyst(harvester, "rate_minus","rateParam",SystMap()(-1.0))
     harvester.GetParameter("rate_minus").set_range(-1.0,-1.0)
@@ -116,34 +110,47 @@ for chn in channels:
   harvester.AddProcesses(mass_shifts, [analysis], [era_tag], [chn], sig_procs, cats[chn], True)
 
 if do_systematics:
-   if model_dep:
-     sig_procs_systs = ["A$MASS" + x for x in sig_procs]
-   else:
-     sig_procs_systs = [x + "phi$MASS" for x in sig_procs]
-
    for syst in systematics:
       sysDef = copy.deepcopy(systematics[syst])
 
+      do_sig_procs = False
       if "sig_procs" in sysDef["processes"]:
-        sysDef["processes"].append(sig_procs_systs)
+        do_sig_procs = True
+        #sysDef["processes"].append(sig_procs_systs)
         sysDef["processes"].remove("sig_procs")
         sysDef["processes"] = [i for j in sysDef["processes"] for i in j]
 
       scaleFactor = 1.0
       if "scaleFactor" in sysDef:
          scaleFactor = sysDef["scaleFactor"]
+      
       if ("all" in sysDef["channel"] and ("YEAR" not in syst)):
          harvester.cp().process(sysDef["processes"]).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor)) 
+         if do_sig_procs:
+           harvester.cp().process(sig_procs).mass(mass_shifts).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
+
+
       elif ("YEAR" not in syst):
          harvester.cp().process(sysDef["processes"]).channel(sysDef["channel"]).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
+         if do_sig_procs:
+           harvester.cp().process(sig_procs).mass(mass_shifts).channel(sysDef["channel"]).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
+
+
       if "YEAR" in syst:
 #         for year in ["2016_preVFP","2016_postVFP","2017","2018"]:
          for year in ["2018"]:
+
             name = sysDef["name"].replace("YEAR",year)
             if ("all" in sysDef["channel"]):
               harvester.cp().process(sysDef["processes"]).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
+              if do_sig_procs:
+                harvester.cp().process(sig_procs).mass(mass_shifts).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
+
             else:
               harvester.cp().process(sysDef["processes"]).channel(sysDef["channel"]).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
+              if do_sig_procs:
+                harvester.cp().process(sig_procs).mass(mass_shifts).channel(sysDef["channel"]).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
+
 
    if model_dep:
       with open("input/4tau_xs_uncerts.json") as jsonfile: sig_xs = json.load(jsonfile)
@@ -151,7 +158,8 @@ if do_systematics:
         phi_mass = k.split("phi")[1].split("A")[0]
         A_mass = k.split("A")[1].split("To")[0]
         for syst, lnN in v.items():
-           harvester.cp().process(["A$MASSphi{}".format(phi_mass)]).AddSyst(harvester,str(syst)+"_yield","lnN",SystMap("mass")([A_mass],[lnN["Down"],lnN["Up"]]))
+           print ["phi{}".format(phi_mass)], [A_mass], str(syst)+"_yield","lnN", [lnN["Down"],lnN["Up"]]
+           harvester.cp().process(["phi{}".format(phi_mass)]).mass([str(A_mass)]).AddSyst(harvester,str(syst)+"_yield","lnN",SystMap()([lnN["Down"],lnN["Up"]]))
 
 
 # Populating Observation, Process and Systematic entries in the harvester instance
@@ -163,12 +171,13 @@ for chn in channels:
   if not model_dep:
     harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESSphi$MASS_norm", "$BIN/$PROCESSphi$MASS_$SYSTEMATIC")
   else:
+    print "Using signal samples scaled to cross section"
     harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/A$MASS$PROCESS", "$BIN/A$MASS$PROCESS_$SYSTEMATIC")
    
 if(auto_rebin):
   rebin = AutoRebin()
-  rebin.SetBinThreshold(5)
-  rebin.SetBinUncertFraction(0.4)
+  rebin.SetBinThreshold(0)
+  rebin.SetBinUncertFraction(1.0)
   rebin.SetRebinMode(1)
   rebin.SetPerformRebin(True)
   rebin.SetVerbosity(1) 

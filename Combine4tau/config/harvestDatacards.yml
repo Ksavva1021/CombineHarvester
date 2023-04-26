@@ -1,8 +1,10 @@
-output_folder: "outputs/1704_mi"
+output_folder: "outputs/2504_md_v2"
 analysis: "X2HDM"
 year: "all"
 channels: ["mmtt", "ettt","mttt","tttt","eett","ttt","emtt"]  
-model_dependent: False
+#channels: ["emtt"]
+model_dependent: True
+cosbma: False
 categories: 
         "mmtt": [[11,"mmtt_z_control_nobtag"],[12,"mmtt_2l2t_sig_nobtag"]]
         "emtt": [[11,"emtt_z_control_nobtag"],[12,"emtt_2l2t_sig_nobtag"]]
@@ -42,13 +44,16 @@ background_processes:
           - *mc_bkg_procs
           - ["jetFakes1","jetFakes2","jetFakes3","jetFakes12","jetFakes13","jetFakes23","jetFakes123"]
 
-signal_processes: ["A60","A70","A80","A90","A100","A125","A140","A160"]
-mass_shifts: ["100","110","125","140","160","180","200","250","300"]
+#signal_processes: ["A60","A70","A80","A90","A100","A125","A140","A160"]
+#mass_shifts: ["100","110","125","140","160","180","200","250","300"]
 
 #signal_processes: ["phi100","phi200"]
-#mass_shifts: ["60","70","80","90","100","125","140","160"]
+signal_processes: ["phi100","phi110","phi125","phi140","phi160","phi180","phi200","phi250","phi300"]
+mass_shifts: ["60","70","80","90","100","125","140","160"]
 
-auto_rebin: False
+
+
+auto_rebin: True
 auto_mc: True
 verbose: True 
 
@@ -76,7 +81,7 @@ systematics:
         DoubleTau_Trigger:
                 channel: ["all"]
                 effect: "shape"
-                processes: *mc_procs
+                processes: *mc_bkg_procs
                 name: "syst_doubletau_trg"
 
         SingleElectron_Trigger:
@@ -514,3 +519,21 @@ systematics:
                 effect: "shape"
                 processes: ["VVR","VVLF"]
                 name: "syst_ggZZ_k_factor"
+
+        syst_eff_b:
+                channel: ["mmtt","mttt","emtt","ettt","mttt"]
+                effect: "lnN"
+                processes: *mc_procs
+                scaleFactor: 1.02
+
+        syst_mistag_b:
+                channel: ["mmtt","mttt","emtt","ettt","mttt"]
+                effect: "lnN"
+                processes: *mc_procs
+                scaleFactor: 1.01
+
+        syst_prefiring:
+                channel: ["all"]
+                effect: "lnN"
+                processes: *mc_procs
+                scaleFactor: 1.01

@@ -192,8 +192,8 @@ if args.run:
     
     
           if "YEAR" in syst:
-    #         for year in ["2016_preVFP","2016_postVFP","2017","2018"]:
-             for year in ["2018"]:
+             for year in ["2016_preVFP","2016_postVFP","2017","2018"]:
+             #for year in ["2018"]:
     
                 name = sysDef["name"].replace("YEAR",year)
                 if ("all" in sysDef["channel"]):
@@ -218,7 +218,8 @@ if args.run:
     
     # Populating Observation, Process and Systematic entries in the harvester instance
     for chn in channels:
-      filename = input_dir_path + '/' + era_tag + "/" + chn + "/" + variable + "_" + chn + "_multicat_" + era_tag + ".root"
+      #filename = input_dir_path + '/' + era_tag + "/" + chn + "/" + variable + "_" + chn + "_multicat_" + era_tag + ".root"
+      filename = input_dir_path + "/" + chn + "/" + variable + "_" + chn + "_multicat_" + era_tag + ".root"
       print ">>>   file %s"%(filename)
       print(chn)
       harvester.cp().channel([chn]).process([i for j in bkg_procs[chn] for i in j]).ExtractShapes(filename, "$BIN/$PROCESS", "$BIN/$PROCESS_$SYSTEMATIC")
@@ -341,7 +342,7 @@ if args.run:
         loop_mass = ["200"]
       for grid_str in loop_mass:
         if args.cosbma: name_ext = other_higgs + grid_str
-        os.system("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s --dry-run | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s.txt; popd" %vars())
+        os.system("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s.txt; popd" %vars())
 
 if args.collect:
 

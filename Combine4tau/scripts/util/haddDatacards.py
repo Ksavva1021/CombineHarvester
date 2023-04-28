@@ -1,4 +1,10 @@
 import os
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--input',help= 'Input directory', default='/vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/1204/')
+parser.add_argument('--output',help= 'Output directory', default='/vols/cms/gu18/4tau_v3/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/1704/')
+args = parser.parse_args()
 
 variable = ['mt_tot']
 #variable = ['st','mt_tot']
@@ -13,11 +19,12 @@ categories = {
               "mmtt": ["z_control_nobtag","2l2t_sig_nobtag"],
              }
 
-source_directory = '/vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/1204/'
-target_directory = '/vols/cms/gu18/4tau_v3/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/1704/'
+source_directory = args.input
+target_directory = args.output
 
 
-
+if not os.path.isdir('%(target_directory)s' % vars()):
+  os.system("mkdir %(target_directory)s" % vars())
 for channel in channels: 
   if not os.path.isdir('%(target_directory)s/%(channel)s' % vars()):
     os.system("mkdir %(target_directory)s/%(channel)s" % vars())

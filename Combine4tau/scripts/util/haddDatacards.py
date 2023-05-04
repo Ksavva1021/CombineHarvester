@@ -2,8 +2,8 @@ import os
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--input',help= 'Input directory', default='/vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/1204/')
-parser.add_argument('--output',help= 'Output directory', default='/vols/cms/gu18/4tau_v3/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/1704/')
+parser.add_argument('--input',help= 'Input directory', default='/vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0105/')
+parser.add_argument('--output',help= 'Output directory', default='/vols/cms/gu18/4tau_v3/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/0105_v3/')
 args = parser.parse_args()
 
 variable = ['mt_tot']

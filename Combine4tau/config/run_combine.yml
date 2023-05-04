@@ -1,8 +1,8 @@
 #path: "shapes/1704" 
-path: "shapes/2804"
+path: "shapes/0105_v3"
 analysis: "X2HDM"
 year: "all"
-channels: ["mmtt", "ettt","mttt","tttt","eett","ttt","emtt"]  
+channels: ["mmtt", "ettt","mttt","tttt","eett","ttt","emtt"] 
 categories: 
         "mmtt": [[11,"mmtt_z_control_nobtag"],[12,"mmtt_2l2t_sig_nobtag"]]
         "emtt": [[11,"emtt_z_control_nobtag"],[12,"emtt_2l2t_sig_nobtag"]]
@@ -22,25 +22,32 @@ define: &mc_procs
 background_processes:
         "mmtt": 
           - *mc_bkg_procs
-          - ["jetFakes3","jetFakes4","jetFakes34"]
+          - ["jetFakes"]
+          #- ["jetFakes3","jetFakes4","jetFakes34"]
         "emtt": 
           - *mc_bkg_procs
-          - ["jetFakes3","jetFakes4","jetFakes34"] 
+          - ["jetFakes"]
+          #- ["jetFakes3","jetFakes4","jetFakes34"] 
         "ettt": 
           - *mc_bkg_procs
-          - ["jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
+          - ["jetFakes"]
+          #- ["jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
         "mttt": 
           - *mc_bkg_procs
-          - ["jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
+          - ["jetFakes"]
+          #- ["jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
         "tttt": 
           - *mc_bkg_procs
-          - ["jetFakes12","jetFakes13","jetFakes14","jetFakes123","jetFakes124","jetFakes234","jetFakes1234"]
+          - ["jetFakes"]
+          #- ["jetFakes12","jetFakes13","jetFakes14","jetFakes123","jetFakes124","jetFakes234","jetFakes1234"]
         "eett": 
           - *mc_bkg_procs
-          - ["jetFakes3","jetFakes4","jetFakes34"]
+          - ["jetFakes"]
+          #- ["jetFakes3","jetFakes4","jetFakes34"]
         "ttt" : 
           - *mc_bkg_procs
-          - ["jetFakes1","jetFakes2","jetFakes3","jetFakes12","jetFakes13","jetFakes23","jetFakes123"]
+          - ["jetFakes"]
+          #- ["jetFakes1","jetFakes2","jetFakes3","jetFakes12","jetFakes13","jetFakes23","jetFakes123"]
 
 
 phi_masses: ["100","110","125","140","160","180","200","250","300"]
@@ -54,29 +61,11 @@ verbose: True
 do_systematics: True
 
 systematics:
-        #Tau_ID_DM_0:
-        #        channel: ["all"]
-        #        effect: "shape"
-        #        processes: *mc_procs
-        #        name: "syst_tau_id_DM0"
-        #
-        #Tau_ID_DM_1:
-        #        channel: ["all"]
-        #        effect: "shape"
-        #        processes: *mc_procs
-        #        name: "syst_tau_id_DM1"
-
-        #Tau_ID_DM_10:
-        #        channel: ["all"]
-        #        effect: "shape"
-        #        processes: *mc_procs
-        #        name: "syst_tau_id_DM10"
-
-        #Tau_ID_highpt:
-        #        channel: ["all"]
-        #        effect: "shape"
-        #        processes: *mc_procs
-        #        name: "syst_tau_id_highpt"
+        Tau_ID_highpt:
+                channel: ["all"]
+                effect: "shape"
+                processes: *mc_procs
+                name: "syst_tau_id_highpt"
 
         Tau_ID_YEAR:
                 channel: ["all"]
@@ -292,148 +281,148 @@ systematics:
         Jet_Fakes_mmtt_non_closure:
                 channel: ["mmtt"]
                 effect: "shape"
-                processes: ["jetFakes3","jetFakes4","jetFakes34"]
+                processes: ["jetFakes","jetFakes3","jetFakes4","jetFakes34"]
                 name: "mmtt_non_closure"
 
         Jet_Fakes_eett_non_closure:
                 channel: ["eett"]
                 effect: "shape"
-                processes: ["jetFakes3","jetFakes4","jetFakes34"]
+                processes: ["jetFakes","jetFakes3","jetFakes4","jetFakes34"]
                 name: "eett_non_closure"
 
         Jet_Fakes_emtt_non_closure:
                 channel: ["emtt"]
                 effect: "shape"
-                processes: ["jetFakes3","jetFakes4","jetFakes34"]
+                processes: ["jetFakes","jetFakes3","jetFakes4","jetFakes34"]
                 name: "emtt_non_closure"
 
         Jet_Fakes_mttt_non_closure:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
+                processes: ["jetFakes","jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
                 name: "mttt_non_closure"
 
         Jet_Fakes_ettt_non_closure:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
+                processes: ["jetFakes","jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
                 name: "ettt_non_closure"
 
         Jet_Fakes_ttt_non_closure:
                 channel: ["ttt","tttt"]
                 effect: "shape"
-                processes: ["jetFakes1","jetFakes2","jetFakes3","jetFakes12","jetFakes13","jetFakes23","jetFakes123"]
+                processes: ["jetFakes","jetFakes1","jetFakes2","jetFakes3","jetFakes12","jetFakes13","jetFakes23","jetFakes123"]
                 name: "ttt_non_closure"
 
         # subtraction pass non closure
         Jet_Fakes_mmtt_subtract_pass_non_closure:
                 channel: ["mmtt"]
                 effect: "shape"
-                processes: ["jetFakes3","jetFakes4","jetFakes34"]
+                processes: ["jetFakes","jetFakes3","jetFakes4","jetFakes34"]
                 name: "mmtt_subtract_pass_non_closure"
 
         Jet_Fakes_eett_subtract_pass_non_closure:
                 channel: ["eett"]
                 effect: "shape"
-                processes: ["jetFakes3","jetFakes4","jetFakes34"]
+                processes: ["jetFakes","jetFakes3","jetFakes4","jetFakes34"]
                 name: "eett_subtract_pass_non_closure"
 
         Jet_Fakes_emtt_subtract_pass_non_closure:
                 channel: ["emtt"]
                 effect: "shape"
-                processes: ["jetFakes3","jetFakes4","jetFakes34"]
+                processes: ["jetFakes","jetFakes3","jetFakes4","jetFakes34"]
                 name: "emtt_subtract_pass_non_closure"
 
         Jet_Fakes_mttt_subtract_pass_non_closure:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
+                processes: ["jetFakes","jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
                 name: "mttt_subtract_pass_non_closure"
 
         Jet_Fakes_ettt_subtract_pass_non_closure:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
+                processes: ["jetFakes","jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
                 name: "ettt_subtract_pass_non_closure"
 
         Jet_Fakes_ttt_subtract_pass_non_closure:
                 channel: ["ttt","tttt"]
                 effect: "shape"
-                processes: ["jetFakes1","jetFakes2","jetFakes3","jetFakes12","jetFakes13","jetFakes23","jetFakes123"]
+                processes: ["jetFakes","jetFakes1","jetFakes2","jetFakes3","jetFakes12","jetFakes13","jetFakes23","jetFakes123"]
                 name: "ttt_subtract_pass_non_closure"
 
         # subtraction fail non closure
         Jet_Fakes_mmtt_subtract_fail_non_closure:
                 channel: ["mmtt"]
                 effect: "shape"
-                processes: ["jetFakes3","jetFakes4","jetFakes34"]
+                processes: ["jetFakes","jetFakes3","jetFakes4","jetFakes34"]
                 name: "mmtt_subtract_fail_non_closure"
 
         Jet_Fakes_eett_subtract_fail_non_closure:
                 channel: ["eett"]
                 effect: "shape"
-                processes: ["jetFakes3","jetFakes4","jetFakes34"]
+                processes: ["jetFakes","jetFakes3","jetFakes4","jetFakes34"]
                 name: "eett_subtract_fail_non_closure"
 
         Jet_Fakes_emtt_subtract_fail_non_closure:
                 channel: ["emtt"]
                 effect: "shape"
-                processes: ["jetFakes3","jetFakes4","jetFakes34"]
+                processes: ["jetFakes","jetFakes3","jetFakes4","jetFakes34"]
                 name: "emtt_subtract_fail_non_closure"
 
         Jet_Fakes_mttt_subtract_fail_non_closure:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
+                processes: ["jetFakes","jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
                 name: "mttt_subtract_fail_non_closure"
 
         Jet_Fakes_ettt_subtract_fail_non_closure:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
+                processes: ["jetFakes","jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
                 name: "ettt_subtract_fail_non_closure"
 
         Jet_Fakes_ttt_subtract_fail_non_closure:
                 channel: ["ttt","tttt"]
                 effect: "shape"
-                processes: ["jetFakes1","jetFakes2","jetFakes3","jetFakes12","jetFakes13","jetFakes23","jetFakes123"]
+                processes: ["jetFakes","jetFakes1","jetFakes2","jetFakes3","jetFakes12","jetFakes13","jetFakes23","jetFakes123"]
                 name: "ttt_subtract_fail_non_closure"
 
         # subtraction
         Jet_Fakes_mmtt_subtraction:
                 channel: ["mmtt"]
                 effect: "shape"
-                processes: ["jetFakes3","jetFakes4","jetFakes34"]
+                processes: ["jetFakes","jetFakes3","jetFakes4","jetFakes34"]
                 name: "mmtt_subtraction"
 
         Jet_Fakes_eett_subtraction:
                 channel: ["eett"]
                 effect: "shape"
-                processes: ["jetFakes3","jetFakes4","jetFakes34"]
+                processes: ["jetFakes","jetFakes3","jetFakes4","jetFakes34"]
                 name: "eett_subtraction"
 
         Jet_Fakes_emtt_subtraction:
                 channel: ["emtt"]
                 effect: "shape"
-                processes: ["jetFakes3","jetFakes4","jetFakes34"]
+                processes: ["jetFakes","jetFakes3","jetFakes4","jetFakes34"]
                 name: "emtt_subtraction"
 
         Jet_Fakes_mttt_subtraction:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
+                processes: ["jetFakes","jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
                 name: "mttt_subtraction"
 
         Jet_Fakes_ettt_subtraction:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
+                processes: ["jetFakes","jetFakes2","jetFakes3","jetFakes4","jetFakes23","jetFakes24","jetFakes34","jetFakes234"]
                 name: "ettt_subtraction"
 
         Jet_Fakes_ttt_subtraction:
                 channel: ["ttt","tttt"]
                 effect: "shape"
-                processes: ["jetFakes1","jetFakes2","jetFakes3","jetFakes12","jetFakes13","jetFakes23","jetFakes123"]
+                processes: ["jetFakes","jetFakes1","jetFakes2","jetFakes3","jetFakes12","jetFakes13","jetFakes23","jetFakes123"]
                 name: "ttt_subtraction"
 
         # iso 0f
@@ -441,93 +430,93 @@ systematics:
         Jet_Fakes_mmtt_iso_0f_3:
                 channel: ["mmtt"]
                 effect: "shape"
-                processes: ["jetFakes3"]
+                processes: ["jetFakes","jetFakes3"]
                 name: "mmtt_iso_0f_3"
 
         Jet_Fakes_eett_iso_0f_3:
                 channel: ["eett"]
                 effect: "shape"
-                processes: ["jetFakes3"]
+                processes: ["jetFakes","jetFakes3"]
                 name: "eett_iso_0f_3"
 
         Jet_Fakes_emtt_iso_0f_3:
                 channel: ["emtt"]
                 effect: "shape"
-                processes: ["jetFakes3"]
+                processes: ["jetFakes","jetFakes3"]
                 name: "emtt_iso_0f_3"
 
         Jet_Fakes_mmtt_iso_0f_4:
                 channel: ["mmtt"]
                 effect: "shape"
-                processes: ["jetFakes4"]
+                processes: ["jetFakes","jetFakes4"]
                 name: "mmtt_iso_0f_4"
 
         Jet_Fakes_eett_iso_0f_4:
                 channel: ["eett"]
                 effect: "shape"
-                processes: ["jetFakes4"]
+                processes: ["jetFakes","jetFakes4"]
                 name: "eett_iso_0f_4"
 
         Jet_Fakes_emtt_iso_0f_4:
                 channel: ["emtt"]
                 effect: "shape"
-                processes: ["jetFakes4"]
+                processes: ["jetFakes","jetFakes4"]
                 name: "emtt_iso_0f_4"
 
         # mttt, ettt
         Jet_Fakes_mttt_iso_0f_2:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes2"]
+                processes: ["jetFakes","jetFakes2"]
                 name: "mttt_iso_0f_2"
 
         Jet_Fakes_ettt_iso_0f_2:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes2"]
+                processes: ["jetFakes","jetFakes2"]
                 name: "ettt_iso_0f_2"
 
         Jet_Fakes_mttt_iso_0f_3:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes3"]
+                processes: ["jetFakes","jetFakes3"]
                 name: "mttt_iso_0f_3"
 
         Jet_Fakes_ettt_iso_0f_3:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes3"]
+                processes: ["jetFakes","jetFakes3"]
                 name: "ettt_iso_0f_3"
 
         Jet_Fakes_mttt_iso_0f_4:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes4"]
+                processes: ["jetFakes","jetFakes4"]
                 name: "mttt_iso_0f_4"
 
         Jet_Fakes_ettt_iso_0f_4:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes4"]
+                processes: ["jetFakes","jetFakes4"]
                 name: "ettt_iso_0f_4"
 
         # ttt
         Jet_Fakes_ttt_iso_0f_1:
                 channel: ["ttt"]
                 effect: "shape"
-                processes: ["jetFakes1"]
+                processes: ["jetFakes","jetFakes1"]
                 name: "ttt_iso_0f_1" 
         
         Jet_Fakes_ttt_iso_0f_2:
                 channel: ["ttt"]
                 effect: "shape"
-                processes: ["jetFakes2"]
+                processes: ["jetFakes","jetFakes2"]
                 name: "ttt_iso_0f_2"
 
         Jet_Fakes_ttt_iso_0f_3:
                 channel: ["ttt"]
                 effect: "shape"
-                processes: ["jetFakes3"]
+                processes: ["jetFakes","jetFakes3"]
                 name: "ttt_iso_0f_3"
 
         # iso 1f
@@ -535,37 +524,37 @@ systematics:
         Jet_Fakes_mmtt_iso_1f_3:
                 channel: ["mmtt"]
                 effect: "shape"
-                processes: ["jetFakes34"]
+                processes: ["jetFakes","jetFakes34"]
                 name: "mmtt_iso_1f_3"
 
         Jet_Fakes_eett_iso_1f_3:
                 channel: ["eett"]
                 effect: "shape"
-                processes: ["jetFakes34"]
+                processes: ["jetFakes","jetFakes34"]
                 name: "eett_iso_1f_3"
 
         Jet_Fakes_emtt_iso_1f_3:
                 channel: ["emtt"]
                 effect: "shape"
-                processes: ["jetFakes34"]
+                processes: ["jetFakes","jetFakes34"]
                 name: "emtt_iso_1f_3" 
        
         Jet_Fakes_mmtt_iso_1f_4:
                 channel: ["mmtt"]
                 effect: "shape"
-                processes: ["jetFakes34"]
+                processes: ["jetFakes","jetFakes34"]
                 name: "mmtt_iso_1f_4"
 
         Jet_Fakes_eett_iso_1f_4:
                 channel: ["eett"]
                 effect: "shape"
-                processes: ["jetFakes34"]
+                processes: ["jetFakes","jetFakes34"]
                 name: "eett_iso_1f_4"
 
         Jet_Fakes_emtt_iso_1f_4:
                 channel: ["emtt"]
                 effect: "shape"
-                processes: ["jetFakes34"]
+                processes: ["jetFakes","jetFakes34"]
                 name: "emtt_iso_1f_4"
  
         # iso 1f1p
@@ -573,81 +562,81 @@ systematics:
         Jet_Fakes_mttt_iso_1f1p_2:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes23"]
+                processes: ["jetFakes","jetFakes23"]
                 name: "mttt_iso_1f1p_2"
 
         Jet_Fakes_ettt_iso_1f1p_2:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes23"]
+                processes: ["jetFakes","jetFakes23"]
                 name: "ettt_iso_1f1p_2"
 
         Jet_Fakes_mttt_iso_1f1p_3:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes34"]
+                processes: ["jetFakes","jetFakes23"]
                 name: "mttt_iso_1f1p_3"
 
         Jet_Fakes_ettt_iso_1f1p_3:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes34"]
+                processes: ["jetFakes","jetFakes23"]
                 name: "ettt_iso_1f1p_3"
 
         Jet_Fakes_mttt_iso_1f1p_4:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes24"]
+                processes: ["jetFakes","jetFakes24"]
                 name: "mttt_iso_1f1p_4"
 
         Jet_Fakes_ettt_iso_1f1p_4:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes24"]
+                processes: ["jetFakes","jetFakes24"]
                 name: "ettt_iso_1f1p_4"
 
         # ttt
         Jet_Fakes_ttt_iso_1f1p_1:
                 channel: ["ttt"]
                 effect: "shape"
-                processes: ["jetFakes12"]
+                processes: ["jetFakes","jetFakes12"]
                 name: "ttt_iso_1f1p_1"
 
         Jet_Fakes_ttt_iso_1f1p_2:
                 channel: ["ttt"]
                 effect: "shape"
-                processes: ["jetFakes23"]
+                processes: ["jetFakes","jetFakes23"]
                 name: "ttt_iso_1f1p_2"
 
         Jet_Fakes_ttt_iso_1f1p_3:
                 channel: ["ttt"]
                 effect: "shape"
-                processes: ["jetFakes13"]
+                processes: ["jetFakes","jetFakes13"]
                 name: "ttt_iso_1f1p_3"
 
         # tttt
         Jet_Fakes_tttt_iso_1f1p_1:
                 channel: ["tttt"]
                 effect: "shape"
-                processes: ["jetFakes12"]
+                processes: ["jetFakes","jetFakes12"]
                 name: "ttt_iso_1f1p_1"
 
         Jet_Fakes_tttt_iso_1f1p_2:
                 channel: ["tttt"]
                 effect: "shape"
-                processes: ["jetFakes23","jetFakes24"]
+                processes: ["jetFakes","jetFakes23","jetFakes24"]
                 name: "ttt_iso_1f1p_2"
 
         Jet_Fakes_tttt_iso_1f1p_3:
                 channel: ["tttt"]
                 effect: "shape"
-                processes: ["jetFakes13","jetFakes34"]
+                processes: ["jetFakes","jetFakes13","jetFakes34"]
                 name: "ttt_iso_1f1p_3"
 
         Jet_Fakes_tttt_iso_1f1p_4:
                 channel: ["tttt"]
                 effect: "shape"
-                processes: ["jetFakes14"]
+                processes: ["jetFakes","jetFakes14"]
                 name: "ttt_iso_1f1p_4"
  
         # iso 1p1f
@@ -655,81 +644,81 @@ systematics:
         Jet_Fakes_mttt_iso_1p1f_2:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes24"]
+                processes: ["jetFakes","jetFakes24"]
                 name: "mttt_iso_1p1f_2"
 
         Jet_Fakes_ettt_iso_1p1f_2:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes24"]
+                processes: ["jetFakes","jetFakes24"]
                 name: "ettt_iso_1p1f_2"
 
         Jet_Fakes_mttt_iso_1p1f_3:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes23"]
+                processes: ["jetFakes","jetFakes34"]
                 name: "mttt_iso_1p1f_3"
 
         Jet_Fakes_ettt_iso_1p1f_3:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes23"]
+                processes: ["jetFakes","jetFakes34"]
                 name: "ettt_iso_1p1f_3"
 
         Jet_Fakes_mttt_iso_1p1f_4:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes34"]
+                processes: ["jetFakes","jetFakes34"]
                 name: "mttt_iso_1p1f_4"
 
         Jet_Fakes_ettt_iso_1p1f_4:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes34"]
+                processes: ["jetFakes","jetFakes34"]
                 name: "ettt_iso_1p1f_4"
 
         # ttt
         Jet_Fakes_ttt_iso_1p1f_1:
                 channel: ["ttt"]
                 effect: "shape"
-                processes: ["jetFakes13"]
+                processes: ["jetFakes","jetFakes13"]
                 name: "ttt_iso_1p1f_1" 
         
-        Jet_Fakes_ttt_iso_1p1f_2:
+        Jet_Fakes_ttt_iso_1f1p_2:
                 channel: ["ttt"]
                 effect: "shape"
-                processes: ["jetFakes12"]
-                name: "ttt_iso_1p1f_2"
+                processes: ["jetFakes","jetFakes12"]
+                name: "ttt_iso_1f1p_2"
 
         Jet_Fakes_ttt_iso_1p1f_3:
                 channel: ["ttt"]
                 effect: "shape"
-                processes: ["jetFakes23"]
+                processes: ["jetFakes","jetFakes23"]
                 name: "ttt_iso_1p1f_3"
        
         # tttt
         Jet_Fakes_tttt_iso_1p1f_1:
                 channel: ["tttt"]
                 effect: "shape"
-                processes: ["jetFakes13","jetFakes14"]
+                processes: ["jetFakes","jetFakes13","jetFakes14"]
                 name: "ttt_iso_1p1f_1"
 
-        Jet_Fakes_tttt_iso_1p1f_2:
+        Jet_Fakes_tttt_iso_1f1p_2:
                 channel: ["tttt"]
                 effect: "shape"
-                processes: ["jetFakes12"]
-                name: "ttt_iso_1p1f_2"
+                processes: ["jetFakes","jetFakes12"]
+                name: "ttt_iso_1f1p_2"
 
         Jet_Fakes_tttt_iso_1p1f_3:
                 channel: ["tttt"]
                 effect: "shape"
-                processes: ["jetFakes23"]
+                processes: ["jetFakes","jetFakes23"]
                 name: "ttt_iso_1p1f_3" 
 
         Jet_Fakes_tttt_iso_1p1f_4:
                 channel: ["tttt"]
                 effect: "shape"
-                processes: ["jetFakes24","jetFakes34"]
+                processes: ["jetFakes","jetFakes24","jetFakes34"]
                 name: "ttt_iso_1p1f_4"
 
         # iso 2f
@@ -737,81 +726,81 @@ systematics:
         Jet_Fakes_mttt_iso_2f_2:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes234"]
+                processes: ["jetFakes","jetFakes234"]
                 name: "mttt_iso_2f_2"
 
         Jet_Fakes_ettt_iso_2f_2:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes234"]
+                processes: ["jetFakes","jetFakes234"]
                 name: "ettt_iso_2f_2"
 
         Jet_Fakes_mttt_iso_2f_3:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes234"]
+                processes: ["jetFakes","jetFakes234"]
                 name: "mttt_iso_2f_3"
 
         Jet_Fakes_ettt_iso_2f_3:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes234"]
+                processes: ["jetFakes","jetFakes234"]
                 name: "ettt_iso_2f_3"
 
         Jet_Fakes_mttt_iso_2f_4:
                 channel: ["mttt"]
                 effect: "shape"
-                processes: ["jetFakes234"]
+                processes: ["jetFakes","jetFakes234"]
                 name: "mttt_iso_2f_4"
 
         Jet_Fakes_ettt_iso_2f_4:
                 channel: ["ettt"]
                 effect: "shape"
-                processes: ["jetFakes234"]
+                processes: ["jetFakes","jetFakes234"]
                 name: "ettt_iso_2f_4"
 
         # ttt
         Jet_Fakes_ttt_iso_2f_1:
                 channel: ["ttt"]
                 effect: "shape"
-                processes: ["jetFakes123"]
+                processes: ["jetFakes","jetFakes123"]
                 name: "ttt_iso_2f_1"
 
         Jet_Fakes_ttt_iso_2f_2:
                 channel: ["ttt"]
                 effect: "shape"
-                processes: ["jetFakes123"]
+                processes: ["jetFakes","jetFakes123"]
                 name: "ttt_iso_2f_2"
 
         Jet_Fakes_ttt_iso_2f_3:
                 channel: ["ttt"]
                 effect: "shape"
-                processes: ["jetFakes123"]
+                processes: ["jetFakes","jetFakes123"]
                 name: "ttt_iso_2f_3"
 
         # tttt
         Jet_Fakes_tttt_iso_2f_1:
                 channel: ["tttt"]
                 effect: "shape"
-                processes: ["jetFakes123","jetFakes124","jetFakes134","jetFakes1234"]
+                processes: ["jetFakes","jetFakes123","jetFakes124","jetFakes134","jetFakes1234"]
                 name: "ttt_iso_2f_1"
 
         Jet_Fakes_tttt_iso_2f_2:
                 channel: ["tttt"]
                 effect: "shape"
-                processes: ["jetFakes123","jetFakes124","jetFakes234","jetFakes1234"]
+                processes: ["jetFakes","jetFakes123","jetFakes124","jetFakes234","jetFakes1234"]
                 name: "ttt_iso_2f_2"
 
         Jet_Fakes_tttt_iso_2f_3:
                 channel: ["tttt"]
                 effect: "shape"
-                processes: ["jetFakes123","jetFakes134","jetFakes234","jetFakes1234"]
+                processes: ["jetFakes","jetFakes123","jetFakes134","jetFakes234","jetFakes1234"]
                 name: "ttt_iso_2f_3"
 
         Jet_Fakes_tttt_iso_2f_4:
                 channel: ["tttt"]
                 effect: "shape"
-                processes: ["jetFakes124","jetFakes134","jetFakes234","jetFakes1234"]
+                processes: ["jetFakes","jetFakes124","jetFakes134","jetFakes234","jetFakes1234"]
                 name: "ttt_iso_2f_4"
 
 

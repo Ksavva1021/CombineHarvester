@@ -90,6 +90,9 @@ def SetRateForNegativeHist(p):
     harvester.cp().process([p.process()]).channel([p.channel()]).bin([p.bin()]).AddSyst(harvester, "rate_minus","rateParam",SystMap()(-1.0))
     harvester.GetParameter("rate_minus").set_range(-1.0,-1.0)
 
+def SetNegativeRates(p):
+  print "Setting Rate For Negative Histograms"
+  p.set_rate(p.rate()*-1.0)
 
 def NegativeBins(p):
   '''Replaces negative bins in hists with 0'''
@@ -236,11 +239,26 @@ if args.run:
       rebin.SetPerformRebin(True)
       rebin.SetVerbosity(1) 
       rebin.Rebin(harvester,harvester)
-    
+   
     # Replacing negative bins
-    harvester.ForEachSyst(SetRateForNegativeHistSyst)
-    harvester.ForEachProc(SetRateForNegativeHist)
-    
+    harvester.ForEachProc(NegativeBins)
+
+    #harvester.ForEachSyst(SetRateForNegativeHistSyst)
+    #harvester.ForEachProc(SetRateForNegativeHist)
+
+    #harvester.cp().process(["jetFakes34"]).channel(["mmtt","eett","emtt"]).AddSyst(harvester, "rate_minus","rateParam",SystMap()(-1.0))
+    #harvester.cp().process(["jetFakes23","jetFakes24","jetFakes34"]).channel(["mttt","ettt"]).AddSyst(harvester, "rate_minus","rateParam",SystMap()(-1.0))
+    #harvester.cp().process(["jetFakes12","jetFakes13","jetFakes23"]).channel(["ttt"]).AddSyst(harvester, "rate_minus","rateParam",SystMap()(-1.0))
+    #harvester.cp().process(["jetFakes123","jetFakes124","jetFakes134","jetFakes234"]).channel(["tttt"]).AddSyst(harvester, "rate_minus","rateParam",SystMap()(-1.0))
+    #harvester.GetParameter("rate_minus").set_frozen(1)
+    #harvester.GetParameter("rate_minus").set_range(-1.0,-1.0)
+
+    #harvester.cp().process(["jetFakes34"]).channel(["mmtt","eett","emtt"]).ForEachProc(SetNegativeRates)
+    #harvester.cp().process(["jetFakes23","jetFakes24","jetFakes34"]).channel(["mttt","ettt"]).ForEachProc(SetNegativeRates)
+    #harvester.cp().process(["jetFakes12","jetFakes13","jetFakes23"]).channel(["ttt"]).ForEachProc(SetNegativeRates)
+    #harvester.cp().process(["jetFakes123","jetFakes124","jetFakes134","jetFakes234"]).channel(["tttt"]).ForEachProc(SetNegativeRates)
+
+ 
     harvester.PrintAll()
     
     workspace = RooWorkspace(analysis,analysis)
@@ -259,12 +277,15 @@ if args.run:
     print green(">>> add workspace and extract pdf...")
     harvester.AddWorkspace(workspace, False)
     harvester.ExtractPdfs(harvester, analysis, "$BIN_$PROCESS_morph", "")  # Extract all processes (signal and bkg are named the same way)
+    #harvester.ExtractData(analysis, "$BIN_data_obs")  # Extract the RooDataHist
     harvester.ExtractData(analysis, "$BIN_data_obs")  # Extract the RooDataHist
-    #
+    
     if (use_automc):
        # Set the autoMCStats line (with -1 = no bbb uncertainties)
        # Set threshold to 0.3 to use Poisson PDF instead
-       harvester.SetAutoMCStats(harvester, 0.5, 0, 1)
+       harvester.SetAutoMCStats(harvester, 10.0, 0, 1)
+       #harvester.SetAutoMCStats(harvester, 0.)
+
     
     if verbose>0:
         print green("\n>>> print observation...\n")

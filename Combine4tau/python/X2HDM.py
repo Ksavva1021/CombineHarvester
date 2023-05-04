@@ -45,7 +45,7 @@ class X2HDM(PhysicsModel):
         
         if self.model_dependent or self.cosbma:
           wsptools = imp.load_source('wsptools', '{}/scripts/workspaceTools.py'.format(self.base))
-          f = ROOT.TFile("{}/input/type{}_BR_renscheme7_csbma_tanb_v2.root".format(self.base,self.type_2hdm))
+          f = ROOT.TFile("{}/input/type{}_BR_renscheme7_csbma_tanb_v3.root".format(self.base,self.type_2hdm))
 
           for j in self.m_phi:
             mA_num = None

@@ -160,6 +160,9 @@ pads = plot.TwoPadSplit(0.8, 0, 0)
 pads[1].cd()
 h_axis.GetXaxis().SetTitle(args.x_title)
 h_axis.GetYaxis().SetTitle(args.y_title)
+if args.logy:
+  h_axis.GetYaxis().SetMoreLogLabels()
+  h_axis.GetYaxis().SetNoExponent()
 if args.x_range is not None:
     h_axis.GetXaxis().SetRangeUser(float(args.x_range.split(',')[0]),float(args.x_range.split(',')[1]))
 if args.y_range is not None:

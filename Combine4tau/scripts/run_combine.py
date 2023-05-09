@@ -94,6 +94,7 @@ def SetNegativeRates(p):
   print "Setting Rate For Negative Histograms"
   p.set_rate(p.rate()*-1.0)
 
+
 def NegativeBins(p):
   '''Replaces negative bins in hists with 0'''
   print("Process is: ",p.process())
@@ -122,8 +123,10 @@ def ParametersToFreeze(grid, m, h, sto=False, satz=False):
        frozen_POIs_SetToZero += ("r_"+ h + i + "=1,")
     elif satz:
        frozen_POIs_SetToZero += ("r_"+ h + i + "=0,")
-  if frozen_POIs_SetToZero[-1] == ",": frozen_POIs_SetToZero = frozen_POIs_SetToZero[:-1]
-  if frozen_POIs[-1] == ",": frozen_POIs = frozen_POIs[:-1]
+  if len(frozen_POIs_SetToZero) > 1:
+    if frozen_POIs_SetToZero[-1] == ",": frozen_POIs_SetToZero = frozen_POIs_SetToZero[:-1]
+  if len(frozen_POIs) > 1:
+    if frozen_POIs[-1] == ",": frozen_POIs = frozen_POIs[:-1]
   return frozen_POIs,frozen_POIs_SetToZero
 
 if args.model_dep or args.cosbma:
@@ -181,34 +184,36 @@ if args.run:
           scaleFactor = 1.0
           if "scaleFactor" in sysDef:
              scaleFactor = sysDef["scaleFactor"]
-          
+    
           if ("all" in sysDef["channel"] and ("YEAR" not in syst)):
              harvester.cp().process(sysDef["processes"]).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor)) 
              if do_sig_procs:
-               harvester.cp().process(sig_procs).mass(mass_shifts).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
-    
-    
+#               harvester.cp().process(sig_procs).mass(mass_shifts).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
+                harvester.cp().process(sig_procs).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
+
           elif ("YEAR" not in syst):
              harvester.cp().process(sysDef["processes"]).channel(sysDef["channel"]).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
              if do_sig_procs:
-               harvester.cp().process(sig_procs).mass(mass_shifts).channel(sysDef["channel"]).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
-    
+#               harvester.cp().process(sig_procs).mass(mass_shifts).channel(sysDef["channel"]).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
+               harvester.cp().process(sig_procs).channel(sysDef["channel"]).AddSyst(harvester,sysDef["name"] if "name" in sysDef else syst, sysDef["effect"], SystMap()(scaleFactor))
     
           if "YEAR" in syst:
              for year in ["2016_preVFP","2016_postVFP","2017","2018"]:
-             #for year in ["2018"]:
     
                 name = sysDef["name"].replace("YEAR",year)
                 if ("all" in sysDef["channel"]):
                   harvester.cp().process(sysDef["processes"]).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
                   if do_sig_procs:
-                    harvester.cp().process(sig_procs).mass(mass_shifts).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
+#                    harvester.cp().process(sig_procs).mass(mass_shifts).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
+                    harvester.cp().process(sig_procs).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
     
+
                 else:
                   harvester.cp().process(sysDef["processes"]).channel(sysDef["channel"]).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
                   if do_sig_procs:
-                    harvester.cp().process(sig_procs).mass(mass_shifts).channel(sysDef["channel"]).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
-    
+#                    harvester.cp().process(sig_procs).mass(mass_shifts).channel(sysDef["channel"]).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
+                    harvester.cp().process(sig_procs).channel(sysDef["channel"]).AddSyst(harvester,name, sysDef["effect"], SystMap()(scaleFactor))
+
     
        if args.model_dep or args.cosbma:
           with open("input/4tau_xs_uncerts.json") as jsonfile: sig_xs = json.load(jsonfile)
@@ -227,7 +232,7 @@ if args.run:
       print(chn)
       harvester.cp().channel([chn]).process([i for j in bkg_procs[chn] for i in j]).ExtractShapes(filename, "$BIN/$PROCESS", "$BIN/$PROCESS_$SYSTEMATIC")
       if not (args.model_dep or args.cosbma):
-        harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESSphi$MASS_norm", "$BIN/$PROCESSphi$MASS_$SYSTEMATIC")
+        harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/$PROCESSphi$MASS_norm", "$BIN/$PROCESSphi$MASS_norm_$SYSTEMATIC")
       else:
         harvester.cp().channel([chn]).process(sig_procs).ExtractShapes(filename, "$BIN/A$MASS$PROCESS", "$BIN/A$MASS$PROCESS_$SYSTEMATIC")
        
@@ -258,6 +263,14 @@ if args.run:
     #harvester.cp().process(["jetFakes12","jetFakes13","jetFakes23"]).channel(["ttt"]).ForEachProc(SetNegativeRates)
     #harvester.cp().process(["jetFakes123","jetFakes124","jetFakes134","jetFakes234"]).channel(["tttt"]).ForEachProc(SetNegativeRates)
 
+    #for b in harvester.cp().bin_set():
+    #  print "Replacing data with asimov in bin", b 
+    #  background_shape = harvester.cp().bin([b]).backgrounds().GetShape().Clone()
+    #  total_procs_shape = harvester.cp().bin([b]).data().GetShape().Clone()
+    #  total_procs_shape.Reset("M")
+    #  total_procs_shape = total_procs_shape + background_shape
+    #  def SetToHist(p): p.set_shape(total_procs_shape,True)
+    #  harvester.cp().bin([b]).ForEachObs(SetToHist)
  
     harvester.PrintAll()
     
@@ -277,7 +290,6 @@ if args.run:
     print green(">>> add workspace and extract pdf...")
     harvester.AddWorkspace(workspace, False)
     harvester.ExtractPdfs(harvester, analysis, "$BIN_$PROCESS_morph", "")  # Extract all processes (signal and bkg are named the same way)
-    #harvester.ExtractData(analysis, "$BIN_data_obs")  # Extract the RooDataHist
     harvester.ExtractData(analysis, "$BIN_data_obs")  # Extract the RooDataHist
     
     if (use_automc):
@@ -342,6 +354,10 @@ if args.run:
   
   ### Run Limits ###
   if args.only_limit or not (args.only_harvest or args.only_ws):
+
+    loop_mass = [grid_str]
+    if args.cosbma:
+      loop_mass=grid_str.split(",")
     for m in setup[split_higgs+"_masses"]:
       if not args.model_dep:
         POI = "r_"+split_higgs+m
@@ -356,14 +372,12 @@ if args.run:
         blinding = "-t -1"
       add_cond = ""
       if not (args.model_dep or args.cosbma): add_cond += " --rMin 0 --rMax 0.02"
-      loop_mass = [grid_str]
       name_ext = ""
-      if args.cosbma: 
-        #loop_mass=grid_str.split(",")
-        loop_mass = ["200"]
       for grid_str in loop_mass:
+        if not (m == "200" and grid_str in ["60","100","160"]): continue # tmp
         if args.cosbma: name_ext = other_higgs + grid_str
-        os.system("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s.txt; popd" %vars())
+        os.system("mkdir %(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s" % vars()) 
+        os.system("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s%(other_higgs)s%(grid_str)s.txt; popd" %vars())
 
 if args.collect:
 
@@ -372,11 +386,36 @@ if args.collect:
     for m in setup[split_higgs+"_masses"]:
       os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M CollectLimits %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/higgsCombine.Test.AsymptoticLimits.mH*.root --use-dirs -o %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/limit.json" %vars())
 
-    if not args.cosbma:
+    if not (args.cosbma or args.model_dep):
       os.system("python scripts/plotting/plot_all_model_independent_limits.py --folder=%(output_folder)s" % vars()) 
     elif args.model_dep:
       for m in phi_masses:
-        os.system("python scripts/plotting/plot_model_dependent_limits.py %(output_folder)s/%(era_tag)s/cmb/limits/phi%(m)s/limit_phi%(m)s.json --excluded-mass=%(m)s --logy --scenario-label=\"m_{#phi} = %(m)s GeV\" --output=\"md_mphi$%(m)s_hb\" --title-left=\"Type X 2HDM Alignment Scenario\"" % vars())
-        os.system("python scripts/plotting/plot_model_dependent_limits.py %(output_folder)s/%(era_tag)s/cmb/limits/phi%(m)s/limit_phi%(m)s.json --logy --scenario-label=\"m_{#phi} = %(m)s GeV\" --output=\"md_mphi$%(m)s\" --title-left=\"Type X 2HDM Alignment Scenario\"" % vars())
+        os.system("python scripts/plotting/plot_model_dependent_limits.py %(output_folder)s/%(era_tag)s/cmb/limits/phi%(m)s/limit_phi%(m)s.json --excluded-mass=%(m)s --logy --scenario-label=\"m_{#phi} = %(m)s GeV\" --output=\"md_mphi%(m)s_hb\" --title-left=\"Type X 2HDM Alignment Scenario\"" % vars())
+        os.system("python scripts/plotting/plot_model_dependent_limits.py %(output_folder)s/%(era_tag)s/cmb/limits/phi%(m)s/limit_phi%(m)s.json --logy --scenario-label=\"m_{#phi} = %(m)s GeV\" --output=\"md_mphi%(m)s\" --title-left=\"Type X 2HDM Alignment Scenario\"" % vars())
+
+  else:
+    loop_mass = [grid_str]
+    if args.cosbma:
+      loop_mass=grid_str.split(",")
+    for m in setup[split_higgs+"_masses"]:
+      if not args.model_dep:
+        POI = "r_"+split_higgs+m
+      else:
+        POI = "tanb"
+      frozen_POIs,frozen_POIs_SetToZero = ParametersToFreeze(setup[split_higgs+"_masses"],m,split_higgs,sto=args.model_dep,satz=args.cosbma)
+      method = "-M AsymptoticLimits"
+      blinding = "--run expected"
+      log_limits = "AL" + datetime.today().strftime('%d%m')
+      if args.cosbma:
+        method = "-M AsymptoticGrid %(cmssw_base)s/input/cosbma_tanb_grid.json" % vars()
+        blinding = "-t -1"
+      add_cond = ""
+      if not (args.model_dep or args.cosbma): add_cond += " --rMin 0 --rMax 0.02"
+      name_ext = ""
+      for grid_str in loop_mass:
+        if not (m == "200" and grid_str in ["60","100","160"]): continue # tmp
+        if args.cosbma: name_ext = other_higgs + grid_str
+        os.system("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s%(other_higgs)s%(grid_str)s.txt; popd" %vars())
+        os.system("plotLimitGrid.py %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s/asymptotic_grid.root --output='csbma_phi%(m)sA%(grid_str)s' --logy --x-title='cos(#beta-#alpha)' --y-title='tan#beta' --contours='exp-2,exp-1,exp0,exp+1,exp+2' --title-left='Type X 2HDM' --title-right='138 fb^{-1} (13 Tev)' --scenario-label='m_{#phi} = %(m)s GeV, m_{A} = %(grid_str)s GeV'" % vars())
 
 

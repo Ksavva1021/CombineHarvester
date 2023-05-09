@@ -8,7 +8,7 @@ parser.add_argument('--step', type=str, default='run', help="step to run")
 parser.add_argument('--name', type=str, default='impacts', help="Name")
 args = parser.parse_args()
 
-ws = "/vols/cms/gu18/4tau_v3/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/outputs/0405/all/cmb/ws.root"
+ws = "/vols/cms/gu18/4tau_v3/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/outputs/0905/all/cmb/ws.root"
 freezepar = "r_A60,r_A70,r_A80,r_A90,r_A125,r_A140,r_A160"
 poi = "r_A100"
 

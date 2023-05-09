@@ -35,7 +35,7 @@ parser.add_argument(
     '--scenario-label', default='', help="""Scenario name to be drawn in top
     left of plot""")
 parser.add_argument(
-    '--title-right', default='138 fb^{-1} (GeV)', help="""Right header text above the frame""")
+    '--title-right', default='138 fb^{-1} (13 GeV)', help="""Right header text above the frame""")
 parser.add_argument(
     '--title-left', default='', help="""Left header text above the frame""")
 parser.add_argument(

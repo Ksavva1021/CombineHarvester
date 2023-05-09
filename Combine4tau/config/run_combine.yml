@@ -3,6 +3,7 @@ path: "shapes/0105_v3"
 analysis: "X2HDM"
 year: "all"
 channels: ["mmtt", "ettt","mttt","tttt","eett","ttt","emtt"] 
+#channels: ["tttt"]
 categories: 
         "mmtt": [[11,"mmtt_z_control_nobtag"],[12,"mmtt_2l2t_sig_nobtag"]]
         "emtt": [[11,"emtt_z_control_nobtag"],[12,"emtt_2l2t_sig_nobtag"]]
@@ -15,6 +16,8 @@ categories:
 variable: "mt_tot" 
 
 define: &mc_bkg_procs ["ZR","TTR","VVR","WR","VVV","ZLF","TTLF","VVLF","WLF","Higgs"]
+#define: &mc_procs ["ZR","TTR","VVR","WR","VVV","ZLF","TTLF","VVLF","WLF","Higgs"]
+
 define: &mc_procs  
           - *mc_bkg_procs
           - "sig_procs"
@@ -53,6 +56,8 @@ background_processes:
 phi_masses: ["100","110","125","140","160","180","200","250","300"]
 A_masses: ["60","70","80","90","100","125","140","160"]
 
+#phi_masses: ["200"]
+#A_masses: ["160"]
 
 auto_rebin: True
 auto_mc: True

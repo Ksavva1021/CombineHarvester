@@ -257,6 +257,10 @@ if args.run:
     #harvester.cp().process(["jetFakes123","jetFakes124","jetFakes134","jetFakes234"]).channel(["tttt"]).AddSyst(harvester, "rate_minus","rateParam",SystMap()(-1.0))
     #harvester.GetParameter("rate_minus").set_frozen(1)
     #harvester.GetParameter("rate_minus").set_range(-1.0,-1.0)
+    if not (args.model_dep or args.cosbma): 
+       harvester.cp().process(sig_procs).AddSyst(harvester, "rate_model_ind","rateParam",SystMap()(0.01))
+       harvester.GetParameter("rate_model_ind").set_frozen(1)
+
 
     #harvester.cp().process(["jetFakes34"]).channel(["mmtt","eett","emtt"]).ForEachProc(SetNegativeRates)
     #harvester.cp().process(["jetFakes23","jetFakes24","jetFakes34"]).channel(["mttt","ettt"]).ForEachProc(SetNegativeRates)
@@ -365,33 +369,53 @@ if args.run:
         POI = "tanb"
       frozen_POIs,frozen_POIs_SetToZero = ParametersToFreeze(setup[split_higgs+"_masses"],m,split_higgs,sto=args.model_dep,satz=args.cosbma)
       method = "-M AsymptoticLimits"
-      blinding = "--run expected"
+      #blinding = "--run expected"
+      blinding = ""
       log_limits = "AL" + datetime.today().strftime('%d%m')
       if args.cosbma:
         method = "-M AsymptoticGrid %(cmssw_base)s/input/cosbma_tanb_grid.json" % vars()
         blinding = "-t -1"
       add_cond = ""
-      if not (args.model_dep or args.cosbma): add_cond += " --rMin 0 --rMax 0.02"
+      #if not (args.model_dep or args.cosbma): add_cond += " --rMin 0 --rMax 0.02"
       name_ext = ""
-      for grid_str in loop_mass:
-        if args.cosbma and not (m == "200" and grid_str in ["100","160"]): continue # tmp
-        dir = "%(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s" % vars()
-        tee = "%(split_higgs)s%(m)s" % vars()
-        if args.cosbma: 
-          name_ext = other_higgs + grid_str
+      # ----
+      #for grid_str in loop_mass:
+      #  if args.cosbma and not (m == "200" and grid_str in ["100","160"]): continue # tmp
+      #  dir = "%(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s" % vars()
+      #  tee = "%(split_higgs)s%(m)s" % vars()
+      #  if args.cosbma: 
+      #    name_ext = other_higgs + grid_str
+      #    os.system("mkdir %(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s" % vars()) 
+      #    dir = "%(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)" % vars()
+      #    tee = "%(split_higgs)s%(m)s%(other_higgs)s%(grid_str)s" % vars()
+
+
+      #  os.system("pushd %(dir)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(tee)s.txt; popd" %vars())
+      # ----
+      if not args.cosbma:
+        if not args.model_dep:
+          os.system("mkdir %(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/model_independent" % vars()) 
+          os.system("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/model_independent; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s%(other_higgs)s.txt; popd" %vars())
+        else:
+          os.system("mkdir %(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s" % vars())
+          os.system("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s%(other_higgs)s.txt; popd" %vars())
+
+      else: 
+        for grid_str in loop_mass:
+          if args.cosbma and not (m == "200" and grid_str in ["60","100","160"]): continue # tmp
+          if args.cosbma: name_ext = other_higgs + grid_str
           os.system("mkdir %(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s" % vars()) 
-          dir = "%(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)" % vars()
-          tee = "%(split_higgs)s%(m)s%(other_higgs)s%(grid_str)s" % vars()
-
-
-        os.system("pushd %(dir)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(tee)s.txt; popd" %vars())
+          os.system("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s%(other_higgs)s%(grid_str)s.txt; popd" %vars())
 
 if args.collect:
 
   if args.model_dep or not args.cosbma:
-
-    for m in setup[split_higgs+"_masses"]:
-      os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M CollectLimits %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/higgsCombine.Test.AsymptoticLimits.mH*.root --use-dirs -o %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/limit.json" %vars())
+    if not args.model_dep:
+      for m in setup[split_higgs+"_masses"]:
+        os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M CollectLimits %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/model_independent/higgsCombine.Test.AsymptoticLimits.mH*.root --use-dirs -o %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/model_independent/limit.json" %vars())
+    else:
+      for m in setup[split_higgs+"_masses"]:
+        os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M CollectLimits %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/higgsCombine.Test.AsymptoticLimits.mH*.root --use-dirs -o %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/limit.json" %vars())
 
     if not (args.cosbma or args.model_dep):
       os.system("python scripts/plotting/plot_all_model_independent_limits.py --folder=%(output_folder)s" % vars()) 

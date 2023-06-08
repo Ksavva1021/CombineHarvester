@@ -951,6 +951,15 @@ def LimitTGraphFromJSON(js, label):
     graph.Sort()
     return graph
 
+def LimitTGraphFromJSON_wScaling(js, label, scaling):
+    xvals = []
+    yvals = []
+    for key in js:
+        xvals.append(float(key))
+        yvals.append(js[key][label]/scaling)
+    graph = R.TGraph(len(xvals), array('d', xvals), array('d', yvals))
+    graph.Sort()
+    return graph
 
 def LimitTGraphFromJSONFile(jsfile, label):
     with open(jsfile) as jsonfile:
@@ -999,6 +1008,20 @@ def LimitBandTGraphFromJSON(js, central, lo, hi):
     graph.Sort()
     return graph
 
+def LimitBandTGraphFromJSON_wScaling(js, central, lo, hi, scaling):
+    xvals = []
+    yvals = []
+    yvals_lo = []
+    yvals_hi = []
+    for key in js:
+        xvals.append(float(key))
+        yvals.append(js[key][central]/scaling)
+        yvals_lo.append((js[key][central] - js[key][lo])/scaling)
+        yvals_hi.append((js[key][hi] - js[key][central])/scaling)
+    graph = R.TGraphAsymmErrors(len(xvals), array('d', xvals), array('d', yvals), array(
+        'd', [0]), array('d', [0]), array('d', yvals_lo), array('d', yvals_hi))
+    graph.Sort()
+    return graph
 
 def StandardLimitsFromJSONFile(json_file, draw=['obs', 'exp0', 'exp1', 'exp2']):
     graphs = {}
@@ -1015,6 +1038,20 @@ def StandardLimitsFromJSONFile(json_file, draw=['obs', 'exp0', 'exp1', 'exp2']):
         graphs['exp2'] = LimitBandTGraphFromJSON(data, 'exp0', 'exp-2', 'exp+2')
     return graphs
 
+def StandardLimitsFromJSONFile_wScaling(json_file,scaling,draw=['obs', 'exp0', 'exp1', 'exp2']):
+    graphs = {}
+    data = {}
+    with open(json_file) as jsonfile:
+        data = json.load(jsonfile)
+    if 'obs' in draw:
+        graphs['obs'] = LimitTGraphFromJSON_wScaling(data, 'obs', scaling)
+    if 'exp0' in draw or 'exp' in draw:
+        graphs['exp0'] = LimitTGraphFromJSON_wScaling(data, 'exp0', scaling)
+    if 'exp1' in draw or 'exp' in draw:
+        graphs['exp1'] = LimitBandTGraphFromJSON_wScaling(data, 'exp0', 'exp-1', 'exp+1', scaling)
+    if 'exp2' in draw or 'exp' in draw:
+        graphs['exp2'] = LimitBandTGraphFromJSON_wScaling(data, 'exp0', 'exp-2', 'exp+2', scaling)
+    return graphs
 
 def bestFit(tree, x, y, cut):
     nfind = tree.Draw(y + ":" + x, cut + "deltaNLL == 0")

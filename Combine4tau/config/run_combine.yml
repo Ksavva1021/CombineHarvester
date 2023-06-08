@@ -1,5 +1,5 @@
 #path: "shapes/1704" 
-path: "shapes/0105_v3"
+path: "shapes/0105_2023"
 analysis: "X2HDM"
 year: "all"
 channels: ["mmtt", "ettt","mttt","tttt","eett","ttt","emtt"] 

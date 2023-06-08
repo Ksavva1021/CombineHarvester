@@ -68,6 +68,9 @@ parser.add_argument(
     '--extra_contour_file', default=None, help="""Root file containing graphs
     to be superimposed on plots""")
 parser.add_argument(
+    '--extra_contour_name', default=None, help="""Name of graphs
+    to be superimposed on plots""")
+parser.add_argument(
     '--extra_contour_title', default="", help="""Legend label for extra
     contours""")
 parser.add_argument(
@@ -118,9 +121,11 @@ if args.extra_contour_file is not None:
         extra_contour_file_contents = extra_contour_file.GetListOfKeys()
         extra_contour_names = []
         for i in range(0,len(extra_contour_file_contents)):
-            extra_contour_names.append(extra_contour_file_contents[i].GetName())
-            extra_contours_per_index = [extra_contour_file.Get(c) for c in extra_contour_names]
-        extra_contours.append(extra_contours_per_index)
+            if extra_contour_file_contents[i].GetName() in args.extra_contour_name.split(","):
+              print extra_contour_file_contents[i].GetName()
+              extra_contour_names.append(extra_contour_file_contents[i].GetName())
+              extra_contours_per_index = [extra_contour_file.Get(c) for c in extra_contour_names]
+              extra_contours.append(extra_contours_per_index)
 else:
     extra_contours = None
 
@@ -269,9 +274,13 @@ if extra_contours is not None:
     if args.extra_contour_style is not None: 
         contour_styles = args.extra_contour_style.split(',')
     for i in range(0,len(extra_contours)):
+        print i
         for gr in extra_contours[i]:
-            plot.Set(gr,LineWidth=2,LineColor=ROOT.kBlue,LineStyle=int(contour_styles[i]))
-            gr.Draw('LSAME')
+            #plot.Set(gr,LineWidth=2,LineColor=ROOT.kBlue,LineStyle=int(contour_styles[i]))
+            #gr.Draw('LSAME')
+            plot.Set(gr, LineColor=int(contour_styles[i]), FillColor=plot.CreateTransparentColor(int(contour_styles[i]),0.2), FillStyle=1001)
+            gr.Draw('FSAME')
+            gr.Draw("LSAME")
    
 
 # We just want the top pad to look like a box, so set all the text and tick
@@ -300,7 +309,9 @@ if extra_contours is not None:
     if args.extra_contour_title is not None: 
         contour_title = args.extra_contour_title.split(',')
     for i in range(0,len(contour_title)): 
-        legend.AddEntry(extra_contours[i][0],contour_title[i],"L")
+        #legend.AddEntry(extra_contours[i][0],contour_title[i],"L")
+        entry = legend.AddEntry(extra_contours[i][0],contour_title[i], "F")
+        entry.SetTextFont(82)
 legend.Draw()
 
 # Draw logos and titles

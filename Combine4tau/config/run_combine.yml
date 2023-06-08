@@ -3,7 +3,6 @@ path: "shapes/0105_v3"
 analysis: "X2HDM"
 year: "all"
 channels: ["mmtt", "ettt","mttt","tttt","eett","ttt","emtt"] 
-#channels: ["tttt"]
 categories: 
         "mmtt": [[11,"mmtt_z_control_nobtag"],[12,"mmtt_2l2t_sig_nobtag"]]
         "emtt": [[11,"emtt_z_control_nobtag"],[12,"emtt_2l2t_sig_nobtag"]]

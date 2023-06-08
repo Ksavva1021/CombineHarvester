@@ -4,6 +4,7 @@ from array import array
 import re
 import json
 import types
+import seaborn as sns
 
 COL_STORE = []
 
@@ -12,6 +13,211 @@ COL_STORE = []
 ## @details Set the properties of the global gStyle object and create colours
 ## and colour palettes
 ##@{
+
+
+def HTTPlotClean(
+            bkg_hists=[],
+            sig_hists=[],
+            data_hist=None,
+            custom_uncerts = None,
+            ratio_range="0.8,1.2",
+            x_title="",
+            y_title="",
+            plot_name="htt_plot",
+            draw_data=True,
+            norm_bins=False,
+            bkg_colours = [R.TColor.GetColor(r,g,b) for r,g,b in sns.color_palette("Set2", 8)],
+            sig_colours=[9,10],
+            title_left="",
+            title_right="",
+            ):
+    R.gROOT.SetBatch(R.kTRUE)
+    R.TH1.AddDirectory(False)
+    ModTDRStyle(r=0.04, l=0.14)
+    R.TGaxis.SetExponentOffset(-0.06, 0.01, "y");
+
+
+    if draw_data:
+      total_datahist = data_hist.Clone()
+      blind_datahist = total_datahist.Clone()
+      total_datahist.SetMarkerStyle(20)
+      blind_datahist.SetMarkerStyle(20)
+      blind_datahist.SetLineColor(1)
+
+
+    #Create stacked plot for the backgrounds
+    for ind, h in enumerate(bkg_hists):
+        h.SetFillColor(bkg_colours[ind])
+        h.SetLineColor(R.kBlack)
+        h.SetMarkerSize(0)
+
+        if norm_bins:
+            h.Scale(1.0,"width")
+
+
+    stack = R.THStack("hs","")
+    bkghist = R.TH1F()
+    for hists in reversed(bkg_hists):
+      stack.Add(hists.Clone())
+      if bkghist.GetEntries()==0:
+          bkghist = hists.Clone()
+      else:
+          bkghist.Add(hists.Clone())
+
+    c1 = R.TCanvas()
+    c1.cd()
+
+    pads=TwoPadSplit(0.29,0.01,0.01)
+    pads[0].cd()
+
+    axish = createAxisHists(2,bkghist,bkghist.GetXaxis().GetXmin(),bkghist.GetXaxis().GetXmax()-0.0001)
+    axish[1].GetXaxis().SetTitle(x_title)
+    axish[1].GetXaxis().SetLabelSize(0.03)
+    axish[1].GetXaxis().SetTitleSize(0.04)
+    axish[1].GetYaxis().SetNdivisions(4)
+    axish[1].GetYaxis().SetTitle("Obs/Exp")
+    axish[1].GetYaxis().SetTitleOffset(1.6)
+    axish[1].GetYaxis().SetTitleSize(0.04)
+    axish[1].GetYaxis().SetLabelSize(0.03)
+
+    axish[0].GetXaxis().SetTitleSize(0)
+    axish[0].GetXaxis().SetLabelSize(0)
+
+    max_bin_content = 0
+    for i in range(stack.GetNhists()):
+        hist = stack.GetHists().At(i)
+        bin_content = hist.GetBinContent(hist.GetMaximumBin())
+        if bin_content > max_bin_content:
+            max_bin_content = bin_content
+
+    axish[0].GetYaxis().SetRangeUser(0,1.6*max_bin_content)
+
+
+    axish[0].GetYaxis().SetTitle(y_title)
+    axish[0].GetYaxis().SetTitleOffset(1.6)
+    axish[0].GetYaxis().SetTitleSize(0.04)
+    axish[0].GetYaxis().SetLabelSize(0.03)
+
+    axish[0].Draw()
+
+    #Draw uncertainty band
+    bkghist.SetFillColor(CreateTransparentColor(12,0.4))
+    bkghist.SetLineColor(CreateTransparentColor(12,0.4))
+    bkghist.SetMarkerSize(0)
+    bkghist.SetMarkerColor(CreateTransparentColor(12,0.4))
+
+    stack.Draw("histsame")
+
+    h_ratio = []
+    pads[0].cd()
+    for ind, h in enumerate(sig_hists):
+        if norm_bins:
+          h.Scale(1.0,"width")
+        h.SetLineColor(sig_colours[ind])
+        h.SetLineWidth(3)
+        h.SetMarkerSize(0)
+        h.Draw("hist same")
+
+    if norm_bins and draw_data:
+        blind_datahist.Scale(1.0,"width")
+        total_datahist.Scale(1.0,"width")
+
+    error_hist = bkghist.Clone()
+    if custom_uncerts != None:
+      bkg_uncert_up = custom_uncerts[0].Clone()
+      bkg_uncert_down = custom_uncerts[1].Clone()
+      if norm_bins:
+        bkg_uncert_up.Scale(1.0,"width")
+        bkg_uncert_down.Scale(1.0,"width")
+
+      for i in range(1,bkg_uncert_up.GetNbinsX()+1):
+          stat_error=error_hist.GetBinError(i)
+          bin_up = bkg_uncert_up.GetBinContent(i)
+          bin_down = bkg_uncert_down.GetBinContent(i)
+          error = abs(bin_up - bin_down)/2
+          band_center = max(bin_up,bin_down) - error
+          error = math.sqrt(error**2+stat_error**2)
+          error_hist.SetBinContent(i,band_center)
+          error_hist.SetBinError(i,error)
+
+    error_hist.Draw("e2same")
+    if draw_data: blind_datahist.Draw("E same")
+    axish[0].Draw("axissame")
+
+    #Setup legend
+    legend = PositionedLegend(0.4,0.38,3,0.03) # when showing plots of signal
+    legend.SetTextFont(42)
+    legend.SetTextSize(0.028)
+    legend.SetFillColor(0)
+    if draw_data: legend.AddEntry(blind_datahist,"Observation","PE")
+    for hists in bkg_hists:
+        legend.AddEntry(hists,hists.GetName(),"f")
+    legend.AddEntry(error_hist,"Background uncertainty","f")
+    for hists in sig_hists:
+        legend.AddEntry(hists,hists.GetName(),"l")
+
+    legend.Draw("same")
+
+    latex2 = R.TLatex()
+    latex2.SetNDC()
+    latex2.SetTextAngle(0)
+    latex2.SetTextColor(R.kBlack)
+    latex2.SetTextSize(0.04)
+    latex2.DrawLatex(0.145,0.955,title_left)
+
+    #CMS and lumi labels
+    #DrawCMSLogo(pads[0], 'CMS', 'Preliminary', 11, 0.045, 0.05, 1.0, '', 1.0)
+    DrawTitle(pads[0], title_right, 3)
+
+    h_ratio = []
+    ratio_bkghist = MakeRatioHist(error_hist.Clone(),bkghist.Clone(),True,False)
+    if draw_data: blind_ratio = MakeRatioHist(blind_datahist.Clone(),bkghist.Clone(),True,False)
+    pads[1].cd()
+    pads[1].SetGrid(0,1)
+    axish[1].Draw("axis")
+    if ratio_range == "0,2":
+        ratio_range = "0.01,1.99"
+
+    for i in range(0,ratio_bkghist.GetNbinsX()+1):
+        if ratio_bkghist.GetBinContent(i) > float(ratio_range.split(',')[1]):
+            ratio_bkghist.SetBinContent(i,1.0)
+        axish[1].SetMinimum(float(ratio_range.split(',')[0]))
+        axish[1].SetMaximum(float(ratio_range.split(',')[1]))
+
+
+    for i, h in enumerate(sig_hists):
+        h_ratio.append(h.Clone())
+        h_ratio[i].Add(bkghist)
+        h_ratio[i].Divide(bkghist)
+        for b in range(0,h_ratio[i].GetNbinsX()+2):
+            if h_ratio[i].GetBinContent(b) == 0 and h_ratio[i].GetBinError(b) == 0:
+                h_ratio[i].SetBinContent(b,1)
+            h_ratio[i].SetLineColor(sig_colours[i])
+            h_ratio[i].SetLineWidth(2)
+            h_ratio[i].Draw("hist same")
+    ratio_bkghist.SetMarkerSize(0)
+    ratio_bkghist.Draw("e2same")
+    if draw_data: blind_ratio.DrawCopy("e0same")
+
+    if custom_uncerts != None:
+        bkg_uncert_up.SetLineColor(CreateTransparentColor(12,0.4))
+        bkg_uncert_down.SetLineColor(CreateTransparentColor(12,0.4))
+        bkg_uncert_up.SetLineWidth(0)
+        bkg_uncert_down.SetLineWidth(0)
+        bkg_uncert_up = MakeRatioHist(bkg_uncert_up,bkghist.Clone(),True,False)
+        bkg_uncert_down = MakeRatioHist(bkg_uncert_down,bkghist.Clone(),True,False)
+        bkg_uncert_up.Draw('histsame')
+        bkg_uncert_down.Draw('histsame')
+    pads[1].RedrawAxis("G")
+
+    pads[0].cd()
+    pads[0].GetFrame().Draw()
+    pads[0].RedrawAxis()
+
+    c1.SaveAs(plot_name+'.pdf')
+    c1.SaveAs(plot_name+'.png')
+
+    c1.Close()
 
 
 def SetTDRStyle():
@@ -477,6 +683,18 @@ def CreateAxisHist(src, at_limits=True):
     R.gPad = backup
     return result
 
+
+def createAxisHists(n,src,xmin=0,xmax=499):
+  result = []
+  for i in range(0,n):
+    res = src.Clone()
+    res.Reset()
+    res.SetTitle("")
+    res.SetName("axis%(i)d"%vars())
+    res.SetAxisRange(xmin,xmax)
+    res.SetStats(0)
+    result.append(res)
+  return result
 
 def CreateAxisHists(n, src, at_limits):
     res = []

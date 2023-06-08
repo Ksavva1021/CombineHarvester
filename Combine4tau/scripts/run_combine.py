@@ -374,10 +374,17 @@ if args.run:
       if not (args.model_dep or args.cosbma): add_cond += " --rMin 0 --rMax 0.02"
       name_ext = ""
       for grid_str in loop_mass:
-        if not (m == "200" and grid_str in ["60","100","160"]): continue # tmp
-        if args.cosbma: name_ext = other_higgs + grid_str
-        os.system("mkdir %(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s" % vars()) 
-        os.system("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s%(other_higgs)s%(grid_str)s.txt; popd" %vars())
+        if args.cosbma and not (m == "200" and grid_str in ["100","160"]): continue # tmp
+        dir = "%(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s" % vars()
+        tee = "%(split_higgs)s%(m)s" % vars()
+        if args.cosbma: 
+          name_ext = other_higgs + grid_str
+          os.system("mkdir %(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s" % vars()) 
+          dir = "%(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)" % vars()
+          tee = "%(split_higgs)s%(m)s%(other_higgs)s%(grid_str)s" % vars()
+
+
+        os.system("pushd %(dir)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(tee)s.txt; popd" %vars())
 
 if args.collect:
 
@@ -413,9 +420,10 @@ if args.collect:
       if not (args.model_dep or args.cosbma): add_cond += " --rMin 0 --rMax 0.02"
       name_ext = ""
       for grid_str in loop_mass:
-        if not (m == "200" and grid_str in ["60","100","160"]): continue # tmp
+        if not (m == "200" and grid_str in ["100","160"]): continue # tmp
         if args.cosbma: name_ext = other_higgs + grid_str
         os.system("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s%(other_higgs)s%(grid_str)s.txt; popd" %vars())
+        print("plotLimitGrid.py %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s/asymptotic_grid.root --output='csbma_phi%(m)sA%(grid_str)s' --logy --x-title='cos(#beta-#alpha)' --y-title='tan#beta' --contours='exp-2,exp-1,exp0,exp+1,exp+2' --title-left='Type X 2HDM' --title-right='138 fb^{-1} (13 Tev)' --scenario-label='m_{#phi} = %(m)s GeV, m_{A} = %(grid_str)s GeV'" % vars())
         os.system("plotLimitGrid.py %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s/asymptotic_grid.root --output='csbma_phi%(m)sA%(grid_str)s' --logy --x-title='cos(#beta-#alpha)' --y-title='tan#beta' --contours='exp-2,exp-1,exp0,exp+1,exp+2' --title-left='Type X 2HDM' --title-right='138 fb^{-1} (13 Tev)' --scenario-label='m_{#phi} = %(m)s GeV, m_{A} = %(grid_str)s GeV'" % vars())
 
 

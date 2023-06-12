@@ -59,7 +59,7 @@ for ind, mass in enumerate(masses):
 
   print "Getting mass:", mass
   
-  graphs.append(StandardLimitsFromJSONFile_wScaling(options.folder+'/all/cmb/limits/A'+ str(mass) + '/model_independent/limit_model_independent.json',100,draw=['exp0', 'exp1','exp2']))
+  graphs.append(StandardLimitsFromJSONFile_wScaling(options.folder+'/all/cmb/limits/A'+ str(mass) + '/model_independent/limit_model_independent.json',100,draw=['obs','exp0', 'exp1','exp2']))
   #graphs.append(StandardLimitsFromJSONFile(options.folder+'/all/cmb/limits/A'+ str(mass) + '/limit_A' + str(mass) + '.json',draw=['obs','exp0', 'exp1','exp2']))
   #graphs.append(StandardLimitsFromJSONFile(options.folder+'/all/cmb/limits/A'+ str(mass) + '/limit_A' + str(mass) + '.json',draw=['exp0']))
 
@@ -116,7 +116,7 @@ for ind, mass in enumerate(masses):
 
   # Set the standard green and yellow colors and draw
   StyleLimitBand(graphs[ind],overwrite_style_dict=style_dict["style"])
-  DrawLimitBand(pads[0], graphs[ind],draw=['exp0','exp1','exp2'], legend=legend if first_loop else None,legend_overwrite=style_dict["legend"] if first_loop else None)
+  DrawLimitBand(pads[0], graphs[ind],draw=['exp0','exp1','exp2','obs'], legend=legend if first_loop else None,legend_overwrite=style_dict["legend"] if first_loop else None)
   legend.Draw()
 
   if first_loop: first_loop = False

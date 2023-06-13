@@ -160,6 +160,12 @@ def main(args):
     globalFitLine.Draw("same")
     points.Draw("0PZ SAME")
 
+    ZeroLine = ROOT.TLine(0, 0, 0, num_chans)
+    ZeroLine.SetLineWidth(3)
+    ZeroLine.SetLineColor(13)
+    ZeroLine.SetLineStyle(2)
+    ZeroLine.Draw("same")
+
     ROOT.gPad.SetTickx()
     ROOT.gPad.SetTicky()
     ROOT.gPad.RedrawAxis()

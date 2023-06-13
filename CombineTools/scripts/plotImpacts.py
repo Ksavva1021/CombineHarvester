@@ -65,7 +65,8 @@ with open(args.input) as jsonfile:
     data = json.load(jsonfile)
 
 # Set the global plotting style
-plot.ModTDRStyle(l=args.left_margin, b=0.10, width=(900 if args.checkboxes else 700), height=args.height)
+plot.ModTDRStyle(l=args.left_margin, r=0.1, b=0.10, width=(900 if args.checkboxes else 700), height=args.height)
+
 
 # We will assume the first POI is the one to plot
 POIs = [ele['name'] for ele in data['POIs']]

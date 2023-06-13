@@ -8,7 +8,7 @@ parser.add_argument('--step', type=str, default='all', help="step to run")
 parser.add_argument('--name', type=str, default='gof', help="Name")
 args = parser.parse_args()
 
-ws = "/vols/cms/gu18/4tau_v3/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/outputs/0706_eett/all/cmb/ws.root"
+ws = "/vols/cms/gu18/4tau_v3/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/0806_unblinding/all/cmb/ws.root"
 freezepar = "r_A60,r_A70,r_A80,r_A90,r_A125,r_A140,r_A160"
 poi = "r_A100"
 
@@ -23,13 +23,13 @@ name = args.name
 
 step = args.step
 
-algo = "saturated"
+algo = "KS"
 
 ntoys = 2000
 ntoysperjob = 20
 
 if step in ["run","all"]:
-  os.system("combine -M GoodnessOfFit -d %(ws)s -n .%(name)s_%(algo)s --algo=%(algo)s --setParameters %(setpar)s --fixedSignalStrength=0 -m %(mass)s" % vars())
+  os.system("combine -M GoodnessOfFit -d %(ws)s -n .%(name)s_%(algo)s --algo=%(algo)s --setParameters %(setpar)s --freezeParameters %(freezepar)s --fixedSignalStrength=0 -m %(mass)s" % vars())
   for i in range(0,int(ntoys/ntoysperjob)):
     seed = 1234 + i
     os.system("combineTool.py -M GoodnessOfFit -d %(ws)s -n .%(name)s_%(algo)s --algo=%(algo)s --setParameters %(setpar)s --fixedSignalStrength=0 -m %(mass)s -t %(ntoysperjob)s -s %(seed)s --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name=\"%(name)s_%(algo)s_%(i)i\"" % vars())

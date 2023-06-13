@@ -48,4 +48,4 @@ elif step == "collect":
         new_impacts[k1].remove(v2)
   with open("%(name)s.json" % vars(), 'w') as outfile: json.dump(new_impacts, outfile) 
 
-  os.system("plotImpacts.py -i %(name)s.json -o %(name)s" % vars())
+  os.system("plotImpacts.py -i %(name)s.json -o %(name)s --blind" % vars())

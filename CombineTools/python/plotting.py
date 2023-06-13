@@ -30,10 +30,18 @@ def HTTPlotClean(
             sig_colours=[9,10],
             title_left="",
             title_right="",
+            replace_axis = None,
+            replace_labels = [[],[]],
+            shift_pad_up = 0.0,
+            x_title_offset = 1.0,
+            divider_lines = [],
+            divider_text = [[],[]],
+            y_axis_above_max = 1.5,
+            width = 600,
             ):
     R.gROOT.SetBatch(R.kTRUE)
     R.TH1.AddDirectory(False)
-    ModTDRStyle(r=0.04, l=0.14)
+    ModTDRStyle(r=0.04, l=0.14, width=width)
     R.TGaxis.SetExponentOffset(-0.06, 0.01, "y");
 
 
@@ -67,13 +75,15 @@ def HTTPlotClean(
     c1 = R.TCanvas()
     c1.cd()
 
-    pads=TwoPadSplit(0.29,0.01,0.01)
+    pads=TwoPadSplit(0.29+shift_pad_up,0.01,0.01)
     pads[0].cd()
+    pads[1].SetBottomMargin(shift_pad_up+0.1)
 
     axish = createAxisHists(2,bkghist,bkghist.GetXaxis().GetXmin(),bkghist.GetXaxis().GetXmax()-0.0001)
     axish[1].GetXaxis().SetTitle(x_title)
     axish[1].GetXaxis().SetLabelSize(0.03)
     axish[1].GetXaxis().SetTitleSize(0.04)
+    axish[1].GetXaxis().SetTitleOffset(x_title_offset)
     axish[1].GetYaxis().SetNdivisions(4)
     axish[1].GetYaxis().SetTitle("Obs/Exp")
     axish[1].GetYaxis().SetTitleOffset(1.6)
@@ -89,8 +99,11 @@ def HTTPlotClean(
         bin_content = hist.GetBinContent(hist.GetMaximumBin())
         if bin_content > max_bin_content:
             max_bin_content = bin_content
+        bin_content = total_datahist.GetBinContent(total_datahist.GetMaximumBin())
+        if bin_content > max_bin_content:
+            max_bin_content = bin_content
 
-    axish[0].GetYaxis().SetRangeUser(0,1.6*max_bin_content)
+    axish[0].GetYaxis().SetRangeUser(0,y_axis_above_max*max_bin_content)
 
 
     axish[0].GetYaxis().SetTitle(y_title)
@@ -107,6 +120,23 @@ def HTTPlotClean(
     bkghist.SetMarkerColor(CreateTransparentColor(12,0.4))
 
     stack.Draw("histsame")
+
+    lines = []
+    for i in divider_lines:
+      lines.append(R.TLine(i, 0, i, y_axis_above_max*max_bin_content))
+      lines[-1].SetLineColor(R.kBlack)
+      lines[-1].SetLineWidth(3)
+      lines[-1].Draw("same")
+
+    for ind,i in enumerate(divider_text[0]):
+      latex = R.TLatex()
+      latex.SetTextAngle(90)
+      latex.SetTextColor(R.kBlack)
+      latex.SetTextFont(42)
+      latex.SetTextSize(0.03)
+      latex.SetTextAlign(32)
+      latex.DrawLatex(i, 0.97*y_axis_above_max*max_bin_content, divider_text[1][ind])
+
 
     h_ratio = []
     pads[0].cd()
@@ -145,16 +175,24 @@ def HTTPlotClean(
     axish[0].Draw("axissame")
 
     #Setup legend
-    legend = PositionedLegend(0.4,0.38,3,0.03) # when showing plots of signal
+    #legend = PositionedLegend(0.4,0.38,3,0.03) # when showing plots of signal
+    #legend = PositionedLegend(0.3,0.28,3,0.03) # when showing plots of signal
+    #legend = PositionedLegend(0.17,0.25,3,0.03) # when showing plots of signal
+    legend = PositionedLegend(0.17,0.3,3,0.03) # when showing plots of signal
     legend.SetTextFont(42)
-    legend.SetTextSize(0.028)
+    legend.SetTextSize(0.025)
     legend.SetFillColor(0)
     if draw_data: legend.AddEntry(blind_datahist,"Observation","PE")
     for hists in bkg_hists:
         legend.AddEntry(hists,hists.GetName(),"f")
-    legend.AddEntry(error_hist,"Background uncertainty","f")
+    legend.AddEntry(error_hist,"Bkg. unc.","f")
     for hists in sig_hists:
-        legend.AddEntry(hists,hists.GetName(),"l")
+        texts = hists.GetName().split(";")
+        for text in texts:
+            if text == texts[0]:
+                legend.AddEntry(hists,text,"l")
+            else:
+                legend.AddEntry(hists,text,"")
 
     legend.Draw("same")
 
@@ -166,7 +204,7 @@ def HTTPlotClean(
     latex2.DrawLatex(0.145,0.955,title_left)
 
     #CMS and lumi labels
-    #DrawCMSLogo(pads[0], 'CMS', 'Preliminary', 11, 0.045, 0.05, 1.0, '', 1.0)
+    #DrawCMSLogo(pads[0], 'CMS', 'Work In Progress', 1, 0.125, -0.07, 0, '', cmsTextSize=0.8)
     DrawTitle(pads[0], title_right, 3)
 
     h_ratio = []
@@ -183,6 +221,13 @@ def HTTPlotClean(
             ratio_bkghist.SetBinContent(i,1.0)
         axish[1].SetMinimum(float(ratio_range.split(',')[0]))
         axish[1].SetMaximum(float(ratio_range.split(',')[1]))
+
+    ratio_lines = []
+    for i in divider_lines:
+      ratio_lines.append(R.TLine(i, float(ratio_range.split(',')[0]), i, float(ratio_range.split(',')[1])))
+      ratio_lines[-1].SetLineColor(R.kBlack)
+      ratio_lines[-1].SetLineWidth(3)
+      ratio_lines[-1].Draw("same")
 
 
     for i, h in enumerate(sig_hists):
@@ -208,6 +253,10 @@ def HTTPlotClean(
         bkg_uncert_down = MakeRatioHist(bkg_uncert_down,bkghist.Clone(),True,False)
         bkg_uncert_up.Draw('histsame')
         bkg_uncert_down.Draw('histsame')
+
+    if replace_axis:
+      ChooseAxisLabels(axish[1],replace_labels[0],size=0.03,logx=False,pad=pads[1],offset=0.01,replace=replace_labels[1],angle=90,align=32)
+
     pads[1].RedrawAxis("G")
 
     pads[0].cd()
@@ -219,6 +268,41 @@ def HTTPlotClean(
 
     c1.Close()
 
+
+def ChooseAxisLabels(axis,labels,size=0.04,logx=False,pad=None,offset=0.04,replace=[],angle=315,align=11):
+  if replace != [] and len(labels) != len(replace):
+    print "Replace and labels are not the same length"
+    return
+
+  axis.GetXaxis().SetLabelSize(0)
+  axis_min = axis.GetXaxis().GetXmin()
+  axis_max = axis.GetXaxis().GetXmax()
+  axis.SetNdivisions(len(labels))
+  if pad==None:
+    b = R.gPad.GetBottomMargin()
+    l = R.gPad.GetLeftMargin()
+    r = 1 -R.gPad.GetRightMargin()
+  else:
+    b = pad.GetBottomMargin()
+    l = pad.GetLeftMargin()
+    r = 1 -pad.GetRightMargin()
+
+  for ind, num in enumerate(labels):
+    latex = R.TLatex()
+    latex.SetNDC()
+    latex.SetTextAngle(angle)
+    latex.SetTextColor(R.kBlack)
+    latex.SetTextFont(42)
+    latex.SetTextSize(size)
+    latex.SetTextAlign(align)
+    if not logx:
+      x_shift = ((num - axis_min)*(r - l))/(axis_max - axis_min)
+    else:
+      x_shift = (math.log(num,10) - math.log(axis_min,10))*(r - l)/(math.log(axis_max,10) - math.log(axis_min,10))
+    if replace != []:
+      latex.DrawLatex(l+x_shift, b-offset, str(replace[ind]))
+    else:
+      latex.DrawLatex(l+x_shift, b-offset, str(num))
 
 def SetTDRStyle():
     """Sets the PubComm recommended style

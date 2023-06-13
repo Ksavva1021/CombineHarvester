@@ -21,7 +21,7 @@ parser.add_argument(
     '--output', default='limit_output', help="""Name of the output
     plot without file extension""")
 parser.add_argument(
-    '--contours', default='exp0,exp1,exp2', help="""List of
+    '--contours', default='obs,exp0,exp1,exp2', help="""List of
     contours to plot.""")
 parser.add_argument(
     '--x-title', default='m_{A} (GeV)', help="""Title for the x-axis""")
@@ -51,7 +51,7 @@ with open(args.input, 'r') as fp:
   json_file = json.load(fp)
 
 contours = {}
-for c in ["exp-2","exp-1","exp0","exp+1","exp+2"]:
+for c in ["exp-2","exp-1","exp0","exp+1","exp+2","obs"]:
   sorted_keys = [str(j) for j in sorted([float(i) for i in json_file.keys()])]
   contours[c] = ROOT.TGraph()
   for k in sorted_keys: contours[c].SetPoint(contours[c].GetN(),float(k),json_file[k][c])
@@ -62,7 +62,11 @@ for c in ["exp-2","exp-1","exp0","exp+1","exp+2"]:
 canv = ROOT.TCanvas(args.output, args.output, 600, 600)
 #plot.SetTDRStyle()
 plot.ModTDRStyle(width=600, height=600)
-pads = plot.TwoPadSplit(0.8, 0, 0)
+if not ("obs" in args.contours and args.excluded_mass != ""):
+  pads = plot.TwoPadSplit(0.8, 0, 0)
+else:
+  pads = plot.TwoPadSplit(0.75, 0, 0)
+
 pads[1].cd()
 binsx = array('f', map(float,sorted_keys)) 
 #binsy = array('f', map(float,[float(args.y_range.split(",")[0]),float(args.y_range.split(",")[1])]))
@@ -91,22 +95,26 @@ pads[1].SetTicky()
 
 fillstyle = 'FSAME'
 
+import copy
 if 'exp2' in args.contours:
-  plot.Set(contours['exp-2'], LineColor=0, FillColor=plot.CreateTransparentColor(ROOT.kGray + 0,0.5), FillStyle=1001)
+  plot.Set(contours['exp-2'], LineColor=0, FillColor=plot.CreateTransparentColor(ROOT.kGray + 0,0.9), FillStyle=1001)
   contours['exp-2'].Draw(fillstyle)
+  copy_expm1 = copy.deepcopy(contours['exp-1'])
+  plot.Set(copy_expm1, LineColor=0, FillColor=plot.CreateTransparentColor(ROOT.kWhite,1.0), FillStyle=1001)
+  copy_expm1.Draw(fillstyle)
 if 'exp1' in args.contours:
-  plot.Set(contours['exp-1'], LineColor=0, FillColor=plot.CreateTransparentColor(ROOT.kGray + 1,0.5), FillStyle=1001)
+  plot.Set(contours['exp-1'], LineColor=0, FillColor=plot.CreateTransparentColor(ROOT.kGray + 1,0.9), FillStyle=1001)
   contours['exp-1'].Draw(fillstyle)
-  fill_col = ROOT.kGray+0
-  # If we're only drawing the 1 sigma contours then we should fill with
-  # white here instead
-  if 'exp2' not in args.contours:
-    fill_col = ROOT.kWhite
-    plot.Set(contours['exp+1'], LineColor=0, FillColor=plot.CreateTransparentColor(fill_col,0.5), FillStyle=1001)
-    contours['exp+1'].Draw(fillstyle)
+  copy_expp1 = copy.deepcopy(contours['exp+1'])
+  plot.Set(copy_expp1, LineColor=0, FillColor=plot.CreateTransparentColor(ROOT.kWhite,1.0), FillStyle=1001)
+  copy_expp1.Draw(fillstyle)
 if 'exp2' in args.contours:
-  plot.Set(contours['exp+2'], LineColor=0, FillColor=plot.CreateTransparentColor(ROOT.kWhite,0.3), FillStyle=1001)
-  contours['exp+2'].Draw(fillstyle)
+  plot.Set(contours['exp+1'], LineColor=0, FillColor=plot.CreateTransparentColor(ROOT.kGray + 0,0.9), FillStyle=1001)
+  contours['exp+1'].Draw(fillstyle)
+  copy_expp2 = copy.deepcopy(contours['exp+2'])
+  plot.Set(copy_expp2, LineColor=0, FillColor=plot.CreateTransparentColor(ROOT.kWhite,1.0), FillStyle=1001)
+  copy_expp2.Draw(fillstyle)
+
 if 'exp0' in args.contours:
   if 'obs' in args.contours:
     plot.Set(contours["exp0"], LineColor=ROOT.kBlack, LineStyle=2)
@@ -141,7 +149,12 @@ h_top.Draw()
 
 
 # Draw the legend in the top TPad
-legend = plot.PositionedLegend(0.4, 0.11, 3, 0.015)
+if not ("obs" in args.contours and args.excluded_mass != ""):
+  legend = plot.PositionedLegend(0.4, 0.11, 3, 0.015)
+else:
+  legend = plot.PositionedLegend(0.4, 0.15, 3, 0.015)
+  legend.SetTextSize(0.027)
+  legend.SetColumnSeparation(-0.15)
 plot.Set(legend, NColumns=2, Header='#bf{%.0f%% CL excluded:}' % (95.))
 if 'obs' in args.contours:
     legend.AddEntry(contours['obs'], "Observed", "F")
@@ -161,7 +174,7 @@ if args.excluded_mass != "":
 legend.Draw()
 
 # Draw logos and titles
-plot.DrawCMSLogo(pads[0], 'CMS', args.cms_sub, 11, 0.045, 0.15, 1.0, '', 1.0)
+#plot.DrawCMSLogo(pads[0], 'CMS', args.cms_sub, 11, 0.045, 0.15, 1.0, '', 1.0)
 plot.DrawTitle(pads[0], args.title_right, 3)
 plot.DrawTitle(pads[0], args.title_left, 1)
 
@@ -176,7 +189,10 @@ latex = ROOT.TLatex()
 latex.SetNDC()
 latex.SetTextSize(0.04)
 #latex.DrawLatex(0.155, 0.75, args.scenario_label)
-latex.DrawLatex(0.18, 0.75, args.scenario_label)
+if not ("obs" in args.contours and args.excluded_mass != ""):
+  latex.DrawLatex(0.18, 0.75, args.scenario_label)
+else:
+  latex.DrawLatex(0.18, 0.7, args.scenario_label)
 
 canv.Print('.pdf')
 canv.Print('.png')

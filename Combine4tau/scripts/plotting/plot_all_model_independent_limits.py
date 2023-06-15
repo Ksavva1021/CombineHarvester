@@ -17,11 +17,13 @@ parser.add_option('--folder', help= 'Folder for processing', default='output')
 
 style_dict = {
         'style' : {
+            'obs' : { 'LineWidth' : 2},
             'exp0' : { 'LineColor' : ROOT.kBlack, 'LineStyle' : 2},
             'exp1' : { 'FillColor' : ROOT.kGreen+1, 'FillColorAlpha' : [ROOT.kGreen+1,0.5]},
             'exp2' : { 'FillColor' : ROOT.kOrange, 'FillColorAlpha' : [ROOT.kOrange,0.5]},
             },
         'legend' : {
+            'obs' : { 'Label' : 'Observed', 'LegendStyle' : 'LP', 'DrawStyle' : 'PLSAME'},
             'exp0' : { 'Label' : 'Expected', 'LegendStyle' : 'L', 'DrawStyle' : 'LSAME'},
             'exp1' : { 'Label' : '68% Expected', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
             'exp2' : { 'Label' : '95% Expected', 'LegendStyle' : 'F', 'DrawStyle' : '3SAME'},
@@ -57,7 +59,8 @@ for ind, mass in enumerate(masses):
 
   print "Getting mass:", mass
   
-  graphs.append(StandardLimitsFromJSONFile(options.folder+'/all/cmb/limits/A'+ str(mass) + '/limit_A' + str(mass) + '.json',draw=['exp0', 'exp1','exp2']))
+  graphs.append(StandardLimitsFromJSONFile_wScaling(options.folder+'/all/cmb/limits/A'+ str(mass) + '/model_independent/limit_model_independent.json',100,draw=['obs','exp0', 'exp1','exp2']))
+  #graphs.append(StandardLimitsFromJSONFile(options.folder+'/all/cmb/limits/A'+ str(mass) + '/limit_A' + str(mass) + '.json',draw=['obs','exp0', 'exp1','exp2']))
   #graphs.append(StandardLimitsFromJSONFile(options.folder+'/all/cmb/limits/A'+ str(mass) + '/limit_A' + str(mass) + '.json',draw=['exp0']))
 
   if first_loop:
@@ -69,7 +72,7 @@ for ind, mass in enumerate(masses):
     axis = CreateAxisHist(axis_g)
     axis.GetXaxis().SetTitle('m_{#phi} (GeV)')
     
-    axis.GetYaxis().SetTitle('95% CL Limit on #sigma(pp#rightarrow Z* #rightarrow #phi A) #times BR(#phi#rightarrow#tau#tau) #times BR(A#rightarrow#tau#tau)')
+    axis.GetYaxis().SetTitle('95% CL Limit on #sigma(pp#rightarrow Z* #rightarrow #phi A) #times BR(#phi#rightarrow#tau#tau) #times BR(A#rightarrow#tau#tau) (pb)')
     axis.GetYaxis().SetTitleOffset(1.75)
     axis.GetYaxis().SetTitleSize(0.04)
     axis.GetXaxis().SetTitleSize(0.04)
@@ -86,7 +89,7 @@ for ind, mass in enumerate(masses):
     legend = PositionedLegend(0.3, 0.2, 3, 0.015)
 
     # Standard CMS logo
-    DrawCMSLogo(pads[0], 'CMS', 'Work in progress', 11, 0.045, 0.035, 1.2, '', 0.8)
+    #DrawCMSLogo(pads[0], 'CMS', 'Work in progress', 11, 0.045, 0.035, 1.2, '', 0.8)
     #DrawTitle(pads[0], "m_{A}=%(MA)s GeV"%vars(), 1)
     DrawTitle(pads[0], "138 fb^{-1} (13 TeV)", 3)
 
@@ -113,7 +116,7 @@ for ind, mass in enumerate(masses):
 
   # Set the standard green and yellow colors and draw
   StyleLimitBand(graphs[ind],overwrite_style_dict=style_dict["style"])
-  DrawLimitBand(pads[0], graphs[ind],draw=['exp0','exp1','exp2'], legend=legend if first_loop else None,legend_overwrite=style_dict["legend"] if first_loop else None)
+  DrawLimitBand(pads[0], graphs[ind],draw=['exp0','exp1','exp2','obs'], legend=legend if first_loop else None,legend_overwrite=style_dict["legend"] if first_loop else None)
   legend.Draw()
 
   if first_loop: first_loop = False

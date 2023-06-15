@@ -161,7 +161,10 @@ else :
 # Setup the canvas: we'll use a two pad split, with a small top pad to contain
 # the CMS logo and the legend
 canv = ROOT.TCanvas(args.output, args.output)
-pads = plot.TwoPadSplit(0.8, 0, 0)
+if not ("obs" in args.contours and args.extra_contour_file != None):
+  pads = plot.TwoPadSplit(0.8, 0, 0)
+else:
+  pads = plot.TwoPadSplit(0.75, 0, 0)
 pads[1].cd()
 h_axis.GetXaxis().SetTitle(args.x_title)
 h_axis.GetYaxis().SetTitle(args.y_title)
@@ -292,7 +295,14 @@ plot.Set(h_top.GetYaxis(), LabelSize=0, TitleSize=0, TickLength=0)
 h_top.Draw()
 
 # Draw the legend in the top TPad
-legend = plot.PositionedLegend(0.4, 0.11, 3, 0.015)
+#legend = plot.PositionedLegend(0.4, 0.11, 3, 0.015)
+# Draw the legend in the top TPad
+if not ("obs" in args.contours and args.extra_contour_file != None):
+  legend = plot.PositionedLegend(0.4, 0.11, 3, 0.015)
+else:
+  legend = plot.PositionedLegend(0.4, 0.15, 3, 0.015)
+  legend.SetTextSize(0.027)
+  legend.SetColumnSeparation(-0.15)
 plot.Set(legend, NColumns=2, Header='#bf{%.0f%% CL Excluded:}' % (args.CL*100.))
 if 'obs' in contours:
     legend.AddEntry(contours['obs'][0], "Observed", "F")
@@ -336,7 +346,11 @@ if mh122_contours is not None and len(mh122_contours)>0:
 latex = ROOT.TLatex()
 latex.SetNDC()
 latex.SetTextSize(0.04)
-latex.DrawLatex(0.155, 0.75, args.scenario_label)
+if not ("obs" in args.contours and args.extra_contour_file != None):
+  latex.DrawLatex(0.155, 0.75, args.scenario_label)
+else:
+  latex.DrawLatex(0.155, 0.7, args.scenario_label)
+#latex.DrawLatex(0.155, 0.75, args.scenario_label)
 
 canv.Print('.pdf')
 canv.Print('.png')

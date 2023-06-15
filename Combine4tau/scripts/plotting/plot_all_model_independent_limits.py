@@ -59,8 +59,8 @@ for ind, mass in enumerate(masses):
 
   print "Getting mass:", mass
   
-  graphs.append(StandardLimitsFromJSONFile_wScaling(options.folder+'/all/cmb/limits/A'+ str(mass) + '/model_independent/limit_model_independent.json',100,draw=['obs','exp0', 'exp1','exp2']))
-  #graphs.append(StandardLimitsFromJSONFile(options.folder+'/all/cmb/limits/A'+ str(mass) + '/limit_A' + str(mass) + '.json',draw=['obs','exp0', 'exp1','exp2']))
+  #graphs.append(StandardLimitsFromJSONFile_wScaling(options.folder+'/all/cmb/limits/A'+ str(mass) + '/model_independent/limit_model_independent.json',100,draw=['obs','exp0', 'exp1','exp2']))
+  graphs.append(StandardLimitsFromJSONFile_wScaling(options.folder+'/all/cmb/limits/A'+ str(mass) + '/limit_A' + str(mass) + '.json',100,draw=['obs','exp0', 'exp1','exp2']))
   #graphs.append(StandardLimitsFromJSONFile(options.folder+'/all/cmb/limits/A'+ str(mass) + '/limit_A' + str(mass) + '.json',draw=['exp0']))
 
   if first_loop:

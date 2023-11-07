@@ -296,6 +296,134 @@ if args.run:
     harvester.ExtractPdfs(harvester, analysis, "$BIN_$PROCESS_morph", "")  # Extract all processes (signal and bkg are named the same way)
     harvester.ExtractData(analysis, "$BIN_data_obs")  # Extract the RooDataHist
     
+    # Group systematics
+    ff_sideband = [
+      "mmtt_iso_0f_3","mmtt_iso_0f_4","mmtt_iso_1f_3","mmtt_iso_1f_4",
+      "eett_iso_0f_3","eett_iso_0f_4","eett_iso_1f_3","eett_iso_1f_4",
+      "emtt_iso_0f_3","emtt_iso_0f_4","emtt_iso_1f_3","emtt_iso_1f_4",
+      "mttt_iso_0f_2","mttt_iso_0f_3","mttt_iso_0f_4",
+      "mttt_iso_1f1p_2","mttt_iso_1f1p_3","mttt_iso_1f1p_4",
+      "mttt_iso_1p1f_2","mttt_iso_1p1f_3","mttt_iso_1p1f_4",
+      "mttt_iso_2f_2","mttt_iso_2f_3","mttt_iso_2f_4",
+      "ettt_iso_0f_2","ettt_iso_0f_3","ettt_iso_0f_4",
+      "ettt_iso_1f1p_2","ettt_iso_1f1p_3","ettt_iso_1f1p_4",
+      "ettt_iso_1p1f_2","ettt_iso_1p1f_3","ettt_iso_1p1f_4",
+      "ettt_iso_2f_2","ettt_iso_2f_3","ettt_iso_2f_4",
+      "ttt_iso_0f_1","ttt_iso_0f_2","ttt_iso_0f_3",
+      "ttt_iso_1f1p_1","ttt_iso_1f1p_2","ttt_iso_1f1p_3","ttt_iso_1f1p_4",
+      "ttt_iso_1p1f_1","ttt_iso_1p1f_2","ttt_iso_1p1f_3","ttt_iso_1p1f_4",
+      "ttt_iso_2f_1","ttt_iso_2f_2","ttt_iso_2f_3","ttt_iso_2f_4",
+      ]
+    harvester.AddDatacardLineAtEnd("ff_sideband group = {}".format(" ".join(ff_sideband)))
+
+    ff_non_closure = ["mmtt_non_closure","eett_non_closure","emtt_non_closure","mttt_non_closure","ettt_non_closure","ttt_non_closure"]
+    harvester.AddDatacardLineAtEnd("ff_non_closure group = {}".format(" ".join(ff_non_closure)))
+
+    ff_subtraction_non_closure = [
+      "mmtt_subtract_pass_non_closure","eett_subtract_pass_non_closure","emtt_subtract_pass_non_closure","mttt_subtract_pass_non_closure","ettt_subtract_pass_non_closure","ttt_subtract_pass_non_closure",
+      "mmtt_subtract_fail_non_closure","eett_subtract_fail_non_closure","emtt_subtract_fail_non_closure","mttt_subtract_fail_non_closure","ettt_subtract_fail_non_closure","ttt_subtract_fail_non_closure"
+      ]
+    harvester.AddDatacardLineAtEnd("ff_subtraction_non_closure group = {}".format(" ".join(ff_subtraction_non_closure)))
+
+    ff_subtraction_yield = ["mmtt_subtraction","eett_subtraction","emtt_subtraction","mttt_subtraction","ettt_subtraction","ttt_subtraction"]
+    harvester.AddDatacardLineAtEnd("ff_subtraction_yield group = {}".format(" ".join(ff_subtraction_yield)))
+
+    tau_ID = [
+      "syst_tau_id_highpt",
+      "syst_tau_id_syst_2016_preVFP","syst_tau_id_syst_2016_postVFP","syst_tau_id_syst_2017","syst_tau_id_syst_2018",
+      "syst_tau_id_syst_all_eras",
+      "syst_tau_id_syst_dm02016_preVFP_DM","syst_tau_id_syst_dm02016_postVFP_DM","syst_tau_id_syst_dm02017_DM","syst_tau_id_syst_dm02018_DM",
+      "syst_tau_id_syst_dm12016_preVFP_DM","syst_tau_id_syst_dm12016_postVFP_DM","syst_tau_id_syst_dm12017_DM","syst_tau_id_syst_dm12018_DM",
+      "syst_tau_id_syst_dm102016_preVFP_DM","syst_tau_id_syst_dm102016_postVFP_DM","syst_tau_id_syst_dm102017_DM","syst_tau_id_syst_dm102018_DM",
+      "syst_tau_id_syst_dm112016_preVFP_DM","syst_tau_id_syst_dm112016_postVFP_DM","syst_tau_id_syst_dm112017_DM","syst_tau_id_syst_dm112018_DM",
+      "syst_tau_id_uncert0_DM02016_preVFP","syst_tau_id_uncert0_DM02016_postVFP","syst_tau_id_uncert0_DM02017","syst_tau_id_uncert0_DM02018",
+      "syst_tau_id_uncert0_DM12016_preVFP","syst_tau_id_uncert0_DM12016_postVFP","syst_tau_id_uncert0_DM12017","syst_tau_id_uncert0_DM12018",
+      "syst_tau_id_uncert0_DM102016_preVFP","syst_tau_id_uncert0_DM102016_postVFP","syst_tau_id_uncert0_DM102017","syst_tau_id_uncert0_DM102018",
+      "syst_tau_id_uncert0_DM112016_preVFP","syst_tau_id_uncert0_DM112016_postVFP","syst_tau_id_uncert0_DM112017","syst_tau_id_uncert0_DM112018",
+      "syst_tau_id_uncert1_DM02016_preVFP","syst_tau_id_uncert1_DM02016_postVFP","syst_tau_id_uncert1_DM02017","syst_tau_id_uncert1_DM02018",
+      "syst_tau_id_uncert1_DM12016_preVFP","syst_tau_id_uncert1_DM12016_postVFP","syst_tau_id_uncert1_DM12017","syst_tau_id_uncert1_DM12018",
+      "syst_tau_id_uncert1_DM102016_preVFP","syst_tau_id_uncert1_DM102016_postVFP","syst_tau_id_uncert1_DM102017","syst_tau_id_uncert1_DM102018",
+      "syst_tau_id_uncert1_DM112016_preVFP","syst_tau_id_uncert1_DM112016_postVFP","syst_tau_id_uncert1_DM112017","syst_tau_id_uncert1_DM112018",
+      ]
+    harvester.AddDatacardLineAtEnd("tau_ID group = {}".format(" ".join(tau_ID)))
+
+    k_factor = [
+      "syst_qqZZ_k_factor",
+      "syst_ggZZ_k_factor",
+    ]
+    harvester.AddDatacardLineAtEnd("k_factor group = {}".format(" ".join(k_factor)))
+
+    electron_ID = [
+      "syst_electron_id",
+    ]
+    harvester.AddDatacardLineAtEnd("electron_ID group = {}".format(" ".join(electron_ID)))
+
+    muon_ID = [
+      "syst_muon_id",
+    ]
+    #harvester.AddDatacardLineAtEnd("muon_ID group = {}".format(" ".join(muon_ID)))
+
+    tau_trigger = [
+      "syst_doubletau_trg",
+    ]
+    harvester.AddDatacardLineAtEnd("tau_trigger group = {}".format(" ".join(tau_trigger)))
+
+    electron_trigger = [
+      "syst_singlee_trg",
+    ]
+    harvester.AddDatacardLineAtEnd("electron_trigger group = {}".format(" ".join(electron_trigger)))
+
+    muon_trigger = [
+      "syst_singlem_trg",
+    ]
+    harvester.AddDatacardLineAtEnd("muon_trigger group = {}".format(" ".join(muon_trigger)))
+
+    tau_es = [
+      "syst_1prong",
+      "syst_1prong1pizero",
+      "syst_3prong",
+      "syst_3prong1pizero",
+    ]
+    harvester.AddDatacardLineAtEnd("tau_es group = {}".format(" ".join(tau_es)))
+
+    electron_es = [
+      "syst_electron_scale",
+    ]
+    harvester.AddDatacardLineAtEnd("electron_es group = {}".format(" ".join(electron_es)))
+
+    jetmet = [
+      "syst_jet_res",
+      "syst_Absolute",
+      "syst_Absolute_2016_preVFP","syst_Absolute_2016_postVFP","syst_Absolute_2017","syst_Absolute_2018",
+      "syst_BBEC1",
+      "syst_BBEC1_2016_preVFP","syst_BBEC1_2016_postVFP","syst_BBEC1_2017","syst_BBEC1_2018",
+      "syst_EC2",
+      "syst_EC2_2016_preVFP","syst_EC2_2016_postVFP","syst_EC2_2017","syst_EC2_2018",
+      "syst_FlavorQCD",
+      "syst_HF",
+      "syst_HF_2016_preVFP","syst_HF_2016_postVFP","syst_HF_2017","syst_HF_2018",
+      "syst_RelativeBal",
+      "syst_RelativeSample_2016_preVFP","syst_RelativeSample_2016_postVFP","syst_RelativeSample_2017","syst_RelativeSample_2018",
+      "syst_met_unclustered",
+    ]
+    harvester.AddDatacardLineAtEnd("jetmet group = {}".format(" ".join(jetmet)))
+
+    lumi = [
+      "Lumi",
+    ]
+    harvester.AddDatacardLineAtEnd("lumi group = {}".format(" ".join(lumi)))
+
+    btag = [
+      "syst_eff_b",
+      "syst_mistag_b",
+    ]
+    harvester.AddDatacardLineAtEnd("btag group = {}".format(" ".join(btag)))
+
+    prefiring = [
+      "syst_prefiring",
+    ]
+    harvester.AddDatacardLineAtEnd("prefiring group = {}".format(" ".join(prefiring)))
+
     if (use_automc):
        # Set the autoMCStats line (with -1 = no bbb uncertainties)
        # Set threshold to 0.3 to use Poisson PDF instead
@@ -347,7 +475,7 @@ if args.run:
     if (os.path.exists("%(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs" %vars()) == False):
        os.mkdir("%(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs"%vars())
   
-    os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M T2W -o ws.root %(po_ws)s -P CombineHarvester.Combine4tau.X2HDM:X2HDM -i %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ --parallel 4 | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_workspace)s_cmb.txt" % vars())
+    os.system("python %(cmssw_base)s/../CombineTools/scripts/combineTool.py -M T2W -o ws.root %(po_ws)s -P CombineHarvester.Combine4tau.X2HDM:X2HDM -i %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ --parallel 4 --cores 2 | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_workspace)s_cmb.txt" % vars())
     # Make Directories for Limits
     if (os.path.exists("%(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits" %vars()) == False):
        os.mkdir("%(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits"%vars())
@@ -380,6 +508,7 @@ if args.run:
       name_ext = ""
       if not args.cosbma:
         os.system("mkdir %(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s" % vars())
+        print("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s%(other_higgs)s.txt; popd" %vars())
         os.system("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s%(other_higgs)s.txt; popd" %vars())
 
       else: 
@@ -391,7 +520,7 @@ if args.run:
           tee = "%(split_higgs)s%(m)s%(other_higgs)s%(grid_str)s" % vars()
 
         if args.model_dep and int(m) > 200: continue
-
+        print "pushd %(dir)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(tee)s.txt; popd" %vars()
         os.system("pushd %(dir)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(tee)s.txt; popd" %vars())
 
 if args.collect:
@@ -407,8 +536,9 @@ if args.collect:
     elif args.model_dep:
       for m in phi_masses:
         if int(m) > 200: continue
-        os.system("python scripts/plotting/plot_model_dependent_limits.py %(output_folder)s/%(era_tag)s/cmb/limits/phi%(m)s/limit_phi%(m)s.json --excluded-mass=%(m)s --logy --scenario-label=\"m_{#phi} = %(m)s GeV\" --output=\"md_mphi%(m)s_hb\" --title-left=\"Type X 2HDM Alignment Scenario\"" % vars())
-        os.system("python scripts/plotting/plot_model_dependent_limits.py %(output_folder)s/%(era_tag)s/cmb/limits/phi%(m)s/limit_phi%(m)s.json --logy --scenario-label=\"m_{#phi} = %(m)s GeV\" --output=\"md_mphi%(m)s\" --title-left=\"Type X 2HDM Alignment Scenario\"" % vars())
+        os.system("python scripts/plotting/plot_model_dependent_limits.py %(output_folder)s/%(era_tag)s/cmb/limits/phi%(m)s/limit_phi%(m)s.json --excluded-mass=%(m)s --logy --scenario-label=\"m_{#phi} = %(m)s GeV\" --output=\"md_mphi%(m)s_hb\" --title-left=\"Type X 2HDM Alignment Scenario\" --cms-sub=\"Preliminary\"" % vars())
+        print("python scripts/plotting/plot_model_dependent_limits.py %(output_folder)s/%(era_tag)s/cmb/limits/phi%(m)s/limit_phi%(m)s.json --excluded-mass=%(m)s --logy --scenario-label=\"m_{#phi} = %(m)s GeV\" --output=\"md_mphi%(m)s_hb\" --title-left=\"Type X 2HDM Alignment Scenario\" --cms-sub=\"Preliminary\"" % vars())
+        os.system("python scripts/plotting/plot_model_dependent_limits.py %(output_folder)s/%(era_tag)s/cmb/limits/phi%(m)s/limit_phi%(m)s.json --logy --scenario-label=\"m_{#phi} = %(m)s GeV\" --output=\"md_mphi%(m)s\" --title-left=\"Type X 2HDM Alignment Scenario\" --cms-sub=\"Preliminary\"" % vars())
 
   else:
     loop_mass = [grid_str]
@@ -432,7 +562,8 @@ if args.collect:
       for grid_str in loop_mass:
         if not (m == "200" and grid_str in ["100","160"]): continue # tmp
         if args.cosbma: name_ext = other_higgs + grid_str
-        os.system("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s%(other_higgs)s%(grid_str)s.txt; popd" %vars())
-        os.system("plotLimitGrid.py %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s/asymptotic_grid.root --output='csbma_phi%(m)sA%(grid_str)s' --logy --x-title='cos(#beta-#alpha)' --y-title='tan#beta' --contours='exp-2,exp-1,exp0,exp+1,exp+2,obs' --title-left='Type X 2HDM' --title-right='138 fb^{-1} (13 Tev)' --scenario-label='m_{#phi} = %(m)s GeV, m_{A} = %(grid_str)s GeV'" % vars())
+        #os.system("pushd %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s; python %(cmssw_base)s/../CombineTools/scripts/combineTool.py %(method)s -m %(grid_str)s --redefineSignalPOIs %(POI)s --setParameters %(frozen_POIs_SetToZero)s --freezeParameters %(frozen_POIs)s -d %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/ws.root --X-rtd MINIMIZER_analytic --cminDefaultMinimizerStrategy 0 %(blinding)s  --job-mode SGE  --prefix-file ic --sub-opts \"-q hep.q -l h_rt=3:0:0\" --task-name %(split_higgs)s%(m)s%(name_ext)s%(add_cond)s | tee -a %(cmssw_base)s/%(output_folder)s/%(era_tag)s/logs/%(log_limits)s_cmb_m%(split_higgs)s%(m)s%(other_higgs)s%(grid_str)s.txt; popd" %vars())
+        os.system("plotLimitGrid.py %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s/asymptotic_grid.root --output='csbma_phi%(m)sA%(grid_str)s' --logy --x-title='cos(#beta-#alpha)' --y-title='tan#beta' --contours='exp-2,exp-1,exp0,exp+1,exp+2,obs' --title-left='Type X 2HDM' --title-right='138 fb^{-1} (13 TeV)' --scenario-label='m_{#phi} = %(m)s GeV, m_{A} = %(grid_str)s GeV'" % vars())
+        os.system("plotLimitGrid.py %(cmssw_base)s/%(output_folder)s/%(era_tag)s/cmb/limits/%(split_higgs)s%(m)s/%(other_higgs)s%(grid_str)s/asymptotic_grid.root --output='csbma_phi%(m)sA%(grid_str)s_hb' --logy --x-title='cos(#beta-#alpha)' --y-title='tan#beta' --contours='exp-2,exp-1,exp0,exp+1,exp+2,obs' --title-left='Type X 2HDM' --title-right='138 fb^{-1} (13 TeV)' --scenario-label='m_{#phi} = %(m)s GeV, m_{A} = %(grid_str)s GeV' --extra_contour_file='input/typeX_info.root' --extra_contour_name='contour_total_exc_mh125p0_mH%(m)sp0_mA%(grid_str)sp0_1' --extra_contour_title='HiggsTools-1' --extra_contour_style=2" % vars())
 
 

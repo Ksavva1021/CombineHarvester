@@ -204,10 +204,14 @@ if args.breakdown is None:
 if args.breakdown is not None:
     pt.SetX1(0.50)
     if len(other_scans) >= 3:
-        pt.SetX1(0.19)
-        pt.SetX2(0.88)
-        pt.SetY1(0.66)
-        pt.SetY2(0.82)
+        #pt.SetX1(0.19)
+        #pt.SetX2(0.88)
+        #pt.SetY1(0.66)
+        #pt.SetY2(0.82)
+        pt.SetX1(0.12)
+        pt.SetX2(0.95)
+        pt.SetY1(0.6-0.05)
+        pt.SetY2(0.82-0.05)
     breakdown = args.breakdown.split(',')
     v_hi = [val_nom[1]]
     v_lo = [val_nom[2]]
@@ -231,7 +235,14 @@ if args.breakdown is not None:
         else:
             hi = v_hi[i]
             lo = v_lo[i]
+
+        if len(other_scans) >= 6 and i % 3 == 0 and i != 0:
+          pt.AddText(textfit)
+          #pt.SetY1(pt.GetY1()+0.1)
+          #pt.SetY2(pt.GetY2()+0.1)
+          textfit = ""
         textfit += '{}^{#plus %.3f}_{#minus %.3f}(%s)' % (hi, abs(lo), br)
+    print(textfit)
     pt.AddText(textfit)
 
 

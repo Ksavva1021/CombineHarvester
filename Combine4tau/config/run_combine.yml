@@ -1,8 +1,9 @@
 #path: "shapes/1704" 
-path: "shapes/0105_2023"
+path: "shapes/0105_v3"
 analysis: "X2HDM"
 year: "all"
 channels: ["mmtt", "ettt","mttt","tttt","eett","ttt","emtt"] 
+#channels: ["mmtt", "ettt","mttt","tttt","eett","ttt"]
 categories: 
         "mmtt": [[11,"mmtt_z_control_nobtag"],[12,"mmtt_2l2t_sig_nobtag"]]
         "emtt": [[11,"emtt_z_control_nobtag"],[12,"emtt_2l2t_sig_nobtag"]]
@@ -688,11 +689,11 @@ systematics:
                 processes: ["jetFakes","jetFakes13"]
                 name: "ttt_iso_1p1f_1" 
         
-        Jet_Fakes_ttt_iso_1f1p_2:
+        Jet_Fakes_ttt_iso_1p1f_2:
                 channel: ["ttt"]
                 effect: "shape"
                 processes: ["jetFakes","jetFakes12"]
-                name: "ttt_iso_1f1p_2"
+                name: "ttt_iso_1p1f_2"
 
         Jet_Fakes_ttt_iso_1p1f_3:
                 channel: ["ttt"]
@@ -707,11 +708,11 @@ systematics:
                 processes: ["jetFakes","jetFakes13","jetFakes14"]
                 name: "ttt_iso_1p1f_1"
 
-        Jet_Fakes_tttt_iso_1f1p_2:
+        Jet_Fakes_tttt_iso_1p1f_2:
                 channel: ["tttt"]
                 effect: "shape"
                 processes: ["jetFakes","jetFakes12"]
-                name: "ttt_iso_1f1p_2"
+                name: "ttt_iso_1p1f_2"
 
         Jet_Fakes_tttt_iso_1p1f_3:
                 channel: ["tttt"]

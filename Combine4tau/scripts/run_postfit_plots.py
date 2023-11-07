@@ -147,7 +147,7 @@ if step in ["plot","all"]:
                             ratio_range="0,2",
                             y_title="Events",
                             x_title="m_{T}^{tot} (GeV)",
-                            title_right="138 fb^{-1}",
+                            title_right="138 fb^{-1} (13 TeV)",
                             title_left=cat_to_latex[cat],
                             bkg_colours=bkg_colours)
 
@@ -276,7 +276,7 @@ if step in ["combine","all"]:
                             ratio_range=ratio_range,
                             y_title="Events",
                             x_title="m_{T}^{tot} (GeV)",
-                            title_right="138 fb^{-1}",
+                            title_right="138 fb^{-1} (13 TeV)",
                             title_left="",
                             bkg_colours=bkg_colours,
                             replace_axis=True,
@@ -286,6 +286,7 @@ if step in ["combine","all"]:
                             divider_lines=divider_lines,
                             divider_text = [divider_text_pos,[cat_to_latex[i] for i in cats_to_combine]],
                             width = 600,
-                            y_axis_above_max = 1.8
+                            y_axis_above_max = 1.8,
+                            cms_label = "Preliminary",
                             )
 

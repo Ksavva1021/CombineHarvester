@@ -122,7 +122,6 @@ if args.extra_contour_file is not None:
         extra_contour_names = []
         for i in range(0,len(extra_contour_file_contents)):
             if extra_contour_file_contents[i].GetName() in args.extra_contour_name.split(","):
-              print extra_contour_file_contents[i].GetName()
               extra_contour_names.append(extra_contour_file_contents[i].GetName())
               extra_contours_per_index = [extra_contour_file.Get(c) for c in extra_contour_names]
               extra_contours.append(extra_contours_per_index)
@@ -320,6 +319,7 @@ if extra_contours is not None:
         contour_title = args.extra_contour_title.split(',')
     for i in range(0,len(contour_title)): 
         #legend.AddEntry(extra_contours[i][0],contour_title[i],"L")
+        print(extra_contours,contour_title)
         entry = legend.AddEntry(extra_contours[i][0],contour_title[i], "F")
         entry.SetTextFont(82)
 legend.Draw()

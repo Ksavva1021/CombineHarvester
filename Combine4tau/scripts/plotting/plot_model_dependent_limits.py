@@ -28,14 +28,14 @@ parser.add_argument(
 parser.add_argument(
     '--y-title', default='tan#beta', help="""Title for the y-axis""")
 parser.add_argument(
-    '--y-range', default="1,100", type=str, help="""y-axis range""")
+    '--y-range', default="1,200", type=str, help="""y-axis range""")
 parser.add_argument(
     '--cms-sub', default='Internal', help="""Text below the CMS logo""")
 parser.add_argument(
     '--scenario-label', default='', help="""Scenario name to be drawn in top
     left of plot""")
 parser.add_argument(
-    '--title-right', default='138 fb^{-1} (13 GeV)', help="""Right header text above the frame""")
+    '--title-right', default='138 fb^{-1} (13 TeV)', help="""Right header text above the frame""")
 parser.add_argument(
     '--title-left', default='', help="""Left header text above the frame""")
 parser.add_argument(
@@ -44,6 +44,8 @@ parser.add_argument(
     '--logy', action='store_true', help="""Draw y-axis in log scale""")
 parser.add_argument(
     '--logx', action='store_true', help="""Draw x-axis in log scale""")
+parser.add_argument(
+    '--box-allowed', default=None, type=str, help="""draw a box with allowed values, format is (x1,y1),(x2,y2),(x3,y3)""")
 args = parser.parse_args()
 
 
@@ -141,20 +143,37 @@ if args.excluded_mass != "":
   excl_cont.Draw('FSAME')
   excl_cont.Draw("LSAME")
 
+if args.box_allowed != None and p == 1:
+  n_points = args.box_allowed.count("(")
+  graph = ROOT.TGraph(n_points+1)
+  for i in range(n_points):
+    point = args.box_allowed.split("(")[i+1].split(")")[0].split(",")
+    graph.SetPoint(i, float(point[0]), float(point[1]))
+  point_end = args.box_allowed.split("(")[1].split(")")[0].split(",")
+  graph.SetPoint(n_points, float(point_end[0]), float(point_end[1]))
+  graph.Print("all")
+  plot.Set(graph, LineColor=8, FillColor=plot.CreateTransparentColor(8,0.2), FillStyle=1001)
+  graph.Draw('FSAME')
+  graph.Draw("LSAME")
+
+
 pads[0].cd()
 h_top = h_axis.Clone()
 plot.Set(h_top.GetXaxis(), LabelSize=0, TitleSize=0, TickLength=0)
 plot.Set(h_top.GetYaxis(), LabelSize=0, TitleSize=0, TickLength=0)
 h_top.Draw()
 
-
 # Draw the legend in the top TPad
 if not ("obs" in args.contours and args.excluded_mass != ""):
   legend = plot.PositionedLegend(0.4, 0.11, 3, 0.015)
 else:
-  legend = plot.PositionedLegend(0.4, 0.15, 3, 0.015)
+  #legend = plot.PositionedLegend(0.4, 0.15, 3, 0.015)
+  legend = plot.PositionedLegend(0.5, 0.15, 3, 0.015)
+
   legend.SetTextSize(0.027)
-  legend.SetColumnSeparation(-0.15)
+  #legend.SetColumnSeparation(-0.15)
+  legend.SetColumnSeparation(-0.0)
+
 plot.Set(legend, NColumns=2, Header='#bf{%.0f%% CL excluded:}' % (95.))
 if 'obs' in args.contours:
     legend.AddEntry(contours['obs'], "Observed", "F")
@@ -171,6 +190,9 @@ if args.excluded_mass != "":
     entry = legend.AddEntry(excl_cont, "HiggsTools-1", "F")
     entry.SetTextFont(82)
     # 82
+if args.box_allowed != None:
+  legend.AddEntry(graph, "Allowed for g-2", "F")
+
 legend.Draw()
 
 # Draw logos and titles

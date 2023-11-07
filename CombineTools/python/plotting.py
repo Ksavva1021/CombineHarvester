@@ -38,6 +38,7 @@ def HTTPlotClean(
             divider_text = [[],[]],
             y_axis_above_max = 1.5,
             width = 600,
+            cms_label = None,
             ):
     R.gROOT.SetBatch(R.kTRUE)
     R.TH1.AddDirectory(False)
@@ -204,7 +205,8 @@ def HTTPlotClean(
     latex2.DrawLatex(0.145,0.955,title_left)
 
     #CMS and lumi labels
-    #DrawCMSLogo(pads[0], 'CMS', 'Work In Progress', 1, 0.125, -0.07, 0, '', cmsTextSize=0.8)
+    if cms_label != None:
+      DrawCMSLogo(pads[0], 'CMS', cms_label, 1, 0.125, -0.07, 0, '', cmsTextSize=0.8)
     DrawTitle(pads[0], title_right, 3)
 
     h_ratio = []

@@ -10,8 +10,9 @@ class X2HDM(PhysicsModel):
         PhysicsModel.__init__(self)
         self.model_dependent = False
         self.cosbma = False
-        self.m_A = [60,70,80,90,100,125,140,160]
-        self.m_phi = [100,110,125,140,160,180,200,250,300]
+        #self.m_A = [60,70,80,90,100,125,140,160]
+        self.m_A = [40,50,60,70,80,90,100,125,140,160,200,250,300,400,600,800]
+        self.m_phi = [60,70,80,90,100,110,125,140,160,180,200,250,300]       
         self.base = '{}/Combine4tau'.format(os.getcwd().split("Combine4tau")[0])
         self.type_2hdm = "X"
 
@@ -23,12 +24,17 @@ class X2HDM(PhysicsModel):
             self.cosbma = True
           if po.startswith("typeII"):
             self.type_2hdm = "II"
+          if po.startswith("mA"):
+            self.m_A = [po[2:]]
+          if po.startswith("mphi"):
+            self.mphi = [po[4:-1]]
 
     def doParametersOfInterest(self):
         """Create POI and other parameters, and define the POI set."""
         poiNames = []
         if not (self.model_dependent or self.cosbma):
           for j in self.m_A:
+            #print("r_A{}".format(j))
             self.modelBuilder.doVar("r_A{}[1,0,20]".format(j))
             poiNames.append('r_A{}'.format(j))
         elif self.model_dependent or self.cosbma:
@@ -96,15 +102,13 @@ class X2HDM(PhysicsModel):
 
               self.modelBuilder.factory_('expr::xs_br_phi{}("@0*@1", xs, br_phi{})'.format(j,j))
 
-
-
     def getYieldScale(self, bin_, process):
 
         scalings = []
         if not (self.model_dependent or self.cosbma):
           for j in self.m_A:
             candidate = 'A{}'.format(j)
-            if candidate in process:
+            if candidate == process:
               scalings.append('r_A{}'.format(j))
         elif self.model_dependent:
           for j in self.m_phi:

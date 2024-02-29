@@ -2,13 +2,14 @@ import os
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--input',help= 'Input directory', default='/vols/cms/gu18/4tau_v3/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/0105/')
-parser.add_argument('--output',help= 'Output directory', default='/vols/cms/gu18/4tau_v3/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/0105_v3/')
+parser.add_argument('--input',help= 'Input directory', default='/vols/cms/ks1021/offline/4tau_/CMSSW_10_2_19/src/UserCode/ICHiggsTauTau/Analysis/4tau/4tau_plots')
+parser.add_argument('--output',help= 'Output directory', default='/vols/cms/ks1021/offline/4tau_/Combine/CMSSW_10_2_13/src/CombineHarvester/Combine4tau/shapes/2202_v2')
 args = parser.parse_args()
 
 variable = ['mt_tot']
 #variable = ['st','mt_tot']
-channels = ['eett','emtt','ettt','mmtt','mttt','ttt','tttt']
+#channels = ['eett','emtt','ettt','mmtt','mttt','ttt','tttt']
+channels = ['eett']
 categories = {
               "ttt" : ["inclusive"],
               "tttt": ["inclusive"],

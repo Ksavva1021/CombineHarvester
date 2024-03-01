@@ -137,4 +137,3 @@ FixBothRanges(pads[0], 0, 0, GetPadYMax(pads[0]), 0.25)
 #latex.SetTextSize(0.04)
 
 canv.Print('plots/model_independent_limit_all.pdf')
-

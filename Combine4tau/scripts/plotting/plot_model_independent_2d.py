@@ -1,5 +1,6 @@
 import ROOT
 import json
+import copy
 import numpy as np
 from array import array
 from optparse import OptionParser
@@ -78,18 +79,63 @@ c.SetLeftMargin(0.15)
 c.SetRightMargin(0.25)
 c.SetBottomMargin(0.15)
 c.SetLogz()
+#ROOT.gPad.SetTicks(0, 1)
 hout.SetMaximum(20.0001) # so labels show up
 hout.SetMinimum(0.9999)
 hout.Draw("COLZ")
 hout.SetContour(255)
 hout.SetStats(0)
+
+cont_vals = [2,3,4,6,8,12]
+
+cont = copy.deepcopy(hout)
+cont.SetContour(len(cont_vals), array('d', cont_vals))
+cont.SetLineColor(ROOT.kBlack)
+cont.Draw("cont3 same")
+
+right_bin = cont.GetNbinsX() - 10
+
+h_final_column_values = [cont.GetBinContent(right_bin, y) for y in range(1, cont.GetNbinsY() + 1)]
+h_final_row_values = [cont.GetBinContent(x, 1) for x in range(1, cont.GetNbinsX() + 1)]
+
+print(h_final_row_values)
+
+for cont_val in cont_vals:
+
+  print(cont_val, min(h_final_column_values), max(h_final_column_values), min(h_final_row_values), max(h_final_row_values))
+
+  if cont_val > min(h_final_column_values) and cont_val < max(h_final_column_values):
+    up_bins = 2
+    left_bins = 3
+    for ind in range(len(h_final_column_values)-1):
+      if (cont_val > h_final_column_values[ind] and cont_val < h_final_column_values[ind+1]) or (cont_val < h_final_column_values[ind] and cont_val > h_final_column_values[ind+1]):
+        print(cont_val, ind, cont.GetXaxis().GetBinLowEdge(right_bin), cont.GetYaxis().GetBinLowEdge(ind))
+        latex = ROOT.TLatex()
+        latex.SetTextSize(0.025)
+        latex.SetTextAlign(22)  # Centered alignment
+        latex.DrawLatex(cont.GetXaxis().GetBinLowEdge(cont.GetNbinsX()-left_bins), cont.GetYaxis().GetBinLowEdge(ind+up_bins), str(cont_val)+" fb")
+
+  elif cont_val > min(h_final_row_values) and cont_val < max(h_final_row_values):
+    up_bins = 2
+    right_bins = 6
+    for ind in range(len(h_final_row_values)-1):
+      if (cont_val > h_final_row_values[ind] and cont_val < h_final_row_values[ind+1]) or (cont_val < h_final_row_values[ind] and cont_val > h_final_row_values[ind+1]):
+        print(cont_val, ind, cont.GetXaxis().GetBinLowEdge(ind), cont.GetYaxis().GetBinLowEdge(1))
+        latex = ROOT.TLatex()
+        latex.SetTextSize(0.025)
+        latex.SetTextAlign(22)  # Centered alignment
+        latex.DrawLatex(cont.GetXaxis().GetBinLowEdge(ind+right_bins), cont.GetYaxis().GetBinLowEdge(1+up_bins), str(cont_val) + " fb")
+# find latex value to draw title
+# Need to figure out if it is on the x axis or the y axis
+
+
 hout.GetZaxis().SetMoreLogLabels()
 hout.GetZaxis().SetNoExponent()
 hout.GetYaxis().SetTitle("m_{#phi} (GeV)")
 hout.GetXaxis().SetTitle("m_{A} (GeV)")
 hout.GetZaxis().SetTitle("95% CL Limit on #sigma #times BR(#phi#rightarrow#tau#tau) #times BR(A#rightarrow#tau#tau) (fb)")
 
-DrawTitle(c, "138 fb^{-1} (13 TeV)", 3, textSize=0.4)
+DrawTitle(c, "138 fb^{-1} (13 TeV)", 3, textSize=0.35)
 DrawCMSLogo(c, 'CMS','Preliminary', 1, 0.14, -0.055, 0, '', 0.4)
 
 

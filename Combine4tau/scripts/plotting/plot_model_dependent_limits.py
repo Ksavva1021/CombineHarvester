@@ -46,6 +46,8 @@ parser.add_argument(
     '--logx', action='store_true', help="""Draw x-axis in log scale""")
 parser.add_argument(
     '--box-allowed', default=None, type=str, help="""draw a box with allowed values, format is (x1,y1),(x2,y2),(x3,y3)""")
+parser.add_argument(
+    '--draw-contour', action='store_true', help="""Draw line contours across the plot""")
 args = parser.parse_args()
 
 

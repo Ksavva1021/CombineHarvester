@@ -1,3 +1,4 @@
+import os
 import ROOT
 import json
 import copy
@@ -34,8 +35,8 @@ def find_closest(numbers, target):
   return closest_lower, closest_higher
 
 
-bins_A = [60,70,80,90,100,125,140,160]
-bins_phi = [100,110,125,140,160,180,200,250,300]
+bins_phi = [60,70,80,90,100,110,125,140,160,180,200,250,300,400,600,800]
+bins_A = [40,50,60,70,80,90,100,125,140,160,200,250,300,400,600]
 
 cont = "obs"
 
@@ -52,8 +53,8 @@ for bA in range(1,hout.GetNbinsX()+1):
   y = hout.GetXaxis().GetBinCenter(bA)
   y1, y2 = find_closest(bins_A,y)
 
-  params_file_down = options.folder+'/all/cmb/limits/A'+ str(y1) + '/limit_A' + str(y1) + '.json'
-  params_file_up = options.folder+'/all/cmb/limits/A'+ str(y2) + '/limit_A' + str(y2) + '.json'
+  params_file_down = options.folder+'/all/A_'+ str(y1) + '/cmb/limits/limit_limits.json'
+  params_file_up = options.folder+'/all/A_'+ str(y2) + '/cmb/limits/limit_limits.json'
   #params_file_down = options.folder+'/all/cmb/limits/A'+ str(y1) + '/model_independent/limit_model_independent.json'
   #params_file_up = options.folder+'/all/cmb/limits/A'+ str(y2) + '/model_independent/limit_model_independent.json'
   with open(params_file_down) as jsonfile: params_down = json.load(jsonfile)
@@ -64,12 +65,14 @@ for bA in range(1,hout.GetNbinsX()+1):
     x = hout.GetYaxis().GetBinCenter(bphi)
     x1, x2 = find_closest(bins_phi,x) 
 
-    f11 = params_down[str(float(x1))][cont]
-    f12 = params_up[str(float(x1))][cont]
-    f21 = params_down[str(float(x2))][cont]
-    f22 = params_up[str(float(x2))][cont]
-
-    hout.SetBinContent(bA,bphi,10.0*InterpolationFromBinEdges(x,y,x1,x2,y1,y2,f11,f12,f21,f22))
+    if not (not any(str(float(x1)) not in d.keys() for d in [params_down, params_up]) and not any(str(float(x2)) not in d.keys() for d in [params_down, params_up])):
+      hout.SetBinContent(bA,bphi,0)
+    else:
+      f11 = params_down[str(float(x1))][cont]
+      f12 = params_up[str(float(x1))][cont]
+      f21 = params_down[str(float(x2))][cont]
+      f22 = params_up[str(float(x2))][cont]
+      hout.SetBinContent(bA,bphi,10.0*InterpolationFromBinEdges(x,y,x1,x2,y1,y2,f11,f12,f21,f22))
   
 
 ROOT.gStyle.SetPalette(ROOT.kRainBow)

@@ -139,11 +139,29 @@ if 'obs' in args.contours:
 # Draw excluded regions
 if args.excluded_mass != "":
   #excluded_file = ROOT.TFile("input/excluded_contours.root")
-  excluded_file = ROOT.TFile("input/excluded_contours_v2.root")
-  excl_cont = excluded_file.Get("mphi"+args.excluded_mass)
-  plot.Set(excl_cont, LineColor=2, FillColor=plot.CreateTransparentColor(2,0.2), FillStyle=1001)
-  excl_cont.Draw('FSAME')
-  excl_cont.Draw("LSAME")
+  #excluded_file = ROOT.TFile("input/excluded_contours_v2.root")
+  #excl_cont = excluded_file.Get("mphi"+args.excluded_mass)
+  #excluded_file = ROOT.TFile("input/typeX_info_v5.root")
+  excluded_file = ROOT.TFile("input/typeX_BRs.root")
+
+  for i in range(1,5):
+
+    #for bs in ["b","s"]:
+
+    #contour_name = "contour_exp_exc_h{}_mphi{}p0_csbma0p0_{}".format(bs,args.excluded_mass,i)
+    contour_name = "contour_exp_exc_mphi{}p0_{}".format(args.excluded_mass,i)
+
+    contour_exists = False
+    if excluded_file and not excluded_file.IsZombie() and not excluded_file.TestBit(ROOT.TFile.kRecovered):
+      contour = excluded_file.Get(contour_name)
+      if contour:
+        contour_exists = True
+
+    if contour_exists:
+      excl_cont = excluded_file.Get(contour_name)
+      plot.Set(excl_cont, LineColor=2, FillColor=plot.CreateTransparentColor(2,0.2), FillStyle=1001)
+      excl_cont.Draw('FSAME')
+      excl_cont.Draw("LSAME")
 
 if args.box_allowed != None and p == 1:
   n_points = args.box_allowed.count("(")
@@ -170,7 +188,7 @@ if not ("obs" in args.contours and args.excluded_mass != ""):
   legend = plot.PositionedLegend(0.4, 0.11, 3, 0.015)
 else:
   #legend = plot.PositionedLegend(0.4, 0.15, 3, 0.015)
-  legend = plot.PositionedLegend(0.5, 0.15, 3, 0.015)
+  legend = plot.PositionedLegend(0.45, 0.15, 3, 0.015, horizontaloffset=0.0)
 
   legend.SetTextSize(0.027)
   #legend.SetColumnSeparation(-0.15)
@@ -198,7 +216,7 @@ if args.box_allowed != None:
 legend.Draw()
 
 # Draw logos and titles
-#plot.DrawCMSLogo(pads[0], 'CMS', args.cms_sub, 11, 0.045, 0.15, 1.0, '', 1.0)
+plot.DrawCMSLogo(pads[0], 'CMS', args.cms_sub, 11, 0.045, 0.15, 1.0, '', 1.0)
 plot.DrawTitle(pads[0], args.title_right, 3)
 plot.DrawTitle(pads[0], args.title_left, 1)
 
